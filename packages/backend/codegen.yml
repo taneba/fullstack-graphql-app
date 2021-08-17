@@ -1,0 +1,8 @@
+overwrite: true
+schema: './src/api/graphql/typeDefs.ts'
+documents: null
+generates:
+  src/api/graphql/generated/graphql.ts:
+    plugins:
+      - 'typescript'
+      - 'typescript-resolvers'

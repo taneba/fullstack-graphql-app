@@ -1,0 +1,35 @@
+{
+  "name": "backend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon 'src/index.ts' --exec 'ts-node'",
+    "gql-gen": "graphql-codegen --config codegen.yml",
+    "db:migration:generate": "prisma migrate dev --create-only",
+    "db:migration:run": "prisma migrate dev",
+    "db:reset": "prisma migrate reset",
+    "prisma-gen": "prisma generate",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@envelop/core": "^1.0.3",
+    "@envelop/depth-limit": "^1.0.0",
+    "@envelop/rate-limiter": "^1.0.0",
+    "@graphql-tools/schema": "^8.1.0",
+    "@prisma/client": "2.29.0",
+    "@types/node": "^16.4.13",
+    "fastify": "^3.20.2",
+    "fastify-cors": "^6.0.2",
+    "graphql": "^15.5.1",
+    "graphql-helix": "^1.7.0",
+    "nodemon": "^2.0.12",
+    "prisma": "^2.29.0",
+    "ts-node": "^10.2.0",
+    "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "@graphql-codegen/typescript-resolvers": "^2.0.0",
+    "chalk": "^4.1.2",
+    "prisma": "2.29.0"
+  }
+}

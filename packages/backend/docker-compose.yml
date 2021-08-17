@@ -1,0 +1,30 @@
+version: '3.7'
+services:
+  app:
+    image: node:lts-alpine
+    tty: true
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /usr/src/fga-server/node_modules
+      - .:/usr/src/fga-server
+    working_dir: /usr/src/fga-server
+    ports:
+      - '5000:5000'
+    command: ash -c 'yarn && yarn dev'
+    depends_on:
+      - db
+  db:
+    image: mysql:latest
+    command: --lower_case_table_names=1
+    volumes:
+      - ./docker/db/data:/var/lib/mysql
+      - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: fga
+      MYSQL_PASSWORD: fga
+      MYSQL_DATABASE: fga
