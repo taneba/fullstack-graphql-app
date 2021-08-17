@@ -2,7 +2,7 @@
 Sample GraphQL App using Prisma, envelop, graphql-helix, nextjs, urql
 
 
-# Start Server
+## Start Server
 
 1. add .env file to `packages/backend`
 
