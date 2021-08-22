@@ -4,12 +4,10 @@ import {
   processRequest,
   renderGraphiQL,
   shouldRenderGraphiQL,
-  ExecutionContext,
 } from 'graphql-helix'
 import {
   envelop,
   useLogger,
-  useAsyncSchema,
   useTiming,
   useExtendContext,
   useSchema,
@@ -17,8 +15,6 @@ import {
 } from '@envelop/core'
 import { useDepthLimit } from '@envelop/depth-limit'
 import { schema } from './api/graphql/typeDefs'
-import { buildSchema } from 'graphql'
-// import { useRateLimiter, IdentifyFn } from '@envelop/rate-limiter'
 import { makeExecutableSchema } from '@graphql-tools/schema'
 import resolvers from './api/graphql/resolvers/resolvers'
 import { createContext } from './context'
@@ -32,7 +28,7 @@ const executableSchema = makeExecutableSchema({
 const getEnveloped = envelop({
   plugins: [
     useSchema(executableSchema),
-    useExtendContext((ctx) => createContext()),
+    useExtendContext(createContext),
     // Logs parameters and information about the execution phases. You can easily plug in your custom logger.
     useLogger(),
     useErrorHandler((error) => {
