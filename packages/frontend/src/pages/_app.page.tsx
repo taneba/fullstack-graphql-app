@@ -3,6 +3,7 @@ import { AppProps } from 'next/app'
 import { GlobalStyles } from '../style/GlobalStyles'
 import { UrqlClientProvider } from '../components/util/UrqlClientProvider'
 import 'twin.macro'
+import { Navbar } from 'src/components/Navbar'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -17,7 +18,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         }
       >
         <UrqlClientProvider>
-          <div tw="flex flex-col h-full bg-white">
+          <Navbar />
+          <div tw="bg-white py-10 px-5 mx-auto container mt-8">
             <Component {...pageProps} />
           </div>
         </UrqlClientProvider>

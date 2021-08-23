@@ -18,15 +18,13 @@ function Todos() {
   const [res] = useQuery({ query: GetTodos })
 
   return (
-    <div>
-      <h1>Todos</h1>
-      <pre tw="text-sm">
-        {JSON.stringify(
-          res.data?.todos.map((todo) => todo),
-          null,
-          2
-        )}
-      </pre>
+    <div tw="mt-4">
+      <h1 tw="text-black font-bold text-3xl">Todos</h1>
+      {res.data?.todos.map((todo) => (
+        <div tw="flex flex-row items-center justify-between w-full py-1 px-4 my-1 rounded border bg-gray-100 text-gray-600">
+          {todo.title}
+        </div>
+      ))}
     </div>
   )
 }
