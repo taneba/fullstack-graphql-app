@@ -2,9 +2,9 @@ import fastify from 'fastify'
 import {
   getGraphQLParameters,
   processRequest,
-  renderGraphiQL,
   shouldRenderGraphiQL,
 } from 'graphql-helix'
+import { renderPlaygroundPage } from 'graphql-playground-html'
 import {
   envelop,
   useLogger,
@@ -67,7 +67,8 @@ app.route({
     ) {
       console.log('render graphqiql')
       res.type('text/html')
-      res.send(renderGraphiQL())
+      // We use playground until it's implemented in GraphiQL as a preset. see https://github.com/graphql/graphiql/issues/1443
+      res.send(renderPlaygroundPage({}))
     } else {
       const { operationName, query, variables } = getGraphQLParameters(request)
 
