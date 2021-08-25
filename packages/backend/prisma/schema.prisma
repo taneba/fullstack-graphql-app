@@ -24,6 +24,7 @@ model Todo {
 
 model User {
   id    Int     @id @default(autoincrement())
+  uid   String? @unique
   email String  @unique
   name  String?
   todos Todo[]

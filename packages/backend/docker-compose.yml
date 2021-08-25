@@ -5,7 +5,7 @@ services:
     tty: true
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     volumes:
       - /usr/src/fga-server/node_modules
       - .:/usr/src/fga-server
@@ -13,8 +13,13 @@ services:
     ports:
       - '5000:5000'
     command: ash -c 'yarn && yarn dev'
+    environment:
+      AUTH0_DOMAIN:
+      AUTH0_AUDIENCE:
+      AUTH0_CLIENT_ID:
     depends_on:
       - db
+
   db:
     image: mysql:latest
     command: --lower_case_table_names=1

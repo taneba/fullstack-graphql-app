@@ -6,7 +6,7 @@ module.exports = {
     colors: {
       ...colors,
       placeholder: '#AFAFAF',
-      white: '#FFFFFF',
+      white: colors.white,
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],

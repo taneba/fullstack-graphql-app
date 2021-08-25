@@ -1,6 +1,12 @@
 # fullstack-graphql-app
-Sample GraphQL App using Prisma, envelop, graphql-helix, nextjs, urql
 
+Sample GraphQL App using modern tech stack
+
+NOTE: This project is WIP.
+
+## Backend
+
+Prisma, envelop, graphql-helix, nextjs, urql
 
 ## Start Server
 

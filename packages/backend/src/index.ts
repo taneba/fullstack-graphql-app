@@ -3,7 +3,12 @@ import {
   getGraphQLParameters,
   processRequest,
   shouldRenderGraphiQL,
-} from 'graphql-helix'
+} from './lib'
+// import {
+//   getGraphQLParameters,
+//   processRequest,
+//   shouldRenderGraphiQL,
+// } from 'graphql-helix'
 import { renderPlaygroundPage } from 'graphql-playground-html'
 import {
   envelop,
@@ -12,12 +17,16 @@ import {
   useExtendContext,
   useSchema,
   useErrorHandler,
+  useMaskedErrors,
+  EnvelopError,
 } from '@envelop/core'
+
 import { useDepthLimit } from '@envelop/depth-limit'
 import { schema } from './api/graphql/typeDefs'
 import { makeExecutableSchema } from '@graphql-tools/schema'
 import resolvers from './api/graphql/resolvers/resolvers'
 import { createContext } from './context'
+import { useAuth0 } from '@envelop/auth0'
 const app = fastify()
 
 const executableSchema = makeExecutableSchema({
@@ -28,16 +37,27 @@ const executableSchema = makeExecutableSchema({
 const getEnveloped = envelop({
   plugins: [
     useSchema(executableSchema),
-    useExtendContext(createContext),
-    // Logs parameters and information about the execution phases. You can easily plug in your custom logger.
     useLogger(),
-    useErrorHandler((error) => {
-      // This callback is called per each GraphQLError emitted during execution phase
-      console.log('ERROR', JSON.stringify(error))
+    useAuth0({
+      onError: (e: any) => {
+        throw new EnvelopError('request not authenticated', {
+          code: 'NOT_AUTHENTICATED',
+        })
+        // NOTE: this does not work because of the graphql-helix issues
+        // see https://github.com/dotansimha/envelop/issues/606
+      },
+      domain: process.env.AUTH0_DOMAIN!,
+      audience: process.env.AUTH0_AUDIENCE!,
+      headerName: 'authorization',
+      preventUnauthenticatedAccess: true,
+      extendContextField: 'auth0',
+      tokenType: 'Bearer',
     }),
-    /** t's a simple time metric collection for every phase in your execution.
-     * You can easily customize the behavior of each timing measurement.
-     * By default, the timing is printed to the log, using console.log. */
+    useExtendContext(createContext), // should be after auth0 so that createContext callback can access to auth0 context
+    useMaskedErrors(),
+    useErrorHandler((error: any) => {
+      console.log('ERROR: ' + JSON.stringify(error))
+    }),
     useTiming(),
     useDepthLimit({
       maxDepth: 10,
@@ -81,10 +101,11 @@ app.route({
         execute,
         request,
         schema,
-        contextFactory,
+        contextFactory: () => contextFactory({ req }),
       })
 
       if (result.type === 'RESPONSE') {
+        console.log(result)
         res.status(result.status)
         res.send(result.payload)
       } else if (result.type === 'MULTIPART_RESPONSE') {

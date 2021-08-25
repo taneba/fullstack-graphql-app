@@ -1,17 +1,47 @@
 import { useAuth0 } from '@auth0/auth0-react'
 import { useEffect, useState } from 'react'
 import * as React from 'react'
+import { pipe, tap } from 'wonka'
 import {
   cacheExchange,
   Client,
   createClient,
   debugExchange,
   dedupExchange,
+  Exchange,
   fetchExchange,
   Provider as UrqlProvider,
 } from 'urql'
 
-const exchanges = [dedupExchange, cacheExchange, debugExchange, fetchExchange]
+const authCheckExchange: Exchange =
+  ({ forward }) =>
+  (ops$) =>
+    pipe(
+      ops$,
+      forward,
+      tap((result) => {
+        if (
+          result.error &&
+          result.error.graphQLErrors.some(
+            (err) => err?.extensions?.code === 'NOT_AUTHENTICATED'
+          )
+        ) {
+          console.log('not authenticated')
+          console.log(result.error)
+          if (window.location.pathname !== '/signin') {
+            window.location.replace('/signin')
+          }
+        }
+      })
+    )
+
+const exchanges = [
+  dedupExchange,
+  cacheExchange,
+  debugExchange,
+  authCheckExchange,
+  fetchExchange,
+]
 
 export function UrqlClientProvider({
   children,

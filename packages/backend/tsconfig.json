@@ -1,9 +1,17 @@
 {
   "compilerOptions": {
-    "sourceMap": true,
-    "outDir": "dist",
+    "target": "ES2019",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
     "strict": true,
-    "lib": ["esnext"],
-    "esModuleInterop": true
-  }
+    "allowJs": true,
+    "noImplicitAny": true,
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": ["types", "node_modules/@types"],
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "lib": ["es2020"]
+  },
+  "exclude": ["**/tmp/"]
 }

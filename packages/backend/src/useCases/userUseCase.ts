@@ -1,4 +1,5 @@
 import { Todo, User } from '@prisma/client'
+import got from 'got'
 import { UserInput } from '../api/graphql/generated/graphql'
 import { IUserRepository } from '../modules/user/IUserRepository'
 import { UseCase, UseCaseContext } from './useCase'
@@ -12,9 +13,20 @@ export class UserUseCase extends UseCase {
   }
 
   public async save(user: UserInput): Promise<User> {
+    const auth0UserInfo = await got<{ email: string }>(
+      `https://${process.env.AUTH0_DOMAIN}/userinfo`,
+      {
+        headers: {
+          Authorization: this.ctx.authToken,
+          'Content-type': 'application/json',
+        },
+      }
+    ).json<{ email: string }>()
+
     return this.userRepository.save({
-      email: user.email,
+      email: auth0UserInfo.email,
       name: user.name,
+      uid: this.ctx.auth0?.sub,
     })
   }
 

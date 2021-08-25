@@ -3,7 +3,7 @@ import React from 'react'
 
 export function Navbar() {
   return (
-    <nav tw="w-full border-b py-3 px-4">
+    <nav tw="w-full border-b py-3 px-4 flex justify-between">
       <ul tw="flex space-x-2">
         <li>
           <NavItem href="/">Home</NavItem>
@@ -12,6 +12,7 @@ export function Navbar() {
           <NavItem href="/todos">Todos</NavItem>
         </li>
       </ul>
+      <NavItem href="/signin">Sign In</NavItem>
     </nav>
   )
 }
