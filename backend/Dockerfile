@@ -2,6 +2,8 @@ FROM node:14-alpine as build
 
 WORKDIR "/usr/src/fga-server"
 
+RUN apk update && \
+    apk add git
 COPY package.json .
 COPY yarn.lock .
 RUN yarn install
@@ -13,6 +15,9 @@ FROM node:14-alpine
 
 ARG WORKDIR=/usr/src/fga-server
 WORKDIR ${WORKDIR}
+
+RUN apk update && \
+    apk add git
 
 COPY --from=build ${WORKDIR}/dist ./dist
 COPY ./package.json ${WORKDIR}
