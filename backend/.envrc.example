@@ -1,5 +1,0 @@
-export AUTH0_DOMAIN=<auth0 domain name>
-export AUTH0_AUDIENCE=<auth0 identifier name>
-export AUTH0_CLIENT_ID=<auth0 client ID>
-export AUTH0_CLIENT_SECRET=<auth0 client secret>
-export AUTH0_BACKEND_CLIENT_ID=<auth0 management client ID>

@@ -1,7 +1,9 @@
+import { useAuth0 } from '@auth0/auth0-react'
 import Link, { LinkProps } from 'next/link'
 import React from 'react'
 
 export function Navbar() {
+  const { isAuthenticated } = useAuth0()
   return (
     <nav tw="w-full border-b py-3 px-4 flex justify-between">
       <ul tw="flex space-x-2">
@@ -12,7 +14,11 @@ export function Navbar() {
           <NavItem href="/todos">Todos</NavItem>
         </li>
       </ul>
-      <NavItem href="/signin">Sign In</NavItem>
+      {isAuthenticated ? (
+        <NavItem href="/signout">Sign Out</NavItem>
+      ) : (
+        <NavItem href="/signin">Sign In</NavItem>
+      )}
     </nav>
   )
 }

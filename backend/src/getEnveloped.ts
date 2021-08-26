@@ -1,10 +1,8 @@
-import fastify from 'fastify'
 // import {
 //   getGraphQLParameters,
 //   processRequest,
 //   shouldRenderGraphiQL,
 // } from 'graphql-helix'
-import { renderPlaygroundPage } from 'graphql-playground-html'
 import {
   envelop,
   useLogger,
@@ -62,18 +60,18 @@ export const getEnveloped = envelop({
     useSchema(executableSchema),
     useLogger(),
     useAuth0({
-      onError: (e: any) => {
-        throw new EnvelopError('request not authenticated', {
-          code: 'NOT_AUTHENTICATED',
-        })
-        // NOTE: this does not work because of the graphql-helix issues
-        // see https://github.com/dotansimha/envelop/issues/606
-        // we are using internal graphql-helix pkg as workaround
-      },
+      //   onError: (e: any) => {
+      //     throw new EnvelopError('request not authenticated', {
+      //       code: 'NOT_AUTHENTICATED',
+      //     })
+      // NOTE: this does not work because of the graphql-helix issues
+      // see https://github.com/dotansimha/envelop/issues/606
+      // we are using internal graphql-helix pkg as workaround for now
+      //   },
       domain: process.env.AUTH0_DOMAIN!,
       audience: process.env.AUTH0_AUDIENCE!,
       headerName: 'authorization',
-      preventUnauthenticatedAccess: true,
+      preventUnauthenticatedAccess: false,
       extendContextField: 'auth0',
       tokenType: 'Bearer',
     }),
