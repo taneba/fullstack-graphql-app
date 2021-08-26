@@ -39,4 +39,8 @@ export class UserRepository implements IUserRepository {
   async findByTodoId(id: number) {
     return await this.prisma.todo.findUnique({ where: { id } }).author()
   }
+
+  async findByUid(uid: string) {
+    return await this.prisma.user.findUnique({ where: { uid } })
+  }
 }

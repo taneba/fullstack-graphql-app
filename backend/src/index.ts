@@ -4,66 +4,12 @@ import {
   processRequest,
   shouldRenderGraphiQL,
 } from './lib'
-// import {
-//   getGraphQLParameters,
-//   processRequest,
-//   shouldRenderGraphiQL,
-// } from 'graphql-helix'
-import { renderPlaygroundPage } from 'graphql-playground-html'
-import {
-  envelop,
-  useLogger,
-  useTiming,
-  useExtendContext,
-  useSchema,
-  useErrorHandler,
-  useMaskedErrors,
-  EnvelopError,
-} from '@envelop/core'
 
-import { useDepthLimit } from '@envelop/depth-limit'
-import { schema } from './api/graphql/typeDefs'
-import { makeExecutableSchema } from '@graphql-tools/schema'
-import resolvers from './api/graphql/resolvers/resolvers'
-import { createContext } from './context'
-import { useAuth0 } from '@envelop/auth0'
+import { renderPlaygroundPage } from 'graphql-playground-html'
+
+import { getEnveloped } from './getEnveloped'
 const app = fastify()
 
-const executableSchema = makeExecutableSchema({
-  resolvers: resolvers,
-  typeDefs: schema,
-})
-
-const getEnveloped = envelop({
-  plugins: [
-    useSchema(executableSchema),
-    useLogger(),
-    useAuth0({
-      onError: (e: any) => {
-        throw new EnvelopError('request not authenticated', {
-          code: 'NOT_AUTHENTICATED',
-        })
-        // NOTE: this does not work because of the graphql-helix issues
-        // see https://github.com/dotansimha/envelop/issues/606
-      },
-      domain: process.env.AUTH0_DOMAIN!,
-      audience: process.env.AUTH0_AUDIENCE!,
-      headerName: 'authorization',
-      preventUnauthenticatedAccess: true,
-      extendContextField: 'auth0',
-      tokenType: 'Bearer',
-    }),
-    useExtendContext(createContext), // should be after auth0 so that createContext callback can access to auth0 context
-    useMaskedErrors(),
-    useErrorHandler((error: any) => {
-      console.log('ERROR: ' + JSON.stringify(error))
-    }),
-    useTiming(),
-    useDepthLimit({
-      maxDepth: 10,
-    }),
-  ],
-})
 app.register(require('fastify-cors'))
 
 app.route({

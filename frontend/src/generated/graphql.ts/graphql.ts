@@ -13,6 +13,7 @@ export type Scalars = {
   Float: number;
 };
 
+
 export type Mutation = {
   __typename?: 'Mutation';
   saveTodo?: Maybe<Todo>;

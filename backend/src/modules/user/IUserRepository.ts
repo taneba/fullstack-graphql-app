@@ -7,4 +7,5 @@ export interface IUserRepository {
   edit(user: Prisma.UserUpdateInput, id: User['id']): Promise<User>
   delete(id: number): Promise<User>
   findByTodoId(id: number): Promise<User | null>
+  findByUid(uid: string): Promise<User | null>
 }

@@ -1,15 +1,17 @@
 import { buildSchema } from 'graphql'
 
 export const schema = buildSchema(/* GraphQL */ `
+  directive @auth on FIELD_DEFINITION
+
   type Query {
     # health check
     time: Int!
-    todos: [Todo!]!
-    users: [User!]!
+    todos: [Todo!]! @auth
+    users: [User!]! @auth
   }
 
   type Mutation {
-    saveTodo(todo: TodoInput!): Todo
+    saveTodo(todo: TodoInput!): Todo @auth
     saveUser(user: UserInput!): User
   }
 

@@ -1,3 +1,4 @@
+import { EnvelopError } from '@envelop/core'
 import { Todo, User } from '@prisma/client'
 import got from 'got'
 import { UserInput } from '../api/graphql/generated/graphql'
@@ -32,6 +33,18 @@ export class UserUseCase extends UseCase {
 
   public async getAll(): Promise<User[]> {
     return this.userRepository.getAll()
+  }
+
+  public async findByUid(): Promise<User> {
+    const uid = this.ctx.auth0?.sub
+    if (!uid) {
+      throw new Error('not authenticated')
+    }
+    const result = await this.userRepository.findByUid(uid)
+    if (!result) {
+      throw new Error('user not found')
+    }
+    return result
   }
 
   public async findById(id: User['id']): Promise<User> {
