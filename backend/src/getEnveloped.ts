@@ -1,8 +1,3 @@
-// import {
-//   getGraphQLParameters,
-//   processRequest,
-//   shouldRenderGraphiQL,
-// } from 'graphql-helix'
 import {
   envelop,
   useLogger,
@@ -21,11 +16,17 @@ import {
   useGenericAuth,
   ResolveUserFn,
   ValidateUserFn,
-} from '@envelop/generic-auth'
+} from './lib/generic-auth'
+// import {
+//   useGenericAuth,
+//   ResolveUserFn,
+//   ValidateUserFn,
+// } from '@envelop/generic-auth'
 import resolvers from './api/graphql/resolvers/resolvers'
 import { createContext, GraphqlServerContext } from './context'
 import { useAuth0 } from '@envelop/auth0'
 import { User } from '@prisma/client'
+import { EnumValueNode } from 'graphql'
 
 const executableSchema = makeExecutableSchema({
   resolvers: resolvers,
@@ -39,26 +40,45 @@ const resolveUserFn: ResolveUserFn<User, GraphqlServerContext> = async (
     const user = await context.useCase.user.findByUid()
     return user
   } catch (e) {
-    console.error('Failed to get user')
+    console.error('Failed to get user', e)
 
     return null
   }
 }
 
-const validateUser: ValidateUserFn<User, GraphqlServerContext> = async (
-  user
+const validateUserFn: ValidateUserFn<User, GraphqlServerContext> = async (
+  user,
+  _context,
+  _ctx,
+  directiveNode
 ) => {
   if (!user) {
     throw new EnvelopError('request not authenticated', {
       code: 'NOT_AUTHENTICATED',
     })
   }
+  if (!directiveNode?.arguments) {
+    return
+  }
+
+  const valueNode = directiveNode.arguments.find(
+    (arg) => arg.name.value === 'role'
+  )?.value as EnumValueNode | undefined
+
+  if (valueNode) {
+    const role = valueNode.value
+    if (role !== user.role) {
+      throw new EnvelopError('request not authorized', {
+        code: 'NOT_AUTHORIZED',
+      })
+    }
+  }
 }
 
 export const getEnveloped = envelop({
   plugins: [
     useSchema(executableSchema),
-    useLogger(),
+    // useLogger(),
     useAuth0({
       //   onError: (e: any) => {
       //     throw new EnvelopError('request not authenticated', {
@@ -75,12 +95,12 @@ export const getEnveloped = envelop({
       extendContextField: 'auth0',
       tokenType: 'Bearer',
     }),
+    useExtendContext(createContext), // should be after auth0 so that createContext callback can access to auth0 context
     useGenericAuth({
-      resolveUserFn,
-      validateUser,
+      resolveUser: resolveUserFn,
+      validateUser: validateUserFn,
       mode: 'protect-auth-directive',
     }),
-    useExtendContext(createContext), // should be after auth0 so that createContext callback can access to auth0 context
     useMaskedErrors(),
     useErrorHandler((error: any) => {
       console.log('ERROR: ' + JSON.stringify(error))

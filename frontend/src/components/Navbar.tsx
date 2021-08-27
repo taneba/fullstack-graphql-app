@@ -13,6 +13,9 @@ export function Navbar() {
         <li>
           <NavItem href="/todos">Todos</NavItem>
         </li>
+        <li>
+          <NavItem href="/users">Users</NavItem>
+        </li>
       </ul>
       {isAuthenticated ? (
         <NavItem href="/signout">Sign Out</NavItem>

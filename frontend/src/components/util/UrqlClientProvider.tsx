@@ -32,6 +32,15 @@ const authCheckExchange: Exchange =
             window.location.replace('/signin')
           }
         }
+
+        if (
+          result.error &&
+          result.error.graphQLErrors.some(
+            (err) => err?.extensions?.code === 'NOT_AUTHORIZED'
+          )
+        ) {
+          window.alert('You do not have right access to the resource')
+        }
       })
     )
 

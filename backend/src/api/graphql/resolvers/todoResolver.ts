@@ -1,4 +1,3 @@
-import { EnvelopError } from '@envelop/core'
 import { GraphqlServerContext } from '../../../context'
 import { TodoMapper } from '../../../modules/todo/todoMappers'
 import { UserMapper } from '../../../modules/user/userMappers'

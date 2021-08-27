@@ -13,6 +13,7 @@ export type Scalars = {
   Float: number;
 };
 
+
 export type Mutation = {
   __typename?: 'Mutation';
   saveTodo?: Maybe<Todo>;
@@ -35,6 +36,11 @@ export type Query = {
   todos: Array<Todo>;
   users: Array<User>;
 };
+
+export enum Role {
+  Admin = 'ADMIN',
+  User = 'USER'
+}
 
 export type Todo = {
   __typename?: 'Todo';
@@ -136,6 +142,7 @@ export type ResolversTypes = {
   Mutation: ResolverTypeWrapper<{}>;
   Query: ResolverTypeWrapper<{}>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
+  Role: Role;
   Todo: ResolverTypeWrapper<Todo>;
   ID: ResolverTypeWrapper<Scalars['ID']>;
   String: ResolverTypeWrapper<Scalars['String']>;
@@ -158,6 +165,10 @@ export type ResolversParentTypes = {
   UserInput: UserInput;
   Boolean: Scalars['Boolean'];
 };
+
+export type AuthDirectiveArgs = {   role?: Role; };
+
+export type AuthDirectiveResolver<Result, Parent, ContextType = any, Args = AuthDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
 
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
   saveTodo?: Resolver<Maybe<ResolversTypes['Todo']>, ParentType, ContextType, RequireFields<MutationSaveTodoArgs, 'todo'>>;
@@ -194,3 +205,6 @@ export type Resolvers<ContextType = any> = {
   User?: UserResolvers<ContextType>;
 };
 
+export type DirectiveResolvers<ContextType = any> = {
+  auth?: AuthDirectiveResolver<any, any, ContextType>;
+};

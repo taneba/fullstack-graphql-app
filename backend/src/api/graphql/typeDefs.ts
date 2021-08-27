@@ -1,13 +1,18 @@
 import { buildSchema } from 'graphql'
 
 export const schema = buildSchema(/* GraphQL */ `
-  directive @auth on FIELD_DEFINITION
+  enum Role {
+    ADMIN
+    USER
+  }
+
+  directive @auth(role: Role! = USER) on FIELD_DEFINITION
 
   type Query {
     # health check
     time: Int!
     todos: [Todo!]! @auth
-    users: [User!]! @auth
+    users: [User!]! @auth(role: ADMIN)
   }
 
   type Mutation {

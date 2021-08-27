@@ -31,7 +31,10 @@ function Todos() {
       <div tw="mt-4">
         {res.data && res.data.todos.length < 1 && <p>No Item</p>}
         {res.data?.todos.map((todo) => (
-          <div tw="flex flex-row items-center justify-between w-full py-1 px-4 my-1 rounded border bg-gray-100 text-gray-600">
+          <div
+            key={todo.id}
+            tw="flex flex-row items-center justify-between w-full py-1 px-4 my-1 rounded border bg-gray-100 text-gray-600"
+          >
             {todo.title}
           </div>
         ))}

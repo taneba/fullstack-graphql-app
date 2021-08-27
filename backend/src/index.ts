@@ -3,7 +3,7 @@ import {
   getGraphQLParameters,
   processRequest,
   shouldRenderGraphiQL,
-} from './lib'
+} from './lib/graphql-helix'
 
 import { renderPlaygroundPage } from 'graphql-playground-html'
 

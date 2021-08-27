@@ -27,7 +27,13 @@ model User {
   uid   String? @unique
   email String  @unique
   name  String?
+  role  Role    @default(USER)
   todos Todo[]
 
   @@map("user")
+}
+
+enum Role {
+  USER
+  ADMIN
 }
