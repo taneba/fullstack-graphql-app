@@ -32,7 +32,6 @@ export const schema = buildSchema(/* GraphQL */ `
   input TodoInput {
     title: String!
     content: String
-    authorId: Int!
   }
 
   type User {
