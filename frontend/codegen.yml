@@ -6,8 +6,6 @@ documents:
   - '!src/generated/**/*'
 generates:
   src/generated/graphql.ts:
-    # plugins:
-    #   - typescript
-    #   - typescript-operations
-    #   - typed-document-node
     preset: gql-tag-operations-preset
+    plugins:
+      - '@homebound/graphql-typescript-factories'

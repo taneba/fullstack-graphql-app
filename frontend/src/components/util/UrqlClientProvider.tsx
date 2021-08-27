@@ -47,7 +47,7 @@ const authCheckExchange: Exchange =
 const exchanges = [
   dedupExchange,
   cacheExchange,
-  debugExchange,
+  ...(process.env.NODE_ENV !== 'test' ? [debugExchange] : []),
   authCheckExchange,
   fetchExchange,
 ]

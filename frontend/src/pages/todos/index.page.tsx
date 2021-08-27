@@ -33,6 +33,7 @@ function Todos() {
         {res.data?.todos.map((todo) => (
           <div
             key={todo.id}
+            role="todo"
             tw="flex flex-row items-center justify-between w-full py-1 px-4 my-1 rounded border bg-gray-100 text-gray-600"
           >
             {todo.title}
