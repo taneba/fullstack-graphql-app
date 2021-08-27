@@ -18,7 +18,7 @@ export function CreateTodoModal({ onClose }: { onClose: () => void }) {
   const [, executeMutation] = useMutation(SaveTodo)
 
   return (
-    <Modal onClose={onClose} title="Add New Todo">
+    <Modal onClose={onClose} title="New Todo">
       title
       <TextField name="title" />
       content
