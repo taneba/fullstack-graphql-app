@@ -32,6 +32,12 @@ Authentication
 
 - Auth0
 
+Testing
+
+- testing-library
+- jest
+- msw
+
 ### Concept
 
 Fully typed GraphQL app using modern future tech stack.
