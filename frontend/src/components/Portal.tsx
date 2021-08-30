@@ -8,10 +8,12 @@ interface Props {
 
 export function Portal(props: Props) {
   let root: HTMLElement | null = null
-  if (process.browser && !root) {
-    root = document.getElementById('modal')
+  root = document.getElementById('portal')
+  if (!root) {
+    root = document.createElement('div')
+    root.setAttribute('id', 'portal')
+    document.body.appendChild(root)
   }
-
   return root && ReactDOM.createPortal(props.children, root)
 }
 

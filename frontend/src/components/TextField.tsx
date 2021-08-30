@@ -1,23 +1,21 @@
+import React from 'react'
 import { InputHTMLAttributes } from 'react'
 
 interface Props extends InputHTMLAttributes<HTMLElement> {
-  label?: string
   name: string
-  isRequired?: boolean
-  note?: string
-  textAlign?: 'right' | 'left' | 'center'
-  suffix?: string
   className?: string
-  hideValidationMark?: boolean
 }
 
-export function TextField({ className, ...restProps }: Props) {
-  return (
-    <div className={className}>
+export const TextField = React.forwardRef<HTMLInputElement, Props>(
+  ({ className, ...restProps }, ref) => {
+    return (
       <input
+        className={className}
         {...restProps}
+        value={restProps.value ?? undefined}
+        ref={ref}
         tw="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-sm"
       />
-    </div>
-  )
-}
+    )
+  }
+)
