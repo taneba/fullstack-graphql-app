@@ -17,7 +17,7 @@
     "noEmit": true,
     "jsx": "preserve",
     "typeRoots": ["src/types", "./node_modules/@types"],
-    "types": ["jest"]
+    "types": ["node", "jest", "@testing-library/jest-dom"]
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "files": ["./src/types/twin.d.ts"],

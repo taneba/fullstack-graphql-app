@@ -14,6 +14,7 @@ export function Modal({ onClose, title, children }: Props) {
     <Portal>
       <Portal.Overlay onClick={onClose}>
         <div
+          role="dialog"
           onClick={(e) => e.stopPropagation()}
           tw="flex flex-col justify-between items-center w-11/12 max-w-lg bg-white rounded-lg p-6"
         >
