@@ -2,6 +2,7 @@ import { fireEvent, screen, waitFor, within } from '@testing-library/react'
 import { graphql } from 'msw'
 import React from 'react'
 import {
+  GetTodosDocument,
   SaveTodoDocument,
   SaveTodoMutationVariables,
 } from 'src/generated/graphql.ts/graphql'
@@ -15,6 +16,20 @@ describe('Todos Page', () => {
     renderPage()
     const target = await screen.findAllByRole('todo')
     expect(target.length).toBe(2)
+  })
+
+  it('displays "No Items" when there is no todo', async () => {
+    renderPage(
+      graphql.query(GetTodosDocument, (req, res, ctx) =>
+        res.once(
+          ctx.data({
+            todos: [],
+          })
+        )
+      )
+    )
+    const target = await screen.findByText('No Items')
+    expect(target).toBeInTheDocument()
   })
 
   it('opens CreateTodoModal when click "New Todo" button', async () => {

@@ -28,7 +28,7 @@ function Todos() {
         New Todo
       </Button>
       <div tw="mt-4">
-        {res.data && res.data.todos.length < 1 && <p>No Item</p>}
+        {res.data && res.data.todos.length < 1 && <p>No Items</p>}
         {res.data?.todos.map((todo) => (
           <div
             key={todo.id}
