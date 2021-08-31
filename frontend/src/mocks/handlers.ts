@@ -5,7 +5,6 @@ export const handlers = [
   graphql.query(GetTodosDocument, (req, res, ctx) =>
     res(
       ctx.data({
-        __typename: 'Query',
         todos: [newTodo(), newTodo()],
       })
     )

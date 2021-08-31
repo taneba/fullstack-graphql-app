@@ -1,6 +1,5 @@
-import { useMutation, useQuery } from 'urql'
-import { gql } from 'src/generated/graphql.ts'
-// TODO yarn link
+import { useQuery } from 'urql'
+import { gql } from '@app/gql'
 import { Button } from 'src/components/Button'
 import { useState } from 'react'
 import { CreateTodoModal } from './CreateTodoModal'

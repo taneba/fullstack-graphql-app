@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@app/gql@link:./src/generated/graphql.ts":
+  version "0.0.0"
+  uid ""
+
 "@ardatan/aggregate-error@0.0.6":
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/@ardatan/aggregate-error/-/aggregate-error-0.0.6.tgz#fe6924771ea40fc98dc7a7045c2e872dc8527609"
