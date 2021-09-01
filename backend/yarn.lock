@@ -523,7 +523,7 @@
   dependencies:
     ajv "^6.12.6"
 
-"@graphql-codegen/cli@^2.1.1":
+"@graphql-codegen/cli@2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/cli/-/cli-2.1.1.tgz#1123f7434292852ac1e101924b37d674ca1e92f3"
   integrity sha512-burl5HdZeaAOhe3gx/3LBNxNyboqNHSDQLlZUazm1Gu8lUdVN1trtO3P5xF7MCBm4MFTjzaAXdPT7FoYvYaWMg==
@@ -591,7 +591,7 @@
     lodash "~4.17.0"
     tslib "~2.3.0"
 
-"@graphql-codegen/typescript-resolvers@^2.0.0":
+"@graphql-codegen/typescript-resolvers@2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-resolvers/-/typescript-resolvers-2.1.1.tgz#ee9e34555c36ec6c82dfed6af8e6491264a2e78c"
   integrity sha512-UQByzvC2hOn4nBCvFoGIr4QTJTtw/j12VnoO5w5uXeztDE7UEjojSCAPoGjsWRADXv+Ez1Ykwm08NwYCnQBcUQ==
