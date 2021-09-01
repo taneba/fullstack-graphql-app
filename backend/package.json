@@ -17,7 +17,7 @@
     "@envelop/depth-limit": "1.0.0",
     "@envelop/generic-auth": "1.0.0",
     "@envelop/rate-limiter": "1.0.0",
-    "@graphql-tools/schema": "^8.1.0",
+    "@graphql-tools/schema": "8.1.2",
     "@prisma/client": "2.29.0",
     "@types/got": "9.6.12",
     "@types/jsonwebtoken": "8.5.5",
