@@ -1084,7 +1084,7 @@
     "@graphql-codegen/plugin-helpers" "^1.18.2"
     tslib "~2.0.1"
 
-"@graphql-codegen/cli@^2.0.1":
+"@graphql-codegen/cli@2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/cli/-/cli-2.1.1.tgz#1123f7434292852ac1e101924b37d674ca1e92f3"
   integrity sha512-burl5HdZeaAOhe3gx/3LBNxNyboqNHSDQLlZUazm1Gu8lUdVN1trtO3P5xF7MCBm4MFTjzaAXdPT7FoYvYaWMg==
@@ -1140,7 +1140,7 @@
     "@graphql-tools/utils" "^8.1.1"
     tslib "~2.3.0"
 
-"@graphql-codegen/gql-tag-operations-preset@^1.1.0":
+"@graphql-codegen/gql-tag-operations-preset@1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/gql-tag-operations-preset/-/gql-tag-operations-preset-1.1.2.tgz#fdd05084ab50a43d8f8520e32456be9889776e5d"
   integrity sha512-myX04XoOzQePSxvNHAqMOa8ovM+2N7VUSThD6/43SOUquAHH7UiO11uGMUbkUitxEjRztQ0JVrQBLeKreBZutQ==
@@ -1186,7 +1186,7 @@
     lodash "~4.17.0"
     tslib "~2.3.0"
 
-"@graphql-codegen/typed-document-node@2.1.2", "@graphql-codegen/typed-document-node@^2.0.0":
+"@graphql-codegen/typed-document-node@2.1.2":
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/typed-document-node/-/typed-document-node-2.1.2.tgz#15c970a27c6f48ffff5e56a31307b82cb4658a58"
   integrity sha512-Fzj0SewbWKA43aW6UafJDjPEKZHuPBFCV2RDT+1BRsWO/gw9kR/pXac4P3WSXBJwvjkFxlcPLH+NLoUmHwswYg==
@@ -1208,7 +1208,7 @@
     change-case-all "1.0.14"
     tslib "~2.3.0"
 
-"@graphql-codegen/typescript-operations@2.1.2", "@graphql-codegen/typescript-operations@^2.0.1":
+"@graphql-codegen/typescript-operations@2.1.2":
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-operations/-/typescript-operations-2.1.2.tgz#fe93ec2e1fe6c036f6d60210d8259a24b2e9434d"
   integrity sha512-4Eqn2TREH3mFY7yiGFlFN+UWGxhPX0HcEt/WIxLydvR57tOEMDYpDdPmaIQ/BQ8vntPA6h/FHIs6wnwFMvJ9jQ==
@@ -1230,7 +1230,7 @@
     auto-bind "~4.0.0"
     tslib "~2.3.0"
 
-"@graphql-codegen/typescript-urql@^3.0.0":
+"@graphql-codegen/typescript-urql@3.1.2":
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript-urql/-/typescript-urql-3.1.2.tgz#f41a2931ef24b794f3e7854213ae7fd75cf483a6"
   integrity sha512-jHtWWWbOYtyacupr5q4OZNNRl2GZNUSVvN7gOSjjE7++ZS9CDeBkqSwhL7cKLblRaYS55aWJwIWwEItOeysS5A==
@@ -1241,7 +1241,7 @@
     change-case-all "1.0.14"
     tslib "~2.3.0"
 
-"@graphql-codegen/typescript@2.1.2", "@graphql-codegen/typescript@^2.0.0", "@graphql-codegen/typescript@^2.1.2":
+"@graphql-codegen/typescript@2.1.2", "@graphql-codegen/typescript@^2.1.2":
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/typescript/-/typescript-2.1.2.tgz#410d69b9d89cf5f6d712ed08687f45e750986ee8"
   integrity sha512-9CHTeMyNwUaIaRYOC06XTdmZbgOoX0pM8c7D8oXfAgV6clEcoGX9cUYcybxZOO3XQvsOGSL/GhyiHpXvjiTffA==
