@@ -1,4 +1,4 @@
-FROM node:14-alpine as build
+FROM node:16-alpine as build
 
 WORKDIR "/usr/src/fga-server"
 
@@ -11,7 +11,7 @@ RUN yarn install
 COPY . .
 RUN npx tsc
 
-FROM node:14-alpine
+FROM node:16-alpine
 
 ARG WORKDIR=/usr/src/fga-server
 WORKDIR ${WORKDIR}
