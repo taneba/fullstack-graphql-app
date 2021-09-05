@@ -7,7 +7,7 @@ interface Props extends InputHTMLAttributes<HTMLElement> {
 }
 
 export const TextField = React.forwardRef<HTMLInputElement, Props>(
-  ({ className, ...restProps }, ref) => {
+  function TextField({ className, ...restProps }: Props, ref) {
     return (
       <input
         className={className}

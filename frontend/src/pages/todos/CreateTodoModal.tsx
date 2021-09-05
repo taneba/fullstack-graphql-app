@@ -2,7 +2,7 @@ import { Modal } from 'src/components/Modal'
 import { gql } from 'src/generated/graphql.ts'
 import { useMutation } from 'urql'
 import { TextField } from 'src/components/TextField'
-import { Textarea } from 'src/components/TextArea'
+import { TextArea } from 'src/components/TextArea'
 import { Button } from 'src/components/Button'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { TodoInput } from 'src/generated/graphql.ts/graphql'
@@ -42,7 +42,7 @@ export function CreateTodoModal({ onClose }: { onClose: () => void }) {
         />
         {errors.title && <span tw="text-red-500">title is required</span>}
         <label htmlFor={register('content').name}>content</label>
-        <Textarea {...register('content')} />
+        <TextArea {...register('content')} />
         <Button primary type="submit">
           Submit
         </Button>

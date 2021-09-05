@@ -1,0 +1,45 @@
+name: CI FE
+on: push
+
+jobs:
+  test:
+    name: Lint, typecheck & test
+    runs-on: ubuntu-latest
+  defaults:
+    run:
+      working-directory: ./backend
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    # Cache node_modules for faster CI runs if the yarn.lock doesn't change change
+    - name: Get yarn cache directory path
+      id: yarn-cache-dir
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+
+    - name: Restore yarn cache
+      uses: actions/cache@v2
+      id: yarn-cache
+      with:
+        path: ${{ steps.yarn-cache-dir.outputs.dir }}
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
+
+    # Throw an error if the yarn.lock file doesn't match the installed dependencies (rather than updating it in-place, which it does by default locally)
+    - name: Install
+      run: yarn install --frozen-lockfile --silent
+
+    - name: Lint
+      run: yarn lint
+
+    - name: Typecheck
+      run: yarn typecheck
+
+    - name: Tests (Jest)
+      run: yarn test

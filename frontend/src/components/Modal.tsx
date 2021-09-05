@@ -1,6 +1,3 @@
-import React, { Fragment, useState } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-import tw, { css } from 'twin.macro'
 import { Portal } from 'src/components/Portal'
 
 interface Props {
