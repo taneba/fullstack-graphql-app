@@ -1,12 +1,13 @@
-import { Modal } from 'src/components/Modal'
-import { gql } from 'src/generated/graphql.ts'
-import { useMutation } from 'urql'
-import { TextField } from 'src/components/TextField'
-import { TextArea } from 'src/components/TextArea'
-import { Button } from 'src/components/Button'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { TodoInput } from 'src/generated/graphql.ts/graphql'
-import { removeEmptyFields } from 'src/utils/form'
+import { useMutation } from 'urql'
+
+import { Button } from '~/components/Button'
+import { Modal } from '~/components/Modal'
+import { TextArea } from '~/components/TextArea'
+import { TextField } from '~/components/TextField'
+import { gql } from '~/generated/graphql.ts'
+import { TodoInput } from '~/generated/graphql.ts/graphql'
+import { removeEmptyFields } from '~/utils/form'
 
 const SaveTodo = gql(/* GraphQL */ `
   mutation SaveTodo($todo: TodoInput!) {
@@ -22,7 +23,6 @@ export function CreateTodoModal({ onClose }: { onClose: () => void }) {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<TodoInput>()
   const onSubmit: SubmitHandler<TodoInput> = async (data) => {

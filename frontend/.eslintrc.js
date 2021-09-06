@@ -18,10 +18,19 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint', 'simple-import-sort'],
   rules: {
     'react/react-in-jsx-scope': 'off',
     'react/display-name': ['error', { ignoreTranspilerName: false }],
+    'react/no-unescaped-entities': 'off',
+    'simple-import-sort/imports': 'error',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
+  },
+  settings: {
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true,
+      }, // this loads <rootdir>/tsconfig.json to eslint
+    },
   },
 }

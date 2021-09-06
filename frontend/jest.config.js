@@ -5,10 +5,10 @@ module.exports = {
     '**/?(*.)+(spec|test).+(ts|tsx|js)',
   ],
   testEnvironment: 'jsdom',
-  transform: {
-    '^.+\\.(ts|tsx|js)$': 'ts-jest',
-  },
   setupFilesAfterEnv: ['./jest.setup.ts'],
+  moduleNameMapper: {
+    '^~/(.*)$': '<rootDir>/src/$1',
+  },
   moduleDirectories: ['node_modules', '<rootDir>'],
   transform: {
     '^.+\\.(ts|tsx|js)$': '<rootDir>/jest-preprocess.js',

@@ -1,4 +1,4 @@
-import { Portal } from 'src/components/Portal'
+import { Portal } from '~/components/Portal'
 
 interface Props {
   onClose: () => void

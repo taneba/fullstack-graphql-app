@@ -3,6 +3,9 @@
     "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"]
+    },
     "allowJs": true,
     "alwaysStrict": true,
     "skipLibCheck": false,

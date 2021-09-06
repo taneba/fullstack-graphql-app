@@ -1,5 +1,6 @@
 import { useAuth0 } from '@auth0/auth0-react'
-import { Button } from 'src/components/Button'
+
+import { Button } from '~/components/Button'
 
 function SignOut() {
   const { logout } = useAuth0()

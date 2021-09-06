@@ -1,12 +1,14 @@
 import { fireEvent, screen, waitFor, within } from '@testing-library/react'
 import { graphql } from 'msw'
 import React from 'react'
+
 import {
   GetTodosDocument,
   SaveTodoDocument,
   SaveTodoMutationVariables,
-} from 'src/generated/graphql.ts/graphql'
-import { testRenderer } from 'src/utils/test-util'
+} from '~/generated/graphql.ts/graphql'
+import { testRenderer } from '~/utils/test-util'
+
 import Todos from './index.page'
 
 describe('Todos Page', () => {
