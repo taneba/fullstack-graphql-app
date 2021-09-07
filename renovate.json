@@ -3,5 +3,11 @@
   "timezone": "Asia/Tokyo",
   "schedule": ["every weekend"],
   "labels": ["dependencies"],
-  "patch": { "automerge": true }
+  "patch": { "automerge": true },
+  "packageRules": [
+    {
+      "matchPackageNames": ["node"],
+      "enabled": false
+    }
+  ]
 }
