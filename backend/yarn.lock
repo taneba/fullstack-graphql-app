@@ -499,10 +499,10 @@
   dependencies:
     graphql-depth-limit "^1.1.0"
 
-"@envelop/generic-auth@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@envelop/generic-auth/-/generic-auth-1.0.0.tgz#bff1f3cb59acf79a268169688ebe9a7fa443c956"
-  integrity sha512-LdJLEeqIV6RZh139GRg4DlXhDAPxLFFR8Wy0f0JA5dLcd2hFHPuKgwDdnKskT/geX9d2zHM7+PBYyZvV5Hq7fQ==
+"@envelop/generic-auth@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@envelop/generic-auth/-/generic-auth-1.0.1.tgz#6401824aba272b0ca822bac4d7bc788208529992"
+  integrity sha512-4+3G0/X3WUM7qjy8DmjzWygwh1dAV9vj5FVvEHQ4uM1Gy7KkUZtmwt0ZNWej6kU27RFXC4xQIc4H8jpQMGggPg==
 
 "@envelop/rate-limiter@1.0.0":
   version "1.0.0"

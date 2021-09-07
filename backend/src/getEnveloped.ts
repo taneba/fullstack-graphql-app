@@ -16,12 +16,7 @@ import {
   useGenericAuth,
   ResolveUserFn,
   ValidateUserFn,
-} from './lib/generic-auth'
-// import {
-//   useGenericAuth,
-//   ResolveUserFn,
-//   ValidateUserFn,
-// } from '@envelop/generic-auth'
+} from '@envelop/generic-auth'
 import resolvers from './api/graphql/resolvers/resolvers'
 import { createContext, GraphqlServerContext } from './context'
 import { useAuth0 } from '@envelop/auth0'
@@ -97,7 +92,7 @@ export const getEnveloped = envelop({
     }),
     useExtendContext(createContext), // should be after auth0 so that createContext callback can access to auth0 context
     useGenericAuth({
-      resolveUser: resolveUserFn,
+      resolveUserFn: resolveUserFn,
       validateUser: validateUserFn,
       mode: 'protect-auth-directive',
     }),
