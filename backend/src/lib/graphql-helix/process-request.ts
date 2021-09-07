@@ -10,41 +10,41 @@ import {
   OperationDefinitionNode,
   ValidationRule,
   ExecutionResult,
-} from "graphql";
-import { stopAsyncIteration, isAsyncIterable, isHttpMethod } from "./util";
-import { HttpError } from "./errors";
+} from 'graphql'
+import { stopAsyncIteration, isAsyncIterable, isHttpMethod } from './util'
+import { HttpError } from './errors'
 import {
   ExecutionContext,
   ExecutionPatchResult,
   MultipartResponse,
   ProcessRequestOptions,
   ProcessRequestResult,
-} from "./types";
+} from './types'
 
 const parseQuery = (
   query: string | DocumentNode,
   parse: typeof defaultParse
 ): DocumentNode | Promise<DocumentNode> => {
-  if (typeof query !== "string" && query.kind === "Document") {
-    return query;
+  if (typeof query !== 'string' && query.kind === 'Document') {
+    return query
   }
   try {
-    const parseResult = parse(query as string);
+    const parseResult = parse(query as string)
 
     if (parseResult instanceof Promise) {
       return parseResult.catch((syntaxError) => {
-        throw new HttpError(400, "GraphQL syntax error.", {
+        throw new HttpError(400, 'GraphQL syntax error.', {
           graphqlErrors: [syntaxError],
-        });
-      });
+        })
+      })
     }
-    return parseResult;
+    return parseResult
   } catch (syntaxError) {
-    throw new HttpError(400, "GraphQL syntax error.", {
-      graphqlErrors: [syntaxError],
-    });
+    throw new HttpError(400, 'GraphQL syntax error.', {
+      graphqlErrors: [syntaxError as Error],
+    })
   }
-};
+}
 
 export const validateDocument = (
   schema: GraphQLSchema,
@@ -52,26 +52,26 @@ export const validateDocument = (
   validate: typeof defaultValidate,
   validationRules?: readonly ValidationRule[]
 ): void => {
-  const validationErrors = validate(schema, document, validationRules);
+  const validationErrors = validate(schema, document, validationRules)
   if (validationErrors.length) {
-    throw new HttpError(400, "GraphQL validation error.", {
+    throw new HttpError(400, 'GraphQL validation error.', {
       graphqlErrors: validationErrors,
-    });
+    })
   }
-};
+}
 
 const getExecutableOperation = (
   document: DocumentNode,
   operationName?: string
 ): OperationDefinitionNode => {
-  const operation = getOperationAST(document, operationName);
+  const operation = getOperationAST(document, operationName)
 
   if (!operation) {
-    throw new HttpError(400, "Could not determine what operation to execute.");
+    throw new HttpError(400, 'Could not determine what operation to execute.')
   }
 
-  return operation;
-};
+  return operation
+}
 
 export const processRequest = async <TContext = {}, TRootValue = {}>(
   options: ProcessRequestOptions<TContext, TRootValue>
@@ -90,66 +90,66 @@ export const processRequest = async <TContext = {}, TRootValue = {}>(
     validate = defaultValidate,
     validationRules,
     variables,
-  } = options;
+  } = options
 
-  let context: TContext | undefined;
-  let rootValue: TRootValue | undefined;
-  let document: DocumentNode | undefined;
-  let operation: OperationDefinitionNode | undefined;
+  let context: TContext | undefined
+  let rootValue: TRootValue | undefined
+  let document: DocumentNode | undefined
+  let operation: OperationDefinitionNode | undefined
 
   const result = await (async (): Promise<
     ProcessRequestResult<TContext, TRootValue>
   > => {
     const accept =
-      typeof request.headers.get === "function"
-        ? request.headers.get("accept")
-        : (request.headers as any).accept;
-    const isEventStream = accept === "text/event-stream";
+      typeof request.headers.get === 'function'
+        ? request.headers.get('accept')
+        : (request.headers as any).accept
+    const isEventStream = accept === 'text/event-stream'
 
     try {
       if (
-        !isHttpMethod("GET", request.method) &&
-        !isHttpMethod("POST", request.method)
+        !isHttpMethod('GET', request.method) &&
+        !isHttpMethod('POST', request.method)
       ) {
         throw new HttpError(
           405,
-          "GraphQL only supports GET and POST requests.",
+          'GraphQL only supports GET and POST requests.',
           {
-            headers: [{ name: "Allow", value: "GET, POST" }],
+            headers: [{ name: 'Allow', value: 'GET, POST' }],
           }
-        );
+        )
       }
 
       if (query == null) {
-        throw new HttpError(400, "Must provide query string.");
+        throw new HttpError(400, 'Must provide query string.')
       }
 
-      document = await parseQuery(query, parse);
+      document = await parseQuery(query, parse)
 
-      validateDocument(schema, document, validate, validationRules);
+      validateDocument(schema, document, validate, validationRules)
 
-      operation = getExecutableOperation(document, operationName);
+      operation = getExecutableOperation(document, operationName)
 
       if (
-        operation.operation === "mutation" &&
-        isHttpMethod("GET", request.method)
+        operation.operation === 'mutation' &&
+        isHttpMethod('GET', request.method)
       ) {
         throw new HttpError(
           405,
-          "Can only perform a mutation operation from a POST request.",
-          { headers: [{ name: "Allow", value: "POST" }] }
-        );
+          'Can only perform a mutation operation from a POST request.',
+          { headers: [{ name: 'Allow', value: 'POST' }] }
+        )
       }
 
-      let variableValues: { [name: string]: any } | undefined;
+      let variableValues: { [name: string]: any } | undefined
 
       try {
         if (variables) {
           variableValues =
-            typeof variables === "string" ? JSON.parse(variables) : variables;
+            typeof variables === 'string' ? JSON.parse(variables) : variables
         }
       } catch (_error) {
-        throw new HttpError(400, "Variables are invalid JSON.");
+        throw new HttpError(400, 'Variables are invalid JSON.')
       }
 
       try {
@@ -158,15 +158,15 @@ export const processRequest = async <TContext = {}, TRootValue = {}>(
           document,
           operation,
           variables: variableValues,
-        };
+        }
         context = contextFactory
           ? await contextFactory(executionContext)
-          : ({} as TContext);
+          : ({} as TContext)
         rootValue = rootValueFactory
           ? await rootValueFactory(executionContext)
-          : ({} as TRootValue);
+          : ({} as TRootValue)
 
-        if (operation.operation === "subscription") {
+        if (operation.operation === 'subscription') {
           const result = await subscribe(
             schema,
             document,
@@ -174,13 +174,13 @@ export const processRequest = async <TContext = {}, TRootValue = {}>(
             context,
             variableValues,
             operationName
-          );
+          )
 
           // If errors are encountered while subscribing to the operation, an execution result
           // instead of an AsyncIterable.
           if (isAsyncIterable<ExecutionResult>(result)) {
             return {
-              type: "PUSH",
+              type: 'PUSH',
               subscribe: async (onResult) => {
                 for await (const payload of result) {
                   onResult(
@@ -191,17 +191,17 @@ export const processRequest = async <TContext = {}, TRootValue = {}>(
                       document,
                       operation,
                     })
-                  );
+                  )
                 }
               },
               unsubscribe: () => {
-                stopAsyncIteration(result);
+                stopAsyncIteration(result)
               },
-            };
+            }
           } else {
             if (isEventStream) {
               return {
-                type: "PUSH",
+                type: 'PUSH',
                 subscribe: async (onResult) => {
                   onResult(
                     formatPayload({
@@ -211,13 +211,13 @@ export const processRequest = async <TContext = {}, TRootValue = {}>(
                       document,
                       operation,
                     })
-                  );
+                  )
                 },
                 unsubscribe: () => undefined,
-              };
+              }
             } else {
               return {
-                type: "RESPONSE",
+                type: 'RESPONSE',
                 payload: formatPayload({
                   payload: result,
                   context,
@@ -227,7 +227,7 @@ export const processRequest = async <TContext = {}, TRootValue = {}>(
                 }),
                 status: 200,
                 headers: [],
-              };
+              }
             }
           }
         } else {
@@ -238,13 +238,13 @@ export const processRequest = async <TContext = {}, TRootValue = {}>(
             context,
             variableValues,
             operationName
-          );
+          )
 
           // Operations that use @defer, @stream and @live will return an `AsyncIterable` instead of an
           // execution result.
           if (isAsyncIterable<ExecutionPatchResult>(result)) {
             return {
-              type: isEventStream ? "PUSH" : "MULTIPART_RESPONSE",
+              type: isEventStream ? 'PUSH' : 'MULTIPART_RESPONSE',
               subscribe: async (onResult) => {
                 for await (const payload of result) {
                   onResult(
@@ -255,16 +255,16 @@ export const processRequest = async <TContext = {}, TRootValue = {}>(
                       document,
                       operation,
                     })
-                  );
+                  )
                 }
               },
               unsubscribe: () => {
-                stopAsyncIteration(result);
+                stopAsyncIteration(result)
               },
-            } as MultipartResponse<TContext, TRootValue>;
+            } as MultipartResponse<TContext, TRootValue>
           } else {
             return {
-              type: "RESPONSE",
+              type: 'RESPONSE',
               status: 200,
               headers: [],
               payload: formatPayload({
@@ -274,34 +274,38 @@ export const processRequest = async <TContext = {}, TRootValue = {}>(
                 document,
                 operation,
               }),
-            };
+            }
           }
         }
       } catch (executionError) {
         if (executionError instanceof GraphQLError) {
           throw new HttpError(
             200,
-            "GraphQLError encountered white executed GraphQL request.",
+            'GraphQLError encountered white executed GraphQL request.',
             {
               graphqlErrors: [executionError],
             }
-          );
+          )
         }
         throw new HttpError(
           500,
-          "Unexpected error encountered while executing GraphQL request.",
+          'Unexpected error encountered while executing GraphQL request.',
           {
-            graphqlErrors: [new GraphQLError(executionError.message)],
+            graphqlErrors: [
+              new GraphQLError((executionError as Error).message),
+            ],
           }
-        );
+        )
       }
     } catch (error) {
       const payload = {
-        errors: error.graphqlErrors || [new GraphQLError(error.message)],
-      };
+        errors: (error as any).graphqlErrors || [
+          new GraphQLError((error as Error).message),
+        ],
+      }
       if (isEventStream) {
         return {
-          type: "PUSH",
+          type: 'PUSH',
           subscribe: async (onResult) => {
             onResult(
               formatPayload({
@@ -311,15 +315,15 @@ export const processRequest = async <TContext = {}, TRootValue = {}>(
                 document,
                 operation,
               })
-            );
+            )
           },
           unsubscribe: () => undefined,
-        };
+        }
       } else {
         return {
-          type: "RESPONSE",
-          status: error.status || 500,
-          headers: error.headers || [],
+          type: 'RESPONSE',
+          status: (error as HttpError).status || 500,
+          headers: (error as HttpError).headers || [],
           payload: formatPayload({
             payload,
             context,
@@ -327,10 +331,10 @@ export const processRequest = async <TContext = {}, TRootValue = {}>(
             document,
             operation,
           }),
-        };
+        }
       }
     }
-  })();
+  })()
 
   return {
     ...result,
@@ -338,5 +342,5 @@ export const processRequest = async <TContext = {}, TRootValue = {}>(
     rootValue,
     document,
     operation,
-  };
-};
+  }
+}
