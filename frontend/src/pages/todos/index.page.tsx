@@ -1,7 +1,9 @@
-import { useQuery } from 'urql'
 import { gql } from '@app/gql'
-import { Button } from 'src/components/Button'
 import { useState } from 'react'
+import { useQuery } from 'urql'
+
+import { Button } from '~/components/Button'
+
 import { CreateTodoModal } from './CreateTodoModal'
 
 const GetTodos = gql(/* GraphQL */ `

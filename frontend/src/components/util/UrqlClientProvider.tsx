@@ -1,7 +1,6 @@
 import { useAuth0 } from '@auth0/auth0-react'
 import { useEffect, useState } from 'react'
 import * as React from 'react'
-import { pipe, tap } from 'wonka'
 import {
   cacheExchange,
   Client,
@@ -12,6 +11,7 @@ import {
   fetchExchange,
   Provider as UrqlProvider,
 } from 'urql'
+import { pipe, tap } from 'wonka'
 
 const authCheckExchange: Exchange =
   ({ forward }) =>

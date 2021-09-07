@@ -1,7 +1,7 @@
 import 'isomorphic-unfetch'
 import '@testing-library/jest-dom/extend-expect'
 
-import { server } from 'src/mocks/server'
+import { server } from '~/mocks/server'
 
 process.env = {
   ...process.env,
