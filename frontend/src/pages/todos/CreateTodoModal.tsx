@@ -26,9 +26,8 @@ export function CreateTodoModal({ onClose }: { onClose: () => void }) {
     formState: { errors },
   } = useForm<TodoInput>()
   const onSubmit: SubmitHandler<TodoInput> = async (data) => {
-    removeEmptyFields(data)
     executeMutation({
-      todo: data,
+      todo: removeEmptyFields(data),
     })
   }
 

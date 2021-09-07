@@ -1,7 +1,8 @@
-export function removeEmptyFields(data: any) {
-  Object.keys(data).forEach((key) => {
-    if (data[key] === '' || data[key] == null) {
-      delete data[key]
+export function removeEmptyFields<T extends Record<string, any>>(obj: T): T {
+  return Object.keys(obj).reduce((r, e: keyof T) => {
+    if (obj[e] !== '') {
+      r[e] = obj[e]
     }
-  })
+    return r
+  }, {} as T)
 }
