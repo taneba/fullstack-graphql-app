@@ -8,7 +8,7 @@
     },
     "allowJs": true,
     "alwaysStrict": true,
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
@@ -24,5 +24,5 @@
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "files": ["./src/types/twin.d.ts"],
-  "exclude": ["node_modules", "src/generated/**/*"]
+  "exclude": ["node_modules/**/*", "src/generated/**/*"]
 }
