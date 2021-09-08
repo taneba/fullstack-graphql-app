@@ -18,6 +18,7 @@ model Todo {
   content   String?
   author    User     @relation(fields: [authorId], references: [id])
   authorId  Int      @map("author_id")
+  completed Boolean    @default(false)
 
   @@map("todo")
 }
