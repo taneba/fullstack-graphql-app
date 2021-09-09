@@ -1,6 +1,7 @@
 import 'isomorphic-unfetch'
 import '@testing-library/jest-dom/extend-expect'
 
+import { resetFactoryIds } from '~/mocks/factories/factory'
 import { server } from '~/mocks/server'
 
 process.env = {
@@ -9,6 +10,7 @@ process.env = {
 }
 
 jest.mock('@auth0/auth0-react', () => {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
   const React = require('react')
   return {
     Auth0Provider: ({ children }: any) => children,
@@ -24,11 +26,16 @@ jest.mock('@auth0/auth0-react', () => {
 })
 
 // Establish API mocking before all tests.
-beforeAll(() => server.listen())
+beforeAll(() => {
+  server.listen()
+})
 
 // Reset any request handlers that we may add during the tests,
 // so they don't affect other tests.
-afterEach(() => server.resetHandlers())
+afterEach(() => {
+  resetFactoryIds()
+  server.resetHandlers()
+})
 
 // Clean up after the tests are finished.
 afterAll(() => server.close())

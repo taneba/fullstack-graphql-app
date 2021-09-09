@@ -2,6 +2,10 @@
   "compilerOptions": {
     "target": "ES2019",
     "module": "CommonJS",
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"]
+    },
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "strict": true,
@@ -11,7 +15,8 @@
     "typeRoots": ["types", "node_modules/@types"],
     "outDir": "./dist",
     "rootDir": "./src",
-    "lib": ["es2020"]
+    "lib": ["es2020"],
+    "noEmit": true
   },
-  "exclude": ["**/tmp/"]
+  "exclude": ["**/tmp/", "node_modules/**/*"]
 }

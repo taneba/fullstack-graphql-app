@@ -1,6 +1,6 @@
 import { Todo, User } from '@prisma/client'
 import got from 'got'
-import { UserInput } from '../../api/graphql/generated/graphql'
+import { UserInput } from '~/api/graphql/generated/graphql'
 import { UseCase, UseCaseContext } from '../../common/useCase'
 import { IUserRepository } from './IUserRepository'
 

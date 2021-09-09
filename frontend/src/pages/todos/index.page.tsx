@@ -21,7 +21,7 @@ const GetTodos = gql(/* GraphQL */ `
 function Todos() {
   const [res] = useQuery({ query: GetTodos })
   const [isModalOpen, setModalOpen] = useState(false)
-
+  console.log(res.data?.todos)
   return (
     <div tw="mt-4">
       <h1 tw="text-black font-bold text-3xl">Todos</h1>

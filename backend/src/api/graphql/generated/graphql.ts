@@ -13,7 +13,6 @@ export type Scalars = {
   Float: number;
 };
 
-
 export type Mutation = {
   __typename?: 'Mutation';
   saveTodo?: Maybe<Todo>;
@@ -50,12 +49,12 @@ export type Todo = {
   title: Scalars['String'];
   content?: Maybe<Scalars['String']>;
   author?: Maybe<User>;
+  completed: Scalars['Boolean'];
 };
 
 export type TodoInput = {
   title: Scalars['String'];
   content?: Maybe<Scalars['String']>;
-  authorId: Scalars['Int'];
 };
 
 export type User = {
@@ -146,10 +145,10 @@ export type ResolversTypes = {
   Todo: ResolverTypeWrapper<Todo>;
   ID: ResolverTypeWrapper<Scalars['ID']>;
   String: ResolverTypeWrapper<Scalars['String']>;
+  Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
   TodoInput: TodoInput;
   User: ResolverTypeWrapper<User>;
   UserInput: UserInput;
-  Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
 };
 
 /** Mapping between all available schema types and the resolvers parents */
@@ -160,10 +159,10 @@ export type ResolversParentTypes = {
   Todo: Todo;
   ID: Scalars['ID'];
   String: Scalars['String'];
+  Boolean: Scalars['Boolean'];
   TodoInput: TodoInput;
   User: User;
   UserInput: UserInput;
-  Boolean: Scalars['Boolean'];
 };
 
 export type AuthDirectiveArgs = {   role?: Role; };
@@ -188,6 +187,7 @@ export type TodoResolvers<ContextType = any, ParentType extends ResolversParentT
   title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   content?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   author?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>;
+  completed?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 

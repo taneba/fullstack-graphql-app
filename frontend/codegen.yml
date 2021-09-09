@@ -7,5 +7,3 @@ documents:
 generates:
   src/generated/graphql.ts:
     preset: gql-tag-operations-preset
-    plugins:
-      - '@homebound/graphql-typescript-factories'

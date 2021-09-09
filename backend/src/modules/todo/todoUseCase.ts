@@ -1,5 +1,5 @@
 import { Todo } from '@prisma/client'
-import { TodoInput } from '../../api/graphql/generated/graphql'
+import { TodoInput } from '~/api/graphql/generated/graphql'
 import { UseCase, UseCaseContext } from '../../common/useCase'
 import { ITodoRepository } from './ITodoRepository'
 
@@ -12,16 +12,22 @@ export class TodoUseCase extends UseCase {
   }
 
   public async save(todo: TodoInput): Promise<Todo> {
+    const currentUserId = this.ctx.currentUser?.id
+    if (!currentUserId) {
+      throw new Error('User not found')
+    }
+
     return this.todoRepository.save(
       {
         title: todo.title,
         content: todo.content,
       },
-      todo.authorId
+      currentUserId
     )
   }
 
   public async getAll(): Promise<Todo[]> {
+    console.log('CTX!!', Object.keys(this.ctx))
     return this.todoRepository.getAll()
   }
 
@@ -30,6 +36,16 @@ export class TodoUseCase extends UseCase {
     if (!result) {
       throw new Error('todo not found')
     }
+    return result
+  }
+
+  public async markAsCompleted(id: number): Promise<Todo> {
+    const result = await this.todoRepository.edit(
+      {
+        completed: true,
+      },
+      id
+    )
     return result
   }
 }

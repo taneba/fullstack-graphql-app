@@ -18,10 +18,11 @@ import {
   ValidateUserFn,
 } from '@envelop/generic-auth'
 import resolvers from './api/graphql/resolvers/resolvers'
-import { createContext, GraphqlServerContext } from './context'
+import { createContext, GraphqlServerContext, prisma } from './context'
 import { useAuth0 } from '@envelop/auth0'
 import { User } from '@prisma/client'
 import { EnumValueNode } from 'graphql'
+import { UserRepository } from './modules/user/UserRepository'
 
 const executableSchema = makeExecutableSchema({
   resolvers: resolvers,
@@ -32,7 +33,12 @@ const resolveUserFn: ResolveUserFn<User, GraphqlServerContext> = async (
   context
 ) => {
   try {
-    const user = await context.useCase.user.findByUid()
+    const uid = context.auth0?.sub
+    if (!uid) {
+      throw new Error('not authenticated')
+    }
+    const userRepository = new UserRepository(prisma)
+    const user = await userRepository.findByUid(uid)
     return user
   } catch (e) {
     console.error('Failed to get user', e)
@@ -90,12 +96,12 @@ export const getEnveloped = envelop({
       extendContextField: 'auth0',
       tokenType: 'Bearer',
     }),
-    useExtendContext(createContext), // should be after auth0 so that createContext callback can access to auth0 context
     useGenericAuth({
       resolveUserFn: resolveUserFn,
       validateUser: validateUserFn,
       mode: 'protect-auth-directive',
     }),
+    useExtendContext(createContext), // should be after auth0 so that createContext callback can access to auth0 context
     useMaskedErrors(),
     useErrorHandler((error: any) => {
       console.log('ERROR: ' + JSON.stringify(error))
