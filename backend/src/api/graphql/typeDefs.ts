@@ -27,6 +27,7 @@ export const schema = buildSchema(/* GraphQL */ `
     title: String!
     content: String
     author: User
+    completed: Boolean!
   }
 
   input TodoInput {

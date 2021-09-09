@@ -1,5 +1,5 @@
 import { GraphqlServerContext } from '../../../context'
-import { UserMapper } from '../../../modules/user/userMappers'
+import { UserMapper } from '../../../modules/user/UserMapper'
 import * as gql from '../generated/graphql'
 
 export const userQueryResolvers: gql.QueryResolvers<GraphqlServerContext> = {

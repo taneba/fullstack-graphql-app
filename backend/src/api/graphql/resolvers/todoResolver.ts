@@ -1,6 +1,6 @@
 import { GraphqlServerContext } from '../../../context'
 import { TodoMapper } from '../../../modules/todo/todoMappers'
-import { UserMapper } from '../../../modules/user/userMappers'
+import { UserMapper } from '../../../modules/user/UserMapper'
 import * as gql from '../generated/graphql'
 
 export const todoQueryResolvers: gql.QueryResolvers<GraphqlServerContext> = {
