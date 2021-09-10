@@ -1,14 +1,14 @@
-import { gql } from '@app/gql'
 import { useState } from 'react'
 import { useQuery } from 'urql'
 
 import { Button } from '~/components/Button'
+import { gql } from '~/generated/graphql.ts'
 
 import { CreateTodoModal } from './CreateTodoModal'
 
-const GetTodos = gql(/* GraphQL */ `
+const GetTodos = gql(`#graphql
   query GetTodos {
-    todos {
+    todosByCurrentUser {
       id
       createdAt
       updatedAt
@@ -21,7 +21,6 @@ const GetTodos = gql(/* GraphQL */ `
 function Todos() {
   const [res] = useQuery({ query: GetTodos })
   const [isModalOpen, setModalOpen] = useState(false)
-  console.log(res.data?.todos)
   return (
     <div tw="mt-4">
       <h1 tw="text-black font-bold text-3xl">Todos</h1>
@@ -30,8 +29,8 @@ function Todos() {
         New Todo
       </Button>
       <div tw="mt-4">
-        {res.data && res.data.todos.length < 1 && <p>No Items</p>}
-        {res.data?.todos.map((todo) => (
+        {res.data && res.data.todosByCurrentUser.length < 1 && <p>No Items</p>}
+        {res.data?.todosByCurrentUser.map((todo) => (
           <div
             key={todo.id}
             role="todo"

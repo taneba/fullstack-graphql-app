@@ -4,9 +4,17 @@ import { UserMapper } from '../../../modules/user/UserMapper'
 import * as gql from '../generated/graphql'
 
 export const todoQueryResolvers: gql.QueryResolvers<GraphqlServerContext> = {
-  todos: async (_, params, ctx) => {
+  allTodos: async (_, params, ctx) => {
     try {
       const result = await ctx.useCase.todo.getAll()
+      return result.map(TodoMapper.toGql)
+    } catch (error) {
+      throw error
+    }
+  },
+  todosByCurrentUser: async (_, params, ctx) => {
+    try {
+      const result = await ctx.useCase.todo.getByCurrentUser()
       return result.map(TodoMapper.toGql)
     } catch (error) {
       throw error

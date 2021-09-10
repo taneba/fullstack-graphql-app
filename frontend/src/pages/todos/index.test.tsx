@@ -25,7 +25,7 @@ describe('Todos Page', () => {
       graphql.query(GetTodosDocument, (req, res, ctx) =>
         res.once(
           ctx.data({
-            todos: [],
+            todosByCurrentUser: [],
           })
         )
       )

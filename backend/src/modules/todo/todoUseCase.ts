@@ -27,8 +27,15 @@ export class TodoUseCase extends UseCase {
   }
 
   public async getAll(): Promise<Todo[]> {
-    console.log('CTX!!', Object.keys(this.ctx))
     return this.todoRepository.getAll()
+  }
+
+  public async getByCurrentUser(): Promise<Todo[]> {
+    const currentUserId = this.ctx.currentUser?.id
+    if (!currentUserId) {
+      throw new Error('User not found')
+    }
+    return this.todoRepository.getByUser(currentUserId)
   }
 
   public async findOne(id: number): Promise<Todo> {

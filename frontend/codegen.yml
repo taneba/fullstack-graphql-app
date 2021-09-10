@@ -7,3 +7,8 @@ documents:
 generates:
   src/generated/graphql.ts:
     preset: gql-tag-operations-preset
+  src/generated/schema.graphql:
+    plugins:
+      - schema-ast
+    config:
+      includeDirectives: true

@@ -40,4 +40,12 @@ export class TodoRepository implements ITodoRepository {
   async getAll() {
     return await this.prisma.todo.findMany()
   }
+
+  async getByUser(id: number) {
+    return await this.prisma.todo.findMany({
+      where: {
+        authorId: id,
+      },
+    })
+  }
 }

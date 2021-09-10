@@ -1415,6 +1415,15 @@
     lodash "~4.17.0"
     tslib "~2.3.0"
 
+"@graphql-codegen/schema-ast@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@graphql-codegen/schema-ast/-/schema-ast-2.2.0.tgz#9615a2793f8e5726a1c95da9442e4cd20b0f95bc"
+  integrity sha512-oWCwVcmK/GPlWA2gSYBGU8gm2Aw9lypfYhJ+aTSGL5lC8OrZInKEy9kWlEpjDvd/bZP+HATebt4Y+5TIJYVLKg==
+  dependencies:
+    "@graphql-codegen/plugin-helpers" "^2.1.0"
+    "@graphql-tools/utils" "^8.1.1"
+    tslib "~2.3.0"
+
 "@graphql-codegen/typed-document-node@2.1.3":
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/@graphql-codegen/typed-document-node/-/typed-document-node-2.1.3.tgz#94a1353173a8056576a307fc65d356ea1b1c1f0b"

@@ -8,7 +8,7 @@ export const handlers = [
   graphql.query(GetTodosDocument, (req, res, ctx) =>
     res(
       ctx.data({
-        todos: [todoFactory(), todoFactory()],
+        todosByCurrentUser: [todoFactory(), todoFactory()],
       })
     )
   ),

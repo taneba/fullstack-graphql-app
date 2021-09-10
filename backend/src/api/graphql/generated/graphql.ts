@@ -32,8 +32,9 @@ export type MutationSaveUserArgs = {
 export type Query = {
   __typename?: 'Query';
   time: Scalars['Int'];
-  todos: Array<Todo>;
-  users: Array<User>;
+  allTodos: Array<Todo>;
+  todosByCurrentUser: Array<Todo>;
+  allUsers: Array<User>;
 };
 
 export enum Role {
@@ -176,8 +177,9 @@ export type MutationResolvers<ContextType = any, ParentType extends ResolversPar
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
   time?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
-  todos?: Resolver<Array<ResolversTypes['Todo']>, ParentType, ContextType>;
-  users?: Resolver<Array<ResolversTypes['User']>, ParentType, ContextType>;
+  allTodos?: Resolver<Array<ResolversTypes['Todo']>, ParentType, ContextType>;
+  todosByCurrentUser?: Resolver<Array<ResolversTypes['Todo']>, ParentType, ContextType>;
+  allUsers?: Resolver<Array<ResolversTypes['User']>, ParentType, ContextType>;
 };
 
 export type TodoResolvers<ContextType = any, ParentType extends ResolversParentTypes['Todo'] = ResolversParentTypes['Todo']> = {

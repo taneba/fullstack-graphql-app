@@ -1,0 +1,49 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+directive @auth(role: Role! = USER) on FIELD_DEFINITION
+
+type Mutation {
+  saveTodo(todo: TodoInput!): Todo @auth
+  saveUser(user: UserInput!): User
+}
+
+type Query {
+  time: Int!
+  allTodos: [Todo!]! @auth
+  todosByCurrentUser: [Todo!]! @auth
+  allUsers: [User!]! @auth(role: ADMIN)
+}
+
+enum Role {
+  ADMIN
+  USER
+}
+
+type Todo {
+  id: ID!
+  createdAt: String
+  updatedAt: String
+  title: String!
+  content: String
+  author: User
+  completed: Boolean!
+}
+
+input TodoInput {
+  title: String!
+  content: String
+}
+
+type User {
+  id: ID!
+  email: String!
+  name: String
+}
+
+input UserInput {
+  email: String!
+  name: String
+}
