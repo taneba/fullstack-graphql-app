@@ -1,4 +1,4 @@
-import { User } from '~/generated/graphql.ts/graphql'
+import { User } from '~/generated/graphql'
 
 import { nextFactoryId } from './factory'
 

@@ -1,4 +1,4 @@
-import { Todo } from '~/generated/graphql.ts/graphql'
+import { Todo } from '~/generated/graphql'
 
 import { nextFactoryId } from './factory'
 
