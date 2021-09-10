@@ -39,4 +39,12 @@ export const todoMutationResolvers: gql.MutationResolvers<GraphqlServerContext> 
         throw error
       }
     },
+    completeTodo: async (_, params, ctx) => {
+      try {
+        const result = await ctx.useCase.todo.markAsCompleted(Number(params.id))
+        return TodoMapper.toGql(result)
+      } catch (error) {
+        throw error
+      }
+    },
   }

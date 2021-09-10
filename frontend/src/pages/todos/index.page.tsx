@@ -2,11 +2,12 @@ import { useState } from 'react'
 import { useQuery } from 'urql'
 
 import { Button } from '~/components/Button'
-import { gql } from '~/generated/graphql.ts'
+import { gql } from '~/generated'
 
 import { CreateTodoModal } from './CreateTodoModal'
+import { TodoItem } from './TodoItem'
 
-const GetTodos = gql(`#graphql
+const GetTodos = gql(/* GraphQL */ `
   query GetTodos {
     todosByCurrentUser {
       id
@@ -14,6 +15,7 @@ const GetTodos = gql(`#graphql
       updatedAt
       title
       content
+      completed
     }
   }
 `)
@@ -22,7 +24,7 @@ function Todos() {
   const [res] = useQuery({ query: GetTodos })
   const [isModalOpen, setModalOpen] = useState(false)
   return (
-    <div tw="mt-4">
+    <div>
       <h1 tw="text-black font-bold text-3xl">Todos</h1>
 
       <Button primary onClick={() => setModalOpen(true)} tw="mt-4">
@@ -30,15 +32,11 @@ function Todos() {
       </Button>
       <div tw="mt-4">
         {res.data && res.data.todosByCurrentUser.length < 1 && <p>No Items</p>}
-        {res.data?.todosByCurrentUser.map((todo) => (
-          <div
-            key={todo.id}
-            role="todo"
-            tw="flex flex-row items-center justify-between w-full py-1 px-4 my-1 rounded border bg-gray-100 text-gray-600"
-          >
-            {todo.title}
-          </div>
-        ))}
+        {res.data?.todosByCurrentUser
+          .filter(({ completed }) => !completed)
+          .map((todo) => (
+            <TodoItem key={todo.id} todo={todo} />
+          ))}
       </div>
       {isModalOpen && <CreateTodoModal onClose={() => setModalOpen(false)} />}
     </div>

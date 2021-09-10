@@ -8,6 +8,7 @@ directive @auth(role: Role! = USER) on FIELD_DEFINITION
 type Mutation {
   saveTodo(todo: TodoInput!): Todo @auth
   saveUser(user: UserInput!): User
+  completeTodo(id: ID!): Todo @auth
 }
 
 type Query {

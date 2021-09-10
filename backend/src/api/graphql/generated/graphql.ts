@@ -17,6 +17,7 @@ export type Mutation = {
   __typename?: 'Mutation';
   saveTodo?: Maybe<Todo>;
   saveUser?: Maybe<User>;
+  completeTodo?: Maybe<Todo>;
 };
 
 
@@ -27,6 +28,11 @@ export type MutationSaveTodoArgs = {
 
 export type MutationSaveUserArgs = {
   user: UserInput;
+};
+
+
+export type MutationCompleteTodoArgs = {
+  id: Scalars['ID'];
 };
 
 export type Query = {
@@ -140,11 +146,11 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
   Mutation: ResolverTypeWrapper<{}>;
+  ID: ResolverTypeWrapper<Scalars['ID']>;
   Query: ResolverTypeWrapper<{}>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
   Role: Role;
   Todo: ResolverTypeWrapper<Todo>;
-  ID: ResolverTypeWrapper<Scalars['ID']>;
   String: ResolverTypeWrapper<Scalars['String']>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
   TodoInput: TodoInput;
@@ -155,10 +161,10 @@ export type ResolversTypes = {
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
   Mutation: {};
+  ID: Scalars['ID'];
   Query: {};
   Int: Scalars['Int'];
   Todo: Todo;
-  ID: Scalars['ID'];
   String: Scalars['String'];
   Boolean: Scalars['Boolean'];
   TodoInput: TodoInput;
@@ -173,6 +179,7 @@ export type AuthDirectiveResolver<Result, Parent, ContextType = any, Args = Auth
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
   saveTodo?: Resolver<Maybe<ResolversTypes['Todo']>, ParentType, ContextType, RequireFields<MutationSaveTodoArgs, 'todo'>>;
   saveUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<MutationSaveUserArgs, 'user'>>;
+  completeTodo?: Resolver<Maybe<ResolversTypes['Todo']>, ParentType, ContextType, RequireFields<MutationCompleteTodoArgs, 'id'>>;
 };
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {

@@ -6,7 +6,7 @@ import {
   GetTodosDocument,
   SaveTodoDocument,
   SaveTodoMutationVariables,
-} from '~/generated/graphql.ts/graphql'
+} from '~/generated/graphql'
 import { testRenderer } from '~/utils/test-util'
 
 import Todos from './index.page'

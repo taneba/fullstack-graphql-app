@@ -1,6 +1,6 @@
 import { useQuery } from 'urql'
 
-import { gql } from '~/generated/graphql.ts'
+import { gql } from '~/generated/'
 
 const GetUsers = gql(/* GraphQL */ `
   query GetUsers {

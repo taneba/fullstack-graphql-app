@@ -19,6 +19,7 @@ export const schema = buildSchema(/* GraphQL */ `
   type Mutation {
     saveTodo(todo: TodoInput!): Todo @auth
     saveUser(user: UserInput!): User
+    completeTodo(id: ID!): Todo @auth
   }
 
   type Todo {
