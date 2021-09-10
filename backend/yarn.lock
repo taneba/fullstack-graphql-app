@@ -485,10 +485,10 @@
     jsonwebtoken "^8.5.1"
     jwks-rsa "^2.0.1"
 
-"@envelop/core@1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@envelop/core/-/core-1.0.3.tgz#80effebd5f41faff229b9b34dbe0d6b13beed4f2"
-  integrity sha512-lJ4/NEk8h2oe7cnTY8FXRHOiYdWnXyfUJwfN2trJNZksllwUxaabD1KK/Y/MH8brtQ2NbOR3YGUtiurRbrFzzQ==
+"@envelop/core@1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@envelop/core/-/core-1.0.4.tgz#c5099fce98194598aecf7d81a87c1e3324e10ffa"
+  integrity sha512-+P2EZfQgyRuWqR8ErzHCO2kXj3wrHQJZC8IFxfiJh1H6PGJs3Fgary14E93gCNW7RLaXApeACRGhlrC/njk73Q==
   dependencies:
     "@envelop/types" "1.0.2"
 
