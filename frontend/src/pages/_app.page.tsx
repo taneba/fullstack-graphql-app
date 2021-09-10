@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       >
         <UrqlClientProvider>
           <Navbar />
-          <div tw="bg-white py-10 px-5 mx-auto container mt-8">
+          <div tw="bg-white px-5 pt-4 mx-auto container">
             <Component {...pageProps} />
           </div>
         </UrqlClientProvider>

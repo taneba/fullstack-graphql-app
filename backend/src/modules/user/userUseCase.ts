@@ -1,9 +1,8 @@
-import { EnvelopError } from '@envelop/core'
 import { Todo, User } from '@prisma/client'
 import got from 'got'
-import { UserInput } from '../api/graphql/generated/graphql'
-import { IUserRepository } from '../modules/user/IUserRepository'
-import { UseCase, UseCaseContext } from './useCase'
+import { UserInput } from '~/api/graphql/generated/graphql'
+import { UseCase, UseCaseContext } from '../../common/useCase'
+import { IUserRepository } from './IUserRepository'
 
 export class UserUseCase extends UseCase {
   public constructor(

@@ -1,5 +1,5 @@
 import { Todo } from '@prisma/client'
-import * as gql from '../../api/graphql/generated/graphql'
+import { gql } from '~/api/graphql/generated'
 
 export class TodoMapper {
   public static toGql(todo: Todo): gql.Todo {

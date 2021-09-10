@@ -6,7 +6,7 @@ import {
   GetTodosDocument,
   SaveTodoDocument,
   SaveTodoMutationVariables,
-} from '~/generated/graphql.ts/graphql'
+} from '~/generated/graphql'
 import { testRenderer } from '~/utils/test-util'
 
 import Todos from './index.page'
@@ -25,7 +25,7 @@ describe('Todos Page', () => {
       graphql.query(GetTodosDocument, (req, res, ctx) =>
         res.once(
           ctx.data({
-            todos: [],
+            todosByCurrentUser: [],
           })
         )
       )

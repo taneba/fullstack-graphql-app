@@ -5,8 +5,8 @@ import { Button } from '~/components/Button'
 import { Modal } from '~/components/Modal'
 import { TextArea } from '~/components/TextArea'
 import { TextField } from '~/components/TextField'
-import { gql } from '~/generated/graphql.ts'
-import { TodoInput } from '~/generated/graphql.ts/graphql'
+import { gql } from '~/generated'
+import { TodoInput } from '~/generated/graphql'
 import { removeEmptyFields } from '~/utils/form'
 
 const SaveTodo = gql(/* GraphQL */ `

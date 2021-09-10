@@ -7,6 +7,7 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier',
   ],
@@ -23,6 +24,8 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/display-name': ['error', { ignoreTranspilerName: false }],
     'react/no-unescaped-entities': 'off',
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error',
     'simple-import-sort/imports': 'error',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
   },

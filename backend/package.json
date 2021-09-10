@@ -5,10 +5,11 @@
   "scripts": {
     "dev": "nodemon 'src/index.ts' --exec 'ts-node'",
     "gql-gen": "graphql-codegen --config codegen.yml",
-    "db:migration:generate": "prisma migrate dev --create-only",
-    "db:migration:run": "prisma migrate dev",
-    "db:reset": "prisma migrate reset",
-    "prisma-gen": "prisma generate",
+    "db:migration:generate": "dotenv -e .env.localhost prisma migrate dev --create-only",
+    "db:migration:run": "dotenv -e .env.localhost prisma migrate dev",
+    "db:reset": "dotenv -e .env.localhost prisma migrate reset",
+    "prisma-gen": "dotenv -e .env.localhost prisma generate",
+    "prisma-studio": "dotenv -e .env.localhost prisma studio",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
@@ -38,6 +39,7 @@
     "@graphql-codegen/cli": "2.1.1",
     "@graphql-codegen/typescript-resolvers": "2.2.0",
     "chalk": "4.1.2",
+    "dotenv-cli": "^4.0.0",
     "graphql-playground-html": "1.6.29",
     "prisma": "2.30.3",
     "ts-node-dev": "1.1.8"

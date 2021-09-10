@@ -1,9 +1,9 @@
 import { GraphqlServerContext } from '../../../context'
-import { UserMapper } from '../../../modules/user/userMappers'
+import { UserMapper } from '../../../modules/user/UserMapper'
 import * as gql from '../generated/graphql'
 
 export const userQueryResolvers: gql.QueryResolvers<GraphqlServerContext> = {
-  users: async (_, params, ctx) => {
+  allUsers: async (_, params, ctx) => {
     try {
       const result = await ctx.useCase.user.getAll()
       return result.map(UserMapper.toGql)

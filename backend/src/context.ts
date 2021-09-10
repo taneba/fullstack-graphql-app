@@ -1,13 +1,13 @@
 import chalk from 'chalk'
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient, User } from '@prisma/client'
 import { TodoRepository } from './modules/todo/TodoRepository'
 import { UserRepository } from './modules/user/UserRepository'
-import { TodoUseCase } from './useCases/todoUseCase'
-import { UserUseCase } from './useCases/userUseCase'
-import { UseCaseContext } from './useCases/useCase'
+import { TodoUseCase } from './modules/todo/TodoUseCase'
 import { DefaultContext } from '@envelop/types'
+import { UseCaseContext } from './common/useCase'
+import { UserUseCase } from './modules/user/UserUseCase'
 
-const prisma = new PrismaClient({
+export const prisma = new PrismaClient({
   log: [
     {
       emit: 'event',
@@ -49,13 +49,15 @@ export interface GraphqlServerContext extends DefaultContext {
     scope: string
   }
   authToken?: string
+  currentUser: User | null
 }
 
 export function createContext(
-  ctx: Pick<GraphqlServerContext, 'auth0'> & { req: any }
+  ctx: Pick<GraphqlServerContext, 'auth0' | 'currentUser'> & { req: any }
 ): GraphqlServerContext {
-  const authToken = ctx.req.headers.authorization
-  const useCaseContext: UseCaseContext = { prisma, auth0: ctx.auth0 }
+  const { auth0, currentUser, req } = ctx
+  const authToken = req.headers.authorization
+  const useCaseContext: UseCaseContext = { prisma, auth0, currentUser }
 
   return {
     prisma,
@@ -64,5 +66,6 @@ export function createContext(
       user: new UserUseCase(useCaseContext, new UserRepository(prisma)),
     },
     authToken,
+    currentUser,
   }
 }
