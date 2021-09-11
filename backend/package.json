@@ -8,6 +8,7 @@
     "db:migration:generate": "dotenv -e .env.localhost prisma migrate dev --create-only",
     "db:migration:run": "dotenv -e .env.localhost prisma migrate dev",
     "db:reset": "dotenv -e .env.localhost prisma migrate reset",
+    "db:pull": "dotenv -e .env.localhost prisma db pull",
     "prisma-gen": "dotenv -e .env.localhost prisma generate",
     "prisma-studio": "dotenv -e .env.localhost prisma studio",
     "type-check": "tsc --noEmit"
