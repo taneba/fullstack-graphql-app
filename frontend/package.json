@@ -14,7 +14,7 @@
     "test:watch": "NODE_ENV=test jest --watch --config ./jest.config.js"
   },
   "dependencies": {
-    "@auth0/auth0-react": "1.6.0",
+    "@auth0/auth0-react": "1.7.0",
     "@headlessui/react": "1.4.1",
     "@heroicons/react": "1.0.4",
     "graphql": "15.5.3",
