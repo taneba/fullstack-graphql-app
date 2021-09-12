@@ -44,9 +44,9 @@
     "@typescript-eslint/parser": "^4.31.0",
     "chalk": "4.1.2",
     "dotenv-cli": "4.0.0",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint": "7.32.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-simple-import-sort": "7.0.0",
     "graphql-playground-html": "1.6.29",
     "prisma": "3.0.2",
     "ts-node-dev": "1.1.8"
