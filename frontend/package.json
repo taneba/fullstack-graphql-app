@@ -21,7 +21,7 @@
     "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-hook-form": "7.15.2",
+    "react-hook-form": "7.15.3",
     "styled-components": "5.3.1",
     "tailwindcss": "2.2.15",
     "twin.macro": "2.7.0",
