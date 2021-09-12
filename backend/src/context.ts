@@ -1,10 +1,11 @@
-import chalk from 'chalk'
-import { PrismaClient, User } from '@prisma/client'
-import { TodoRepository } from './modules/todo/TodoRepository'
-import { UserRepository } from './modules/user/UserRepository'
-import { TodoUseCase } from './modules/todo/TodoUseCase'
 import { DefaultContext } from '@envelop/types'
+import { PrismaClient, User } from '@prisma/client'
+import chalk from 'chalk'
+
 import { UseCaseContext } from './common/useCase'
+import { TodoRepository } from './modules/todo/TodoRepository'
+import { TodoUseCase } from './modules/todo/TodoUseCase'
+import { UserRepository } from './modules/user/UserRepository'
 import { UserUseCase } from './modules/user/UserUseCase'
 
 export const prisma = new PrismaClient({

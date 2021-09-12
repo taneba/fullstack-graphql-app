@@ -1,4 +1,4 @@
-import { Todo, Prisma } from '@prisma/client'
+import { Prisma,Todo } from '@prisma/client'
 
 export interface ITodoRepository {
   save(

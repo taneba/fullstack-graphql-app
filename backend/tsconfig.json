@@ -6,17 +6,19 @@
     "paths": {
       "~/*": ["src/*"]
     },
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
     "strict": true,
     "allowJs": true,
-    "noImplicitAny": true,
+    "alwaysStrict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
     "allowSyntheticDefaultImports": true,
-    "typeRoots": ["types", "node_modules/@types"],
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "noImplicitAny": true,
+    "lib": ["es2020"],
     "outDir": "./dist",
     "rootDir": "./src",
-    "lib": ["es2020"],
-    "noEmit": true
+    "typeRoots": ["types", "node_modules/@types"]
   },
   "exclude": ["**/tmp/", "node_modules/**/*"]
 }

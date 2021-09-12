@@ -1,16 +1,17 @@
 import fastify from 'fastify'
+import fastifyCors from 'fastify-cors'
+import { renderPlaygroundPage } from 'graphql-playground-html'
+
+import { getEnveloped } from './getEnveloped'
 import {
   getGraphQLParameters,
   processRequest,
   shouldRenderGraphiQL,
 } from './lib/graphql-helix'
 
-import { renderPlaygroundPage } from 'graphql-playground-html'
-
-import { getEnveloped } from './getEnveloped'
 const app = fastify()
 
-app.register(require('fastify-cors'))
+app.register(fastifyCors)
 
 app.route({
   method: ['GET', 'POST'],

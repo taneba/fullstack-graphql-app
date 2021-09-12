@@ -9,7 +9,7 @@ import { userMutationResolvers, userQueryResolvers } from './userResolvers'
 
 const resolvers: gql.Resolvers<GraphqlServerContext> = {
   Query: {
-    time: (_parent, _params, _ctx) => Math.floor(Date.now() / 1000),
+    time: () => Math.floor(Date.now() / 1000),
     ...todoQueryResolvers,
     ...userQueryResolvers,
   },

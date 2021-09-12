@@ -1,4 +1,5 @@
 import { User } from '@prisma/client'
+
 import { gql } from '~/api/graphql/generated'
 
 export class UserMapper {

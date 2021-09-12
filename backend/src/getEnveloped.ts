@@ -1,27 +1,27 @@
+import { useAuth0 } from '@envelop/auth0'
 import {
   envelop,
-  useLogger,
-  useTiming,
-  useExtendContext,
-  useSchema,
-  useErrorHandler,
-  useMaskedErrors,
   EnvelopError,
+  useErrorHandler,
+  useExtendContext,
+  useLogger,
+  useMaskedErrors,
+  useSchema,
+  useTiming,
 } from '@envelop/core'
-
 import { useDepthLimit } from '@envelop/depth-limit'
-import { schema } from './api/graphql/typeDefs'
-import { makeExecutableSchema } from '@graphql-tools/schema'
 import {
-  useGenericAuth,
   ResolveUserFn,
+  useGenericAuth,
   ValidateUserFn,
 } from '@envelop/generic-auth'
-import resolvers from './api/graphql/resolvers/resolvers'
-import { createContext, GraphqlServerContext, prisma } from './context'
-import { useAuth0 } from '@envelop/auth0'
+import { makeExecutableSchema } from '@graphql-tools/schema'
 import { User } from '@prisma/client'
 import { EnumValueNode } from 'graphql'
+
+import resolvers from './api/graphql/resolvers/resolvers'
+import { schema } from './api/graphql/typeDefs'
+import { createContext, GraphqlServerContext, prisma } from './context'
 import { UserRepository } from './modules/user/UserRepository'
 
 const executableSchema = makeExecutableSchema({
@@ -79,7 +79,7 @@ const validateUserFn: ValidateUserFn<User, GraphqlServerContext> = async (
 export const getEnveloped = envelop({
   plugins: [
     useSchema(executableSchema),
-    // useLogger(),
+    useLogger(),
     useAuth0({
       //   onError: (e: any) => {
       //     throw new EnvelopError('request not authenticated', {
@@ -89,8 +89,8 @@ export const getEnveloped = envelop({
       // see https://github.com/dotansimha/envelop/issues/606
       // we are using internal graphql-helix pkg as workaround for now
       //   },
-      domain: process.env.AUTH0_DOMAIN!,
-      audience: process.env.AUTH0_AUDIENCE!,
+      domain: process.env.AUTH0_DOMAIN || '',
+      audience: process.env.AUTH0_AUDIENCE || '',
       headerName: 'authorization',
       preventUnauthenticatedAccess: false,
       extendContextField: 'auth0',
@@ -103,7 +103,7 @@ export const getEnveloped = envelop({
     }),
     useExtendContext(createContext), // should be after auth0 so that createContext callback can access to auth0 context
     useMaskedErrors(),
-    useErrorHandler((error: any) => {
+    useErrorHandler((error: unknown) => {
       console.log('ERROR: ' + JSON.stringify(error))
     }),
     useTiming(),

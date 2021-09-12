@@ -1,4 +1,5 @@
-import { PrismaClient, Todo, Prisma } from '@prisma/client'
+import { Prisma,PrismaClient, Todo } from '@prisma/client'
+
 import { ITodoRepository } from './ITodoRepository'
 
 export class TodoRepository implements ITodoRepository {

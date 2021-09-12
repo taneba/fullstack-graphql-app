@@ -1,5 +1,7 @@
 import { Todo } from '@prisma/client'
+
 import { TodoInput } from '~/api/graphql/generated/graphql'
+
 import { UseCase, UseCaseContext } from '../../common/useCase'
 import { ITodoRepository } from './ITodoRepository'
 
