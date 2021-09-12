@@ -1,24 +1,24 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "lib": ["dom", "dom.iterable", "esnext"],
     "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"]
     },
+    "strict": true,
     "allowJs": true,
     "alwaysStrict": true,
     "skipLibCheck": true,
+    "noEmit": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
     "jsx": "preserve",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "typeRoots": ["src/types", "./node_modules/@types"],
     "types": ["node", "jest", "@testing-library/jest-dom"]
   },
