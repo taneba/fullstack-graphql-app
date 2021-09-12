@@ -2545,7 +2545,7 @@ fast-safe-stringify@^2.0.8:
   resolved "https://registry.yarnpkg.com/fast-safe-stringify/-/fast-safe-stringify-2.0.8.tgz#dc2af48c46cf712b683e849b2bbd446b32de936f"
   integrity sha512-lXatBjf3WPjmWD6DpIZxkeSsCOwqI0maYMpgDlx8g4U2qi4lbjA9oH/HD2a87G+KfsUmo5WbJFmqBZlPxtptag==
 
-fastify-compress@^3.6.0:
+fastify-compress@3.6.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/fastify-compress/-/fastify-compress-3.6.0.tgz#07acff3a7fe375434945c090a39bd72f5616487a"
   integrity sha512-K7GCSb8CMyhHKBhDcKzKQOpOj/5OUaaAEyBftBRDqoLdhgTsJr3syQ8Nk2u1TJDdqmx64bhAtj9Nr/BS3Ylueg==
@@ -2578,7 +2578,7 @@ fastify-error@^0.3.0:
   resolved "https://registry.yarnpkg.com/fastify-error/-/fastify-error-0.3.1.tgz#8eb993e15e3cf57f0357fc452af9290f1c1278d2"
   integrity sha512-oCfpcsDndgnDVgiI7bwFKAun2dO+4h84vBlkWsWnz/OUK9Reff5UFoFl241xTiLeHWX/vU9zkDVXqYUxjOwHcQ==
 
-fastify-helmet@^5.3.2:
+fastify-helmet@5.3.2:
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/fastify-helmet/-/fastify-helmet-5.3.2.tgz#eda259b8a9ad5ccc6dacc1b7ed358c03f59a7f7f"
   integrity sha512-X9lKZa7wjvMe79eUP0Fo+3GMMmbxKC92ddJGdmSIEZxn0JwSw+Fw5mlOiM9RABRQGphdLDSHIL/29ywH7GUusQ==
