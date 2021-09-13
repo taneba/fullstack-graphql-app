@@ -2,7 +2,12 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import { useMutation } from 'urql'
 
 import { Button } from '~/components/Button'
-import { Modal } from '~/components/Modal'
+import {
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+} from '~/components/feedback/Dialog'
 import { TextArea } from '~/components/TextArea'
 import { TextField } from '~/components/TextField'
 import { gql } from '~/generated'
@@ -18,7 +23,7 @@ const SaveTodo = gql(/* GraphQL */ `
   }
 `)
 
-export function CreateTodoModal({ onClose }: { onClose: () => void }) {
+export function CreateTodoModal() {
   const [, executeMutation] = useMutation(SaveTodo)
   const {
     register,
@@ -32,7 +37,9 @@ export function CreateTodoModal({ onClose }: { onClose: () => void }) {
   }
 
   return (
-    <Modal onClose={onClose} title="New Todo">
+    <DialogContent>
+      <DialogTitle>New Todo</DialogTitle>
+      <DialogDescription>add a new todo</DialogDescription>
       <form onSubmit={handleSubmit(onSubmit)} role="form">
         <label htmlFor={register('title').name}>title</label>
         <TextField
@@ -42,10 +49,12 @@ export function CreateTodoModal({ onClose }: { onClose: () => void }) {
         {errors.title && <span tw="text-red-500">title is required</span>}
         <label htmlFor={register('content').name}>content</label>
         <TextArea {...register('content')} />
-        <Button primary type="submit">
-          Submit
-        </Button>
+        <DialogClose asChild>
+          <Button primary type="submit">
+            Submit
+          </Button>
+        </DialogClose>
       </form>
-    </Modal>
+    </DialogContent>
   )
 }
