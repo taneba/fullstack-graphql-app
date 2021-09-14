@@ -1,7 +1,7 @@
-import { useState } from 'react'
 import { useQuery } from 'urql'
 
 import { Button } from '~/components/Button'
+import { Dialog, DialogTrigger } from '~/components/feedback/Dialog'
 import { gql } from '~/generated'
 
 import { CreateTodoModal } from './CreateTodoModal'
@@ -22,14 +22,17 @@ const GetTodos = gql(/* GraphQL */ `
 
 function Todos() {
   const [res] = useQuery({ query: GetTodos })
-  const [isModalOpen, setModalOpen] = useState(false)
   return (
     <div>
       <h1 tw="text-black font-bold text-3xl">Todos</h1>
-
-      <Button primary onClick={() => setModalOpen(true)} tw="mt-4">
-        New Todo
-      </Button>
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button primary tw="mt-4">
+            New Todo
+          </Button>
+        </DialogTrigger>
+        <CreateTodoModal />
+      </Dialog>
       <div tw="mt-4">
         {res.data && res.data.todosByCurrentUser.length < 1 && <p>No Items</p>}
         {res.data?.todosByCurrentUser
@@ -38,7 +41,6 @@ function Todos() {
             <TodoItem key={todo.id} todo={todo} />
           ))}
       </div>
-      {isModalOpen && <CreateTodoModal onClose={() => setModalOpen(false)} />}
     </div>
   )
 }

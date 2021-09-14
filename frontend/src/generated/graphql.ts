@@ -15,9 +15,14 @@ export type Scalars = {
 
 export type Mutation = {
   __typename?: 'Mutation';
+  completeTodo?: Maybe<Todo>;
   saveTodo?: Maybe<Todo>;
   saveUser?: Maybe<User>;
-  completeTodo?: Maybe<Todo>;
+};
+
+
+export type MutationCompleteTodoArgs = {
+  id: Scalars['ID'];
 };
 
 
@@ -30,17 +35,12 @@ export type MutationSaveUserArgs = {
   user: UserInput;
 };
 
-
-export type MutationCompleteTodoArgs = {
-  id: Scalars['ID'];
-};
-
 export type Query = {
   __typename?: 'Query';
-  time: Scalars['Int'];
   allTodos: Array<Todo>;
-  todosByCurrentUser: Array<Todo>;
   allUsers: Array<User>;
+  time: Scalars['Int'];
+  todosByCurrentUser: Array<Todo>;
 };
 
 export enum Role {
@@ -50,24 +50,24 @@ export enum Role {
 
 export type Todo = {
   __typename?: 'Todo';
-  id: Scalars['ID'];
-  createdAt?: Maybe<Scalars['String']>;
-  updatedAt?: Maybe<Scalars['String']>;
-  title: Scalars['String'];
-  content?: Maybe<Scalars['String']>;
   author?: Maybe<User>;
   completed: Scalars['Boolean'];
+  content?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  title: Scalars['String'];
+  updatedAt?: Maybe<Scalars['String']>;
 };
 
 export type TodoInput = {
-  title: Scalars['String'];
   content?: Maybe<Scalars['String']>;
+  title: Scalars['String'];
 };
 
 export type User = {
   __typename?: 'User';
-  id: Scalars['ID'];
   email: Scalars['String'];
+  id: Scalars['ID'];
   name?: Maybe<Scalars['String']>;
 };
 
