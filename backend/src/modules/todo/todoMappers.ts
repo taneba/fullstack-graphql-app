@@ -11,4 +11,8 @@ export class TodoMapper {
       updatedAt: todo.updatedAt?.toString(),
     }
   }
+
+  public static toGqlCollection(todos: Todo[]): gql.Todo[] {
+    return todos.map(this.toGql)
+  }
 }

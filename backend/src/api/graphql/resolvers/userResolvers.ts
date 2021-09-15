@@ -5,7 +5,7 @@ import * as gql from '../generated/graphql'
 export const userQueryResolvers: gql.QueryResolvers<GraphqlServerContext> = {
   allUsers: async (_, params, ctx) => {
     const result = await ctx.useCase.user.getAll()
-    return result.map(UserMapper.toGql)
+    return UserMapper.toGqlCollection(result)
   },
 }
 

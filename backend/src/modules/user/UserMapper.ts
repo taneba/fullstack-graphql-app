@@ -9,4 +9,8 @@ export class UserMapper {
       id: user.id.toString(),
     }
   }
+
+  public static toGqlCollection(user: User[]): gql.User[] {
+    return user.map(this.toGql)
+  }
 }
