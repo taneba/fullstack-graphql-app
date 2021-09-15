@@ -36,18 +36,6 @@ export class UserUseCase extends UseCase {
     return this.userRepository.findAll()
   }
 
-  public async findByUid(): Promise<User> {
-    const uid = this.ctx.auth0?.sub
-    if (!uid) {
-      throw new Error('not authenticated')
-    }
-    const result = await this.userRepository.findByUid(uid)
-    if (!result) {
-      throw new Error('user not found')
-    }
-    return result
-  }
-
   public async findById(id: User['id']): Promise<User> {
     const result = await this.userRepository.findById(id)
     if (!result) {
