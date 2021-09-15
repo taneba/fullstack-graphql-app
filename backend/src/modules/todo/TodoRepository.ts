@@ -1,4 +1,4 @@
-import { Prisma,PrismaClient, Todo } from '@prisma/client'
+import { Prisma, PrismaClient, Todo } from '@prisma/client'
 
 import { ITodoRepository } from './ITodoRepository'
 
@@ -38,11 +38,11 @@ export class TodoRepository implements ITodoRepository {
     })
   }
 
-  async getAll() {
+  async findAll() {
     return await this.prisma.todo.findMany()
   }
 
-  async getByUser(id: number) {
+  async findByUserId(id: number) {
     return await this.prisma.todo.findMany({
       where: {
         authorId: id,

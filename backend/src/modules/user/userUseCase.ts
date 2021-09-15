@@ -32,8 +32,8 @@ export class UserUseCase extends UseCase {
     })
   }
 
-  public async getAll(): Promise<User[]> {
-    return this.userRepository.getAll()
+  public async findAll(): Promise<User[]> {
+    return this.userRepository.findAll()
   }
 
   public async findByUid(): Promise<User> {

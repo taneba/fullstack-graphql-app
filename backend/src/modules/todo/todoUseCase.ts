@@ -28,22 +28,22 @@ export class TodoUseCase extends UseCase {
     )
   }
 
-  public async getAll(): Promise<Todo[]> {
-    return this.todoRepository.getAll()
+  public async findAll(): Promise<Todo[]> {
+    return this.todoRepository.findAll()
   }
 
-  public async getByCurrentUser(): Promise<Todo[]> {
+  public async findByCurrentUser(): Promise<Todo[]> {
     const currentUserId = this.ctx.currentUser?.id
     if (!currentUserId) {
       throw new Error('User not found')
     }
-    return this.todoRepository.getByUser(currentUserId)
+    return this.todoRepository.findByUserId(currentUserId)
   }
 
-  public async findOne(id: number): Promise<Todo> {
+  public async findById(id: number): Promise<Todo> {
     const result = await this.todoRepository.findById(id)
     if (!result) {
-      throw new Error('todo not found')
+      throw new Error('Todo not found')
     }
     return result
   }

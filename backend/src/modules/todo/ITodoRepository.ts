@@ -1,4 +1,4 @@
-import { Prisma,Todo } from '@prisma/client'
+import { Prisma, Todo } from '@prisma/client'
 
 export interface ITodoRepository {
   save(
@@ -6,8 +6,8 @@ export interface ITodoRepository {
     authorId: number
   ): Promise<Todo>
   findById(id: number): Promise<Todo | null>
-  getAll(): Promise<Todo[]>
-  getByUser(id: number): Promise<Todo[]>
+  findAll(): Promise<Todo[]>
+  findByUserId(id: number): Promise<Todo[]>
   edit(todo: Prisma.TodoUpdateInput, id: Todo['id']): Promise<Todo>
   delete(id: number): Promise<Todo>
 }

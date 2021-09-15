@@ -5,11 +5,11 @@ import * as gql from '../generated/graphql'
 
 export const todoQueryResolvers: gql.QueryResolvers<GraphqlServerContext> = {
   allTodos: async (_, params, ctx) => {
-    const result = await ctx.useCase.todo.getAll()
+    const result = await ctx.useCase.todo.findAll()
     return TodoMapper.toGqlCollection(result)
   },
   todosByCurrentUser: async (_, params, ctx) => {
-    const result = await ctx.useCase.todo.getByCurrentUser()
+    const result = await ctx.useCase.todo.findByCurrentUser()
     return TodoMapper.toGqlCollection(result)
   },
 }
