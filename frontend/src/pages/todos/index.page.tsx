@@ -1,7 +1,7 @@
+import React from 'react'
 import { useQuery } from 'urql'
 
-import { Button } from '~/components/Button'
-import { Dialog, DialogTrigger } from '~/components/feedback/Dialog'
+import { Button, Dialog, DialogTrigger, Portal, Spinner } from '~/components'
 import { gql } from '~/generated'
 
 import { CreateTodoModal } from './CreateTodoModal'
@@ -34,6 +34,11 @@ function Todos() {
         <CreateTodoModal />
       </Dialog>
       <div tw="mt-4">
+        {res.fetching && (
+          <Portal>
+            <Spinner />
+          </Portal>
+        )}
         {res.data && res.data.todosByCurrentUser.length < 1 && <p>No Items</p>}
         {res.data?.todosByCurrentUser
           .filter(({ completed }) => !completed)

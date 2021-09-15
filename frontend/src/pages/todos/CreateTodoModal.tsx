@@ -1,15 +1,16 @@
+import React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { useMutation } from 'urql'
 
-import { Button } from '~/components/Button'
 import {
+  Button,
   DialogClose,
   DialogContent,
   DialogDescription,
   DialogTitle,
-} from '~/components/feedback/Dialog'
-import { TextArea } from '~/components/TextArea'
-import { TextField } from '~/components/TextField'
+  TextArea,
+  TextField,
+} from '~/components'
 import { gql } from '~/generated'
 import { TodoInput } from '~/generated/graphql'
 import { removeEmptyFields } from '~/utils/form'

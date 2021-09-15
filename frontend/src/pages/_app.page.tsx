@@ -3,8 +3,7 @@ import 'twin.macro'
 import { Auth0Provider } from '@auth0/auth0-react'
 import { AppProps } from 'next/app'
 
-import { Navbar } from '~/components/Navbar'
-import { UrqlClientProvider } from '~/components/util/UrqlClientProvider'
+import { Navbar, UrqlClientProvider } from '~/components/'
 import { GlobalStyles } from '~/style/GlobalStyles'
 
 function MyApp({ Component, pageProps }: AppProps) {
