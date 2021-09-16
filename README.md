@@ -26,6 +26,7 @@ Frontend
 - urql
 - tailwindcss
 - twin.macro
+- radix ui
 
 Authentication
 
@@ -39,31 +40,29 @@ Testing
 
 # Getting Started
 
-## Backend
+## Setting up auth0
 
-### install deps
+As this project uses auth0 for authentication, you should first setup auth0 to make everything work. If you don't have auth0 account, then sign up and create account.
 
-```
-yarn install
-```
+You need to create API, Application (Single Page Application) in the auth0 console. In Application, go to Application URIs section in the middle of the settings page and specify `http://localhost:3000` to Allowed Callback URLs, Allowed Logout URLs, Allowed Web Origins, Allowed Origins (CORS).
 
-### set up auth0
+Once you have set up API and Application, collect credentials below which will be used in your application:
 
-As this project uses auth0 for authentication, you should setup auth0 to make whole app work.
+* Client Id: Your Auth0 application's Client ID. can be found on the Application setting page.
+* Domain: Your Auth0 application's Domain. can be found on the Application setting page.
+* Audience: API Identifier for an access token. can be found on the API setting page.
 
-You should create API, Application (Single Page Application) in the auth0 console.
+### Configure environment variables
 
-### .env file
-
-add .env and .env.localhost file to `backend/`
+In the backend root directory, Specify .env and .env.localhost file with the following environment variables:
 
 .env
 
 ```
 DATABASE_URL="mysql://fga:fga@db:3306/fga"
-AUTH0_CLIENT_ID=<client id>
-AUTH0_DOMAIN=<domain>
-AUTH0_AUDIENCE=<audience>
+AUTH0_CLIENT_ID=<Client Id>
+AUTH0_DOMAIN=<Domain>
+AUTH0_AUDIENCE=<Audience>
 GRAPHQL_END_POINT=http://localhost:5000/graphql
 ```
 
@@ -71,10 +70,27 @@ GRAPHQL_END_POINT=http://localhost:5000/graphql
 
 ```
 DATABASE_URL="mysql://fga:fga@localhost:3306/fga"
-AUTH0_CLIENT_ID=<client id>
-AUTH0_DOMAIN=<domain>
-AUTH0_AUDIENCE=<audience>
+AUTH0_CLIENT_ID=<Client Id>
+AUTH0_DOMAIN=<Domain>
+AUTH0_AUDIENCE=<Audience>
 GRAPHQL_END_POINT=http://localhost:5000/graphql
+```
+
+And in the frontend root directory, Specify .env.local file with the following environment variables:
+
+```
+NEXT_PUBLIC_AUTH0_CLIENT_ID=<Client Id>
+NEXT_PUBLIC_AUTH0_DOMAIN=<Domain>
+NEXT_PUBLIC_AUTH0_AUDIENCE=<Audience>
+NEXT_PUBLIC_GRAPHQL_END_POINT=http://localhost:5000/graphql
+```
+
+## Backend
+
+### install deps
+
+```
+yarn install
 ```
 
 ### start server
