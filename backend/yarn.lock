@@ -3908,6 +3908,11 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
 
+neverthrow@^4.2.2:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/neverthrow/-/neverthrow-4.2.2.tgz#cf333a8ab37398bc0c7a0349b9ea3c67de0ff880"
+  integrity sha512-zmJ1Oo368VlI7Fp2p+uD3ekkEEYzHr4ZlTE/4vfjA+TPtstftvJ3meIS2EReKy604wVXb+N+8XtwN98Mc1jJsA==
+
 no-case@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/no-case/-/no-case-3.0.4.tgz#d361fd5c9800f558551a8369fc0dcd4662b6124d"

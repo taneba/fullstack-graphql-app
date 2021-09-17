@@ -1,5 +1,6 @@
 import { Todo, User } from '@prisma/client'
 import got from 'got'
+import { err, ok, Result } from 'neverthrow'
 
 import { UserInput } from '~/api/graphql/generated/graphql'
 
@@ -44,11 +45,11 @@ export class UserUseCase extends UseCase {
     return result
   }
 
-  public async findByTodoId(id: Todo['id']): Promise<User> {
+  public async findByTodoId(id: Todo['id']): Promise<Result<User, Error>> {
     const result = await this.userRepository.findByTodoId(id)
     if (!result) {
-      throw new Error('user not found')
+      return err(new Error('user not found'))
     }
-    return result
+    return ok(result)
   }
 }

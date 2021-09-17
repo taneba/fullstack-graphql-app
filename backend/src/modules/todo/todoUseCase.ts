@@ -1,4 +1,5 @@
 import { Todo } from '@prisma/client'
+import { err, Ok, ok, Result } from 'neverthrow'
 
 import { TodoInput } from '~/api/graphql/generated/graphql'
 
@@ -13,48 +14,50 @@ export class TodoUseCase extends UseCase {
     super(ctx)
   }
 
-  public async save(todo: TodoInput): Promise<Todo> {
+  public async save(todo: TodoInput): Promise<Result<Todo, Error>> {
     const currentUserId = this.ctx.currentUser?.id
     if (!currentUserId) {
-      throw new Error('User not found')
+      return err(new Error('User not found'))
     }
-
-    return this.todoRepository.save(
+    const result = await this.todoRepository.save(
       {
         title: todo.title,
         content: todo.content,
       },
       currentUserId
     )
+    return ok(result)
   }
 
-  public async findAll(): Promise<Todo[]> {
-    return this.todoRepository.findAll()
+  public async findAll(): Promise<Ok<Todo[], Error>> {
+    const result = await this.todoRepository.findAll()
+    return ok(result)
   }
 
-  public async findByCurrentUser(): Promise<Todo[]> {
+  public async findByCurrentUser(): Promise<Result<Todo[], Error>> {
     const currentUserId = this.ctx.currentUser?.id
     if (!currentUserId) {
-      throw new Error('User not found')
+      return err(new Error('User not found'))
     }
-    return this.todoRepository.findByUserId(currentUserId)
+    const result = await this.todoRepository.findByUserId(currentUserId)
+    return ok(result)
   }
 
-  public async findById(id: number): Promise<Todo> {
+  public async findById(id: number): Promise<Result<Todo, Error>> {
     const result = await this.todoRepository.findById(id)
     if (!result) {
-      throw new Error('Todo not found')
+      return err(new Error('Todo not found'))
     }
-    return result
+    return ok(result)
   }
 
-  public async markAsCompleted(id: number): Promise<Todo> {
+  public async markAsCompleted(id: number): Promise<Ok<Todo, Error>> {
     const result = await this.todoRepository.edit(
       {
         completed: true,
       },
       id
     )
-    return result
+    return ok(result)
   }
 }

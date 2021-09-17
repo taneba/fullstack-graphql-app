@@ -5,6 +5,6 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "graphql-config.load.filePath": "./frontend/graphql.config.js",
-  "cSpell.words": ["fastify"],
+  "cSpell.words": ["fastify", "neverthrow"],
   "eslint.workingDirectories": ["./frontend", "./backend"]
 }

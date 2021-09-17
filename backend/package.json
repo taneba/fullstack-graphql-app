@@ -34,6 +34,7 @@
     "graphql-helix": "1.7.0",
     "jsonwebtoken": "8.5.1",
     "jwks-rsa": "2.0.4",
+    "neverthrow": "^4.2.2",
     "nodemon": "2.0.12",
     "prisma": "3.0.2",
     "ts-node": "10.2.1",
