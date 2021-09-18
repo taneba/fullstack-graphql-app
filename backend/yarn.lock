@@ -492,12 +492,12 @@
     jsonwebtoken "^8.5.1"
     jwks-rsa "^2.0.1"
 
-"@envelop/core@1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@envelop/core/-/core-1.0.4.tgz#c5099fce98194598aecf7d81a87c1e3324e10ffa"
-  integrity sha512-+P2EZfQgyRuWqR8ErzHCO2kXj3wrHQJZC8IFxfiJh1H6PGJs3Fgary14E93gCNW7RLaXApeACRGhlrC/njk73Q==
+"@envelop/core@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@envelop/core/-/core-1.1.0.tgz#051d7ec589c8b3dac669587eadc5bd4e392a9945"
+  integrity sha512-3IPoF8pdL5MoXOmI43AK5w9T96YBm9INs5QlrudUqZnWDMwWKwgGmYMXzNjVEpyMEv7qlfYUTTEAJqZGrTgOrQ==
   dependencies:
-    "@envelop/types" "1.0.2"
+    "@envelop/types" "1.1.0"
 
 "@envelop/depth-limit@1.0.0":
   version "1.0.0"
@@ -518,10 +518,10 @@
   dependencies:
     graphql-rate-limit "3.1.0"
 
-"@envelop/types@1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@envelop/types/-/types-1.0.2.tgz#c0eb58929209aa3c6563921a9fc58f63448c02fc"
-  integrity sha512-uL1Nn0aiDN72nEPvhJixH0DoCGxkPPW6/HZcl9lwnaVld1TDQhs72TVuX3vTsZQIvk2s62T5XsvrcdIbMkKfJw==
+"@envelop/types@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@envelop/types/-/types-1.1.0.tgz#14578b09de7b57cc6bec24a4d0442cebcf426e93"
+  integrity sha512-NswpqlmHmZSfPt1Uvkjq+21yD3sVVi6jCOE/JqN+ZFEHnVawCDT/nl1b1hq3QDkuhDjd9sRznE/EMuUhzhtvmA==
 
 "@eslint/eslintrc@^0.4.3":
   version "0.4.3"
