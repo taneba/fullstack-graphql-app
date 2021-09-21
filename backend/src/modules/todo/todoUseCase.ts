@@ -1,6 +1,7 @@
 import { Todo } from '@prisma/client'
 
 import { TodoInput } from '~/api/graphql/generated/graphql'
+import { Result, returnErr, returnOk } from '~/common/result'
 
 import { UseCase, UseCaseContext } from '../../common/useCase'
 import { ITodoRepository } from './ITodoRepository'
@@ -32,12 +33,19 @@ export class TodoUseCase extends UseCase {
     return this.todoRepository.findAll()
   }
 
-  public async findByCurrentUser(): Promise<Todo[]> {
+  public async findByCurrentUser(): Promise<
+    Result<Todo[], 'RESOURCE_NOT_FOUND' | 'DATABASE'>
+  > {
     const currentUserId = this.ctx.currentUser?.id
     if (!currentUserId) {
-      throw new Error('User not found')
+      return returnErr('RESOURCE_NOT_FOUND')
     }
-    return this.todoRepository.findByUserId(currentUserId)
+    try {
+      const result = await this.todoRepository.findByUserId(currentUserId)
+      return returnOk(result)
+    } catch (error) {
+      return returnErr('DATABASE')
+    }
   }
 
   public async findById(id: number): Promise<Todo> {

@@ -1,3 +1,6 @@
+import { EnvelopError } from '@envelop/core'
+import { match, select } from 'ts-pattern'
+
 import { GraphqlServerContext } from '../../../context'
 import { TodoMapper } from '../../../modules/todo/todoMappers'
 import { UserMapper } from '../../../modules/user/UserMapper'
@@ -10,7 +13,19 @@ export const todoQueryResolvers: gql.QueryResolvers<GraphqlServerContext> = {
   },
   todosByCurrentUser: async (_, params, ctx) => {
     const result = await ctx.useCase.todo.findByCurrentUser()
-    return TodoMapper.toGqlCollection(result)
+    // Just an example for ts-pattern
+    return match(result)
+      .with({ type: 'error', error: 'DATABASE' }, (res) => {
+        throw new EnvelopError('database error')
+      })
+      .with({ type: 'error', error: 'RESOURCE_NOT_FOUND' }, (res) => {
+        throw new EnvelopError('resource not founr error')
+      })
+      .with({ type: 'ok' }, (res) => {
+        const result = res.data
+        return TodoMapper.toGqlCollection(result)
+      })
+      .exhaustive()
   },
 }
 
