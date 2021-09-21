@@ -8,9 +8,6 @@ import * as gql from '../generated/graphql'
 export const todoQueryResolvers: gql.QueryResolvers<GraphqlServerContext> = {
   allTodos: async (_, params, ctx) => {
     const result = await ctx.useCase.todo.findAll()
-    if (result.isErr()) {
-      throw new EnvelopError(result.error.message)
-    }
     return TodoMapper.toGqlCollection(result.value)
   },
   todosByCurrentUser: async (_, params, ctx) => {

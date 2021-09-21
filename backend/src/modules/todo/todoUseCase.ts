@@ -29,7 +29,7 @@ export class TodoUseCase extends UseCase {
     return ok(result)
   }
 
-  public async findAll(): Promise<Ok<Todo[], Error>> {
+  public async findAll(): Promise<Ok<Todo[], never>> {
     const result = await this.todoRepository.findAll()
     return ok(result)
   }
@@ -51,7 +51,7 @@ export class TodoUseCase extends UseCase {
     return ok(result)
   }
 
-  public async markAsCompleted(id: number): Promise<Ok<Todo, Error>> {
+  public async markAsCompleted(id: number): Promise<Ok<Todo, never>> {
     const result = await this.todoRepository.edit(
       {
         completed: true,
