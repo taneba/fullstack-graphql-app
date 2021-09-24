@@ -484,10 +484,10 @@
     ts-node "^9"
     tslib "^2"
 
-"@envelop/auth0@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@envelop/auth0/-/auth0-1.0.0.tgz#2f4d3a38c07faa345bdfe4d41ab72525458214bc"
-  integrity sha512-SgwuHZaNNz+u+SS20NUuasjFVJQKIkFSj7DPdYV2gTCgcfgNAV63wcgtO8C/rImmOhQjeH9/yTe6JVtgnTpYWA==
+"@envelop/auth0@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@envelop/auth0/-/auth0-1.0.1.tgz#b6881c3a26b3187eb31428acacfbf85ea83a6a94"
+  integrity sha512-+RRI7jZEAoiyfEroDJ/qx2dBdvj52o3kntlydN7Xbg1y3oCsHtH+B3/Y+/nBt4+7F575VEwPqKMPOYM+Xgbm4A==
   dependencies:
     jsonwebtoken "^8.5.1"
     jwks-rsa "^2.0.1"
@@ -2938,7 +2938,7 @@ graphql-depth-limit@^1.1.0:
   dependencies:
     arrify "^1.0.1"
 
-graphql-helix@^1.8.0:
+graphql-helix@1.8.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/graphql-helix/-/graphql-helix-1.8.0.tgz#e3dc18348acb8e792243f808130606c28214c4bd"
   integrity sha512-tg1tdR2PgCOn2Z/NDSnA9rUR16bLrLtE4el/NwboQ4wWaWM/Eoi3ewV0gtyzKgg61+SjywEac5mDvGgK0AfsDg==
