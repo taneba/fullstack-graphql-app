@@ -5,8 +5,8 @@ An opinionated fullstack GraphQL Boilerplate using modern tech stack.
 ## Concepts
 
 - 🛡type-safe
-  - graphql-code-generator ()
-  - prisma (type-safe orm)
+  - graphql-code-generator
+  - prisma
   - ts-pattern (for type-safe error handling)
 - 🛠customizable
   - envelop (plugin system for GraphQL)
