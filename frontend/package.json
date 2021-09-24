@@ -15,7 +15,7 @@
     "bundle-analyzer": "ANALYZE=true yarn run build"
   },
   "dependencies": {
-    "@auth0/auth0-react": "1.7.0",
+    "@auth0/auth0-react": "1.8.0",
     "@heroicons/react": "1.0.4",
     "@radix-ui/react-dialog": "0.1.0",
     "@radix-ui/react-icons": "1.0.3",
