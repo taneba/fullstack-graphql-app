@@ -42,8 +42,8 @@
   "devDependencies": {
     "@graphql-codegen/cli": "2.2.0",
     "@graphql-codegen/typescript-resolvers": "2.2.1",
-    "@typescript-eslint/eslint-plugin": "4.31.1",
-    "@typescript-eslint/parser": "4.31.1",
+    "@typescript-eslint/eslint-plugin": "4.31.2",
+    "@typescript-eslint/parser": "4.31.2",
     "chalk": "4.1.2",
     "dotenv-cli": "4.0.0",
     "eslint": "7.32.0",
