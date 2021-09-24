@@ -2,14 +2,14 @@ import fastify from 'fastify'
 import fastifyCompress from 'fastify-compress'
 import fastifyCors from 'fastify-cors'
 import fastfyHelment from 'fastify-helmet'
-import { renderPlaygroundPage } from 'graphql-playground-html'
-
-import { getEnveloped } from './getEnveloped'
 import {
   getGraphQLParameters,
   processRequest,
   shouldRenderGraphiQL,
-} from './lib/graphql-helix'
+} from 'graphql-helix'
+import { renderPlaygroundPage } from 'graphql-playground-html'
+
+import { getEnveloped } from './getEnveloped'
 
 const app = fastify()
 
