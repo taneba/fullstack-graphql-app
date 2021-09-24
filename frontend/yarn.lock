@@ -2418,10 +2418,10 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@stitches/react@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@stitches/react/-/react-1.2.0.tgz#cdb69256d76bcb4753417d59bc42da21fd603ba1"
-  integrity sha512-GuMh610X3oJB2pdywARg1jccjAEvrDbq4iwy1SernR/4o1FX5SOTJZIjC4CquagZQjL00KFV8Cwfq/12FS6aBg==
+"@stitches/react@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@stitches/react/-/react-1.2.5.tgz#2353343c220f0c59ba388a26fdd9ff7962cb6031"
+  integrity sha512-95Wwjp5cvoYQjg616OBiHZM1PnIF51pnFQIgSPxPzS/xXBrer9sNO1tfpVfLYfOifvuotse2IFNbypJ92BXzvg==
 
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
@@ -9116,10 +9116,10 @@ tty-browserify@0.0.1:
   resolved "https://registry.yarnpkg.com/tty-browserify/-/tty-browserify-0.0.1.tgz#3f05251ee17904dfd0677546670db9651682b811"
   integrity sha512-C3TaO7K81YvjCgQH9Q1S3R3P3BtN3RIM8n+OvX4il1K1zgE8ZhI0op7kClgkxtutIE8hQrcrHBXvIheqKUUCxw==
 
-twin.macro@2.7.0:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/twin.macro/-/twin.macro-2.7.0.tgz#2107e79339e24041de1f72e0f045ae321041f007"
-  integrity sha512-7RictvVsITP3Odm7zd5EcZ3i8+deBuDCZBAwnm/H5MSixaKESjvEFQaHA/T8nkHb6vKcp/2f/6+txRzXLj//gg==
+twin.macro@^2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/twin.macro/-/twin.macro-2.8.0.tgz#eabd894cb00cc9251856ba093a057199be922bf1"
+  integrity sha512-iORyfVXFlWcVebDF3i0iQS9Ek+9ybsiotTjDBPFg1iG4gWJe4sbudd8iC0gysSep/OWVBcKZ6dKzo3kmVKMqXQ==
   dependencies:
     "@babel/parser" "^7.12.5"
     "@babel/template" "^7.14.5"
