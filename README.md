@@ -1,6 +1,18 @@
 # fullstack-graphql-app
 
-Fullstack GraphQL App Boilerplate using modern tech stack.
+An opinionated fullstack GraphQL Boilerplate using modern tech stack.
+
+## Concepts
+
+- 🛡type-safe
+  - graphql-code-generator ()
+  - prisma (type-safe orm)
+  - ts-pattern (for type-safe error handling)
+- 🛠customizable
+  - envelop (plugin system for GraphQL)
+  - urql (highty customizable GraphQL Client)
+- 📈simple but scalable
+  - a bit flavor of [clean architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 
 ## Tech Stack
 
