@@ -2,7 +2,7 @@ import { Todo } from '@prisma/client'
 
 import { TodoInput } from '~/api/graphql/generated/graphql'
 
-import { Result, returnErr, returnOk } from '../../common/result'
+import { err, ok, Result } from '../../common/result'
 import { UseCase, UseCaseContext } from '../../common/useCase'
 import { ITodoRepository } from './ITodoRepository'
 
@@ -38,13 +38,13 @@ export class TodoUseCase extends UseCase {
   > {
     const currentUserId = this.ctx.currentUser?.id
     if (!currentUserId) {
-      return returnErr('RESOURCE_NOT_FOUND')
+      return err('RESOURCE_NOT_FOUND')
     }
     try {
       const result = await this.todoRepository.findByUserId(currentUserId)
-      return returnOk(result)
+      return ok(result)
     } catch (error) {
-      return returnErr('DATABASE')
+      return err('DATABASE')
     }
   }
 
