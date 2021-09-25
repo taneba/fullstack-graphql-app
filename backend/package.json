@@ -30,7 +30,7 @@
     "fastify-cors": "6.0.2",
     "fastify-helmet": "5.3.2",
     "got": "11.8.2",
-    "graphql": "15.5.3",
+    "graphql": "15.6.0",
     "graphql-helix": "1.8.0",
     "jsonwebtoken": "8.5.1",
     "jwks-rsa": "2.0.4",
