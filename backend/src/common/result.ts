@@ -1,10 +1,10 @@
 import { AppErrorType } from './error'
 
-type Ok<Data> = { type: 'ok'; data: Data }
+type Ok<T> = { type: 'ok'; data: T }
 
-type Err<Error> = { type: 'error'; error: Error }
+type Err<E> = { type: 'error'; error: E }
 
-export type Result<Data, Error extends AppErrorType> = Ok<Data> | Err<Error>
+export type Result<T, E extends AppErrorType> = Ok<T> | Err<E>
 
 export const returnOk = <D>(data: D): Ok<D> => ({
   type: 'ok',
