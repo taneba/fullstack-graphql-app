@@ -2,6 +2,7 @@ import { Todo, User } from '@prisma/client'
 import got from 'got'
 
 import { UserInput } from '~/api/graphql/generated/graphql'
+import { err, ok, Result } from '~/common/result'
 
 import { UseCase, UseCaseContext } from '../../common/useCase'
 import { IUserRepository } from './IUserRepository'
@@ -14,7 +15,9 @@ export class UserUseCase extends UseCase {
     super(ctx)
   }
 
-  public async save(user: UserInput): Promise<User> {
+  public async save(
+    user: UserInput
+  ): Promise<Result<User, 'AUTH0' | 'DATABASE'>> {
     const auth0UserInfo = await got<{ email: string }>(
       `https://${process.env.AUTH0_DOMAIN}/userinfo`,
       {
@@ -23,32 +26,59 @@ export class UserUseCase extends UseCase {
           'Content-type': 'application/json',
         },
       }
-    ).json<{ email: string }>()
+    )
+      .json<{ email: string }>()
+      .catch((e) => {
+        console.log(e)
+        return null
+      })
 
-    return this.userRepository.save({
-      email: auth0UserInfo.email,
-      name: user.name,
-      uid: this.ctx.auth0?.sub,
-    })
+    if (!auth0UserInfo) {
+      return err('AUTH0')
+    }
+
+    try {
+      const result = await this.userRepository.save({
+        email: auth0UserInfo.email,
+        name: user.name,
+        uid: this.ctx.auth0?.sub,
+      })
+      return ok(result)
+    } catch (error) {
+      return err('DATABASE')
+    }
   }
 
-  public async findAll(): Promise<User[]> {
-    return this.userRepository.findAll()
+  public async findAll(): Promise<Result<User[], 'DATABASE'>> {
+    try {
+      const result = await this.userRepository.findAll()
+      return ok(result)
+    } catch (error) {
+      return err('DATABASE')
+    }
   }
 
-  public async findById(id: User['id']): Promise<User> {
+  public async findById(
+    id: User['id']
+  ): Promise<Result<User, 'DATABASE' | 'RESOURCE_NOT_FOUND'>> {
     const result = await this.userRepository.findById(id)
     if (!result) {
-      throw new Error('user not found')
+      return err('RESOURCE_NOT_FOUND')
     }
-    return result
+    return ok(result)
   }
 
-  public async findByTodoId(id: Todo['id']): Promise<User> {
-    const result = await this.userRepository.findByTodoId(id)
-    if (!result) {
-      throw new Error('user not found')
+  public async findByTodoId(
+    id: Todo['id']
+  ): Promise<Result<User, 'DATABASE' | 'RESOURCE_NOT_FOUND'>> {
+    try {
+      const result = await this.userRepository.findByTodoId(id)
+      if (!result) {
+        return err('RESOURCE_NOT_FOUND')
+      }
+      return ok(result)
+    } catch (error) {
+      return err('DATABASE')
     }
-    return result
   }
 }
