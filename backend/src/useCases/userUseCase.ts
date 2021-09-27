@@ -4,8 +4,8 @@ import got from 'got'
 import { UserInput } from '~/api/graphql/generated/graphql'
 import { err, ok, Result } from '~/common/result'
 
-import { UseCase, UseCaseContext } from '../../common/useCase'
-import { IUserRepository } from './IUserRepository'
+import { UseCase, UseCaseContext } from '../common/useCase'
+import { IUserRepository } from '../modules/user/IUserRepository'
 
 export class UserUseCase extends UseCase {
   public constructor(

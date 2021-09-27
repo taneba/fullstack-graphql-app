@@ -5,9 +5,9 @@ const chalk = require('chalk')
 
 import { UseCaseContext } from './common/useCase'
 import { TodoRepository } from './modules/todo/TodoRepository'
-import { TodoUseCase } from './modules/todo/TodoUseCase'
 import { UserRepository } from './modules/user/UserRepository'
-import { UserUseCase } from './modules/user/UserUseCase'
+import { TodoUseCase } from './useCases/todoUseCase'
+import { UserUseCase } from './useCases/userUseCase'
 
 export const prisma = new PrismaClient({
   log: [
