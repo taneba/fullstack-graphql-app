@@ -32,7 +32,7 @@
     "typescript": "4.4.3",
     "urql": "2.0.5",
     "wonka": "4.0.15",
-    "zod": "3.8.2"
+    "zod": "3.9.1"
   },
   "devDependencies": {
     "@app/gql": "link:./src/generated/graphql.ts",
