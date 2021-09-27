@@ -49,23 +49,36 @@ export class UserUseCase extends UseCase {
     }
   }
 
-  public async findAll(): Promise<User[]> {
-    return this.userRepository.findAll()
+  public async findAll(): Promise<Result<User[], 'DATABASE'>> {
+    try {
+      const result = await this.userRepository.findAll()
+      return ok(result)
+    } catch (error) {
+      return err('DATABASE')
+    }
   }
 
-  public async findById(id: User['id']): Promise<User> {
+  public async findById(
+    id: User['id']
+  ): Promise<Result<User, 'DATABASE' | 'RESOURCE_NOT_FOUND'>> {
     const result = await this.userRepository.findById(id)
     if (!result) {
-      throw new Error('user not found')
+      return err('RESOURCE_NOT_FOUND')
     }
-    return result
+    return ok(result)
   }
 
-  public async findByTodoId(id: Todo['id']): Promise<User> {
-    const result = await this.userRepository.findByTodoId(id)
-    if (!result) {
-      throw new Error('user not found')
+  public async findByTodoId(
+    id: Todo['id']
+  ): Promise<Result<User, 'DATABASE' | 'RESOURCE_NOT_FOUND'>> {
+    try {
+      const result = await this.userRepository.findByTodoId(id)
+      if (!result) {
+        return err('RESOURCE_NOT_FOUND')
+      }
+      return ok(result)
+    } catch (error) {
+      return err('DATABASE')
     }
-    return result
   }
 }

@@ -14,23 +14,35 @@ export class TodoUseCase extends UseCase {
     super(ctx)
   }
 
-  public async save(todo: TodoInput): Promise<Todo> {
+  public async save(
+    todo: TodoInput
+  ): Promise<Result<Todo, 'DATABASE' | 'RESOURCE_NOT_FOUND'>> {
     const currentUserId = this.ctx.currentUser?.id
     if (!currentUserId) {
-      throw new Error('User not found')
+      return err('RESOURCE_NOT_FOUND')
     }
 
-    return this.todoRepository.save(
-      {
-        title: todo.title,
-        content: todo.content,
-      },
-      currentUserId
-    )
+    try {
+      const result = await this.todoRepository.save(
+        {
+          title: todo.title,
+          content: todo.content,
+        },
+        currentUserId
+      )
+      return ok(result)
+    } catch (error) {
+      return err('DATABASE')
+    }
   }
 
-  public async findAll(): Promise<Todo[]> {
-    return this.todoRepository.findAll()
+  public async findAll(): Promise<Result<Todo[], 'DATABASE'>> {
+    try {
+      const result = await this.todoRepository.findAll()
+      return ok(result)
+    } catch (error) {
+      return err('DATABASE')
+    }
   }
 
   public async findByCurrentUser(): Promise<
@@ -48,21 +60,31 @@ export class TodoUseCase extends UseCase {
     }
   }
 
-  public async findById(id: number): Promise<Todo> {
-    const result = await this.todoRepository.findById(id)
-    if (!result) {
-      throw new Error('Todo not found')
+  public async findById(
+    id: number
+  ): Promise<Result<Todo, 'RESOURCE_NOT_FOUND' | 'DATABASE'>> {
+    try {
+      const result = await this.todoRepository.findById(id)
+      if (!result) {
+        return err('RESOURCE_NOT_FOUND')
+      }
+      return ok(result)
+    } catch (error) {
+      return err('DATABASE')
     }
-    return result
   }
 
-  public async markAsCompleted(id: number): Promise<Todo> {
-    const result = await this.todoRepository.edit(
-      {
-        completed: true,
-      },
-      id
-    )
-    return result
+  public async markAsCompleted(id: number): Promise<Result<Todo, 'DATABASE'>> {
+    try {
+      const result = await this.todoRepository.edit(
+        {
+          completed: true,
+        },
+        id
+      )
+      return ok(result)
+    } catch (error) {
+      return err('DATABASE')
+    }
   }
 }
