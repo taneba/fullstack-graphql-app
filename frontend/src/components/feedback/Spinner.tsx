@@ -1,18 +1,14 @@
-import Loader, { LoaderProps } from 'react-loader-spinner'
+import { SpinnerCircularFixed, SpinnerCircularFixedProps } from 'spinners-react'
 
 import { Portal } from '..'
 
-interface Props extends Pick<LoaderProps, 'height' | 'visible'> {
+interface Props extends Pick<SpinnerCircularFixedProps, 'size'> {
   global?: boolean
 }
 
-export function Spinner({ global = false, height = 24 }: Props) {
+export function Spinner({ global = false, size = 40 }: Props) {
   const Inner = (
-    <Loader
-      type="TailSpin"
-      color="rgba(30, 58, 138)"
-      height={global ? 40 : height}
-    />
+    <SpinnerCircularFixed color="rgba(30, 58, 138)" size={global ? 40 : size} />
   )
   return global ? (
     <Portal>
