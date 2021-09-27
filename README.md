@@ -8,9 +8,11 @@ An opinionated fullstack GraphQL Boilerplate using modern tech stack.
   - graphql-code-generator
   - prisma
   - ts-pattern (for type-safe error handling)
+
 **🛠Customizable**
   - envelop (plugin system for GraphQL)
   - urql (highty customizable GraphQL Client)
+
 **📈Simple but scalable**
   - a bit flavor of [clean architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 
