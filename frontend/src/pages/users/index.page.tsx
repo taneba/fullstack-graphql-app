@@ -4,8 +4,8 @@ import { useQuery } from 'urql'
 import { DevNote } from '~/components/general/DevNote'
 import { gql } from '~/generated/'
 
-const GetUsers = gql(/* GraphQL */ `
-  query GetUsers {
+const GetAllUsers = gql(/* GraphQL */ `
+  query GetAllUsers {
     allUsers {
       id
       name
@@ -14,7 +14,7 @@ const GetUsers = gql(/* GraphQL */ `
 `)
 
 function Users() {
-  const [res] = useQuery({ query: GetUsers })
+  const [res] = useQuery({ query: GetAllUsers })
   return (
     <div tw="mt-4">
       <h1 tw="text-black font-bold text-3xl">Users</h1>
@@ -26,7 +26,7 @@ function Users() {
           GetUsers query doesn't include email field.
         </DevNote.P>
         <DevNote.Pre>
-          {`query GetUsers {
+          {`query GetAllUsers {
   allUsers {
     id
     name
@@ -42,7 +42,7 @@ So if it's wrong, curl request below unhappily works,
         <DevNote.Pre>{`curl -X POST \\
 -H "Content-Type: application/json" \\
 -H "Authorization: Bearer <Token> \\
--d '{"query":"query GetUsers {allUsers {id name email __typename }}","operationName":"GetUsers","variables":{}}' \\
+-d '{"query":"query GetAllUsers {allUsers {id name email __typename }}","operationName":"GetAllUsers","variables":{}}' \\
 http://localhost:5000/graphql
 
 {"data":{"allUsers":[{"id":"1","name":"John","email":"test@gmail.com","__typename":"User"},{"id":"2","name":"Paul","email":"test2@gmail.com","__typename":"User"}]}}
