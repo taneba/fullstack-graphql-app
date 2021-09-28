@@ -1,4 +1,3 @@
-import React from 'react'
 import { useQuery } from 'urql'
 
 import { Button, Dialog, DialogTrigger, Spinner } from '~/components'

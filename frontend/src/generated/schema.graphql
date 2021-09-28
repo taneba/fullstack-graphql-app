@@ -14,6 +14,7 @@ type Mutation {
 type Query {
   allTodos: [Todo!]! @auth(role: ADMIN)
   allUsers: [User!]! @auth
+  currentUser: User @auth
   time: Int!
   todo(id: ID!): Todo @auth
   todosByCurrentUser: [Todo!]! @auth

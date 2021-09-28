@@ -15,6 +15,7 @@ export const schema = buildSchema(/* GraphQL */ `
     todosByCurrentUser: [Todo!]! @auth
     todo(id: ID!): Todo @auth
     allUsers: [User!]! @auth
+    currentUser: User @auth
   }
 
   type Mutation {
@@ -40,7 +41,7 @@ export const schema = buildSchema(/* GraphQL */ `
 
   type User {
     id: ID!
-    email: String!
+    email: String! # private
     name: String
   }
 

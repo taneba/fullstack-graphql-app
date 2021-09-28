@@ -39,6 +39,7 @@ export type Query = {
   __typename?: 'Query';
   allTodos: Array<Todo>;
   allUsers: Array<User>;
+  currentUser?: Maybe<User>;
   time: Scalars['Int'];
   todo?: Maybe<Todo>;
   todosByCurrentUser: Array<Todo>;
@@ -193,6 +194,7 @@ export type MutationResolvers<ContextType = any, ParentType extends ResolversPar
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
   allTodos?: Resolver<Array<ResolversTypes['Todo']>, ParentType, ContextType>;
   allUsers?: Resolver<Array<ResolversTypes['User']>, ParentType, ContextType>;
+  currentUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>;
   time?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   todo?: Resolver<Maybe<ResolversTypes['Todo']>, ParentType, ContextType, RequireFields<QueryTodoArgs, 'id'>>;
   todosByCurrentUser?: Resolver<Array<ResolversTypes['Todo']>, ParentType, ContextType>;

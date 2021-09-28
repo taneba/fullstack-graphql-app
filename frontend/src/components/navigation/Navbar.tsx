@@ -1,4 +1,5 @@
 import { useAuth0 } from '@auth0/auth0-react'
+import { PersonIcon } from '@radix-ui/react-icons'
 import Link, { LinkProps } from 'next/link'
 import React from 'react'
 
@@ -6,7 +7,7 @@ export function Navbar() {
   const { isAuthenticated } = useAuth0()
   return (
     <nav tw="w-full border-b py-3 px-4 flex justify-between">
-      <ul tw="flex space-x-2">
+      <ul tw="flex space-x-4">
         <li>
           <NavItem href="/">Home</NavItem>
         </li>
@@ -21,7 +22,12 @@ export function Navbar() {
         </li>
       </ul>
       {isAuthenticated ? (
-        <NavItem href="/signout">Sign Out</NavItem>
+        <div tw="flex space-x-3">
+          <NavItem href="/profile">
+            <PersonIcon />
+          </NavItem>
+          <NavItem href="/signout">Sign Out</NavItem>
+        </div>
       ) : (
         <NavItem href="/signin">Sign In</NavItem>
       )}
@@ -38,7 +44,9 @@ function NavItem({
 }) {
   return (
     <Link href={href}>
-      <p tw="hover:text-gray-800 text-gray-500 cursor-pointer">{children}</p>
+      <p tw="hover:text-gray-800 text-gray-500 cursor-pointer flex items-center">
+        {children}
+      </p>
     </Link>
   )
 }
