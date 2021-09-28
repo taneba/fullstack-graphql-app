@@ -14,7 +14,10 @@ export function Navbar() {
           <NavItem href="/todos">Todos</NavItem>
         </li>
         <li>
-          <NavItem href="/users">Users</NavItem>
+          <NavItem href="/users">All Users</NavItem>
+        </li>
+        <li>
+          <NavItem href="/all-todos">All Todos</NavItem>
         </li>
       </ul>
       {isAuthenticated ? (

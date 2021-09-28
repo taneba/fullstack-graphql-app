@@ -11,9 +11,10 @@ export const schema = buildSchema(/* GraphQL */ `
   type Query {
     # health check
     time: Int!
-    allTodos: [Todo!]! @auth
+    allTodos: [Todo!]! @auth(role: ADMIN)
     todosByCurrentUser: [Todo!]! @auth
-    allUsers: [User!]! @auth(role: ADMIN)
+    todo(id: ID!): Todo @auth
+    allUsers: [User!]! @auth
   }
 
   type Mutation {
