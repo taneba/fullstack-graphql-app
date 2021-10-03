@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "ts-node-dev --respawn -r tsconfig-paths/register src/index.ts",
+    "dev": "nodemon 'src/index.ts' --exec 'ts-node -r tsconfig-paths/register'",
     "gql-gen": "graphql-codegen --config codegen.yml",
     "db:migration:generate": "dotenv -e .env.localhost prisma migrate dev --create-only",
     "db:migration:run": "dotenv -e .env.localhost prisma migrate dev",
@@ -32,6 +32,7 @@
     "got": "11.8.2",
     "graphql": "15.6.0",
     "graphql-helix": "1.8.0",
+    "graphql-tools": "^8.2.0",
     "jsonwebtoken": "8.5.1",
     "jwks-rsa": "2.0.4",
     "prisma": "3.1.1",
@@ -40,7 +41,6 @@
   },
   "devDependencies": {
     "@graphql-codegen/cli": "2.2.0",
-    "@graphql-codegen/typescript-resolvers": "2.2.1",
     "@typescript-eslint/eslint-plugin": "4.31.2",
     "@typescript-eslint/parser": "4.31.2",
     "chalk": "4.1.2",
@@ -49,7 +49,9 @@
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-simple-import-sort": "7.0.0",
     "graphql-playground-html": "1.6.29",
+    "nodemon": "^2.0.13",
     "prisma": "3.1.1",
+    "ts-node": "^10.2.1",
     "ts-node-dev": "^1.1.8",
     "tsconfig-paths": "^3.11.0"
   }

@@ -56,6 +56,7 @@ export class TodoUseCase extends UseCase {
       const result = await this.todoRepository.findByUserId(currentUserId)
       return ok(result)
     } catch (error) {
+      console.log(error)
       return err('DATABASE')
     }
   }

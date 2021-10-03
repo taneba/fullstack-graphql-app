@@ -49,6 +49,20 @@ export class UserUseCase extends UseCase {
     }
   }
 
+  public async findCurrentUser(): Promise<
+    Result<User, 'DATABASE' | 'RESOURCE_NOT_FOUND'>
+  > {
+    const currentUserId = this.ctx.currentUser?.id
+    if (!currentUserId) {
+      return err('RESOURCE_NOT_FOUND')
+    }
+    const result = await this.userRepository.findById(currentUserId)
+    if (!result) {
+      return err('RESOURCE_NOT_FOUND')
+    }
+    return ok(result)
+  }
+
   public async findAll(): Promise<Result<User[], 'DATABASE'>> {
     try {
       const result = await this.userRepository.findAll()
