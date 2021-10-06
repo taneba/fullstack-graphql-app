@@ -5,7 +5,7 @@ schema {
 
 directive @auth(role: Role! = USER) on FIELD_DEFINITION
 
-directive @isOwner(type: String) on FIELD_DEFINITION | MUTATION | QUERY
+directive @isOwner(ownerField: String) on FIELD_DEFINITION | MUTATION
 
 type Mutation {
   completeTodo(id: ID!): Todo @auth
@@ -29,9 +29,10 @@ enum Role {
 
 type Todo {
   author: User
+  authorId: String!
   completed: Boolean!
-  content: String @isOwner
-  createdAt: String
+  content: String @isOwner(ownerField: "authorId")
+  createdAt: String @isOwner(ownerField: "authorId")
   id: ID!
   title: String!
   updatedAt: String
@@ -43,7 +44,7 @@ input TodoInput {
 }
 
 type User {
-  email: String! @isOwner
+  email: String! @isOwner(ownerField: "id")
   id: ID!
   name: String
 }

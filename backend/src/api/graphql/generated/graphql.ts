@@ -58,6 +58,7 @@ export enum Role {
 export type Todo = {
   __typename?: 'Todo';
   author?: Maybe<User>;
+  authorId: Scalars['String'];
   completed: Scalars['Boolean'];
   content?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['String']>;
@@ -186,7 +187,7 @@ export type AuthDirectiveArgs = {
 export type AuthDirectiveResolver<Result, Parent, ContextType = any, Args = AuthDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
 
 export type IsOwnerDirectiveArgs = {
-  type?: Maybe<Scalars['String']>;
+  ownerField?: Maybe<Scalars['String']>;
 };
 
 export type IsOwnerDirectiveResolver<Result, Parent, ContextType = any, Args = IsOwnerDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
@@ -208,6 +209,7 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
 
 export type TodoResolvers<ContextType = any, ParentType extends ResolversParentTypes['Todo'] = ResolversParentTypes['Todo']> = {
   author?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>;
+  authorId?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   completed?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
   content?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   createdAt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;

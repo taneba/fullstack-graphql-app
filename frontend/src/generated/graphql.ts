@@ -58,6 +58,7 @@ export enum Role {
 export type Todo = {
   __typename?: 'Todo';
   author?: Maybe<User>;
+  authorId: Scalars['String'];
   completed: Scalars['Boolean'];
   content?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['String']>;

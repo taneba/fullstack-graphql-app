@@ -1,5 +1,6 @@
 import { EnvelopError, Plugin } from '@envelop/core'
 import { User } from '@prisma/client'
+import { StringValueNode } from 'graphql'
 
 import { Resolvers } from '~/api/graphql/generated/graphql'
 import { GraphqlServerContext } from '~/context'
@@ -46,6 +47,7 @@ export function useOwnerCheck(
     onExecute() {
       return {
         async onResolverCalled({ args, root, context, info }) {
+          // TODO: handle isQuery, Mutation
           const directiveNode = getDirective(info, 'isOwner')
           if (directiveNode) {
             const currentUser = (context as GraphqlServerContext)[
@@ -53,18 +55,25 @@ export function useOwnerCheck(
             ] as User
 
             const parentType = info.path.typename as TypeName // ex. User
-            const isQuery = parentType === 'Query'
-            const targetResourceId: string | null = isQuery ? args.id : root.id
+            const isMutation = parentType === 'Mutation'
+            const targetResourceId: string | null = isMutation
+              ? args.id
+              : root.id
             const currentUserId = currentUser.id
-            const isOwner =
-              parentType === 'User'
-                ? currentUserId === Number(targetResourceId)
-                : await isCurrentUserAlsoOwner({
-                    context,
-                    currentUserId,
-                    targetResourceId: Number(targetResourceId),
-                    typeName: parentType,
-                  })
+
+            // if parentType is not User, ownerField should be placed
+            const ownerFieldNode = directiveNode.arguments?.find(
+              (arg) => arg.name.value === 'ownerField'
+            )?.value as StringValueNode | undefined
+
+            const ownerFieldName = ownerFieldNode?.value || 'userId' // default to userId
+
+            if (!ownerFieldName) {
+              console.log('ownerField is not placed')
+              throw new EnvelopError('something went wrong')
+            }
+
+            const isOwner = currentUserId === root[ownerFieldName]
 
             if (!isOwner) {
               throw new EnvelopError(

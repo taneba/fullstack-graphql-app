@@ -18,6 +18,7 @@ import {
 import { makeExecutableSchema } from '@graphql-tools/schema'
 import { User } from '@prisma/client'
 import { EnumValueNode } from 'graphql'
+import { TokenExpiredError } from 'jsonwebtoken'
 import { match } from 'ts-pattern'
 
 import { Role } from './api/graphql/generated/graphql'
@@ -102,6 +103,15 @@ export const getEnveloped = envelop({
       preventUnauthenticatedAccess: false,
       extendContextField: 'auth0',
       tokenType: 'Bearer',
+      onError: (e) => {
+        if (e instanceof TokenExpiredError) {
+          throw new EnvelopError('jwt expired', {
+            code: 'TOKEN_EXPIRED',
+          })
+        } else {
+          throw e
+        }
+      },
     }),
     useGenericAuth({
       resolveUserFn: resolveUserFn,
