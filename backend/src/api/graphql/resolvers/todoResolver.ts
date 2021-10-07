@@ -23,6 +23,13 @@ export const todoQueryResolvers: gql.QueryResolvers<GraphqlServerContext> = {
       .with(whenIsOk, ({ value }) => TodoMapper.toGqlCollection(value))
       .exhaustive()
   },
+  todo: async (_, params, ctx) => {
+    const result = await ctx.useCase.todo.findById(Number(params.id))
+    return match(result)
+      .with(whenIsErr, handleAppError)
+      .with(whenIsOk, ({ value }) => TodoMapper.toGql(value))
+      .exhaustive()
+  },
 }
 
 export const todoResolvers: gql.TodoResolvers<GraphqlServerContext> = {

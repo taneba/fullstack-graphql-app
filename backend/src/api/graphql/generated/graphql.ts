@@ -15,9 +15,14 @@ export type Scalars = {
 
 export type Mutation = {
   __typename?: 'Mutation';
+  completeTodo?: Maybe<Todo>;
   saveTodo?: Maybe<Todo>;
   saveUser?: Maybe<User>;
-  completeTodo?: Maybe<Todo>;
+};
+
+
+export type MutationCompleteTodoArgs = {
+  id: Scalars['ID'];
 };
 
 
@@ -30,45 +35,50 @@ export type MutationSaveUserArgs = {
   user: UserInput;
 };
 
-
-export type MutationCompleteTodoArgs = {
-  id: Scalars['ID'];
-};
-
 export type Query = {
   __typename?: 'Query';
-  time: Scalars['Int'];
   allTodos: Array<Todo>;
-  todosByCurrentUser: Array<Todo>;
   allUsers: Array<User>;
+  currentUser?: Maybe<User>;
+  time: Scalars['Int'];
+  todo?: Maybe<Todo>;
+  todosByCurrentUser: Array<Todo>;
 };
 
-export enum Role {
-  Admin = 'ADMIN',
-  User = 'USER'
-}
 
+export type QueryTodoArgs = {
+  id: Scalars['ID'];
+};
+
+export const Role = {
+  Admin: 'ADMIN',
+  User: 'USER'
+} as const;
+
+export type Role = typeof Role[keyof typeof Role];
 export type Todo = {
   __typename?: 'Todo';
-  id: Scalars['ID'];
-  createdAt?: Maybe<Scalars['String']>;
-  updatedAt?: Maybe<Scalars['String']>;
-  title: Scalars['String'];
-  content?: Maybe<Scalars['String']>;
   author?: Maybe<User>;
+  authorId: Scalars['String'];
   completed: Scalars['Boolean'];
+  content?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  title: Scalars['String'];
+  updatedAt?: Maybe<Scalars['String']>;
 };
 
 export type TodoInput = {
-  title: Scalars['String'];
   content?: Maybe<Scalars['String']>;
+  title: Scalars['String'];
 };
 
 export type User = {
   __typename?: 'User';
-  id: Scalars['ID'];
   email: Scalars['String'];
+  id: Scalars['ID'];
   name?: Maybe<Scalars['String']>;
+  role: Role;
 };
 
 export type UserInput = {
@@ -145,14 +155,14 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
-  Mutation: ResolverTypeWrapper<{}>;
-  ID: ResolverTypeWrapper<Scalars['ID']>;
-  Query: ResolverTypeWrapper<{}>;
-  Int: ResolverTypeWrapper<Scalars['Int']>;
-  Role: Role;
-  Todo: ResolverTypeWrapper<Todo>;
-  String: ResolverTypeWrapper<Scalars['String']>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
+  ID: ResolverTypeWrapper<Scalars['ID']>;
+  Int: ResolverTypeWrapper<Scalars['Int']>;
+  Mutation: ResolverTypeWrapper<{}>;
+  Query: ResolverTypeWrapper<{}>;
+  Role: Role;
+  String: ResolverTypeWrapper<Scalars['String']>;
+  Todo: ResolverTypeWrapper<Todo>;
   TodoInput: TodoInput;
   User: ResolverTypeWrapper<User>;
   UserInput: UserInput;
@@ -160,50 +170,62 @@ export type ResolversTypes = {
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
-  Mutation: {};
-  ID: Scalars['ID'];
-  Query: {};
-  Int: Scalars['Int'];
-  Todo: Todo;
-  String: Scalars['String'];
   Boolean: Scalars['Boolean'];
+  ID: Scalars['ID'];
+  Int: Scalars['Int'];
+  Mutation: {};
+  Query: {};
+  String: Scalars['String'];
+  Todo: Todo;
   TodoInput: TodoInput;
   User: User;
   UserInput: UserInput;
 };
 
-export type AuthDirectiveArgs = {   role?: Role; };
+export type AuthDirectiveArgs = {
+  role?: Role;
+};
 
 export type AuthDirectiveResolver<Result, Parent, ContextType = any, Args = AuthDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
 
+export type IsOwnerDirectiveArgs = {
+  ownerField?: Maybe<Scalars['String']>;
+};
+
+export type IsOwnerDirectiveResolver<Result, Parent, ContextType = any, Args = IsOwnerDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
+
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
+  completeTodo?: Resolver<Maybe<ResolversTypes['Todo']>, ParentType, ContextType, RequireFields<MutationCompleteTodoArgs, 'id'>>;
   saveTodo?: Resolver<Maybe<ResolversTypes['Todo']>, ParentType, ContextType, RequireFields<MutationSaveTodoArgs, 'todo'>>;
   saveUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<MutationSaveUserArgs, 'user'>>;
-  completeTodo?: Resolver<Maybe<ResolversTypes['Todo']>, ParentType, ContextType, RequireFields<MutationCompleteTodoArgs, 'id'>>;
 };
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
-  time?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   allTodos?: Resolver<Array<ResolversTypes['Todo']>, ParentType, ContextType>;
-  todosByCurrentUser?: Resolver<Array<ResolversTypes['Todo']>, ParentType, ContextType>;
   allUsers?: Resolver<Array<ResolversTypes['User']>, ParentType, ContextType>;
+  currentUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>;
+  time?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
+  todo?: Resolver<Maybe<ResolversTypes['Todo']>, ParentType, ContextType, RequireFields<QueryTodoArgs, 'id'>>;
+  todosByCurrentUser?: Resolver<Array<ResolversTypes['Todo']>, ParentType, ContextType>;
 };
 
 export type TodoResolvers<ContextType = any, ParentType extends ResolversParentTypes['Todo'] = ResolversParentTypes['Todo']> = {
-  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
-  createdAt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  updatedAt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
-  title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  content?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   author?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>;
+  authorId?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   completed?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
+  content?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  createdAt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  title?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  updatedAt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type UserResolvers<ContextType = any, ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']> = {
-  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   email?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  role?: Resolver<ResolversTypes['Role'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -216,4 +238,5 @@ export type Resolvers<ContextType = any> = {
 
 export type DirectiveResolvers<ContextType = any> = {
   auth?: AuthDirectiveResolver<any, any, ContextType>;
+  isOwner?: IsOwnerDirectiveResolver<any, any, ContextType>;
 };

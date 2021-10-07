@@ -15,6 +15,13 @@ export const userQueryResolvers: gql.QueryResolvers<GraphqlServerContext> = {
       .with(whenIsOk, ({ value }) => UserMapper.toGqlCollection(value))
       .exhaustive()
   },
+  currentUser: async (_, params, ctx) => {
+    const result = await ctx.useCase.user.findCurrentUser()
+    return match(result)
+      .with(whenIsErr, handleAppError)
+      .with(whenIsOk, ({ value }) => UserMapper.toGql(value))
+      .exhaustive()
+  },
 }
 
 export const userMutationResolvers: gql.MutationResolvers<GraphqlServerContext> =
