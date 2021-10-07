@@ -18,15 +18,18 @@ import {
 import { makeExecutableSchema } from '@graphql-tools/schema'
 import { User } from '@prisma/client'
 import { EnumValueNode } from 'graphql'
+import { TokenExpiredError } from 'jsonwebtoken'
 
+import { Role } from './api/graphql/generated/graphql'
 import resolvers from './api/graphql/resolvers/resolvers'
 import { schema } from './api/graphql/typeDefs'
 import { createContext, GraphqlServerContext, prisma } from './context'
 import { UserRepository } from './modules/user/UserRepository'
+import { useOwnerCheck } from './utils/useOwnerCheck'
 
 const executableSchema = makeExecutableSchema({
-  resolvers: resolvers,
   typeDefs: schema,
+  resolvers: resolvers,
 })
 
 const resolveUserFn: ResolveUserFn<User, GraphqlServerContext> = async (
@@ -58,6 +61,7 @@ const validateUserFn: ValidateUserFn<User, GraphqlServerContext> = async (
       code: 'NOT_AUTHENTICATED',
     })
   }
+
   if (!directiveNode?.arguments) {
     return
   }
@@ -67,7 +71,7 @@ const validateUserFn: ValidateUserFn<User, GraphqlServerContext> = async (
   )?.value as EnumValueNode | undefined
 
   if (valueNode) {
-    const role = valueNode.value
+    const role = valueNode.value as Role
     if (role !== user.role) {
       throw new EnvelopError('request not authorized', {
         code: 'NOT_AUTHORIZED',
@@ -87,6 +91,15 @@ export const getEnveloped = envelop({
       preventUnauthenticatedAccess: false,
       extendContextField: 'auth0',
       tokenType: 'Bearer',
+      onError: (e) => {
+        if (e instanceof TokenExpiredError) {
+          throw new EnvelopError('jwt expired', {
+            code: 'TOKEN_EXPIRED',
+          })
+        } else {
+          throw e
+        }
+      },
     }),
     useGenericAuth({
       resolveUserFn: resolveUserFn,
@@ -94,6 +107,7 @@ export const getEnveloped = envelop({
       mode: 'protect-auth-directive',
     }),
     useExtendContext(createContext), // should be after auth0 so that createContext callback can access to auth0 context
+    useOwnerCheck(),
     useMaskedErrors(),
     useErrorHandler((error: unknown) => {
       console.log('ERROR: ' + JSON.stringify(error))

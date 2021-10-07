@@ -9,6 +9,7 @@ export class TodoMapper {
       id: todo.id.toString(),
       createdAt: todo.createdAt?.toString(),
       updatedAt: todo.updatedAt?.toString(),
+      authorId: todo.authorId.toString(),
     }
   }
 

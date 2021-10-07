@@ -7,6 +7,8 @@ export const schema = buildSchema(/* GraphQL */ `
   }
 
   directive @auth(role: Role! = USER) on FIELD_DEFINITION
+  directive @isOwner(ownerField: String) on FIELD_DEFINITION | OBJECT
+  # TODO: directive @isOwnerOrHasRole(type: String, roles: [String]) on QUERY | MUTATION | FIELD_DEFINITION
 
   type Query {
     # health check
@@ -24,13 +26,14 @@ export const schema = buildSchema(/* GraphQL */ `
     completeTodo(id: ID!): Todo @auth
   }
 
-  type Todo {
+  type Todo @isOwner(ownerField: "authorId") {
     id: ID!
     createdAt: String
     updatedAt: String
     title: String!
     content: String
     author: User
+    authorId: String!
     completed: Boolean!
   }
 
@@ -41,8 +44,9 @@ export const schema = buildSchema(/* GraphQL */ `
 
   type User {
     id: ID!
-    email: String! # private
+    email: String! @isOwner(ownerField: "id") # private
     name: String
+    role: Role!
   }
 
   input UserInput {

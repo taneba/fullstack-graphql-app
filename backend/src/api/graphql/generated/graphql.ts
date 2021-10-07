@@ -50,14 +50,16 @@ export type QueryTodoArgs = {
   id: Scalars['ID'];
 };
 
-export enum Role {
-  Admin = 'ADMIN',
-  User = 'USER'
-}
+export const Role = {
+  Admin: 'ADMIN',
+  User: 'USER'
+} as const;
 
+export type Role = typeof Role[keyof typeof Role];
 export type Todo = {
   __typename?: 'Todo';
   author?: Maybe<User>;
+  authorId: Scalars['String'];
   completed: Scalars['Boolean'];
   content?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['String']>;
@@ -76,6 +78,7 @@ export type User = {
   email: Scalars['String'];
   id: Scalars['ID'];
   name?: Maybe<Scalars['String']>;
+  role: Role;
 };
 
 export type UserInput = {
@@ -185,6 +188,12 @@ export type AuthDirectiveArgs = {
 
 export type AuthDirectiveResolver<Result, Parent, ContextType = any, Args = AuthDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
 
+export type IsOwnerDirectiveArgs = {
+  ownerField?: Maybe<Scalars['String']>;
+};
+
+export type IsOwnerDirectiveResolver<Result, Parent, ContextType = any, Args = IsOwnerDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
+
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
   completeTodo?: Resolver<Maybe<ResolversTypes['Todo']>, ParentType, ContextType, RequireFields<MutationCompleteTodoArgs, 'id'>>;
   saveTodo?: Resolver<Maybe<ResolversTypes['Todo']>, ParentType, ContextType, RequireFields<MutationSaveTodoArgs, 'todo'>>;
@@ -202,6 +211,7 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
 
 export type TodoResolvers<ContextType = any, ParentType extends ResolversParentTypes['Todo'] = ResolversParentTypes['Todo']> = {
   author?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>;
+  authorId?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   completed?: Resolver<ResolversTypes['Boolean'], ParentType, ContextType>;
   content?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
   createdAt?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
@@ -215,6 +225,7 @@ export type UserResolvers<ContextType = any, ParentType extends ResolversParentT
   email?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  role?: Resolver<ResolversTypes['Role'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -227,4 +238,5 @@ export type Resolvers<ContextType = any> = {
 
 export type DirectiveResolvers<ContextType = any> = {
   auth?: AuthDirectiveResolver<any, any, ContextType>;
+  isOwner?: IsOwnerDirectiveResolver<any, any, ContextType>;
 };

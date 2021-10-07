@@ -1,6 +1,7 @@
 import { useQuery } from 'urql'
 
 import { Button, Dialog, DialogTrigger, Spinner } from '~/components'
+import { DevNote } from '~/components/general/DevNote'
 import { gql } from '~/generated'
 
 import { CreateTodoModal } from './CreateTodoModal'
@@ -24,6 +25,12 @@ function Todos() {
   return (
     <div>
       <h1 tw="text-black font-bold text-3xl">Todos</h1>
+      <DevNote.Root>
+        <DevNote.P>
+          This page represents the very basic example of GraphQL React
+          application.
+        </DevNote.P>
+      </DevNote.Root>
       <Dialog>
         <DialogTrigger asChild>
           <Button primary tw="mt-4">

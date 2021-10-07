@@ -9,6 +9,7 @@ const GetAllUsers = gql(/* GraphQL */ `
     allUsers {
       id
       name
+      email
     }
   }
 `)
@@ -21,9 +22,9 @@ function Users() {
 
       <DevNote.Root tw="self-center mx-auto bg-cyan-50 p-3 border-cyan-100 border-2 rounded-md">
         <DevNote.P tw="text-xs whitespace-pre-wrap leading-relaxed">
-          NOTE: Here we don't see any email of each user, which is a private
-          field and shouldn't be visible to other people. This is because
-          GetUsers query doesn't include email field.
+          Here we don't see any email of each user, which is a private field and
+          shouldn't be visible to other people. This is because GetUsers query
+          doesn't include email field.
         </DevNote.P>
         <DevNote.Pre>
           {`query GetAllUsers {
@@ -62,7 +63,5 @@ http://localhost:5000/graphql
     </div>
   )
 }
-
-const P = tw.p`text-xs whitespace-pre-wrap`
 
 export default Users
