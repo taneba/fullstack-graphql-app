@@ -5,6 +5,7 @@ import fastfyHelment from 'fastify-helmet'
 import {
   getGraphQLParameters,
   processRequest,
+  sendResult,
   shouldRenderGraphiQL,
 } from 'graphql-helix'
 import { renderPlaygroundPage } from 'graphql-playground-html'
@@ -26,7 +27,6 @@ app.route({
     const { parse, validate, contextFactory, execute, schema } = getEnveloped({
       req,
     })
-
     const request = {
       body: req.body,
       headers: req.headers,
@@ -44,7 +44,6 @@ app.route({
       res.send(renderPlaygroundPage({}))
     } else {
       const { operationName, query, variables } = getGraphQLParameters(request)
-
       const result = await processRequest({
         operationName,
         query,
@@ -56,58 +55,7 @@ app.route({
         schema,
         contextFactory: () => contextFactory({ req }),
       })
-
-      if (result.type === 'RESPONSE') {
-        console.log(result)
-        res.status(result.status)
-        res.send(result.payload)
-      } else if (result.type === 'MULTIPART_RESPONSE') {
-        res.raw.writeHead(200, {
-          Connection: 'keep-alive',
-          'Content-Type': 'multipart/mixed; boundary="-"',
-          'Transfer-Encoding': 'chunked',
-        })
-
-        req.raw.on('close', () => {
-          result.unsubscribe()
-        })
-
-        res.raw.write('---')
-
-        await result.subscribe((result) => {
-          const chunk = Buffer.from(JSON.stringify(result), 'utf8')
-          const data = [
-            '',
-            'Content-Type: application/json; charset=utf-8',
-            'Content-Length: ' + String(chunk.length),
-            '',
-            chunk,
-          ]
-
-          if (result.hasNext) {
-            data.push('---')
-          }
-
-          res.raw.write(data.join('\r\n'))
-        })
-
-        res.raw.write('\r\n-----\r\n')
-        res.raw.end()
-      } else {
-        res.raw.writeHead(200, {
-          'Content-Type': 'text/event-stream',
-          Connection: 'keep-alive',
-          'Cache-Control': 'no-cache',
-        })
-
-        req.raw.on('close', () => {
-          result.unsubscribe()
-        })
-
-        await result.subscribe((result) => {
-          res.raw.write(`data: ${JSON.stringify(result)}\n\n`)
-        })
-      }
+      sendResult(result, res.raw)
     }
   },
 })
