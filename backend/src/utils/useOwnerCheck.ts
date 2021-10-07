@@ -1,80 +1,67 @@
 import { EnvelopError, Plugin } from '@envelop/core'
+import { getDirective, MapperKind, mapSchema } from '@graphql-tools/utils'
 import { User } from '@prisma/client'
-import { StringValueNode } from 'graphql'
+import { defaultFieldResolver, GraphQLSchema } from 'graphql'
 
-import { Resolvers } from '~/api/graphql/generated/graphql'
 import { GraphqlServerContext } from '~/context'
 
-import { getDirective } from './getDirective'
-
-const isCurrentUserAlsoOwner = async ({
-  context,
-  currentUserId,
-  targetResourceId,
-  typeName, // Todo, Query
-}: {
-  context: any
-  currentUserId: number
-  targetResourceId: number
-  typeName: string // TODO Union typeにしたい！
-}): Promise<boolean> => {
-  const ownerIdField = 'authorId' // should be passed via directive arg
-  const type = 'todo' // should be passed via directive arg
-  try {
-    const res = await (context as GraphqlServerContext).prisma[type].findFirst({
-      where: {
-        id: targetResourceId,
-        [ownerIdField]: currentUserId,
-      },
-    })
-    return !!res
-  } catch (error) {
-    return false
-  }
-}
-
-type TypeName = keyof Resolvers
+const schemaCache = new WeakMap<GraphQLSchema, GraphQLSchema>()
 
 export function useOwnerCheck(
   options?:
     | {
-        contextFieldName?: 'currentUser' | string
+        userContextField?: 'currentUser' | string
       }
     | undefined
 ): Plugin {
-  const fieldName = options?.contextFieldName || 'currentUser'
+  const userContextField = options?.userContextField || 'currentUser'
   return {
-    onExecute() {
-      return {
-        async onResolverCalled({ args, root, context, info }) {
-          // TODO: handle isQuery, Mutation
-          const directiveNode = getDirective(info, 'isOwner')
-          if (directiveNode) {
+    onSchemaChange(ctx) {
+      let schema = schemaCache.get(ctx.schema)
+      if (!schema) {
+        schema = applyOwnerCheckDirective(ctx.schema, userContextField)
+        schemaCache.set(ctx.schema, schema)
+      }
+      ctx.replaceSchema(schema!)
+    },
+  }
+}
+
+const typeDirectiveArgumentMaps: Record<string, any> = {}
+
+function applyOwnerCheckDirective(
+  schema: GraphQLSchema,
+  userContextField: string
+): GraphQLSchema {
+  return mapSchema(schema, {
+    [MapperKind.TYPE]: (type, a) => {
+      const ownerDirective = getDirective(schema, type, 'isOwner')?.[0]
+      if (ownerDirective) {
+        typeDirectiveArgumentMaps[type.name] = ownerDirective
+      }
+      return undefined
+    },
+    [MapperKind.OBJECT_FIELD]: (fieldConfig, fieldName, typeName) => {
+      const ownerDirective =
+        getDirective(schema, fieldConfig, 'isOwner')?.[0] ??
+        typeDirectiveArgumentMaps[typeName]
+      if (ownerDirective && fieldConfig) {
+        return {
+          ...fieldConfig,
+          async resolve(source, args, context, info) {
+            const { resolve = defaultFieldResolver } = fieldConfig
+            const result = await resolve(source, args, context, info)
+
             const currentUser = (context as GraphqlServerContext)[
-              fieldName
+              userContextField
             ] as User
-
-            const parentType = info.path.typename as TypeName // ex. User
-            const isMutation = parentType === 'Mutation'
-            const targetResourceId: string | null = isMutation
-              ? args.id
-              : root.id
-            const currentUserId = currentUser.id
-
-            // if parentType is not User, ownerField should be placed
-            const ownerFieldNode = directiveNode.arguments?.find(
-              (arg) => arg.name.value === 'ownerField'
-            )?.value as StringValueNode | undefined
-
-            const ownerFieldName = ownerFieldNode?.value || 'userId' // default to userId
-
-            if (!ownerFieldName) {
+            const ownerField: string | undefined = ownerDirective.ownerField
+            if (!ownerField) {
               console.log('ownerField is not placed')
               throw new EnvelopError('something went wrong')
             }
-
-            const isOwner = currentUserId === root[ownerFieldName]
-
+            const isOwner =
+              String(source[ownerField]) === String(currentUser.id)
             if (!isOwner) {
               throw new EnvelopError(
                 'request not authorized' + `, operation: ${info.fieldName}`,
@@ -83,9 +70,13 @@ export function useOwnerCheck(
                 }
               )
             }
-          }
-        },
+
+            return result
+          },
+        }
       }
+
+      return fieldConfig
     },
-  }
+  })
 }

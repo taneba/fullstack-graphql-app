@@ -19,7 +19,6 @@ import { makeExecutableSchema } from '@graphql-tools/schema'
 import { User } from '@prisma/client'
 import { EnumValueNode } from 'graphql'
 import { TokenExpiredError } from 'jsonwebtoken'
-import { match } from 'ts-pattern'
 
 import { Role } from './api/graphql/generated/graphql'
 import resolvers from './api/graphql/resolvers/resolvers'
@@ -73,22 +72,11 @@ const validateUserFn: ValidateUserFn<User, GraphqlServerContext> = async (
 
   if (valueNode) {
     const role = valueNode.value as Role
-    match(role)
-      .with(Role.User, (role) => {
-        if (role !== Role.User) {
-          throw new EnvelopError('request not authorized', {
-            code: 'NOT_AUTHORIZED',
-          })
-        }
+    if (role !== user.role) {
+      throw new EnvelopError('request not authorized', {
+        code: 'NOT_AUTHORIZED',
       })
-      .with(Role.Admin, (role) => {
-        if (role !== Role.Admin) {
-          throw new EnvelopError('request not authorized', {
-            code: 'NOT_AUTHORIZED',
-          })
-        }
-      })
-      .exhaustive()
+    }
   }
 }
 

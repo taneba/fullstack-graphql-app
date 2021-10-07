@@ -77,6 +77,7 @@ export type User = {
   email: Scalars['String'];
   id: Scalars['ID'];
   name?: Maybe<Scalars['String']>;
+  role: Role;
 };
 
 export type UserInput = {

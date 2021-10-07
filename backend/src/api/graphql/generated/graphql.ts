@@ -50,11 +50,12 @@ export type QueryTodoArgs = {
   id: Scalars['ID'];
 };
 
-export enum Role {
-  Admin = 'ADMIN',
-  User = 'USER'
-}
+export const Role = {
+  Admin: 'ADMIN',
+  User: 'USER'
+} as const;
 
+export type Role = typeof Role[keyof typeof Role];
 export type Todo = {
   __typename?: 'Todo';
   author?: Maybe<User>;
@@ -77,6 +78,7 @@ export type User = {
   email: Scalars['String'];
   id: Scalars['ID'];
   name?: Maybe<Scalars['String']>;
+  role: Role;
 };
 
 export type UserInput = {
@@ -223,6 +225,7 @@ export type UserResolvers<ContextType = any, ParentType extends ResolversParentT
   email?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   name?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  role?: Resolver<ResolversTypes['Role'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
