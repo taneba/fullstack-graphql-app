@@ -9,6 +9,7 @@ export function todoFactory(options?: Partial<Todo>): Todo {
     title: 'test todo',
     author: undefined,
     completed: false,
+    authorId: '1',
     ...options,
   }
 }
