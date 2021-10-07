@@ -8343,7 +8343,7 @@ source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.1:
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
 
-spinners-react@^1.0.4:
+spinners-react@1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/spinners-react/-/spinners-react-1.0.4.tgz#728444f1e96b3ce7470709ecbfb0f9681819ed0b"
   integrity sha512-8I6vGcsGTtv0raS3T4zT+XzgHi2y4uBb9TlgpAKia+gZ9BIt9/+za5mOtQOz8yM8wv9lap75UMc57ys17cO1ag==
