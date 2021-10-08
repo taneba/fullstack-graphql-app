@@ -1,7 +1,6 @@
 import { DefaultContext } from '@envelop/types'
 import { PrismaClient, User } from '@prisma/client'
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const chalk = require('chalk')
+import chalk from 'chalk'
 
 import { UseCaseContext } from './common/useCase'
 import { TodoRepository } from './modules/todo/TodoRepository'

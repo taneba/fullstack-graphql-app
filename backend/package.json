@@ -11,7 +11,7 @@
     "db:pull": "dotenv -e .env.localhost prisma db pull",
     "prisma-gen": "dotenv -e .env.localhost prisma generate",
     "prisma-studio": "dotenv -e .env.localhost prisma studio",
-    "type-check": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
     "lint": "eslint --fix --cache --ext .ts,.tsx src"
   },
   "dependencies": {
