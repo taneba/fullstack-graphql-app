@@ -3079,10 +3079,10 @@ graphql-depth-limit@^1.1.0:
   dependencies:
     arrify "^1.0.1"
 
-graphql-helix@1.8.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/graphql-helix/-/graphql-helix-1.8.0.tgz#e3dc18348acb8e792243f808130606c28214c4bd"
-  integrity sha512-tg1tdR2PgCOn2Z/NDSnA9rUR16bLrLtE4el/NwboQ4wWaWM/Eoi3ewV0gtyzKgg61+SjywEac5mDvGgK0AfsDg==
+graphql-helix@1.8.2:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/graphql-helix/-/graphql-helix-1.8.2.tgz#27dd3751b988920ac524e238969387a6474737aa"
+  integrity sha512-KPDkwzhiMDfHDKICWEmmNg0fNjQma8dXanJOhFVVPpKFSsaSGR2DLrbVGe4BxLvJWeeZc0HkwnRluAm41YAmrw==
 
 graphql-playground-html@1.6.29:
   version "1.6.29"
