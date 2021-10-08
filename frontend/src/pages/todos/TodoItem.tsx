@@ -2,11 +2,7 @@ import { useCallback } from 'react'
 import { useMutation } from 'urql'
 
 import { gql } from '~/generated/'
-import { Todo } from '~/generated/graphql'
-
-interface Props {
-  todo: Todo
-}
+import { TodoItem_TodoFragment } from '~/generated/graphql'
 
 const CompleteTodo = gql(/* GraphQL */ `
   mutation CompleteTodo($id: ID!) {
@@ -15,6 +11,21 @@ const CompleteTodo = gql(/* GraphQL */ `
     }
   }
 `)
+
+const TodoItem_Todo = gql(/* GraphQL */ `
+  fragment TodoItem_Todo on Todo {
+    id
+    title
+  }
+`)
+
+TodoItem.fragments = {
+  todo: TodoItem_Todo,
+}
+
+interface Props {
+  todo: TodoItem_TodoFragment
+}
 
 export function TodoItem({ todo }: Props) {
   const [, executeMutation] = useMutation(CompleteTodo)
