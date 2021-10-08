@@ -20,7 +20,7 @@
     "@radix-ui/react-dialog": "0.1.0",
     "@radix-ui/react-icons": "1.0.3",
     "@radix-ui/react-portal": "0.1.0",
-    "graphql": "15.6.0",
+    "graphql": "15.6.1",
     "graphql-anywhere": "^4.2.7",
     "next": "11.1.2",
     "react": "17.0.2",
