@@ -1,3 +1,4 @@
+import { filter } from 'graphql-anywhere'
 import { useQuery } from 'urql'
 
 import { Button, Dialog, DialogTrigger, Spinner } from '~/components'
@@ -10,11 +11,8 @@ import { TodoItem } from './TodoItem'
 const GetTodos = gql(/* GraphQL */ `
   query GetTodos {
     todosByCurrentUser {
+      ...TodoItem_Todo
       id
-      createdAt
-      updatedAt
-      title
-      content
       completed
     }
   }
@@ -45,7 +43,10 @@ function Todos() {
         {res.data?.todosByCurrentUser
           .filter(({ completed }) => !completed)
           .map((todo) => (
-            <TodoItem key={todo.id} todo={todo} />
+            <TodoItem
+              key={todo.id}
+              todo={filter(TodoItem.fragments.todo, todo)}
+            />
           ))}
       </div>
     </div>
