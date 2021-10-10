@@ -3079,10 +3079,10 @@ graphql-depth-limit@^1.1.0:
   dependencies:
     arrify "^1.0.1"
 
-graphql-helix@1.8.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/graphql-helix/-/graphql-helix-1.8.0.tgz#e3dc18348acb8e792243f808130606c28214c4bd"
-  integrity sha512-tg1tdR2PgCOn2Z/NDSnA9rUR16bLrLtE4el/NwboQ4wWaWM/Eoi3ewV0gtyzKgg61+SjywEac5mDvGgK0AfsDg==
+graphql-helix@1.8.3:
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/graphql-helix/-/graphql-helix-1.8.3.tgz#2161c4550ff971e0065d0931e2ca9d5950522796"
+  integrity sha512-xZ1y3KlinPAnBmi9GpFvTBXdY64HH98QbjRmStLp/FMvIxryv3hYqeoJO72uBKdh2BCgubxHa91LoD1J57lmSg==
 
 graphql-playground-html@1.6.29:
   version "1.6.29"
@@ -3141,10 +3141,10 @@ graphql-ws@^5.0.0:
   resolved "https://registry.yarnpkg.com/graphql-ws/-/graphql-ws-5.4.0.tgz#18cd078e00fc9db7609f7ad76af04073bfbdedb0"
   integrity sha512-kxct2hGiVQJJlsfHAYoq41LY9zLkEM5SLCy+ySAOJejwYIMR290sXKzPILG3LQBEaXP9iIAiMN3nVPtOQRE8uA==
 
-graphql@15.6.0:
-  version "15.6.0"
-  resolved "https://registry.yarnpkg.com/graphql/-/graphql-15.6.0.tgz#e69323c6a9780a1a4b9ddf7e35ca8904bb04df02"
-  integrity sha512-WJR872Zlc9hckiEPhXgyUftXH48jp2EjO5tgBBOyNMRJZ9fviL2mJBD6CAysk6N5S0r9BTs09Qk39nnJBkvOXQ==
+graphql@15.6.1:
+  version "15.6.1"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-15.6.1.tgz#9125bdf057553525da251e19e96dab3d3855ddfc"
+  integrity sha512-3i5lu0z6dRvJ48QP9kFxBkJ7h4Kso7PS8eahyTFz5Jm6CvQfLtNIE8LX9N6JLnXTuwR+sIYnXzaWp6anOg0QQw==
 
 has-ansi@^2.0.0:
   version "2.0.0"
