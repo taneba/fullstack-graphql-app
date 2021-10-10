@@ -5,7 +5,6 @@ import fastfyHelment from 'fastify-helmet'
 import {
   getGraphQLParameters,
   processRequest,
-  sendResult,
   shouldRenderGraphiQL,
 } from 'graphql-helix'
 import { renderPlaygroundPage } from 'graphql-playground-html'
@@ -14,6 +13,8 @@ import { getEnveloped } from './getEnveloped'
 
 const app = fastify()
 
+// TODO: This should never go to prod with a blanket
+// whitelist
 app.register(fastifyCors)
 app.register(fastfyHelment, {
   contentSecurityPolicy: false,
@@ -38,10 +39,10 @@ app.route({
       shouldRenderGraphiQL(request) &&
       process.env.NODE_ENV !== 'production'
     ) {
-      console.log('render graphqiql')
       res.type('text/html')
       // We use playground until it's implemented in GraphiQL as a preset. see https://github.com/graphql/graphiql/issues/1443
       res.send(renderPlaygroundPage({}))
+      return
     } else {
       const { operationName, query, variables } = getGraphQLParameters(request)
       const result = await processRequest({
@@ -55,7 +56,57 @@ app.route({
         schema,
         contextFactory: () => contextFactory({ req }),
       })
-      sendResult(result, res.raw)
+
+      if (result.type === 'RESPONSE') {
+        res.status(result.status)
+        res.send(result.payload)
+      } else if (result.type === 'MULTIPART_RESPONSE') {
+        res.raw.writeHead(200, {
+          Connection: 'keep-alive',
+          'Content-Type': 'multipart/mixed; boundary="-"',
+          'Transfer-Encoding': 'chunked',
+        })
+
+        req.raw.on('close', () => {
+          result.unsubscribe()
+        })
+
+        res.raw.write('---')
+
+        await result.subscribe((result) => {
+          const chunk = Buffer.from(JSON.stringify(result), 'utf8')
+          const data = [
+            '',
+            'Content-Type: application/json; charset=utf-8',
+            'Content-Length: ' + String(chunk.length),
+            '',
+            chunk,
+          ]
+
+          if (result.hasNext) {
+            data.push('---')
+          }
+
+          res.raw.write(data.join('\r\n'))
+        })
+
+        res.raw.write('\r\n-----\r\n')
+        res.raw.end()
+      } else {
+        res.raw.writeHead(200, {
+          'Content-Type': 'text/event-stream',
+          Connection: 'keep-alive',
+          'Cache-Control': 'no-cache',
+        })
+
+        req.raw.on('close', () => {
+          result.unsubscribe()
+        })
+
+        await result.subscribe((result) => {
+          res.raw.write(`data: ${JSON.stringify(result)}\n\n`)
+        })
+      }
     }
   },
 })
