@@ -34,7 +34,7 @@ function applyOwnerCheckDirective(
   userContextField: string
 ): GraphQLSchema {
   return mapSchema(schema, {
-    [MapperKind.TYPE]: (type, a) => {
+    [MapperKind.TYPE]: (type) => {
       const ownerDirective = getDirective(schema, type, 'isOwner')?.[0]
       if (ownerDirective) {
         typeDirectiveArgumentMaps[type.name] = ownerDirective
