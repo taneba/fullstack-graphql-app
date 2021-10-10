@@ -9,7 +9,6 @@ const GetAllUsers = gql(/* GraphQL */ `
     allUsers {
       id
       name
-      email
     }
   }
 `)
