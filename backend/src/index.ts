@@ -11,11 +11,13 @@ import { renderPlaygroundPage } from 'graphql-playground-html'
 
 import { getEnveloped } from './getEnveloped'
 
+const clientUrl = 'http://localhost:3000' // should be replaced with env variable
+
 const app = fastify()
 
-// TODO: This should never go to prod with a blanket
-// whitelist
-app.register(fastifyCors)
+app.register(fastifyCors, {
+  origin: clientUrl,
+})
 app.register(fastfyHelment, {
   contentSecurityPolicy: false,
 })
