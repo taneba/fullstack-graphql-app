@@ -1,8 +1,10 @@
+import React from 'react'
 import { useQuery } from 'urql'
 
-import { Spinner } from '~/components'
+import { Avatar, Spinner } from '~/components'
 import { DevNote } from '~/components/general/DevNote'
 import { gql } from '~/generated'
+import { fromObject } from '~/utils/fromObject'
 
 const GetCurrentUser = gql(/* GraphQL */ `
   query GetCurrentUser {
@@ -23,10 +25,17 @@ function Profile() {
       <DevNote.Root>
         <DevNote.P>This page is a demo for accessing private field</DevNote.P>
       </DevNote.Root>
-
       <div>
         {res.fetching && <Spinner global />}
-        {JSON.stringify(res.data)}
+        {res.error && <p>error</p>}
+        {res.data?.currentUser &&
+          fromObject(res.data.currentUser)(({ name, email }) => (
+            <div tw="mt-6">
+              <Avatar name={name} size="l" />
+              <p tw="text-lg ml-1 mt-2 font-bold">{name}</p>
+              <p tw="text-sm ml-1">{email}</p>
+            </div>
+          ))}
       </div>
     </div>
   )
