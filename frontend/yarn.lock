@@ -4,7 +4,6 @@
 
 "@app/gql@link:./src/generated/graphql.ts":
   version "0.0.0"
-  uid ""
 
 "@ardatan/aggregate-error@0.0.6":
   version "0.0.6"
@@ -2233,14 +2232,14 @@
   dependencies:
     "@babel/runtime" "^7.13.10"
 
-"@radix-ui/react-avatar@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@radix-ui/react-avatar/-/react-avatar-0.1.0.tgz#4c467396170bb46a9b15676901155f28b7ee824e"
-  integrity sha512-wJtWsLvaTRISFyLIVTtp1yNgIxSCLV5IuTwmLf9IR6wQ3wbf3WxmIjaMvkZ4cGhPw/LnNYyk1OejhdOnQibNEw==
+"@radix-ui/react-avatar@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-avatar/-/react-avatar-0.1.1.tgz#a5e2c660f5e2564ad75fb30587bfdbba64137411"
+  integrity sha512-yFWO2VZNmO6EkwwdKSIf5Wabd97iGFzKNrLI8aIHFYuZe+WBOnfF99SeU52wm2a18k/sdIiwTZlsxUCiSBadEw==
   dependencies:
     "@babel/runtime" "^7.13.10"
-    "@radix-ui/react-context" "0.1.0"
-    "@radix-ui/react-primitive" "0.1.0"
+    "@radix-ui/react-context" "0.1.1"
+    "@radix-ui/react-primitive" "0.1.1"
     "@radix-ui/react-use-callback-ref" "0.1.0"
     "@radix-ui/react-use-layout-effect" "0.1.0"
 
@@ -2255,6 +2254,13 @@
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-context/-/react-context-0.1.0.tgz#670a7a2a63f8380a7cb5ff0bce87d51bdb065c5c"
   integrity sha512-o8h7SP6ePEBLC33BsHiuFqW898c+wiyBiY2ZC2xFJUUnHj1Z6XrQdZCNjm3/VuhljMkPrIA5xC4swVWBo/gzOA==
+  dependencies:
+    "@babel/runtime" "^7.13.10"
+
+"@radix-ui/react-context@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-context/-/react-context-0.1.1.tgz#06996829ea124d9a1bc1dbe3e51f33588fab0875"
+  integrity sha512-PkyVX1JsLBioeu0jB9WvRpDBBLtLZohVDT3BB5CTSJqActma8S8030P57mWZb4baZifMvN7KKWPAA40UmWKkQg==
   dependencies:
     "@babel/runtime" "^7.13.10"
 
@@ -2345,10 +2351,26 @@
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-slot" "0.1.0"
 
+"@radix-ui/react-primitive@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-primitive/-/react-primitive-0.1.1.tgz#98e64d9c3094df737d0f49f0e9e48ff2f44498b0"
+  integrity sha512-65GCHeDV/ikicXKR2rLSO6w+dyUQwSG2J1JD2qm4suK1259nTuRvPsPBrbhZpoXWQKj2drMZfhhclXVfzwW1Kw==
+  dependencies:
+    "@babel/runtime" "^7.13.10"
+    "@radix-ui/react-slot" "0.1.1"
+
 "@radix-ui/react-slot@0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-slot/-/react-slot-0.1.0.tgz#56965f2af80576f9e3fcdbba839ef7fccbd3b577"
   integrity sha512-ZuvAUhSK9EAE42b3+K7k7w4nF1uF+Wd4bFj2OCE1aSiW3tgiu7ZU+J61m2+RIDps0WLu95PUx6eZrnpfqBXFRg==
+  dependencies:
+    "@babel/runtime" "^7.13.10"
+    "@radix-ui/react-compose-refs" "0.1.0"
+
+"@radix-ui/react-slot@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-slot/-/react-slot-0.1.1.tgz#9dbc2070ccc492847f7e43747b4847bc54786a76"
+  integrity sha512-deq3K7cCXQ+tWMZF2GKl3zGMcwVbyQDiMY/UcPI0Q1DDudRG2dWrEwcYbYajEelc07oOxzNyKpaXZLOpNxquuA==
   dependencies:
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-compose-refs" "0.1.0"
