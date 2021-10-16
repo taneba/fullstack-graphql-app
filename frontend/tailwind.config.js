@@ -1,5 +1,6 @@
 /* eslint @typescript-eslint/no-var-requires: "off" */
-const colors = require('tailwindcss/colors')
+// const colors = require('tailwindcss/colors')
+const colors = require('@radix-ui/colors')
 
 module.exports = {
   theme: {
