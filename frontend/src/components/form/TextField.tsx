@@ -14,7 +14,7 @@ export const TextField = React.forwardRef<HTMLInputElement, Props>(
         {...restProps}
         value={restProps.value ?? undefined}
         ref={ref}
-        tw="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-sm"
+        tw="appearance-none border rounded w-full py-2 px-3 leading-tight border-slate8"
       />
     )
   }

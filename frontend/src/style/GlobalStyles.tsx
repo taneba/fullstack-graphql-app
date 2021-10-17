@@ -1,10 +1,12 @@
+import { purple } from '@radix-ui/colors'
 import { globalCss } from 'stitches.config'
 import tw, { globalStyles as baseStyles, theme } from 'twin.macro'
 
 const customStyles = {
+  html: { ...tw`h-full w-full` },
   body: {
-    WebkitTapHighlightColor: theme`colors.purple.500`,
-    ...tw`antialiased`,
+    WebkitTapHighlightColor: purple.purple8,
+    ...tw`antialiased h-full w-full`,
   },
 }
 

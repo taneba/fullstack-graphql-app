@@ -55,7 +55,7 @@ http://localhost:5000/graphql
           <Flex
             key={user.id}
             // tw="flex flex-row items-center justify-between w-full py-1 px-4 my-1 rounded border bg-gray-100 text-gray-600"
-            tw="p-2 items-center border-b-2 border-gray-100"
+            tw="p-2 items-center border-b-2 border-slate5"
           >
             <Avatar size="s" name={user.name || 'NN'} />
             <p tw="ml-2">{user.name}</p>

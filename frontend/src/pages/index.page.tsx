@@ -9,7 +9,7 @@ function Home() {
         <br />
         Feedbacks are always welcome ;)
       </p>
-      <p tw="text-sky-500 mt-4">Yoshihiro Nakamura</p>
+      <p tw="text-sky8 mt-4">Yoshihiro Nakamura</p>
     </div>
   )
 }

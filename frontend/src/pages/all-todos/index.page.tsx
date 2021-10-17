@@ -26,7 +26,7 @@ function AllTodos() {
   return (
     <div>
       <h1 tw="text-black font-bold text-3xl">Todos</h1>
-      <p tw="text-red-400">
+      <p tw="text-red11">
         You should have an admin role to see todos of all users
       </p>
       <DevNote.Root>

@@ -47,13 +47,11 @@ export function CreateTodoModal() {
           id={register('title').name}
           {...register('title', { required: true })}
         />
-        {errors.title && <span tw="text-red-500">title is required</span>}
+        {errors.title && <span tw="text-red9">title is required</span>}
         <label htmlFor={register('content').name}>content</label>
         <TextArea {...register('content')} />
         <DialogClose asChild>
-          <Button primary type="submit">
-            Submit
-          </Button>
+          <Button type="submit">Submit</Button>
         </DialogClose>
       </form>
     </DialogContent>

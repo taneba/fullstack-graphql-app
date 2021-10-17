@@ -1,4 +1,6 @@
 import { filter } from 'graphql-anywhere'
+import { styled } from 'stitches.config'
+import tw from 'twin.macro'
 import { useQuery } from 'urql'
 
 import { Button, Dialog, DialogTrigger, Spinner } from '~/components'
@@ -18,11 +20,15 @@ const GetTodos = gql(/* GraphQL */ `
   }
 `)
 
+const StyledH1 = styled('h1', {
+  ...tw`text-blackA4 font-bold`,
+})
+
 function Todos() {
   const [res] = useQuery({ query: GetTodos })
+
   return (
     <div>
-      <h1 tw="text-black font-bold text-3xl">Todos</h1>
       <DevNote.Root>
         <DevNote.P>
           This page represents the very basic example of GraphQL React
@@ -31,9 +37,7 @@ function Todos() {
       </DevNote.Root>
       <Dialog>
         <DialogTrigger asChild>
-          <Button primary tw="mt-4">
-            New Todo
-          </Button>
+          <Button tw="mt-4">New Todo</Button>
         </DialogTrigger>
         <CreateTodoModal />
       </Dialog>

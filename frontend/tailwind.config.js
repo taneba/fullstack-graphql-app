@@ -1,6 +1,20 @@
 /* eslint @typescript-eslint/no-var-requires: "off" */
-// const colors = require('tailwindcss/colors')
 const colors = require('@radix-ui/colors')
+
+const blackA = {
+  blackA1: 'rgba(0, 0, 0, 0.012)',
+  blackA2: 'rgba(0, 0, 0, 0.027)',
+  blackA3: 'rgba(0, 0, 0, 0.047)',
+  blackA4: 'rgba(0, 0, 0, 0.071)',
+  blackA5: 'rgba(0, 0, 0, 0.090)',
+  blackA6: 'rgba(0, 0, 0, 0.114)',
+  blackA7: 'rgba(0, 0, 0, 0.141)',
+  blackA8: 'rgba(0, 0, 0, 0.220)',
+  blackA9: 'rgba(0, 0, 0, 0.439)',
+  blackA10: 'rgba(0, 0, 0, 0.478)',
+  blackA11: 'rgba(0, 0, 0, 0.565)',
+  blackA12: 'rgba(0, 0, 0, 0.910)',
+}
 
 module.exports = {
   theme: {
@@ -20,14 +34,20 @@ module.exports = {
       '6xl': '4rem',
       '7xl': '5rem',
     },
+    // colors: colors,
     colors: {
-      ...colors,
+      ...colors.blue,
+      ...colors.violet,
+      ...colors.slate,
+      ...colors.blackA,
+      ...colors.whiteA,
+      ...colors.sky,
+      ...colors.skyA,
+      ...colors.red,
+      ...blackA,
       placeholder: '#AFAFAF',
-      white: colors.white,
-      black: {
-        a9: 'rgba(0, 0, 0, 0.44)',
-        DEFAULT: '#000000',
-      },
+      white: '#FFFFFF',
+      black: '#000000',
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],

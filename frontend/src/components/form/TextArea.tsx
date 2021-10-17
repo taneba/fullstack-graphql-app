@@ -13,7 +13,7 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, Props>(
         {...restProps}
         className={className}
         value={restProps.value ?? undefined}
-        tw="border rounded-lg w-full h-40 p-3"
+        tw="border rounded-lg w-full h-40 p-3 border-slate8"
         ref={ref}
       />
     )

@@ -44,7 +44,7 @@ function NavItem({
 }) {
   return (
     <Link href={href}>
-      <p tw="hover:text-gray-800 text-gray-500 cursor-pointer flex items-center">
+      <p tw="hover:text-slate10 text-slate8 cursor-pointer flex items-center">
         {children}
       </p>
     </Link>

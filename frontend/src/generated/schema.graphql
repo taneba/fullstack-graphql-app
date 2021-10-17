@@ -5,7 +5,7 @@ schema {
 
 directive @auth(role: Role! = USER) on FIELD_DEFINITION
 
-directive @isOwner(ownerField: String!) on FIELD_DEFINITION | OBJECT
+directive @isOwner(ownerField: String) on FIELD_DEFINITION | OBJECT
 
 type Mutation {
   completeTodo(id: ID!): Todo @auth
