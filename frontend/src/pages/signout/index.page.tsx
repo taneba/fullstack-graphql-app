@@ -4,11 +4,7 @@ import { Button } from '~/components'
 
 function SignOut() {
   const { logout } = useAuth0()
-  return (
-    <Button primary onClick={logout}>
-      Sign Out
-    </Button>
-  )
+  return <Button onClick={() => logout()}>Sign Out</Button>
 }
 
 export default SignOut
