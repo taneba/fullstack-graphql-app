@@ -88,26 +88,26 @@ export type UserInput = {
 export type GetAllTodosQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetAllTodosQuery = { __typename?: 'Query', allTodos: Array<{ __typename?: 'Todo', id: string, createdAt?: Maybe<string>, updatedAt?: Maybe<string>, title: string, content?: Maybe<string>, completed: boolean, author?: Maybe<{ __typename?: 'User', name?: Maybe<string> }> }> };
+export type GetAllTodosQuery = { __typename?: 'Query', allTodos: Array<{ __typename?: 'Todo', id: string, createdAt?: string | null | undefined, updatedAt?: string | null | undefined, title: string, content?: string | null | undefined, completed: boolean, author?: { __typename?: 'User', name?: string | null | undefined } | null | undefined }> };
 
 export type GetCurrentUserQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetCurrentUserQuery = { __typename?: 'Query', currentUser?: Maybe<{ __typename?: 'User', id: string, name?: Maybe<string>, email: string }> };
+export type GetCurrentUserQuery = { __typename?: 'Query', currentUser?: { __typename?: 'User', id: string, name?: string | null | undefined, email: string } | null | undefined };
 
 export type SaveTodoMutationVariables = Exact<{
   todo: TodoInput;
 }>;
 
 
-export type SaveTodoMutation = { __typename?: 'Mutation', saveTodo?: Maybe<{ __typename: 'Todo', id: string }> };
+export type SaveTodoMutation = { __typename?: 'Mutation', saveTodo?: { __typename: 'Todo', id: string } | null | undefined };
 
 export type CompleteTodoMutationVariables = Exact<{
   id: Scalars['ID'];
 }>;
 
 
-export type CompleteTodoMutation = { __typename?: 'Mutation', completeTodo?: Maybe<{ __typename?: 'Todo', id: string }> };
+export type CompleteTodoMutation = { __typename?: 'Mutation', completeTodo?: { __typename?: 'Todo', id: string } | null | undefined };
 
 export type TodoItem_TodoFragment = { __typename?: 'Todo', id: string, title: string };
 
@@ -119,7 +119,7 @@ export type GetTodosQuery = { __typename?: 'Query', todosByCurrentUser: Array<{ 
 export type GetAllUsersQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetAllUsersQuery = { __typename?: 'Query', allUsers: Array<{ __typename?: 'User', id: string, name?: Maybe<string> }> };
+export type GetAllUsersQuery = { __typename?: 'Query', allUsers: Array<{ __typename?: 'User', id: string, name?: string | null | undefined }> };
 
 export const TodoItem_TodoFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"TodoItem_Todo"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Todo"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]} as unknown as DocumentNode<TodoItem_TodoFragment, unknown>;
 export const GetAllTodosDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetAllTodos"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"allTodos"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"createdAt"}},{"kind":"Field","name":{"kind":"Name","value":"updatedAt"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"content"}},{"kind":"Field","name":{"kind":"Name","value":"completed"}},{"kind":"Field","name":{"kind":"Name","value":"author"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}}]}}]} as unknown as DocumentNode<GetAllTodosQuery, GetAllTodosQueryVariables>;
