@@ -70,7 +70,7 @@
     "eslint-plugin-react": "7.26.1",
     "eslint-plugin-react-hooks": "4.2.0",
     "eslint-plugin-simple-import-sort": "7.0.0",
-    "graphql-playground-html": "1.6.29",
+    "graphql-playground-html": "1.6.30",
     "graphql-typescript-integration": "1.2.0",
     "isomorphic-unfetch": "3.1.0",
     "jest": "27.3.1",
