@@ -598,14 +598,7 @@
     jsonwebtoken "^8.5.1"
     jwks-rsa "^2.0.1"
 
-"@envelop/core@1.6.0":
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/@envelop/core/-/core-1.6.0.tgz#65518d328c1cf7d731f046c40eca2844f36e09d3"
-  integrity sha512-Whnrp/Rswwva5IWTW7fqfr+ALuqZhSp67kgXKggF4l8I3rjkZQBerG+YIlPyrg+PHhalFbX0tqvaeqsL5QVjcQ==
-  dependencies:
-    "@envelop/types" "1.5.0"
-
-"@envelop/core@^1.6.1":
+"@envelop/core@1.6.1", "@envelop/core@^1.6.1":
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/@envelop/core/-/core-1.6.1.tgz#327ed1f27cd9a847c3560e18cca078ba834f8d0e"
   integrity sha512-c2ugQ0rS7HhKQLsRUvdnmJfHP5gNYDJm2VONDiFs2yBnu/hWJMaHacZTT8iDFRq2RxdDmSpVJip/AXJ4bVn6lQ==
@@ -631,11 +624,6 @@
   integrity sha512-r8XEfMdo+uAqzPjW5Ub2o2QPylD9mbiVrAkyWB0OdJi2hBLJixo+dmdZH/rSOmhXAe8h4tNsVl2FHA+Rq42jEw==
   dependencies:
     graphql-rate-limit "3.1.0"
-
-"@envelop/types@1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@envelop/types/-/types-1.5.0.tgz#3572ae19754942e5a08d9c2fae8991e86406e2c5"
-  integrity sha512-NSSHhL7n30IEgYXC2qRt9PqFnNb1ITGAhljJKYJufAZ8xz+DeBP2RHBt0MYvETWz84yc1525piCt1H9Vx4Q44Q==
 
 "@envelop/types@1.5.1":
   version "1.5.1"
