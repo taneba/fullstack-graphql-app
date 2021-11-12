@@ -620,10 +620,10 @@
     "@envelop/core" "^1.6.1"
     graphql-depth-limit "^1.1.0"
 
-"@envelop/generic-auth@1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@envelop/generic-auth/-/generic-auth-1.0.1.tgz#6401824aba272b0ca822bac4d7bc788208529992"
-  integrity sha512-4+3G0/X3WUM7qjy8DmjzWygwh1dAV9vj5FVvEHQ4uM1Gy7KkUZtmwt0ZNWej6kU27RFXC4xQIc4H8jpQMGggPg==
+"@envelop/generic-auth@1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@envelop/generic-auth/-/generic-auth-1.2.1.tgz#ee7e7d830693a8ccc9e4b8e3bb6c808c126cdc43"
+  integrity sha512-8UjNuCXSGt+yvvCM7hX4ss2x0+6HVrKKaH3qxWoqoSpbz21nuP9+U5cxAEZSmxjmbRN0PY/MxB81oolaMvd61w==
 
 "@envelop/rate-limiter@1.0.0":
   version "1.0.0"
