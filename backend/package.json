@@ -51,7 +51,7 @@
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-simple-import-sort": "7.0.0",
     "graphql-playground-html": "1.6.30",
-    "nodemon": "2.0.14",
+    "nodemon": "2.0.15",
     "prisma": "3.3.0",
     "ts-node": "10.4.0",
     "ts-node-dev": "1.1.8",
