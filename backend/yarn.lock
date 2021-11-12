@@ -605,11 +605,19 @@
   dependencies:
     "@envelop/types" "1.5.0"
 
-"@envelop/depth-limit@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@envelop/depth-limit/-/depth-limit-1.0.0.tgz#7269943879eeabd31fade1ccefbc5c1fdd2762b7"
-  integrity sha512-Ujy75wKcNJk8AwT1iOKVPUEODrtWxHCuA2SuCGXOG1IUfuKBpskiwkrIE5G46hoYzfQhZfZ8KS9Ak3AKA/e+vg==
+"@envelop/core@^1.6.1":
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/@envelop/core/-/core-1.6.1.tgz#327ed1f27cd9a847c3560e18cca078ba834f8d0e"
+  integrity sha512-c2ugQ0rS7HhKQLsRUvdnmJfHP5gNYDJm2VONDiFs2yBnu/hWJMaHacZTT8iDFRq2RxdDmSpVJip/AXJ4bVn6lQ==
   dependencies:
+    "@envelop/types" "1.5.1"
+
+"@envelop/depth-limit@1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@envelop/depth-limit/-/depth-limit-1.2.1.tgz#166c0409dca1b40169d65a9b4877b578a94beefe"
+  integrity sha512-oLUSzFYAu1zk2jVN1613V7Qb8VdvvOduuvUQidI3aUJHRzbshEw1TEDZXz2PWA5zSbFuCPGBnT2Be9lEFLegAQ==
+  dependencies:
+    "@envelop/core" "^1.6.1"
     graphql-depth-limit "^1.1.0"
 
 "@envelop/generic-auth@1.0.1":
@@ -628,6 +636,11 @@
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/@envelop/types/-/types-1.5.0.tgz#3572ae19754942e5a08d9c2fae8991e86406e2c5"
   integrity sha512-NSSHhL7n30IEgYXC2qRt9PqFnNb1ITGAhljJKYJufAZ8xz+DeBP2RHBt0MYvETWz84yc1525piCt1H9Vx4Q44Q==
+
+"@envelop/types@1.5.1":
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/@envelop/types/-/types-1.5.1.tgz#8a47ca9f6e78b40b176dac0dea6c5045f92c644d"
+  integrity sha512-NrwLVzyNqiSzgRRqOxkU2IgRc5hSGS73VsgxqchU3jl36rYo7AXVAnITkytmB9wk+jN2vUOVvayLkaTXooARwg==
 
 "@eslint/eslintrc@^0.4.3":
   version "0.4.3"
