@@ -618,12 +618,12 @@
   resolved "https://registry.yarnpkg.com/@envelop/generic-auth/-/generic-auth-1.2.1.tgz#ee7e7d830693a8ccc9e4b8e3bb6c808c126cdc43"
   integrity sha512-8UjNuCXSGt+yvvCM7hX4ss2x0+6HVrKKaH3qxWoqoSpbz21nuP9+U5cxAEZSmxjmbRN0PY/MxB81oolaMvd61w==
 
-"@envelop/rate-limiter@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@envelop/rate-limiter/-/rate-limiter-1.0.0.tgz#846c763bbee5eedebade54c37558bb39dc9eb1ac"
-  integrity sha512-r8XEfMdo+uAqzPjW5Ub2o2QPylD9mbiVrAkyWB0OdJi2hBLJixo+dmdZH/rSOmhXAe8h4tNsVl2FHA+Rq42jEw==
+"@envelop/rate-limiter@1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@envelop/rate-limiter/-/rate-limiter-1.2.1.tgz#82acb6eb66f8e6998bab68c260d8a0b0e186cc84"
+  integrity sha512-KAonXY6Nk9rcH7W9rj2STdnKP1oudRD0jF2RoLenkByHjoxMISOSt1rFDmQMEHaoQh0SHKcsT6W/CP95GQWFmA==
   dependencies:
-    graphql-rate-limit "3.1.0"
+    graphql-rate-limit "3.3.0"
 
 "@envelop/types@1.5.1":
   version "1.5.1"
@@ -3110,10 +3110,10 @@ graphql-playground-html@1.6.30:
   dependencies:
     xss "^1.0.6"
 
-graphql-rate-limit@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/graphql-rate-limit/-/graphql-rate-limit-3.1.0.tgz#df8f164cfda38604104b58647ea8a6821dd78b40"
-  integrity sha512-cT/WGsZye0e6EQPKPh01CcRrx/kstBe1Pxv8dae5LHtCSb0sCKQIdQMyBhJsFAkKERBiQVegLaDvhI+V9H7pJA==
+graphql-rate-limit@3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/graphql-rate-limit/-/graphql-rate-limit-3.3.0.tgz#241e3f6dc4cc3cbd139d63d40e2ce613f8485646"
+  integrity sha512-mbbEv5z3SjkDLvVVdHi0XrVLavw2Mwo93GIqgQB/fx8dhcNSEv3eYI1OGdp8mhsm/MsZm7hjrRlwQMVRKBVxhA==
   dependencies:
     "@graphql-tools/utils" "^7.6.0"
     graphql-shield "^7.5.0"
