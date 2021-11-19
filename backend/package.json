@@ -23,7 +23,7 @@
     "@graphql-tools/schema": "8.3.1",
     "@prisma/client": "3.5.0",
     "@types/got": "9.6.12",
-    "@types/jsonwebtoken": "8.5.5",
+    "@types/jsonwebtoken": "8.5.6",
     "@types/node": "16.11.7",
     "fastify": "3.24.0",
     "fastify-compress": "3.6.1",
