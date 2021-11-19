@@ -21,7 +21,7 @@
     "@envelop/generic-auth": "1.2.1",
     "@envelop/rate-limiter": "1.2.1",
     "@graphql-tools/schema": "8.3.1",
-    "@prisma/client": "3.3.0",
+    "@prisma/client": "3.5.0",
     "@types/got": "9.6.12",
     "@types/jsonwebtoken": "8.5.5",
     "@types/node": "16.11.7",
@@ -35,7 +35,7 @@
     "graphql-tools": "8.2.0",
     "jsonwebtoken": "8.5.1",
     "jwks-rsa": "2.0.5",
-    "prisma": "3.3.0",
+    "prisma": "3.5.0",
     "ts-pattern": "3.3.3",
     "typescript": "4.4.4"
   },
@@ -52,7 +52,7 @@
     "eslint-plugin-simple-import-sort": "7.0.0",
     "graphql-playground-html": "1.6.30",
     "nodemon": "2.0.15",
-    "prisma": "3.3.0",
+    "prisma": "3.5.0",
     "ts-node": "10.4.0",
     "ts-node-dev": "1.1.8",
     "tsconfig-paths": "3.11.0"
