@@ -15,7 +15,7 @@
     "lint": "eslint --fix --cache --ext .ts,.tsx src"
   },
   "dependencies": {
-    "@envelop/auth0": "1.1.0",
+    "@envelop/auth0": "1.2.1",
     "@envelop/core": "1.6.1",
     "@envelop/depth-limit": "1.2.1",
     "@envelop/generic-auth": "1.2.1",

@@ -590,10 +590,10 @@
     ts-node "^9"
     tslib "^2"
 
-"@envelop/auth0@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@envelop/auth0/-/auth0-1.1.0.tgz#72ece8a288c39617e5b72b073c01dbc982297fd7"
-  integrity sha512-GTjVs+Yv5/9WWHYthmxhmD4SoM/eGiN82Nsbp3KtMDew2fY4hWWmDXHcqgY6PvOcv0jr/jIVYY0cNuVyb5MnWQ==
+"@envelop/auth0@1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@envelop/auth0/-/auth0-1.2.1.tgz#0c7f852dbdaacff27e2ea115a3831e80f90360f5"
+  integrity sha512-B+N8Z35S+raMfvpIlnMY6SPs0HtLxYg+v9SmXmJUQEgbuS6QNml/WEUpW96F44NAJyXy6xj3WHETTY/3NEdneg==
   dependencies:
     jsonwebtoken "^8.5.1"
     jwks-rsa "^2.0.1"
