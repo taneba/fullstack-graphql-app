@@ -3112,10 +3112,10 @@ graphql-depth-limit@^1.1.0:
   dependencies:
     arrify "^1.0.1"
 
-graphql-helix@1.10.1:
-  version "1.10.1"
-  resolved "https://registry.yarnpkg.com/graphql-helix/-/graphql-helix-1.10.1.tgz#7f874307517cac87c03224e3bb86b0ff7ddc0c6b"
-  integrity sha512-gFhXr5mDxqR/CJmMQr/c/eSerovIMnGccxzo/dOrkf3Epyb8QyNM9VQSsnnROPFyAh+J+T0HIMsgo51K+fx+6A==
+graphql-helix@1.10.2:
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/graphql-helix/-/graphql-helix-1.10.2.tgz#88a6d3869277dde2c30c770affc5d9ead27fb7e9"
+  integrity sha512-XSG9X7X0/+luu6sK24fxy3SbSJ8Hx34UlR6acx760p99x8SkIxQhCFWZNdwkM+pwJI63ZREXXjowoH6IcGNPoA==
 
 graphql-playground-html@1.6.30:
   version "1.6.30"
