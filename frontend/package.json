@@ -52,7 +52,7 @@
     "@graphql-codegen/typescript-urql": "3.4.1",
     "@graphql-typed-document-node/core": "3.1.1",
     "@next/bundle-analyzer": "12.0.4",
-    "@testing-library/jest-dom": "5.15.0",
+    "@testing-library/jest-dom": "5.15.1",
     "@testing-library/react": "12.1.2",
     "@types/jest": "27.0.3",
     "@types/react": "17.0.35",
