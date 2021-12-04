@@ -625,10 +625,10 @@
   resolved "https://registry.yarnpkg.com/@envelop/generic-auth/-/generic-auth-1.2.1.tgz#ee7e7d830693a8ccc9e4b8e3bb6c808c126cdc43"
   integrity sha512-8UjNuCXSGt+yvvCM7hX4ss2x0+6HVrKKaH3qxWoqoSpbz21nuP9+U5cxAEZSmxjmbRN0PY/MxB81oolaMvd61w==
 
-"@envelop/rate-limiter@1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@envelop/rate-limiter/-/rate-limiter-1.2.1.tgz#82acb6eb66f8e6998bab68c260d8a0b0e186cc84"
-  integrity sha512-KAonXY6Nk9rcH7W9rj2STdnKP1oudRD0jF2RoLenkByHjoxMISOSt1rFDmQMEHaoQh0SHKcsT6W/CP95GQWFmA==
+"@envelop/rate-limiter@1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@envelop/rate-limiter/-/rate-limiter-1.3.0.tgz#a24120b07a2a34456c297c99c94704deaf5fedcc"
+  integrity sha512-9JBtM7LsLcJClCOWcJCH2s60l2eGGGF07tud6eSYHVAMViy6ATsS6tqMB2VHV97/Iyl7OykVnLWa4ciPop2SbQ==
   dependencies:
     graphql-rate-limit "3.3.0"
 
