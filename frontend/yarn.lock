@@ -1991,14 +1991,14 @@
   dependencies:
     "@babel/runtime" "^7.13.10"
 
-"@radix-ui/react-avatar@0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@radix-ui/react-avatar/-/react-avatar-0.1.1.tgz#a5e2c660f5e2564ad75fb30587bfdbba64137411"
-  integrity sha512-yFWO2VZNmO6EkwwdKSIf5Wabd97iGFzKNrLI8aIHFYuZe+WBOnfF99SeU52wm2a18k/sdIiwTZlsxUCiSBadEw==
+"@radix-ui/react-avatar@0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-avatar/-/react-avatar-0.1.2.tgz#31ddc80bcaabf1fb3869490de4a3a9e07da5ddec"
+  integrity sha512-aHfzDe/QvDOTlQ98CMK0fgYZo8H/cPoFh9FV0wsCNppIYbUxoeXl3ebdLYpLf9mpZX9OTRW7B8ksmVFbCFWtrw==
   dependencies:
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-context" "0.1.1"
-    "@radix-ui/react-primitive" "0.1.1"
+    "@radix-ui/react-primitive" "0.1.2"
     "@radix-ui/react-use-callback-ref" "0.1.0"
     "@radix-ui/react-use-layout-effect" "0.1.0"
 
@@ -2105,10 +2105,26 @@
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-slot" "0.1.1"
 
+"@radix-ui/react-primitive@0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-primitive/-/react-primitive-0.1.2.tgz#ca20fb15fc83124eead186333f917145e5e53378"
+  integrity sha512-mVgeBkuNRZRCzHuDm2DWjZEIs3ntp4m3GtKWPXUn+SgmJXIIpVLt7KhvEmNkgXURq/DJgxG9GmJJMXkACioH/A==
+  dependencies:
+    "@babel/runtime" "^7.13.10"
+    "@radix-ui/react-slot" "0.1.2"
+
 "@radix-ui/react-slot@0.1.1":
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-slot/-/react-slot-0.1.1.tgz#9dbc2070ccc492847f7e43747b4847bc54786a76"
   integrity sha512-deq3K7cCXQ+tWMZF2GKl3zGMcwVbyQDiMY/UcPI0Q1DDudRG2dWrEwcYbYajEelc07oOxzNyKpaXZLOpNxquuA==
+  dependencies:
+    "@babel/runtime" "^7.13.10"
+    "@radix-ui/react-compose-refs" "0.1.0"
+
+"@radix-ui/react-slot@0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-slot/-/react-slot-0.1.2.tgz#e6f7ad9caa8ce81cc8d532c854c56f9b8b6307c8"
+  integrity sha512-ADkqfL+agEzEguU3yS26jfB50hRrwf7U4VTwAOZEmi/g+ITcBWe12yM46ueS/UCIMI9Py+gFUaAdxgxafFvY2Q==
   dependencies:
     "@babel/runtime" "^7.13.10"
     "@radix-ui/react-compose-refs" "0.1.0"
