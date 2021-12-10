@@ -598,10 +598,10 @@
     jsonwebtoken "^8.5.1"
     jwks-rsa "^2.0.1"
 
-"@envelop/core@1.6.2":
-  version "1.6.2"
-  resolved "https://registry.yarnpkg.com/@envelop/core/-/core-1.6.2.tgz#03e80b01cd0faaca0e1d0a406a14d6693c6dbd84"
-  integrity sha512-otrNSlMgR0e8xG2tHI5Lcsg4YWKdUngRBn/dhxzTK2KFOOQa4mEfQI5k3/hESFlC8WFbP2pvNmegPjxa7aK4eA==
+"@envelop/core@1.6.4":
+  version "1.6.4"
+  resolved "https://registry.yarnpkg.com/@envelop/core/-/core-1.6.4.tgz#cf596d570428b87a7c8e22ee95b753ec837ccd90"
+  integrity sha512-/cUMG0ZVNwwNOu1ZFxFgzo7DyB17nkwpFZAAidkY+g+yNBWu+V76kwziH5Qdu7ca3Rv4F8u1Y0BWRlvMunb2sQ==
   dependencies:
     "@envelop/types" "1.5.1"
 
