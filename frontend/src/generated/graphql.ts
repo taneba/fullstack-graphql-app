@@ -1,6 +1,7 @@
 /* eslint-disable */
 import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
 export type Maybe<T> = T | null;
+export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
@@ -68,7 +69,7 @@ export type Todo = {
 };
 
 export type TodoInput = {
-  content?: Maybe<Scalars['String']>;
+  content?: InputMaybe<Scalars['String']>;
   title: Scalars['String'];
 };
 
@@ -82,7 +83,7 @@ export type User = {
 
 export type UserInput = {
   email: Scalars['String'];
-  name?: Maybe<Scalars['String']>;
+  name?: InputMaybe<Scalars['String']>;
 };
 
 export type GetAllTodosQueryVariables = Exact<{ [key: string]: never; }>;
