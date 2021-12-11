@@ -4,7 +4,6 @@
 
 "@app/gql@link:./src/generated/graphql.ts":
   version "0.0.0"
-  uid ""
 
 "@ardatan/aggregate-error@0.0.6":
   version "0.0.6"
@@ -8621,10 +8620,10 @@ tty-browserify@0.0.1:
   resolved "https://registry.yarnpkg.com/tty-browserify/-/tty-browserify-0.0.1.tgz#3f05251ee17904dfd0677546670db9651682b811"
   integrity sha512-C3TaO7K81YvjCgQH9Q1S3R3P3BtN3RIM8n+OvX4il1K1zgE8ZhI0op7kClgkxtutIE8hQrcrHBXvIheqKUUCxw==
 
-twin.macro@2.8.1:
-  version "2.8.1"
-  resolved "https://registry.yarnpkg.com/twin.macro/-/twin.macro-2.8.1.tgz#674c75a47b0416b9d129681b2676f20507c4697b"
-  integrity sha512-rsAc9Ll+9JER5xwbHxtJp3VQghlw18WzNi0lDyKBtLcvpreqRBtPjQjvP3NRey0tYkYF0GgoDWZoQtlkGcUKPw==
+twin.macro@2.8.2:
+  version "2.8.2"
+  resolved "https://registry.yarnpkg.com/twin.macro/-/twin.macro-2.8.2.tgz#7f1344b4b1c3811da93a62fa204fe08999df7a75"
+  integrity sha512-2Vg09mp+nA70AWUedJ8WRgB2me3buq7JGbOnjHnFnNaBzomVu5k7lJ9YGpByIlre+UYr7QRhtlj7+IUKxvCrUA==
   dependencies:
     "@babel/parser" "^7.12.5"
     "@babel/template" "^7.14.5"
