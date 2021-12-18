@@ -37,7 +37,7 @@
     "jwks-rsa": "2.0.5",
     "prisma": "3.5.0",
     "ts-pattern": "3.3.3",
-    "typescript": "4.5.3"
+    "typescript": "4.5.4"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "2.3.0",
