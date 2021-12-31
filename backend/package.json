@@ -40,9 +40,9 @@
     "typescript": "4.5.4"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "2.3.0",
-    "@graphql-codegen/typescript-resolvers": "2.4.2",
-    "@graphql-codegen/visitor-plugin-common": "2.5.1",
+    "@graphql-codegen/cli": "2.3.1",
+    "@graphql-codegen/typescript-resolvers": "2.4.3",
+    "@graphql-codegen/visitor-plugin-common": "2.5.2",
     "@typescript-eslint/eslint-plugin": "4.33.0",
     "@typescript-eslint/parser": "4.33.0",
     "chalk": "5.0.0",
