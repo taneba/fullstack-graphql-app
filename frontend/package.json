@@ -40,9 +40,9 @@
   },
   "devDependencies": {
     "@app/gql": "link:./src/generated/graphql.ts",
-    "@babel/preset-env": "7.16.5",
-    "@babel/preset-react": "7.16.5",
-    "@babel/preset-typescript": "7.16.5",
+    "@babel/preset-env": "7.16.7",
+    "@babel/preset-react": "7.16.7",
+    "@babel/preset-typescript": "7.16.7",
     "@graphql-codegen/cli": "2.3.0",
     "@graphql-codegen/gql-tag-operations-preset": "1.2.1",
     "@graphql-codegen/schema-ast": "2.4.0",
