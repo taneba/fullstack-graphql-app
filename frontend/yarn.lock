@@ -8300,10 +8300,10 @@ ts-node@^9:
     source-map-support "^0.5.17"
     yn "3.1.1"
 
-ts-pattern@3.3.4:
-  version "3.3.4"
-  resolved "https://registry.yarnpkg.com/ts-pattern/-/ts-pattern-3.3.4.tgz#127f51bae9c29551f8fdc7c588ba1ec65b8e5c24"
-  integrity sha512-bZFReX+qF6N6c9SyycqBmYeoOgZCBep0+/M/kFan9Ujf1t2KqJJUhruVXWyeOVJrHxGPKbB+4xA7feqHS2t+Iw==
+ts-pattern@3.3.5:
+  version "3.3.5"
+  resolved "https://registry.yarnpkg.com/ts-pattern/-/ts-pattern-3.3.5.tgz#9a4bde1d44f9afe7e82409820f68790232c2544c"
+  integrity sha512-LD+wFR/RNckk1DrKV0LTH4KIT9wRqnnOjtEf77ovhKcVi8gf83Uf6U7OdywEua6KD9SbHadUdfolayfIUiPxzw==
 
 tsconfig-paths@^3.9.0:
   version "3.12.0"
