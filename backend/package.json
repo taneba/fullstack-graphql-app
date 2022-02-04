@@ -24,7 +24,7 @@
     "@prisma/client": "3.5.0",
     "@types/got": "9.6.12",
     "@types/jsonwebtoken": "8.5.8",
-    "@types/node": "16.11.21",
+    "@types/node": "16.11.22",
     "fastify": "3.27.0",
     "fastify-compress": "4.0.1",
     "fastify-cors": "6.0.2",
