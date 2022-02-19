@@ -53,7 +53,7 @@
     "graphql-playground-html": "1.6.30",
     "nodemon": "2.0.15",
     "prisma": "3.5.0",
-    "ts-node": "10.4.0",
+    "ts-node": "10.5.0",
     "ts-node-dev": "1.1.8",
     "tsconfig-paths": "3.12.0"
   }
