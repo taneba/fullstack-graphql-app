@@ -12,6 +12,7 @@
     "prisma-gen": "dotenv -e .env.localhost prisma generate",
     "prisma-studio": "dotenv -e .env.localhost prisma studio",
     "typecheck": "tsc --noEmit",
+    "build": "tsc",
     "lint": "eslint --fix --cache --ext .ts,.tsx src"
   },
   "dependencies": {
