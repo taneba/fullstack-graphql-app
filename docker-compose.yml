@@ -16,7 +16,7 @@ services:
       AUTH0_DOMAIN:
       AUTH0_AUDIENCE:
       AUTH0_CLIENT_ID:
-      DATABASE_URL: mysql://fga:fga@db:3306/fga
+      DATABASE_URL:
     depends_on:
       - db
     restart: on-failure
