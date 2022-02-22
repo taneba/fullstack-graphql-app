@@ -3,51 +3,32 @@ RUN apk update && \
     apk add git
 
 RUN yarn global add turbo
+WORKDIR "/app"
 
-WORKDIR "/usr/src/fga-server"
+RUN pwd
 
 # Prune the workspace for the backend aapp
 FROM base as pruner
 COPY .git ./.git
 COPY . .
+RUN pwd
 RUN turbo prune --scope=backend --docker
 
 # Add pruned lockfile and package.json's of the pruned subworkspace
 FROM pruner as installer
-COPY --from=builder /app/out/json/ .
-COPY --from=builder /app/out/yarn.lock ./yarn.lock
+COPY --from=pruner /app/out/json/ .
+COPY --from=pruner /app/out/yarn.lock ./yarn.lock
 
 # Install only the deps needed to build the target
 RUN yarn install
 
 # Copy source code of pruned subworkspace and build
 FROM installer as builder
-ARG WORKDIR=/usr/src/fga-server
-WORKDIR ${WORKDIR}
 
-COPY --from=pruner .git ./.git
+COPY --from=pruner /app/.git ./.git
 COPY --from=installer /app/ .
-COPY --from=builder /app/out/full/ .
+COPY --from=pruner /app/out/full/ .
 RUN turbo run build --scope=backend
-
-# Start the app
-FROM builder as runner
 EXPOSE 4000
+
 CMD node ./dist/index.js
-
-# FROM node:16-alpine
-
-# ARG WORKDIR=/usr/src/fga-server
-# WORKDIR ${WORKDIR}
-
-# RUN apk update && \
-#     apk add git
-
-# COPY --from=pruner ${WORKDIR}/dist ./dist
-# COPY ./package.json ${WORKDIR}
-# COPY ./yarn.lock ${WORKDIR}
-# RUN yarn install --production
-
-# EXPOSE 4000
-
-# CMD node ./dist/index.js
