@@ -1,6 +1,6 @@
 # fullstack-graphql-app
 
-An opinionated fullstack GraphQL Boilerplate using modern tech stack.
+An opinionated fullstack GraphQL monorepo Boilerplate using modern tech stack.
 
 ## Concepts
 
@@ -24,6 +24,7 @@ An opinionated fullstack GraphQL Boilerplate using modern tech stack.
 Common
 
 - TypeScript
+- Turborepo
 - GraphQL
 - graphql-codegen
 
