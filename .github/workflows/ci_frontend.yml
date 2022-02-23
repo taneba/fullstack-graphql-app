@@ -30,7 +30,6 @@ jobs:
       #     key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
       #     restore-keys: |
       #       ${{ runner.os }}-yarn-
-
       - name: Turbo Cache
         id: turbo-cache
         uses: actions/cache@v2
@@ -40,15 +39,26 @@ jobs:
           restore-keys: |
             turbo-${{ github.job }}-${{ github.ref_name }}-
 
+      - name: Prune
+        run: yarn turbo prune --scope=frontend
+
       # Throw an error if the yarn.lock file doesn't match the installed dependencies (rather than updating it in-place, which it does by default locally)
       - name: Install
-        run: yarn install --frozen-lockfile --silent
+        run: |
+          cd out
+          yarn install --frozen-lockfile --silent
 
       - name: Lint
-        run: yarn lint:frontend
+        run: |
+          cd out
+          yarn lint:frontend
 
       - name: Typecheck
-        run: yarn typecheck:frontend
+        run: |
+          cd out
+          yarn typecheck:frontend
 
       - name: Tests (Jest)
-        run: yarn test:frontend
+        run: |
+          cd out
+          yarn test:frontend
