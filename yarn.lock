@@ -29,7 +29,6 @@
 
 "@app/gql@link:./apps/frontend/src/generated/graphql.ts":
   version "0.0.0"
-  uid ""
 
 "@ardatan/aggregate-error@0.0.6":
   version "0.0.6"
@@ -38,14 +37,14 @@
   dependencies:
     tslib "~2.0.1"
 
-"@auth0/auth0-react@1.8.0":
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/@auth0/auth0-react/-/auth0-react-1.8.0.tgz#6fc34c0dabc72944467e50f9b8244d22e6f52f01"
-  integrity sha512-tlrabVy4mB07Jbw41S2Ze2a7eGLyL32xs5OURGHXrCCxPXOYpBMeV9FdPssIK6vbAVRiUgwoeiemFAGhLRLZ0w==
+"@auth0/auth0-react@1.9.0":
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/@auth0/auth0-react/-/auth0-react-1.9.0.tgz#957041fa9756a5cf20412116f19f2d1367aa66b6"
+  integrity sha512-VkovI2i7dI1dkIJAdS51O9XMq6vlcHJn9DL+if4rSxt+sNocFd1i4q0j07a9XbafBj4/WEkSbOiX93z2ZXqdAA==
   dependencies:
-    "@auth0/auth0-spa-js" "^1.18.0"
+    "@auth0/auth0-spa-js" "^1.19.3"
 
-"@auth0/auth0-spa-js@^1.18.0":
+"@auth0/auth0-spa-js@^1.19.3":
   version "1.20.0"
   resolved "https://registry.yarnpkg.com/@auth0/auth0-spa-js/-/auth0-spa-js-1.20.0.tgz#0fbb47b518e74877cc519cd51fbfa50fad18a2a3"
   integrity sha512-TSQn8UJKRwamWCxUFbWqXQICWhrBF7vPg5Y/DrziFoDAzfUn6jIl7bv1xb3VMml6xwkCvMaHY4IE48LzwNUjUg==
