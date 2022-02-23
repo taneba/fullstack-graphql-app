@@ -29,7 +29,6 @@
 
 "@app/gql@link:./apps/frontend/src/generated/graphql.ts":
   version "0.0.0"
-  uid ""
 
 "@ardatan/aggregate-error@0.0.6":
   version "0.0.6"
@@ -1107,10 +1106,10 @@
     ts-node "^9"
     tslib "^2"
 
-"@envelop/auth0@1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@envelop/auth0/-/auth0-1.2.1.tgz#0c7f852dbdaacff27e2ea115a3831e80f90360f5"
-  integrity sha512-B+N8Z35S+raMfvpIlnMY6SPs0HtLxYg+v9SmXmJUQEgbuS6QNml/WEUpW96F44NAJyXy6xj3WHETTY/3NEdneg==
+"@envelop/auth0@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@envelop/auth0/-/auth0-3.0.0.tgz#0d0eded0092a4a267893123e2453982a9b340d5e"
+  integrity sha512-/e0XqNIPF6kWArhsCnkyuN9H6XRZyGc9QhTCvJreruOfi4MqioQC8KMQTkQXzwtcqUzoNLZBMQMBeavDlxJfbw==
   dependencies:
     jsonwebtoken "^8.5.1"
     jwks-rsa "^2.0.1"
