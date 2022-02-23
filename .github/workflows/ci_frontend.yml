@@ -48,21 +48,17 @@ jobs:
 
       # Throw an error if the yarn.lock file doesn't match the installed dependencies (rather than updating it in-place, which it does by default locally)
       - name: Install
-        run: |
-          cd out
-          yarn install --frozen-lockfile --silent
+        working-directory: ./out
+        run: yarn install --frozen-lockfile --silent
 
       - name: Lint
-        run: |
-          cd out
-          yarn lint:frontend
+        working-directory: ./out
+        run: yarn lint:frontend
 
       - name: Typecheck
-        run: |
-          cd out
-          yarn typecheck:frontend
+        working-directory: ./out
+        run: yarn typecheck:frontend
 
       - name: Tests (Jest)
-        run: |
-          cd out
-          yarn test:frontend
+        working-directory: ./out
+        run: yarn test:frontend
