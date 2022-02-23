@@ -12,6 +12,9 @@
     "typecheck": {
       "outputs": []
     },
+    "test": {
+      "outputs": ["coverage/**"]
+    },
     "dev": {}
   }
 }
