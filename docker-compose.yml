@@ -1,24 +1,25 @@
 version: '3.7'
 services:
   app:
-    image: node:lts-alpine
     tty: true
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.backend
     volumes:
-      - /usr/src/fga-server/node_modules
-      - .:/usr/src/fga-server
-    working_dir: /usr/src/fga-server
+      - /app/node_modules
+      - .:/app
+    working_dir: /app
     ports:
       - '5000:5000'
-    command: ash -c 'yarn && yarn dev'
+    command: yarn turbo run dev --scope=backend
     environment:
       AUTH0_DOMAIN:
       AUTH0_AUDIENCE:
       AUTH0_CLIENT_ID:
+      DATABASE_URL:
     depends_on:
       - db
+    restart: on-failure
 
   db:
     image: mysql:latest

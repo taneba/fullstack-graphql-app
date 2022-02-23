@@ -20,7 +20,7 @@ export const err = <E extends AppErrorType>(error: E): Err<E> => ({
 })
 
 export const matchResult = <T extends Result<any, AppErrorType>>(result: T) =>
-  match(result).with<Pattern<any>, unknown>(
+  match(result).with<Pattern<any>, unknown, any>(
     { type: 'error', error: 'DATABASE' },
     () => {
       throw new EnvelopError('database error')

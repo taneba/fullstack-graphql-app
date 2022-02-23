@@ -1,4 +1,5 @@
 {
+  "extends": "tsconfig/base.json",
   "compilerOptions": {
     "target": "ES2019",
     "module": "CommonJS",
@@ -6,17 +7,13 @@
     "paths": {
       "~/*": ["src/*"]
     },
-    "strict": true,
     "allowJs": true,
     "alwaysStrict": true,
-    "skipLibCheck": true,
     "noEmit": true,
     "allowSyntheticDefaultImports": true,
-    "moduleResolution": "Node",
     "resolveJsonModule": true,
     "noImplicitAny": true,
     "lib": ["es2020"],
-    "esModuleInterop": true,
     "outDir": "./dist",
     "rootDir": "./src",
     "forceConsistentCasingInFileNames": true,

@@ -1,0 +1,16 @@
+{
+  "extends": "tsconfig/nextjs.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"]
+    },
+    "alwaysStrict": true,
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": ["src/types", "./node_modules/@types"],
+    "types": ["node", "@types/jest", "@testing-library/jest-dom"]
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "files": ["./src/types/twin.d.ts"],
+  "exclude": ["node_modules/**/*", "src/generated/**/*"]
+}

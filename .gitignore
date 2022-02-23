@@ -8,3 +8,11 @@ yarn-error.log*
 .env
 .envrc
 **/tmp
+
+.turbo
+
+build/**
+dist/**
+.next/**
+
+docker/db/data/
