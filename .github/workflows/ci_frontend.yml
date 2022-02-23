@@ -40,7 +40,7 @@ jobs:
             turbo-${{ github.job }}-${{ github.ref_name }}-
 
       - name: Prune
-        run: yarn turbo prune --scope=frontend
+        run: npx turbo prune --scope=frontend
 
       # Throw an error if the yarn.lock file doesn't match the installed dependencies (rather than updating it in-place, which it does by default locally)
       - name: Install
