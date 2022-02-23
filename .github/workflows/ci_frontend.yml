@@ -5,9 +5,9 @@ jobs:
   test:
     name: Lint, Type check & Test
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./frontend
+    # defaults:
+    #   run:
+    #     working-directory: ./frontend
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -18,28 +18,37 @@ jobs:
           node-version: '14'
 
       # Cache node_modules for faster CI runs if the yarn.lock doesn't change change
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir
-        run: echo "::set-output name=dir::$(yarn cache dir)"
+      # - name: Get yarn cache directory path
+      #   id: yarn-cache-dir
+      #   run: echo "::set-output name=dir::$(yarn cache dir)"
 
-      - name: Restore yarn cache
+      # - name: Restore yarn cache
+      #   uses: actions/cache@v2
+      #   id: yarn-cache
+      #   with:
+      #     path: ${{ steps.yarn-cache-dir.outputs.dir }}
+      #     key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-yarn-
+
+      - name: Turbo Cache
+        id: turbo-cache
         uses: actions/cache@v2
-        id: yarn-cache
         with:
-          path: ${{ steps.yarn-cache-dir.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          path: .turbo
+          key: turbo-${{ github.job }}-${{ github.ref_name }}-${{ github.sha }}
           restore-keys: |
-            ${{ runner.os }}-yarn-
+            turbo-${{ github.job }}-${{ github.ref_name }}-
 
       # Throw an error if the yarn.lock file doesn't match the installed dependencies (rather than updating it in-place, which it does by default locally)
       - name: Install
         run: yarn install --frozen-lockfile --silent
 
       - name: Lint
-        run: yarn lint
+        run: yarn lint:frontend
 
       - name: Typecheck
         run: yarn typecheck
 
       - name: Tests (Jest)
-        run: yarn test
+        run: yarn test:frontend

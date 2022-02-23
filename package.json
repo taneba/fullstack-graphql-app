@@ -2,6 +2,15 @@
   "name": "fullstack-graphql-app",
   "version": "0.0.0",
   "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "test:frontend": "turbo run test --scope=frontend",
+    "lint:frontend": "turbo run lint --scope=frontend",
+    "typecheck:frontend": "turbo run typecheck --scope=frontend"
+  },
   "workspaces": [
     "apps/*",
     "packages/*"
