@@ -9,6 +9,9 @@
     "lint": {
       "outputs": []
     },
+    "typecheck": {
+      "outputs": []
+    },
     "dev": {}
   }
 }

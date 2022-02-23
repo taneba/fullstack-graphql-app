@@ -1,50 +1,16 @@
 {
+  "extends": "tsconfig/nextjs.json",
   "compilerOptions": {
-    "target": "esnext",
     "baseUrl": ".",
     "paths": {
-      "~/*": [
-        "src/*"
-      ]
+      "~/*": ["src/*"]
     },
-    "strict": true,
-    "allowJs": true,
     "alwaysStrict": true,
-    "skipLibCheck": true,
-    "noEmit": true,
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "typeRoots": [
-      "src/types",
-      "./node_modules/@types"
-    ],
-    "types": [
-      "node",
-      "jest",
-      "@testing-library/jest-dom"
-    ],
-    "incremental": true
+    "typeRoots": ["src/types", "./node_modules/@types"],
+    "types": ["node", "@types/jest", "@testing-library/jest-dom"]
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "files": [
-    "./src/types/twin.d.ts"
-  ],
-  "exclude": [
-    "node_modules/**/*",
-    "src/generated/**/*"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "files": ["./src/types/twin.d.ts"],
+  "exclude": ["node_modules/**/*", "src/generated/**/*"]
 }

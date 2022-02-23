@@ -5,16 +5,19 @@ An opinionated fullstack GraphQL Boilerplate using modern tech stack.
 ## Concepts
 
 **🛡Type-safe**
-  - graphql-code-generator
-  - prisma
-  - ts-pattern (for type-safe error handling)
+
+- graphql-code-generator
+- prisma
+- ts-pattern (for type-safe error handling)
 
 **🛠Customizable**
-  - envelop (plugin system for GraphQL)
-  - urql (highty customizable GraphQL Client)
+
+- envelop (plugin system for GraphQL)
+- urql (highty customizable GraphQL Client)
 
 **📈Simple but scalable**
-  - a bit flavor of [clean architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+
+- a bit flavor of [clean architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 
 ## Tech Stack
 
@@ -62,13 +65,13 @@ You need to create API, Application (Single Page Application) in the auth0 conso
 
 Once you have set up API and Application, collect credentials below which will be used in your application:
 
-* Client Id: Your Auth0 application's Client ID. can be found on the Application setting page.
-* Domain: Your Auth0 application's Domain. can be found on the Application setting page.
-* Audience: API Identifier for an access token. can be found on the API setting page.
+- Client Id: Your Auth0 application's Client ID. can be found on the Application setting page.
+- Domain: Your Auth0 application's Domain. can be found on the Application setting page.
+- Audience: API Identifier for an access token. can be found on the API setting page.
 
 ### Configure environment variables
 
-In the backend root directory, Specify .env and .env.localhost file with the following environment variables:
+In the root directory, Specify .env and .env.localhost file with the following environment variables:
 
 .env
 
