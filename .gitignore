@@ -12,7 +12,7 @@ yarn-error.log*
 .turbo
 
 build/**
-dist/**
+**/dist/**
 .next/**
 
 docker/db/data/
