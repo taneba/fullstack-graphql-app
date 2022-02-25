@@ -15,9 +15,6 @@ const clientUrl = 'http://localhost:3000' // should be replaced with env variabl
 
 const app = fastify()
 
-console.log('環境変数')
-console.log('AUTH0_DOMAIN', process.env.AUTH0_DOMAIN)
-
 app.register(fastifyCors, {
   origin: clientUrl,
 })
