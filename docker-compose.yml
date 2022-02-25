@@ -2,16 +2,14 @@ version: '3.7'
 services:
   app:
     tty: true
-    build:
-      context: .
-      dockerfile: Dockerfile.backend
+    image: node:16
     volumes:
-      - /app/node_modules
       - .:/app
+      - node_modules:/app/node_modules
     working_dir: /app
     ports:
       - '5000:5000'
-    command: yarn turbo run dev --scope=backend
+    command: bash -c 'yarn && yarn turbo run dev --scope=backend'
     environment:
       AUTH0_DOMAIN:
       AUTH0_AUDIENCE:
@@ -19,7 +17,6 @@ services:
       DATABASE_URL:
     depends_on:
       - db
-    restart: on-failure
 
   db:
     image: mysql:latest
@@ -34,3 +31,13 @@ services:
       MYSQL_USER: fga
       MYSQL_PASSWORD: fga
       MYSQL_DATABASE: fga
+    # healthcheck:
+    #   test: mysqladmin ping -h127.0.0.1 -P3306 -u$$MYSQL_USER -p$$MYSQL_PASSWORD
+    #   interval: 10s
+    #   timeout: 10s
+    #   retries: 10
+    #   start_period: 10s
+
+volumes:
+  node_modules:
+    driver: local
