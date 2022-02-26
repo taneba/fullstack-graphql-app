@@ -60,7 +60,7 @@
     "@types/styled-components": "5.1.23",
     "babel-jest": "27.5.1",
     "babel-plugin-macros": "3.1.0",
-    "babel-plugin-styled-components": "2.0.3",
+    "babel-plugin-styled-components": "2.0.6",
     "babel-plugin-twin": "1.0.2",
     "config": "*",
     "graphql-playground-html": "1.6.30",
