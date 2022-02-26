@@ -34,7 +34,7 @@
     "ts-pattern": "3.3.5",
     "twin.macro": "2.8.2",
     "typescript": "4.5.5",
-    "urql": "2.1.3",
+    "urql": "2.2.0",
     "wonka": "4.0.15",
     "zod": "3.11.6"
   },
