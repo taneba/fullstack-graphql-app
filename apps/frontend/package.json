@@ -19,7 +19,7 @@
     "@heroicons/react": "1.0.6",
     "@radix-ui/colors": "0.1.8",
     "@radix-ui/react-avatar": "0.1.4",
-    "@radix-ui/react-dialog": "0.1.6",
+    "@radix-ui/react-dialog": "0.1.7",
     "@radix-ui/react-icons": "1.0.3",
     "@radix-ui/react-portal": "0.1.4",
     "graphql": "15.8.0",
