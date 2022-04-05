@@ -29,7 +29,6 @@
 
 "@app/gql@link:./apps/frontend/src/generated/graphql.ts":
   version "0.0.0"
-  uid ""
 
 "@ardatan/aggregate-error@0.0.6":
   version "0.0.6"
@@ -1122,10 +1121,10 @@
   dependencies:
     "@envelop/types" "2.2.0"
 
-"@envelop/depth-limit@1.2.3":
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/@envelop/depth-limit/-/depth-limit-1.2.3.tgz#06238a5f959c4920081e037bbea8478994c0194a"
-  integrity sha512-8MDbINQsGiIRE2diEBwGnfVNvRyfTwcBAPvzXTPs3/T5BKcqB4+/fT2rPtk/ePKvcNR8OwQnMhdZf7zxWi0Pkw==
+"@envelop/depth-limit@1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@envelop/depth-limit/-/depth-limit-1.5.0.tgz#ec884f58fa3e3d04c142e67e1ab662ebb023c0ec"
+  integrity sha512-B38PrkPvpJqau6NQNnxYvLJCvEI6AZCzz1na8iSB/MFUsiAuUvZBdqDuTmcCuXG8hsmTdoB0wjf9na2ds5Ud0w==
   dependencies:
     graphql-depth-limit "^1.1.0"
 
