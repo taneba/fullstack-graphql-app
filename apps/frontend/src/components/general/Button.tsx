@@ -6,6 +6,7 @@ interface Props {
   type?: 'submit' | 'reset' | 'button'
   className?: string
   primary?: boolean
+  secondary?: boolean
   onClick?: () => void
   disabled?: boolean
 }
@@ -19,6 +20,7 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>(
       onClick,
       disabled = false,
       primary = false,
+      secondary = false,
     }: Props,
     forwardedRef
   ) {
@@ -32,8 +34,9 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>(
         css={[
           primary &&
             tw`
-        text-blue-900 bg-blue-100
+        text-white bg-blue-500
         `,
+          secondary && tw`text-white bg-gray-500`,
         ]}
         ref={forwardedRef}
       >

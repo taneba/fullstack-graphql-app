@@ -18,6 +18,14 @@ export const schema = buildSchema(/* GraphQL */ `
     todo(id: ID!): Todo @auth
     allUsers: [User!]! @auth
     currentUser: User @auth
+    getProfile: ProfileResult @auth
+  }
+
+  union ProfileResult = User | UserNotFound
+
+  type UserNotFound {
+    message: String!
+    role: Role!
   }
 
   type Mutation {
@@ -50,7 +58,6 @@ export const schema = buildSchema(/* GraphQL */ `
   }
 
   input UserInput {
-    email: String!
-    name: String
+    name: String!
   }
 `)

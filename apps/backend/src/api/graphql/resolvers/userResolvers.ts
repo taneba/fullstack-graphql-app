@@ -1,4 +1,4 @@
-import { match } from 'ts-pattern'
+import { match, Pattern } from 'ts-pattern'
 
 import { handleAppError } from '~/common/error'
 import { whenIsErr, whenIsOk } from '~/common/result'
@@ -21,6 +21,34 @@ export const userQueryResolvers: gql.QueryResolvers<GraphqlServerContext> = {
       .with(whenIsErr, handleAppError)
       .with(whenIsOk, ({ value }) => UserMapper.toGql(value))
       .exhaustive()
+  },
+  getProfile: async (_, params, ctx) => {
+    const result = await ctx.useCase.user.findCurrentUser()
+    const NotFoundResponse: gql.UserNotFound = {
+      __typename: 'UserNotFound',
+      message: 'user not found',
+      role: 'USER',
+    }
+
+    return match(result)
+      .with(whenIsErr, (result) =>
+        match(result)
+          .with({ error: 'RESOURCE_NOT_FOUND' }, () => {
+            return NotFoundResponse
+          })
+          .otherwise(handleAppError)
+      )
+      .with(whenIsOk, ({ value }) => UserMapper.toGql(value))
+      .exhaustive()
+  },
+}
+
+export const ProfileResult: gql.ProfileResultResolvers = {
+  __resolveType(obj) {
+    return match(obj)
+      .with({ __typename: 'User' }, () => 'User' as const)
+      .with({ __typename: 'UserNotFound' }, () => 'UserNotFound' as const)
+      .otherwise(() => null)
   },
 }
 

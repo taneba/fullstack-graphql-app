@@ -4,6 +4,7 @@ import { Auth0Provider } from '@auth0/auth0-react'
 import { AppProps } from 'next/app'
 
 import { Navbar, UrqlClientProvider } from '~/components/'
+import { CurrentUserProvider } from '~/contexts/currentUser'
 import { GlobalStyles } from '~/style/GlobalStyles'
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -19,10 +20,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         }
       >
         <UrqlClientProvider>
-          <Navbar />
-          <div tw="bg-white px-5 pt-4 mx-auto container">
-            <Component {...pageProps} />
-          </div>
+          <CurrentUserProvider>
+            <Navbar />
+            <div tw="bg-white px-5 pt-4 mx-auto container">
+              <Component {...pageProps} />
+            </div>
+          </CurrentUserProvider>
         </UrqlClientProvider>
       </Auth0Provider>
       <div id="modal" tw="max-w-xl mx-auto relative" />

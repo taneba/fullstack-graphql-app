@@ -70,6 +70,12 @@ Once you have set up API and Application, collect credentials below which will b
 - Domain: Your Auth0 application's Domain. can be found on the Application setting page.
 - Audience: API Identifier for an access token. can be found on the API setting page.
 
+### Add roles to a user using Rules
+
+You can manage role-based authorization with auth0 Rules, which is a mechanism that allows us to run some code when user register an account on auth0.
+
+To do so, in the Auth0 console, create a new Rule and use code example which can be found in apps/backend/src/lib/auth0/rules/addRolesToUsers.js. (Note that you should specify your own audience to namespace e.g. `const namespace = 'https://api.fullstack-graphql-app.com'`)
+
 ### Configure environment variables
 
 In the root directory, Specify .env and .env.localhost file with the following environment variables:
@@ -130,7 +136,7 @@ The scripts you might frequently use:
 
 ### connect to your mysql database
 
-```
+```sh
  docker exec -it backend_db_1 mysql -u root -p
 
  mysql> use fga
@@ -138,14 +144,10 @@ The scripts you might frequently use:
 
 ## Frontend
 
-### install deps
-
-```
-yarn install
-```
-
 ### start
 
-```
-yarn run dev
+Just run the command below, which uses turborepo cli inside.
+
+```sh
+yarn run dev:frontend
 ```

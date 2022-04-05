@@ -13,10 +13,13 @@ type Mutation {
   saveUser(user: UserInput!): User
 }
 
+union ProfileResult = User | UserNotFound
+
 type Query {
   allTodos: [Todo!]! @auth(role: ADMIN)
   allUsers: [User!]! @auth
   currentUser: User @auth
+  getProfile: ProfileResult @auth
   time: Int!
   todo(id: ID!): Todo @auth
   todosByCurrentUser: [Todo!]! @auth
@@ -51,6 +54,10 @@ type User {
 }
 
 input UserInput {
-  email: String!
-  name: String
+  name: String!
+}
+
+type UserNotFound {
+  message: String!
+  role: Role!
 }

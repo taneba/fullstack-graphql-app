@@ -1,9 +1,10 @@
 import { GraphQLResolveInfo } from 'graphql';
 export type Maybe<T> = T | null;
+export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
-export type RequireFields<T, K extends keyof T> = { [X in Exclude<keyof T, K>]?: T[X] } & { [P in K]-?: NonNullable<T[P]> };
+export type RequireFields<T, K extends keyof T> = Omit<T, K> & { [P in K]-?: NonNullable<T[P]> };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -35,11 +36,14 @@ export type MutationSaveUserArgs = {
   user: UserInput;
 };
 
+export type ProfileResult = User | UserNotFound;
+
 export type Query = {
   __typename?: 'Query';
   allTodos: Array<Todo>;
   allUsers: Array<User>;
   currentUser?: Maybe<User>;
+  getProfile?: Maybe<ProfileResult>;
   time: Scalars['Int'];
   todo?: Maybe<Todo>;
   todosByCurrentUser: Array<Todo>;
@@ -69,7 +73,7 @@ export type Todo = {
 };
 
 export type TodoInput = {
-  content?: Maybe<Scalars['String']>;
+  content?: InputMaybe<Scalars['String']>;
   title: Scalars['String'];
 };
 
@@ -82,8 +86,13 @@ export type User = {
 };
 
 export type UserInput = {
-  email: Scalars['String'];
-  name?: Maybe<Scalars['String']>;
+  name: Scalars['String'];
+};
+
+export type UserNotFound = {
+  __typename?: 'UserNotFound';
+  message: Scalars['String'];
+  role: Role;
 };
 
 
@@ -108,7 +117,7 @@ export type SubscriptionSubscribeFn<TResult, TParent, TContext, TArgs> = (
   args: TArgs,
   context: TContext,
   info: GraphQLResolveInfo
-) => AsyncIterator<TResult> | Promise<AsyncIterator<TResult>>;
+) => AsyncIterable<TResult> | Promise<AsyncIterable<TResult>>;
 
 export type SubscriptionResolveFn<TResult, TParent, TContext, TArgs> = (
   parent: TParent,
@@ -159,6 +168,7 @@ export type ResolversTypes = {
   ID: ResolverTypeWrapper<Scalars['ID']>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
   Mutation: ResolverTypeWrapper<{}>;
+  ProfileResult: ResolversTypes['User'] | ResolversTypes['UserNotFound'];
   Query: ResolverTypeWrapper<{}>;
   Role: Role;
   String: ResolverTypeWrapper<Scalars['String']>;
@@ -166,6 +176,7 @@ export type ResolversTypes = {
   TodoInput: TodoInput;
   User: ResolverTypeWrapper<User>;
   UserInput: UserInput;
+  UserNotFound: ResolverTypeWrapper<UserNotFound>;
 };
 
 /** Mapping between all available schema types and the resolvers parents */
@@ -174,12 +185,14 @@ export type ResolversParentTypes = {
   ID: Scalars['ID'];
   Int: Scalars['Int'];
   Mutation: {};
+  ProfileResult: ResolversParentTypes['User'] | ResolversParentTypes['UserNotFound'];
   Query: {};
   String: Scalars['String'];
   Todo: Todo;
   TodoInput: TodoInput;
   User: User;
   UserInput: UserInput;
+  UserNotFound: UserNotFound;
 };
 
 export type AuthDirectiveArgs = {
@@ -200,10 +213,15 @@ export type MutationResolvers<ContextType = any, ParentType extends ResolversPar
   saveUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, RequireFields<MutationSaveUserArgs, 'user'>>;
 };
 
+export type ProfileResultResolvers<ContextType = any, ParentType extends ResolversParentTypes['ProfileResult'] = ResolversParentTypes['ProfileResult']> = {
+  __resolveType: TypeResolveFn<'User' | 'UserNotFound', ParentType, ContextType>;
+};
+
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
   allTodos?: Resolver<Array<ResolversTypes['Todo']>, ParentType, ContextType>;
   allUsers?: Resolver<Array<ResolversTypes['User']>, ParentType, ContextType>;
   currentUser?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType>;
+  getProfile?: Resolver<Maybe<ResolversTypes['ProfileResult']>, ParentType, ContextType>;
   time?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
   todo?: Resolver<Maybe<ResolversTypes['Todo']>, ParentType, ContextType, RequireFields<QueryTodoArgs, 'id'>>;
   todosByCurrentUser?: Resolver<Array<ResolversTypes['Todo']>, ParentType, ContextType>;
@@ -229,11 +247,19 @@ export type UserResolvers<ContextType = any, ParentType extends ResolversParentT
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
+export type UserNotFoundResolvers<ContextType = any, ParentType extends ResolversParentTypes['UserNotFound'] = ResolversParentTypes['UserNotFound']> = {
+  message?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  role?: Resolver<ResolversTypes['Role'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
 export type Resolvers<ContextType = any> = {
   Mutation?: MutationResolvers<ContextType>;
+  ProfileResult?: ProfileResultResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
   Todo?: TodoResolvers<ContextType>;
   User?: UserResolvers<ContextType>;
+  UserNotFound?: UserNotFoundResolvers<ContextType>;
 };
 
 export type DirectiveResolvers<ContextType = any> = {
