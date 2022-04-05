@@ -33,8 +33,9 @@ Backend
 - Prisma
 - fastify
 - envelop
-- graphql-helix
-- graphql playground
+- graphql-yoga 2.0
+- graphiql
+- ts-pattern
 - mysql
 
 Frontend
@@ -45,6 +46,7 @@ Frontend
 - tailwindcss
 - twin.macro
 - radix ui
+- React Hook Form
 
 Authentication
 
@@ -60,7 +62,7 @@ Testing
 
 ## Setting up auth0
 
-As this project uses auth0 for authentication, you should first setup auth0 to make everything work. If you don't have auth0 account, then sign up and create account.
+As this project uses auth0 for authentication, you need to setup auth0 to make everything work. If you don't have any auth0 account, then sign up and create account.
 
 You need to create API, Application (Single Page Application) in the auth0 console. In Application, go to Application URIs section in the middle of the settings page and specify `http://localhost:3000` to Allowed Callback URLs, Allowed Logout URLs, Allowed Web Origins, Allowed Origins (CORS).
 
@@ -74,7 +76,18 @@ Once you have set up API and Application, collect credentials below which will b
 
 You can manage role-based authorization with auth0 Rules, which is a mechanism that allows us to run some code when user register an account on auth0.
 
-To do so, in the Auth0 console, create a new Rule and use code example which can be found in apps/backend/src/lib/auth0/rules/addRolesToUsers.js. (Note that you should specify your own audience to namespace e.g. `const namespace = 'https://api.fullstack-graphql-app.com'`)
+To do so, got to the Auth0 dashboard and create a new Rule (which can be found in Auth Pipeline on the side menu). Then fill the field with [example code](https://github.com/taneba/fullstack-graphql-app/blob/main/apps/backend/src/lib/auth0/rules/setRolesToUser.js) (Note that you should specify your own audience to namespace e.g. `const namespace = 'https://api.fullstack-graphql-app.com'`). And finally name the rule whatever you like.
+
+After attached the rule, auth0 now add role to the user after a user registered the account on auth0. 
+
+```ts
+const { loginWithRedirect } = useAuth0()
+
+// Here "ADMIN" will be sent to auth0 and the rule put the role to jwt token.
+loginWithRedirect({
+  role: "ADMIN",
+})
+```
 
 ### Configure environment variables
 
