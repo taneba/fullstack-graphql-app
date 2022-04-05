@@ -6,10 +6,12 @@
     "build": "turbo run build",
     "test": "turbo run test",
     "lint": "turbo run lint",
-    "typecheck": "turbo run typecheck",
+    "type-check": "turbo run type-check",
+    "codegen:graphql": "turbo run codegen:graphql",
+    "dev:frontend": "turbo run dev --scope=frontend",
     "test:frontend": "turbo run test --scope=frontend",
     "lint:frontend": "turbo run lint --scope=frontend",
-    "typecheck:frontend": "turbo run typecheck --scope=frontend"
+    "type-check:frontend": "turbo run type-check --scope=frontend"
   },
   "workspaces": [
     "apps/*",

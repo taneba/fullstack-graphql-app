@@ -3,18 +3,19 @@
   "baseBranch": "origin/main",
   "pipeline": {
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["type-check", "^build"],
       "outputs": ["dist/**", ".next/**"]
     },
     "lint": {
       "outputs": []
     },
-    "typecheck": {
-      "outputs": []
+    "type-check": {
+      "dependsOn": ["^type-check"]
     },
     "test": {
       "outputs": ["coverage/**"]
     },
-    "dev": {}
+    "dev": { "cache": false },
+    "codegen:graphql": { "cache": false }
   }
 }

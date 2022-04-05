@@ -29,6 +29,7 @@
 
 "@app/gql@link:./apps/frontend/src/generated/graphql.ts":
   version "0.0.0"
+  uid ""
 
 "@ardatan/aggregate-error@0.0.6":
   version "0.0.6"
@@ -1106,20 +1107,20 @@
     ts-node "^9"
     tslib "^2"
 
-"@envelop/auth0@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@envelop/auth0/-/auth0-3.0.0.tgz#0d0eded0092a4a267893123e2453982a9b340d5e"
-  integrity sha512-/e0XqNIPF6kWArhsCnkyuN9H6XRZyGc9QhTCvJreruOfi4MqioQC8KMQTkQXzwtcqUzoNLZBMQMBeavDlxJfbw==
+"@envelop/auth0@^3.3.0":
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@envelop/auth0/-/auth0-3.3.0.tgz#e14b222da35eb307920fec64973dc7b734c194a8"
+  integrity sha512-OAsd4BIvsCS1QOwoCniJAElHpN1tYQj3o6b15+qGres3MQocqBFkT0RZ9ra2a6y/Ua0ws6TtD2KWapSqymoisw==
   dependencies:
     jsonwebtoken "^8.5.1"
     jwks-rsa "^2.0.1"
 
-"@envelop/core@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@envelop/core/-/core-2.0.0.tgz#6ce0040df2f705f2e8c657203fe57c8cee49a3c4"
-  integrity sha512-Crp//PEcF3jvj9tOtwO0jMWBBlC+1IjdfzZUvjVNF7nx/IMiojb6P99yj0KXrcoxyyc5Csaq5YwSap1WKdXNcQ==
+"@envelop/core@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@envelop/core/-/core-2.3.0.tgz#378281eb451cc1f2ac87587ca1a68968bd352a5c"
+  integrity sha512-5nZ/n6Wx6YbT9RNc+J3I+/e4GJd8TI1mhO7miKGZcxyOO93ztlIrMMxN1kdZ+IQoRVw7aj38cJJw/OCVWAZ/+Q==
   dependencies:
-    "@envelop/types" "2.0.0"
+    "@envelop/types" "2.2.0"
 
 "@envelop/depth-limit@1.2.3":
   version "1.2.3"
@@ -1128,10 +1129,19 @@
   dependencies:
     graphql-depth-limit "^1.1.0"
 
-"@envelop/generic-auth@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@envelop/generic-auth/-/generic-auth-3.0.0.tgz#4729f33d99b7987d8dee1802a80f74724de94a38"
-  integrity sha512-YCb6/MsBxALq4X0PUzkBPUYSYr49U8YlgmvcXQkq/nNi8bdQY3G9weD0Bqlh2l2OnqHhsg26qHg0zA9NR7aFyw==
+"@envelop/extended-validation@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@envelop/extended-validation/-/extended-validation-1.6.0.tgz#a1b995f19f7f15ccbc9674384ea2dd9eaafd643d"
+  integrity sha512-XeWAn+ppjHqT7v3kGELLeN6DvFbKaMgUHi9366LOVEV8wT2tKsrTlfnZfrtFmkkRUrACoxJeFi8q58sdLs5HQA==
+  dependencies:
+    "@graphql-tools/utils" "^8.6.1"
+
+"@envelop/generic-auth@^4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@envelop/generic-auth/-/generic-auth-4.2.0.tgz#5049f073768e996469d70aa44c943038222d5f7d"
+  integrity sha512-TY2y5DuoVRCruRn2VqEG+p5IEqLqtDjfHzgjLx+pz/tSB0uQ9ikFIRekOOQKS+81qp5BHXTaEvntgoYzLdFwxw==
+  dependencies:
+    "@envelop/extended-validation" "^1.6.0"
 
 "@envelop/rate-limiter@^3.0.0":
   version "3.0.0"
@@ -1140,10 +1150,10 @@
   dependencies:
     graphql-rate-limit "3.3.0"
 
-"@envelop/types@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@envelop/types/-/types-2.0.0.tgz#5e357cdc7c9d19b3283432540f757a0f2e22d204"
-  integrity sha512-X6KUeCikfr6/yx02WiClIQwx3mZJbR8m20/UEfpLC8QjcVG3Vox+QK1EOnXiZkvpQVe3FA05Rp0o+PCla30idA==
+"@envelop/types@2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@envelop/types/-/types-2.2.0.tgz#95776d9b63ba8974f52b476d4db5bb169febbe32"
+  integrity sha512-Lghvfs0kh53G5mUKpCMlB/FhHh3O8SSR4hewB7JyE9hOEu/9h/6u+GHH/OEgdaRHky1Sae5Jf4grO+h21ka4ig==
 
 "@eslint/eslintrc@^1.1.0":
   version "1.1.0"
@@ -1654,6 +1664,13 @@
     "@ardatan/aggregate-error" "0.0.6"
     camel-case "4.1.2"
     tslib "~2.2.0"
+
+"@graphql-tools/utils@^8.6.1":
+  version "8.6.5"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-8.6.5.tgz#ac04571b03f854c7a938b2ab700516a6c6d32335"
+  integrity sha512-mjOtaWiS2WIqRz/cq5gaeM3sVrllcu2xbtHROw1su1v3xWa3D3dKgn8Lrl7+tvWs5WUVySsBss/VZ3WdoPkCrA==
+  dependencies:
+    tslib "~2.3.0"
 
 "@graphql-tools/utils@^8.6.2":
   version "8.6.2"

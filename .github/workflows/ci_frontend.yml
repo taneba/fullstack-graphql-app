@@ -50,9 +50,9 @@ jobs:
         working-directory: ./out
         run: yarn lint:frontend
 
-      - name: Typecheck
+      - name: Type-check
         working-directory: ./out
-        run: yarn typecheck:frontend
+        run: yarn type-check:frontend
 
       - name: Tests (Jest)
         working-directory: ./out
