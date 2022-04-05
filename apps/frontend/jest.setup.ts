@@ -4,6 +4,8 @@ import '@testing-library/jest-dom/extend-expect'
 import { resetFactoryIds } from '~/mocks/factories/factory'
 import { server } from '~/mocks/server'
 
+globalThis.IS_REACT_ACT_ENVIRONMENT = true
+
 process.env = {
   ...process.env,
   NEXT_PUBLIC_GRAPHQL_END_POINT: 'http://localhost:4000/dev/graphql',
