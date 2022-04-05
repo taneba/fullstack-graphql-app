@@ -12,8 +12,10 @@ import {
 import { useDepthLimit } from '@envelop/depth-limit'
 import {
   ResolveUserFn,
+  UnauthenticatedError,
   useGenericAuth,
   ValidateUserFn,
+  ValidateUserFnParams,
 } from '@envelop/generic-auth'
 import { makeExecutableSchema } from '@graphql-tools/schema'
 import { User } from '@prisma/client'
@@ -50,33 +52,11 @@ const resolveUserFn: ResolveUserFn<User, GraphqlServerContext> = async (
   }
 }
 
-const validateUserFn: ValidateUserFn<User, GraphqlServerContext> = async (
-  user,
-  _context,
-  _ctx,
-  directiveNode
-) => {
+const validateUserFn: ValidateUserFn<User> = ({ user }) => {
   if (!user) {
     throw new EnvelopError('request not authenticated', {
       code: 'NOT_AUTHENTICATED',
     })
-  }
-
-  if (!directiveNode?.arguments) {
-    return
-  }
-
-  const valueNode = directiveNode.arguments.find(
-    (arg) => arg.name.value === 'role'
-  )?.value as EnumValueNode | undefined
-
-  if (valueNode) {
-    const role = valueNode.value as Role
-    if (role !== user.role) {
-      throw new EnvelopError('request not authorized', {
-        code: 'NOT_AUTHORIZED',
-      })
-    }
   }
 }
 
@@ -97,6 +77,7 @@ export const getEnveloped = envelop({
             code: 'TOKEN_EXPIRED',
           })
         } else {
+          console.log('error on useAuth0', e)
           throw e
         }
       },
@@ -104,7 +85,7 @@ export const getEnveloped = envelop({
     useGenericAuth({
       resolveUserFn: resolveUserFn,
       validateUser: validateUserFn,
-      mode: 'protect-auth-directive',
+      mode: 'protect-granular',
     }),
     useExtendContext(createContext), // should be after auth0 so that createContext callback can access to auth0 context
     useOwnerCheck(),

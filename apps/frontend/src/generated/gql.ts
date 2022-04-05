@@ -3,7 +3,9 @@ import * as graphql from './graphql';
 import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
 
 const documents = {
+    "\n  query GetProfile {\n    getProfile {\n      __typename\n      ... on User {\n        id\n        email\n        name\n        role\n        __typename\n      }\n      ... on UserNotFound {\n        message\n        role\n        __typename\n      }\n    }\n  }\n": graphql.GetProfileDocument,
     "\n  query GetAllTodos {\n    allTodos {\n      id\n      createdAt\n      updatedAt\n      title\n      content\n      completed\n      author {\n        name\n      }\n    }\n  }\n": graphql.GetAllTodosDocument,
+    "\n  mutation SaveUser($user: UserInput!) {\n    saveUser(user: $user) {\n      id\n      __typename\n    }\n  }\n": graphql.SaveUserDocument,
     "\n  query GetCurrentUser {\n    currentUser {\n      id\n      name\n      email\n    }\n  }\n": graphql.GetCurrentUserDocument,
     "\n  mutation SaveTodo($todo: TodoInput!) {\n    saveTodo(todo: $todo) {\n      id\n      __typename\n    }\n  }\n": graphql.SaveTodoDocument,
     "\n  mutation CompleteTodo($id: ID!) {\n    completeTodo(id: $id) {\n      id\n    }\n  }\n": graphql.CompleteTodoDocument,
@@ -12,7 +14,9 @@ const documents = {
     "\n  query GetAllUsers {\n    allUsers {\n      id\n      name\n    }\n  }\n": graphql.GetAllUsersDocument,
 };
 
+export function gql(source: "\n  query GetProfile {\n    getProfile {\n      __typename\n      ... on User {\n        id\n        email\n        name\n        role\n        __typename\n      }\n      ... on UserNotFound {\n        message\n        role\n        __typename\n      }\n    }\n  }\n"): (typeof documents)["\n  query GetProfile {\n    getProfile {\n      __typename\n      ... on User {\n        id\n        email\n        name\n        role\n        __typename\n      }\n      ... on UserNotFound {\n        message\n        role\n        __typename\n      }\n    }\n  }\n"];
 export function gql(source: "\n  query GetAllTodos {\n    allTodos {\n      id\n      createdAt\n      updatedAt\n      title\n      content\n      completed\n      author {\n        name\n      }\n    }\n  }\n"): (typeof documents)["\n  query GetAllTodos {\n    allTodos {\n      id\n      createdAt\n      updatedAt\n      title\n      content\n      completed\n      author {\n        name\n      }\n    }\n  }\n"];
+export function gql(source: "\n  mutation SaveUser($user: UserInput!) {\n    saveUser(user: $user) {\n      id\n      __typename\n    }\n  }\n"): (typeof documents)["\n  mutation SaveUser($user: UserInput!) {\n    saveUser(user: $user) {\n      id\n      __typename\n    }\n  }\n"];
 export function gql(source: "\n  query GetCurrentUser {\n    currentUser {\n      id\n      name\n      email\n    }\n  }\n"): (typeof documents)["\n  query GetCurrentUser {\n    currentUser {\n      id\n      name\n      email\n    }\n  }\n"];
 export function gql(source: "\n  mutation SaveTodo($todo: TodoInput!) {\n    saveTodo(todo: $todo) {\n      id\n      __typename\n    }\n  }\n"): (typeof documents)["\n  mutation SaveTodo($todo: TodoInput!) {\n    saveTodo(todo: $todo) {\n      id\n      __typename\n    }\n  }\n"];
 export function gql(source: "\n  mutation CompleteTodo($id: ID!) {\n    completeTodo(id: $id) {\n      id\n    }\n  }\n"): (typeof documents)["\n  mutation CompleteTodo($id: ID!) {\n    completeTodo(id: $id) {\n      id\n    }\n  }\n"];

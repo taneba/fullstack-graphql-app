@@ -5,7 +5,11 @@ import {
   todoQueryResolvers,
   todoResolvers,
 } from './todoResolver'
-import { userMutationResolvers, userQueryResolvers } from './userResolvers'
+import {
+  ProfileResult,
+  userMutationResolvers,
+  userQueryResolvers,
+} from './userResolvers'
 
 const resolvers: gql.Resolvers<GraphqlServerContext> = {
   Query: {
@@ -18,6 +22,7 @@ const resolvers: gql.Resolvers<GraphqlServerContext> = {
     ...userMutationResolvers,
   },
   Todo: todoResolvers,
+  ProfileResult: ProfileResult,
 }
 
 export default resolvers

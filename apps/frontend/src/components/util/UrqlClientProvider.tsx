@@ -20,26 +20,34 @@ const authCheckExchange: Exchange =
       ops$,
       forward,
       tap((result) => {
-        if (
-          result.error &&
-          result.error.graphQLErrors.some(
-            (err) => err?.extensions?.code === 'NOT_AUTHENTICATED'
-          )
-        ) {
-          console.log('not authenticated')
-          console.log(result.error)
-          if (window.location.pathname !== '/signin') {
-            window.location.replace('/signin')
+        if (result.error) {
+          if (
+            result.error.graphQLErrors.some(
+              (err) => err?.extensions?.code === 'NOT_AUTHENTICATED'
+            )
+          ) {
+            if (window.location.pathname !== '/signin') {
+              window.location.replace('/signin')
+            }
           }
-        }
 
-        if (
-          result.error &&
-          result.error.graphQLErrors.some(
-            (err) => err?.extensions?.code === 'NOT_AUTHORIZED'
-          )
-        ) {
-          window.alert('You do not have right access to the resource')
+          if (
+            result.error.graphQLErrors.some(
+              (err) => err.extensions.code === 'USER_NOT_FOUND'
+            )
+          ) {
+            if (window.location.pathname !== '/onboarding') {
+              window.location.replace('/onboarding')
+            }
+          }
+
+          if (
+            result.error.graphQLErrors.some(
+              (err) => err?.extensions?.code === 'NOT_AUTHORIZED'
+            )
+          ) {
+            window.alert('You do not have right access to the resource')
+          }
         }
       })
     )

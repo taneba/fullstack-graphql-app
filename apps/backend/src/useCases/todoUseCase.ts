@@ -16,10 +16,10 @@ export class TodoUseCase extends UseCase {
 
   public async save(
     todo: TodoInput
-  ): Promise<Result<Todo, 'DATABASE' | 'RESOURCE_NOT_FOUND'>> {
+  ): Promise<Result<Todo, 'DATABASE' | 'USER_NOT_FOUND'>> {
     const currentUserId = this.ctx.currentUser?.id
     if (!currentUserId) {
-      return err('RESOURCE_NOT_FOUND')
+      return err('USER_NOT_FOUND')
     }
 
     try {
@@ -46,11 +46,11 @@ export class TodoUseCase extends UseCase {
   }
 
   public async findByCurrentUser(): Promise<
-    Result<Todo[], 'RESOURCE_NOT_FOUND' | 'DATABASE'>
+    Result<Todo[], 'USER_NOT_FOUND' | 'DATABASE'>
   > {
     const currentUserId = this.ctx.currentUser?.id
     if (!currentUserId) {
-      return err('RESOURCE_NOT_FOUND')
+      return err('USER_NOT_FOUND')
     }
     try {
       const result = await this.todoRepository.findByUserId(currentUserId)

@@ -58,7 +58,13 @@ export function createContext(
 ): GraphqlServerContext {
   const { auth0, currentUser, req } = ctx
   const authToken = req.headers.authorization
-  const useCaseContext: UseCaseContext = { prisma, auth0, currentUser }
+  const useCaseContext: UseCaseContext = {
+    prisma,
+    auth0,
+    currentUser,
+    authToken,
+  }
+  console.log('authToken???', authToken)
 
   return {
     prisma,
@@ -67,6 +73,7 @@ export function createContext(
       user: new UserUseCase(useCaseContext, new UserRepository(prisma)),
     },
     authToken,
+    userRole: 'User',
     currentUser,
   }
 }

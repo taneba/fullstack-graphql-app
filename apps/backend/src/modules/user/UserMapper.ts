@@ -7,6 +7,7 @@ export class UserMapper {
     return {
       ...user,
       id: user.id.toString(),
+      __typename: 'User',
     }
   }
 

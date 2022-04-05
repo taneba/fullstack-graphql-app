@@ -34,14 +34,21 @@ export class UserUseCase extends UseCase {
       })
 
     if (!auth0UserInfo) {
+      console.log('failed to get auth0 user info')
       return err('AUTH0')
     }
 
+    const uid = this.ctx.auth0?.sub
+
+    if (!uid) {
+      console.log('failed to get uid from auth0')
+      return err('AUTH0')
+    }
     try {
       const result = await this.userRepository.save({
         email: auth0UserInfo.email,
         name: user.name,
-        uid: this.ctx.auth0?.sub,
+        uid: uid,
       })
       return ok(result)
     } catch (error) {
