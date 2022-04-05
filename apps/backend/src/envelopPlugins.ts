@@ -1,7 +1,7 @@
 import { useAuth0 } from '@envelop/auth0'
 import {
-  envelop,
   EnvelopError,
+  PluginOrDisabledPlugin,
   useErrorHandler,
   useExtendContext,
   useLogger,
@@ -12,17 +12,13 @@ import {
 import { useDepthLimit } from '@envelop/depth-limit'
 import {
   ResolveUserFn,
-  UnauthenticatedError,
   useGenericAuth,
   ValidateUserFn,
-  ValidateUserFnParams,
 } from '@envelop/generic-auth'
 import { makeExecutableSchema } from '@graphql-tools/schema'
 import { User } from '@prisma/client'
-import { EnumValueNode } from 'graphql'
 import { TokenExpiredError } from 'jsonwebtoken'
 
-import { Role } from './api/graphql/generated/graphql'
 import resolvers from './api/graphql/resolvers/resolvers'
 import { schema } from './api/graphql/typeDefs'
 import { createContext, GraphqlServerContext, prisma } from './context'
@@ -60,42 +56,40 @@ const validateUserFn: ValidateUserFn<User> = ({ user }) => {
   }
 }
 
-export const getEnveloped = envelop({
-  plugins: [
-    useSchema(executableSchema),
-    useLogger(),
-    useAuth0({
-      domain: process.env.AUTH0_DOMAIN || '',
-      audience: process.env.AUTH0_AUDIENCE || '',
-      headerName: 'authorization',
-      preventUnauthenticatedAccess: false,
-      extendContextField: 'auth0',
-      tokenType: 'Bearer',
-      onError: (e) => {
-        if (e instanceof TokenExpiredError) {
-          throw new EnvelopError('jwt expired', {
-            code: 'TOKEN_EXPIRED',
-          })
-        } else {
-          console.log('error on useAuth0', e)
-          throw e
-        }
-      },
-    }),
-    useGenericAuth({
-      resolveUserFn: resolveUserFn,
-      validateUser: validateUserFn,
-      mode: 'protect-granular',
-    }),
-    useExtendContext(createContext), // should be after auth0 so that createContext callback can access to auth0 context
-    useOwnerCheck(),
-    useMaskedErrors(),
-    useErrorHandler((error: unknown) => {
-      console.log('ERROR: ' + JSON.stringify(error))
-    }),
-    useTiming(),
-    useDepthLimit({
-      maxDepth: 10,
-    }),
-  ],
-})
+export const envelopPlugins: PluginOrDisabledPlugin[] = [
+  useSchema(executableSchema),
+  useLogger(),
+  useAuth0({
+    domain: process.env.AUTH0_DOMAIN || '',
+    audience: process.env.AUTH0_AUDIENCE || '',
+    headerName: 'authorization',
+    preventUnauthenticatedAccess: false,
+    extendContextField: 'auth0',
+    tokenType: 'Bearer',
+    onError: (e) => {
+      if (e instanceof TokenExpiredError) {
+        throw new EnvelopError('jwt expired', {
+          code: 'TOKEN_EXPIRED',
+        })
+      } else {
+        console.log('error on useAuth0', e)
+        throw e
+      }
+    },
+  }),
+  useGenericAuth({
+    resolveUserFn: resolveUserFn,
+    validateUser: validateUserFn,
+    mode: 'protect-granular',
+  }),
+  useExtendContext(createContext), // should be after auth0 so that createContext callback can access to auth0 context
+  useOwnerCheck(),
+  useMaskedErrors(),
+  useErrorHandler((error: unknown) => {
+    console.log('ERROR: ' + JSON.stringify(error))
+  }),
+  useTiming(),
+  useDepthLimit({
+    maxDepth: 10,
+  }),
+]
