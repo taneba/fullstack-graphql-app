@@ -18,7 +18,7 @@
   "dependencies": {
     "@envelop/auth0": "^3.3.0",
     "@envelop/core": "^2.3.0",
-    "@envelop/depth-limit": "1.2.3",
+    "@envelop/depth-limit": "1.5.0",
     "@envelop/generic-auth": "^4.2.0",
     "@envelop/rate-limiter": "^3.0.0",
     "@graphql-tools/schema": "8.3.2",
