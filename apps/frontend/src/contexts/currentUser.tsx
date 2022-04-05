@@ -8,7 +8,7 @@ import { gql } from '~/generated'
 
 type CurrentUserModel = Omit<
   ReturnType<typeof useCurrentUserInternal>,
-  'auth0Loading'
+  'auth0Loading' | 'getProfileFetching'
 >
 
 const CurrentUserContext = createContext<CurrentUserModel>(undefined as any)
@@ -53,6 +53,7 @@ function useCurrentUserInternal() {
 
   return {
     currentUser: res.data?.getProfile,
+    getProfileFetching: res.fetching,
     auth0Loading: isLoading,
     isOnboarded,
     isAuthenticated,
@@ -68,9 +69,9 @@ export function CurrentUserProvider({
   const value = useCurrentUserInternal()
   const router = useRouter()
 
-  const { auth0Loading, ...rest } = value
+  const { auth0Loading, getProfileFetching, ...rest } = value
 
-  if (auth0Loading) {
+  if (auth0Loading || getProfileFetching) {
     return <Spinner global />
   }
 
