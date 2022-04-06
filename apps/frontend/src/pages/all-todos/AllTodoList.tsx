@@ -21,6 +21,12 @@ const GetAllTodos = gql(/* GraphQL */ `
 export function AllTodoList() {
   const [res] = useQuery({ query: GetAllTodos })
 
+  if (res.error) {
+    throw new Error(
+      res.error.graphQLErrors.map((error) => error.message).toString()
+    )
+  }
+
   return (
     <div>
       {res.data && res.data.allTodos.length < 1 && <p>No Items</p>}

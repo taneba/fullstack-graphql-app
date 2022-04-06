@@ -1,4 +1,5 @@
 import { Suspense } from 'react'
+import { ErrorBoundary } from 'react-error-boundary'
 
 import { Spinner } from '~/components'
 import { DevNote } from '~/components/general/DevNote'
@@ -18,10 +19,13 @@ function AllTodos() {
           admin role user to see
         </DevNote.P>
       </DevNote.Root>
-
-      <Suspense fallback={<Spinner />}>
-        <AllTodoList />
-      </Suspense>
+      <ErrorBoundary
+        fallbackRender={(props) => <div>{JSON.stringify(props)}</div>}
+      >
+        <Suspense fallback={<Spinner />}>
+          <AllTodoList />
+        </Suspense>
+      </ErrorBoundary>
     </div>
   )
 }
