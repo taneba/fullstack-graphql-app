@@ -55,7 +55,7 @@
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "12.1.4",
     "@types/jest": "27.4.1",
-    "@types/react": "17.0.39",
+    "@types/react": "17.0.44",
     "@types/react-dom": "17.0.13",
     "@types/styled-components": "5.1.24",
     "babel-jest": "27.5.1",
