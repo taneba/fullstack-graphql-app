@@ -1114,7 +1114,14 @@
     jsonwebtoken "^8.5.1"
     jwks-rsa "^2.0.1"
 
-"@envelop/core@^2.0.0", "@envelop/core@^2.3.0":
+"@envelop/core@2.3.1":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@envelop/core/-/core-2.3.1.tgz#77d502db2aa97846573d7c2e87a00bde840c7ebb"
+  integrity sha512-AnYUci7EGyA8flml881lDvVDl6n/u6GQpVIOTsZVO29d4/rPqSJ2KFguDD3mjDL406doTTLNuDI4ndxfJl6fmQ==
+  dependencies:
+    "@envelop/types" "2.2.0"
+
+"@envelop/core@^2.0.0":
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/@envelop/core/-/core-2.3.0.tgz#378281eb451cc1f2ac87587ca1a68968bd352a5c"
   integrity sha512-5nZ/n6Wx6YbT9RNc+J3I+/e4GJd8TI1mhO7miKGZcxyOO93ztlIrMMxN1kdZ+IQoRVw7aj38cJJw/OCVWAZ/+Q==
