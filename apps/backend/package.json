@@ -27,7 +27,7 @@
     "@types/got": "9.6.12",
     "@types/jsonwebtoken": "8.5.8",
     "@types/node": "16.11.26",
-    "fastify": "3.27.2",
+    "fastify": "3.29.0",
     "fastify-compress": "4.0.1",
     "fastify-cors": "6.0.3",
     "fastify-helmet": "7.0.1",
