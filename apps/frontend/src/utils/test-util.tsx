@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { GraphQLHandler, GraphQLRequest } from 'msw'
-import React from 'react'
+import React, { StrictMode } from 'react'
 
 import { UrqlClientProvider } from '~/components/util/UrqlClientProvider'
 import { server } from '~/mocks/server'
@@ -12,5 +13,13 @@ export const testRenderer =
     if (responseOverride) {
       server.use(responseOverride)
     }
-    render(<UrqlClientProvider>{children}</UrqlClientProvider>)
+    render(
+      <StrictMode>
+        <UrqlClientProvider>{children}</UrqlClientProvider>
+      </StrictMode>
+    )
+
+    return {
+      user: userEvent.setup(),
+    }
   }

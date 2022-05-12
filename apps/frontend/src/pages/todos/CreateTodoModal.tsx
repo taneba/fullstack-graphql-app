@@ -36,10 +36,8 @@ export function CreateTodoModal() {
       await executeMutation({
         todo: removeEmptyFields(data),
       })
-      window.alert('success!')
     } catch (error) {
       console.log(error)
-      window.alert('Failed to create todo')
     }
   }
 

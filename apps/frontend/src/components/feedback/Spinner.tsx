@@ -8,7 +8,11 @@ interface Props extends Pick<SpinnerCircularFixedProps, 'size'> {
 
 export function Spinner({ global = false, size = 40 }: Props) {
   const Inner = (
-    <SpinnerCircularFixed color="rgba(30, 58, 138)" size={global ? 40 : size} />
+    <SpinnerCircularFixed
+      color="rgba(30, 58, 138)"
+      size={global ? 40 : size}
+      role="loading"
+    />
   )
   return global ? (
     <Portal>
