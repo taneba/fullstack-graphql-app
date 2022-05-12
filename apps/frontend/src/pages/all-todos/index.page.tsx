@@ -1,28 +1,11 @@
-import { useQuery } from 'urql'
+import { Suspense } from 'react'
 
 import { Spinner } from '~/components'
 import { DevNote } from '~/components/general/DevNote'
-import { gql } from '~/generated'
 
-const GetAllTodos = gql(/* GraphQL */ `
-  query GetAllTodos {
-    allTodos {
-      id
-      createdAt
-      updatedAt
-      title
-      content
-      completed
-      author {
-        name
-      }
-    }
-  }
-`)
+import { AllTodoList } from './AllTodoList'
 
 function AllTodos() {
-  const [res] = useQuery({ query: GetAllTodos })
-
   return (
     <div>
       <h1 tw="text-black font-bold text-3xl">Todos</h1>
@@ -36,16 +19,9 @@ function AllTodos() {
         </DevNote.P>
       </DevNote.Root>
 
-      <div>
-        {res.fetching && <Spinner global />}
-        {res.data && res.data.allTodos.length < 1 && <p>No Items</p>}
-        {res.data?.allTodos.map((todo) => (
-          <div key={todo.id}>
-            <div>{todo.title}</div>
-            <p>{todo.author?.name}</p>
-          </div>
-        ))}
-      </div>
+      <Suspense fallback={<Spinner />}>
+        <AllTodoList />
+      </Suspense>
     </div>
   )
 }

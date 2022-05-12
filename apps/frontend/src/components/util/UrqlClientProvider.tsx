@@ -11,7 +11,12 @@ import {
   fetchExchange,
   Provider as UrqlProvider,
 } from 'urql'
-import { pipe, tap } from 'wonka'
+import { delay, pipe, tap } from 'wonka'
+
+const fakeSlowNetworkExchange: Exchange =
+  ({ forward }) =>
+  (ops$) =>
+    pipe(ops$, delay(1000), forward)
 
 const authCheckExchange: Exchange =
   ({ forward }) =>
@@ -57,6 +62,7 @@ const exchanges = [
   cacheExchange,
   ...(process.env.NODE_ENV !== 'test' ? [debugExchange] : []),
   authCheckExchange,
+  fakeSlowNetworkExchange,
   fetchExchange,
 ]
 
@@ -89,6 +95,7 @@ export function UrqlClientProvider({
               authorization: token ? `Bearer ${token}` : '',
             },
           }),
+          suspense: true,
         })
       )
     }

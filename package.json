@@ -10,6 +10,7 @@
     "codegen:graphql": "turbo run codegen:graphql",
     "dev:frontend": "turbo run dev --scope=frontend",
     "test:frontend": "turbo run test --scope=frontend",
+    "test:watch": "turbo run test:watch",
     "lint:frontend": "turbo run lint --scope=frontend",
     "type-check:frontend": "turbo run type-check --scope=frontend"
   },

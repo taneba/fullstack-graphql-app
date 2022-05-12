@@ -17,8 +17,10 @@ import {
 } from '@envelop/generic-auth'
 import { makeExecutableSchema } from '@graphql-tools/schema'
 import { User } from '@prisma/client'
+import { EnumValueNode } from 'graphql'
 import { TokenExpiredError } from 'jsonwebtoken'
 
+import { Role } from './api/graphql/generated/graphql'
 import resolvers from './api/graphql/resolvers/resolvers'
 import { schema } from './api/graphql/typeDefs'
 import { createContext, GraphqlServerContext, prisma } from './context'
@@ -48,11 +50,31 @@ const resolveUserFn: ResolveUserFn<User, GraphqlServerContext> = async (
   }
 }
 
-const validateUserFn: ValidateUserFn<User> = ({ user }) => {
+const validateUserFn: ValidateUserFn<User> = ({
+  user,
+  fieldAuthDirectiveNode,
+}) => {
   if (!user) {
     throw new EnvelopError('request not authenticated', {
       code: 'NOT_AUTHENTICATED',
     })
+  } else {
+    if (!fieldAuthDirectiveNode?.arguments) {
+      return
+    }
+
+    const valueNode = fieldAuthDirectiveNode.arguments.find(
+      (arg) => arg.name.value === 'role'
+    )?.value as EnumValueNode | undefined
+
+    if (valueNode) {
+      const role = valueNode.value as Role
+      if (role !== user.role) {
+        throw new EnvelopError('request not authorized', {
+          code: 'NOT_AUTHORIZED',
+        })
+      }
+    }
   }
 }
 

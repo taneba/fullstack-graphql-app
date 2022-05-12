@@ -15,6 +15,9 @@
     "test": {
       "outputs": ["coverage/**"]
     },
+    "test:watch": {
+      "outputs": []
+    },
     "dev": { "cache": false },
     "codegen:graphql": { "cache": false }
   }

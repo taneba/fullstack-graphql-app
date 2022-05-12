@@ -32,9 +32,13 @@ export function CreateTodoModal() {
     formState: { errors },
   } = useForm<TodoInput>()
   const onSubmit: SubmitHandler<TodoInput> = async (data) => {
-    executeMutation({
-      todo: removeEmptyFields(data),
-    })
+    try {
+      await executeMutation({
+        todo: removeEmptyFields(data),
+      })
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (
@@ -50,11 +54,9 @@ export function CreateTodoModal() {
         {errors.title && <span tw="text-red-500">title is required</span>}
         <label htmlFor={register('content').name}>content</label>
         <TextArea {...register('content')} />
-        <DialogClose asChild>
-          <Button primary type="submit">
-            Submit
-          </Button>
-        </DialogClose>
+        <Button primary type="submit">
+          Submit
+        </Button>
       </form>
     </DialogContent>
   )

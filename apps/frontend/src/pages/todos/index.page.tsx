@@ -1,25 +1,12 @@
-import { filter } from 'graphql-anywhere'
-import { useQuery } from 'urql'
+import { Suspense } from 'react'
 
 import { Button, Dialog, DialogTrigger, Spinner } from '~/components'
 import { DevNote } from '~/components/general/DevNote'
-import { gql } from '~/generated'
 
 import { CreateTodoModal } from './CreateTodoModal'
-import { TodoItem } from './TodoItem'
-
-const GetTodos = gql(/* GraphQL */ `
-  query GetTodos {
-    todosByCurrentUser {
-      ...TodoItem_Todo
-      id
-      completed
-    }
-  }
-`)
+import { TodoList } from './TodoList'
 
 function Todos() {
-  const [res] = useQuery({ query: GetTodos })
   return (
     <div>
       <h1 tw="text-black font-bold text-3xl">Todos</h1>
@@ -38,16 +25,9 @@ function Todos() {
         <CreateTodoModal />
       </Dialog>
       <div tw="mt-4">
-        {res.fetching && <Spinner global />}
-        {res.data && res.data.todosByCurrentUser.length < 1 && <p>No Items</p>}
-        {res.data?.todosByCurrentUser
-          .filter(({ completed }) => !completed)
-          .map((todo) => (
-            <TodoItem
-              key={todo.id}
-              todo={filter(TodoItem.fragments.todo, todo)}
-            />
-          ))}
+        <Suspense fallback={<Spinner />}>
+          <TodoList />
+        </Suspense>
       </div>
     </div>
   )
