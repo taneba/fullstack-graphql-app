@@ -1,4 +1,3 @@
-import { useAuth0 } from '@auth0/auth0-react'
 import { PersonIcon } from '@radix-ui/react-icons'
 import Link, { LinkProps } from 'next/link'
 import { useRouter } from 'next/router'
@@ -11,12 +10,14 @@ export function Navbar() {
   const { isOnboarded } = useCurrentUser()
   return (
     <nav tw="w-full border-b h-16 px-6 flex justify-between items-center">
-      <div tw="flex space-x-6 h-full">
-        <NavItem href="/">Home</NavItem>
-        <NavItem href="/todos">Todos</NavItem>
-        <NavItem href="/users">All Users</NavItem>
-        <NavItem href="/all-todos">All Todos</NavItem>
-      </div>
+      {isOnboarded && (
+        <div tw="flex space-x-6 h-full">
+          <NavItem href="/">Home</NavItem>
+          <NavItem href="/todos">Todos</NavItem>
+          <NavItem href="/users">All Users</NavItem>
+          <NavItem href="/all-todos">All Todos</NavItem>
+        </div>
+      )}
       {isOnboarded ? (
         <div tw="flex space-x-3">
           <NavItem href="/profile">
