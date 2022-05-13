@@ -19,7 +19,7 @@
     "@envelop/auth0": "3.3.2",
     "@envelop/core": "2.3.2",
     "@envelop/depth-limit": "1.5.2",
-    "@envelop/generic-auth": "4.2.1",
+    "@envelop/generic-auth": "4.2.2",
     "@envelop/rate-limiter": "^3.0.0",
     "@graphql-tools/schema": "8.3.7",
     "@graphql-yoga/node": "^2.0.0",
