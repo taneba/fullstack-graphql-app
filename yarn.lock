@@ -10,22 +10,23 @@
     "@jridgewell/gen-mapping" "^0.1.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@apollo/client@~3.2.5 || ~3.3.0 || ~3.4.0 || ~3.5.0":
-  version "3.5.10"
-  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.5.10.tgz#43463108a6e07ae602cca0afc420805a19339a71"
-  integrity sha512-tL3iSpFe9Oldq7gYikZK1dcYxp1c01nlSwtsMz75382HcI6fvQXyFXUCJTTK3wgO2/ckaBvRGw7VqjFREdVoRw==
+"@apollo/client@~3.2.5 || ~3.3.0 || ~3.4.0 || ~3.5.0 || ~3.6.0":
+  version "3.6.2"
+  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.6.2.tgz#0418bfa6358dd117894c8af396706cfa2b186032"
+  integrity sha512-DNWyl+NNU2VsfHtXwOr4rV9hnQFPkl2/dNXeouhk9q7bXCWdEh3K8YTt/frULGVKbQjtnlPmz8C+LFI/JZ2N3w==
   dependencies:
-    "@graphql-typed-document-node/core" "^3.0.0"
+    "@graphql-typed-document-node/core" "^3.1.1"
     "@wry/context" "^0.6.0"
     "@wry/equality" "^0.5.0"
     "@wry/trie" "^0.3.0"
-    graphql-tag "^2.12.3"
+    graphql-tag "^2.12.6"
     hoist-non-react-statics "^3.3.2"
     optimism "^0.16.1"
     prop-types "^15.7.2"
     symbol-observable "^4.0.0"
-    ts-invariant "^0.9.4"
+    ts-invariant "^0.10.0"
     tslib "^2.3.0"
+    use-sync-external-store "^1.0.0"
     zen-observable-ts "^1.2.0"
 
 "@app/gql@link:./apps/frontend/src/generated/graphql.ts":
@@ -1565,14 +1566,6 @@
     "@graphql-tools/utils" "8.6.10"
     tslib "~2.4.0"
 
-"@graphql-tools/merge@8.2.7":
-  version "8.2.7"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/merge/-/merge-8.2.7.tgz#add05bcc47df6b7390f31acbcadd986e160d58f9"
-  integrity sha512-rKxjNogqu1UYAG/y5FOb6lJsmSQbWA+jq4inWjNEVX54VGGE7/WGnmPaqcsyomNOfS3vIRS6NnG+DxiQSqetjg==
-  dependencies:
-    "@graphql-tools/utils" "8.6.6"
-    tslib "~2.3.0"
-
 "@graphql-tools/optimize@^1.0.1":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@graphql-tools/optimize/-/optimize-1.2.0.tgz#292d0a269f95d04bc6d822c034569bb7e591fb26"
@@ -1625,16 +1618,6 @@
     tslib "~2.4.0"
     value-or-promise "1.0.11"
 
-"@graphql-tools/schema@8.3.7":
-  version "8.3.7"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/schema/-/schema-8.3.7.tgz#6e2be8e17a1f97f4d11d5b787c414ec29400fde2"
-  integrity sha512-7byr9J6rfMPFPfiR4u65dy20xHATTvbgOY7KYd1sYPnMKKfRZe0tUgpnE+noXcfob7N8s366WaVh7bEoztQMwg==
-  dependencies:
-    "@graphql-tools/merge" "8.2.7"
-    "@graphql-tools/utils" "8.6.6"
-    tslib "~2.3.0"
-    value-or-promise "1.0.11"
-
 "@graphql-tools/url-loader@7.9.21", "@graphql-tools/url-loader@^7.0.11", "@graphql-tools/url-loader@^7.9.7":
   version "7.9.21"
   resolved "https://registry.yarnpkg.com/@graphql-tools/url-loader/-/url-loader-7.9.21.tgz#4ceeca79ac71ac0ed2358360ef6f94594033ed52"
@@ -1663,13 +1646,6 @@
   dependencies:
     tslib "~2.4.0"
 
-"@graphql-tools/utils@8.6.6":
-  version "8.6.6"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-8.6.6.tgz#f7c88d32818b748f3e3867ed87a562769b544417"
-  integrity sha512-wjY2ljKLCnnbRrDNPPgPNqCujou0LFSOWcxAjV6DYUlfFWTsAEvlYmsmY4T+K12wI/fnqoJ2bUwIlap1plFDMg==
-  dependencies:
-    tslib "~2.3.0"
-
 "@graphql-tools/utils@^7.6.0", "@graphql-tools/utils@^7.9.1":
   version "7.10.0"
   resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-7.10.0.tgz#07a4cb5d1bec1ff1dc1d47a935919ee6abd38699"
@@ -1690,7 +1666,7 @@
     tslib "~2.4.0"
     value-or-promise "1.0.11"
 
-"@graphql-typed-document-node/core@3.1.1", "@graphql-typed-document-node/core@^3.0.0", "@graphql-typed-document-node/core@^3.1.1":
+"@graphql-typed-document-node/core@3.1.1", "@graphql-typed-document-node/core@^3.1.1":
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/@graphql-typed-document-node/core/-/core-3.1.1.tgz#076d78ce99822258cf813ecc1e7fa460fa74d052"
   integrity sha512-NQ17ii0rK1b34VZonlmT2QMJFI70m0TRwbknO/ihlbatXyaktDhN/98vBiUU6kNBPljqGqyIrl2T4nY2RpFANg==
@@ -5409,22 +5385,22 @@ graphql-shield@^7.5.0:
     object-hash "^2.0.3"
     yup "^0.31.0"
 
-graphql-tag@^2.11.0, graphql-tag@^2.12.3:
+graphql-tag@^2.11.0, graphql-tag@^2.12.6:
   version "2.12.6"
   resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.12.6.tgz#d441a569c1d2537ef10ca3d1633b48725329b5f1"
   integrity sha512-FdSNcu2QQcWnM2VNvSCCDCVS5PpPqpzgFT8+GXzqJuoDd0CBncxCY278u4mhRO7tMgo2JjgJA5aZ+nWSQ/Z+xg==
   dependencies:
     tslib "^2.1.0"
 
-graphql-tools@8.2.5:
-  version "8.2.5"
-  resolved "https://registry.yarnpkg.com/graphql-tools/-/graphql-tools-8.2.5.tgz#703654ca783ead773ab0098a29d41938b0279e6d"
-  integrity sha512-9OS0j2iaz7Hjawm2FbznBjAAFB35rAUvBsSPWqfL4yY5YJQgrSy9ZGHLPwEtYhEqRcN0m1/0KgOEakbeuXIWKw==
+graphql-tools@8.2.9:
+  version "8.2.9"
+  resolved "https://registry.yarnpkg.com/graphql-tools/-/graphql-tools-8.2.9.tgz#079799d5ec5e81cf4e3239bf67bde2e8f4e7e0f9"
+  integrity sha512-ZDu5MFt8Cc+LM8EfS+ie8ueKrAZ5R/iLzS6AkmS0KLc9J6gJ3hLezJszVtoV9OS4kajA1XIfZ8jeoQ8000OJog==
   dependencies:
-    "@graphql-tools/schema" "8.3.7"
-    tslib "~2.3.0"
+    "@graphql-tools/schema" "8.3.11"
+    tslib "~2.4.0"
   optionalDependencies:
-    "@apollo/client" "~3.2.5 || ~3.3.0 || ~3.4.0 || ~3.5.0"
+    "@apollo/client" "~3.2.5 || ~3.3.0 || ~3.4.0 || ~3.5.0 || ~3.6.0"
 
 graphql-typescript-integration@1.2.0:
   version "1.2.0"
@@ -9069,6 +9045,13 @@ tree-kill@^1.2.2:
   resolved "https://registry.yarnpkg.com/tree-kill/-/tree-kill-1.2.2.tgz#4ca09a9092c88b73a7cdc5e8a01b507b0790a0cc"
   integrity sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==
 
+ts-invariant@^0.10.0:
+  version "0.10.3"
+  resolved "https://registry.yarnpkg.com/ts-invariant/-/ts-invariant-0.10.3.tgz#3e048ff96e91459ffca01304dbc7f61c1f642f6c"
+  integrity sha512-uivwYcQaxAucv1CzRp2n/QdYPo4ILf9VXgH19zEIjFx2EJufV16P0JtJVpYHy89DItG6Kwj2oIUjrcK5au+4tQ==
+  dependencies:
+    tslib "^2.1.0"
+
 ts-invariant@^0.3.2:
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/ts-invariant/-/ts-invariant-0.3.3.tgz#b5742b1885ecf9e29c31a750307480f045ec0b16"
@@ -9082,13 +9065,6 @@ ts-invariant@^0.4.0:
   integrity sha512-uEtWkFM/sdZvRNNDL3Ehu4WVpwaulhwQszV8mrtcdeE8nN00BV9mAmQ88RkrBhFgl9gMgvjJLAQcZbnPXI9mlA==
   dependencies:
     tslib "^1.9.3"
-
-ts-invariant@^0.9.4:
-  version "0.9.4"
-  resolved "https://registry.yarnpkg.com/ts-invariant/-/ts-invariant-0.9.4.tgz#42ac6c791aade267dd9dc65276549df5c5d71cac"
-  integrity sha512-63jtX/ZSwnUNi/WhXjnK8kz4cHHpYS60AnmA6ixz17l7E12a5puCWFlNpkne5Rl0J8TBPVHpGjsj4fxs8ObVLQ==
-  dependencies:
-    tslib "^2.1.0"
 
 ts-jest@27.1.4:
   version "27.1.4"
@@ -9532,6 +9508,11 @@ use-sidecar@^1.1.2:
   dependencies:
     detect-node-es "^1.1.0"
     tslib "^2.0.0"
+
+use-sync-external-store@^1.0.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.1.0.tgz#3343c3fe7f7e404db70f8c687adf5c1652d34e82"
+  integrity sha512-SEnieB2FPKEVne66NpXPd1Np4R1lTNKfjuy3XdIoPQKYBAFdzbzSZlSn1KJZUiihQLQC5Znot4SBz1EOTBwQAQ==
 
 util-deprecate@^1.0.1, util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"
