@@ -23,7 +23,7 @@
     "@envelop/rate-limiter": "^3.0.0",
     "@graphql-tools/schema": "8.3.11",
     "@graphql-yoga/node": "^2.0.0",
-    "@prisma/client": "3.5.0",
+    "@prisma/client": "3.14.0",
     "@types/got": "9.6.12",
     "@types/jsonwebtoken": "8.5.8",
     "@types/node": "16.11.35",
