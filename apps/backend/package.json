@@ -51,7 +51,7 @@
     "nodemon": "2.0.16",
     "ts-node": "10.7.0",
     "ts-node-dev": "1.1.8",
-    "tsc-alias": "1.6.6",
+    "tsc-alias": "1.6.7",
     "tsconfig-paths": "3.12.0"
   }
 }
