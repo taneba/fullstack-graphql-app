@@ -8592,10 +8592,10 @@ source-map@^0.7.3:
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.7.3.tgz#5302f8169031735226544092e64981f751750383"
   integrity sha512-CkCj6giN3S+n9qrYiBTX5gystlENnRW5jZeNLHpe6aue+SrHcG5VYwujhW9s4dY31mEGsxBDrHR6oI69fTXsaQ==
 
-spinners-react@1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/spinners-react/-/spinners-react-1.0.6.tgz#b7e43d6097fa30107718df718108f3586d50088f"
-  integrity sha512-5J3sPZ9xogVA3CbLjFD3vTWhcuHb+mKFSBBEm5c8+8JSdPGweLQ6sPU+SD51FwZ2lqHks8DpiLk/lyLUa70oJA==
+spinners-react@1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/spinners-react/-/spinners-react-1.0.7.tgz#237e3e6f5fe2e6319083eb8703372e728eb2a304"
+  integrity sha512-Xcgpc7Ybm6HOrpCVJjbH1G/NV852HaV4Zc9T1sJ2+S2hn05lGiBZS1dBOKGLc1kp8wv2sd3wtt94I/NNqDjs3Q==
 
 sponge-case@^1.0.1:
   version "1.0.1"
