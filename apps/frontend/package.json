@@ -55,7 +55,7 @@
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "13.2.0",
     "@testing-library/user-event": "^14.2.0",
-    "@types/jest": "27.4.1",
+    "@types/jest": "27.5.2",
     "@types/react": "^18.0.9",
     "@types/react-dom": "17.0.17",
     "@types/styled-components": "5.1.25",
