@@ -29,7 +29,7 @@
     "@types/node": "16.11.36",
     "fastify": "3.29.0",
     "fastify-compress": "4.1.0",
-    "fastify-cors": "6.0.3",
+    "fastify-cors": "6.1.0",
     "fastify-helmet": "7.1.0",
     "got": "11.8.5",
     "graphql": "15.8.0",
