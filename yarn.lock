@@ -4908,7 +4908,7 @@ fast-text-encoding@^1.0.3:
   resolved "https://registry.yarnpkg.com/fast-text-encoding/-/fast-text-encoding-1.0.3.tgz#ec02ac8e01ab8a319af182dae2681213cfe9ce53"
   integrity sha512-dtm4QZH9nZtcDt8qJiOH9fcQd1NAgi+K1O2DbE6GG1PPCK/BWfOH3idCTRQ4ImXRUOyopDEgDEnVEE7Y/2Wrig==
 
-fastify-compress@4.0.1:
+"fastify-compress-deprecated@npm:fastify-compress@4.0.1":
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/fastify-compress/-/fastify-compress-4.0.1.tgz#61e4836aa2cb9d8ac3989e5c7b69dc2c55a3a451"
   integrity sha512-3ABDmLS3CVZpP9VyhpPsYy1ID771i92ftZ320Qq68lGLQ+kUqHIAWeTcik+KM8UycY8Ad+baECBHZpXDHvG0Eg==
@@ -4926,6 +4926,14 @@ fastify-compress@4.0.1:
     pump "^3.0.0"
     pumpify "^2.0.1"
     string-to-stream "^3.0.1"
+
+fastify-compress@4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/fastify-compress/-/fastify-compress-4.1.0.tgz#f699d45f3ebbcab05b8c4b2d168208042860dece"
+  integrity sha512-dFuw7kFVE5PtQg52rMZ75ZngDA1vVMLuWbUqT4QumJqnm04ksrg8n1W7NX92Bj4szBX4wyYwWWua7+wy1Ml4iw==
+  dependencies:
+    fastify-compress-deprecated "npm:fastify-compress@4.0.1"
+    process-warning "^1.0.0"
 
 fastify-cors@6.0.3:
   version "6.0.3"
