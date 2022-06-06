@@ -3,12 +3,10 @@
   "display": "Expo.js",
   "extends": "./base.json",
   "compilerOptions": {
-    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "incremental": true,
     "module": "esnext",
     "isolatedModules": true,
-
     "allowJs": true,
     "esModuleInterop": true,
     "jsx": "react-native",
