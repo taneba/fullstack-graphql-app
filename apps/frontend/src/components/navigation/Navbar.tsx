@@ -9,9 +9,9 @@ import { useCurrentUser } from '~/contexts/currentUser'
 export function Navbar() {
   const { isOnboarded } = useCurrentUser()
   return (
-    <nav tw="w-full border-b h-16 px-6 flex justify-between items-center">
+    <nav tw="flex h-16 w-full items-center justify-between border-b px-6">
       {isOnboarded && (
-        <div tw="flex space-x-6 h-full">
+        <div tw="flex h-full space-x-6">
           <NavItem href="/">Home</NavItem>
           <NavItem href="/todos">Todos</NavItem>
           <NavItem href="/users">All Users</NavItem>
@@ -45,8 +45,8 @@ function NavItem({
 
   return (
     <Link href={href}>
-      <div tw="flex h-full" css={isCurrent && tw`border-b border-blue-500`}>
-        <p tw="hover:text-gray-800 text-gray-500 cursor-pointer flex items-center">
+      <div css={[tw`flex h-full`, isCurrent && tw`border-b border-blue-500`]}>
+        <p tw="flex cursor-pointer items-center text-gray-500 hover:text-gray-800">
           {children}
         </p>
       </div>
