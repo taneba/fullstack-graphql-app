@@ -1,8 +1,8 @@
+import fastifyCompress from '@fastify/compress'
+import fastifyCors from '@fastify/cors'
+import fastfyHelment from '@fastify/helmet'
 import { createServer } from '@graphql-yoga/node'
 import fastify, { FastifyReply, FastifyRequest } from 'fastify'
-import fastifyCompress from 'fastify-compress'
-import fastifyCors from 'fastify-cors'
-import fastfyHelment from 'fastify-helmet'
 import { Readable } from 'stream'
 
 import { schema } from './api/graphql/typeDefs'
