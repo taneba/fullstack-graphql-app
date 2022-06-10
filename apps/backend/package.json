@@ -19,7 +19,7 @@
     "@envelop/auth0": "3.3.3",
     "@envelop/core": "2.3.3",
     "@envelop/depth-limit": "1.5.3",
-    "@envelop/generic-auth": "4.2.2",
+    "@envelop/generic-auth": "4.2.4",
     "@envelop/rate-limiter": "^3.0.0",
     "@fastify/compress": "^5.0.0",
     "@fastify/cors": "^7.0.0",
