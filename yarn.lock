@@ -9507,10 +9507,10 @@ url-parse-lax@^3.0.0:
   dependencies:
     prepend-http "^2.0.0"
 
-urql@2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/urql/-/urql-2.2.0.tgz#5eade2813f5b61497086a5038ecc7c6e7cbd7153"
-  integrity sha512-36wnWqDrpXqhwT5r2/qRSZXhb7Y4sXA0nLlYEd3uLgvfIdOA8kUaPdfTujzfrvfCcfiVVFxhzqVAhc8r17NMwQ==
+urql@2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/urql/-/urql-2.2.2.tgz#7d7d06ef4a78aef391222255b1c92bba0af3e296"
+  integrity sha512-jaVhDxWS2gfJLWWupFXtRkTCuGeRX+b9v19PU6TnKIJ7VP+xyrgpNHghHcTBGo58F+rxvCXVNEvSvdlKFMiHhg==
   dependencies:
     "@urql/core" "^2.4.3"
     wonka "^4.0.14"
