@@ -1150,10 +1150,10 @@
   dependencies:
     tiny-lru "7.0.6"
 
-"@envelop/rate-limiter@^3.0.0":
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/@envelop/rate-limiter/-/rate-limiter-3.3.2.tgz#8d20b88f173320e72763c21d8d06247ae920eff7"
-  integrity sha512-vShHl0n40OX94JKcw1GA51YBuRc7e4iV6V0htk5cq/QDzPeMfkHXTQAfkqq96jyCrXXUzu4VZCRPUDRyBFrkow==
+"@envelop/rate-limiter@3.3.3":
+  version "3.3.3"
+  resolved "https://registry.yarnpkg.com/@envelop/rate-limiter/-/rate-limiter-3.3.3.tgz#acaf176289f635f2c6bdd56252d040c217b4b68e"
+  integrity sha512-gRf5CaqVo+T8wOI6+K+6WChi/bC5wHswdv4fOhS9cEwLQ1zbwZ8gSiwXKxjbXRbiQoMpAnVD6bYaEHmFlpt+Gw==
   dependencies:
     graphql-rate-limit "3.3.0"
 
