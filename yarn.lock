@@ -1612,13 +1612,13 @@
     "@graphql-tools/utils" "8.6.10"
     tslib "~2.4.0"
 
-"@graphql-tools/merge@8.2.13":
-  version "8.2.13"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/merge/-/merge-8.2.13.tgz#d4f254dcea301ce3d9c23b03eb68a7ae9baf6981"
-  integrity sha512-lhzjCa6wCthOYl7B6UzER3SGjU2WjSGnW0WGr8giMYsrtf6G3vIRotMcSVMlhDzyyMIOn7uPULOUt3/kaJ/rIA==
+"@graphql-tools/merge@8.2.14":
+  version "8.2.14"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/merge/-/merge-8.2.14.tgz#44811e5453f5515d9537bd1b64f0f0cfe6313a45"
+  integrity sha512-od6lTF732nwPX91G79eiJf+dyRBHxCaKe7QL4IYeH4d1k+NYqx/ihYpFJNjDaqxmpHH92Hr+TxsP9SYRK3/QKg==
   dependencies:
-    "@graphql-tools/utils" "8.6.12"
-    tslib "~2.4.0"
+    "@graphql-tools/utils" "8.6.13"
+    tslib "^2.4.0"
 
 "@graphql-tools/optimize@^1.0.1":
   version "1.2.0"
@@ -1672,14 +1672,14 @@
     tslib "~2.4.0"
     value-or-promise "1.0.11"
 
-"@graphql-tools/schema@8.3.13":
-  version "8.3.13"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/schema/-/schema-8.3.13.tgz#099460459d7821dd8deb34952900fe300085ba0b"
-  integrity sha512-e+bx1VHj1i5v4HmhCYCar0lqdoLmkRi/CfV07rTqHR6CRDbIb/S/qDCajHLt7FCovQ5ozlI5sRVbBhzfq5H0PQ==
+"@graphql-tools/schema@8.3.14":
+  version "8.3.14"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/schema/-/schema-8.3.14.tgz#0aeab46daab70fb7505c950dc7e83a3da0eeb7ce"
+  integrity sha512-ntA4pKwyyPHFFKcIw17FfqGZAiTNZl0tHieQpPIkN5fPc4oHcXOfaj1vBjtIC/Qn6H7XBBu3l2kMA8FpobdxTQ==
   dependencies:
-    "@graphql-tools/merge" "8.2.13"
-    "@graphql-tools/utils" "8.6.12"
-    tslib "~2.4.0"
+    "@graphql-tools/merge" "8.2.14"
+    "@graphql-tools/utils" "8.6.13"
+    tslib "^2.4.0"
     value-or-promise "1.0.11"
 
 "@graphql-tools/url-loader@7.9.21", "@graphql-tools/url-loader@^7.0.11", "@graphql-tools/url-loader@^7.9.7":
@@ -1710,12 +1710,12 @@
   dependencies:
     tslib "~2.4.0"
 
-"@graphql-tools/utils@8.6.12":
-  version "8.6.12"
-  resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-8.6.12.tgz#0a550dc0331fd9b097fe7223d65cbbee720556e4"
-  integrity sha512-WQ91O40RC+UJgZ9K+IzevSf8oolR1QE+WQ21Oyc2fgDYYiqT0eSf+HVyhZr/8x9rVjn3N9HeqCsywbdmbljg0w==
+"@graphql-tools/utils@8.6.13":
+  version "8.6.13"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-8.6.13.tgz#2b4fb7f9f8a29b25eecd44551fb95974de32f969"
+  integrity sha512-FiVqrQzj4cgz0HcZ3CxUs8NtBGPZFpmsVyIgwmL6YCwIhjJQnT72h8G3/vk5zVfjfesht85YGp0inWWuoCKWzg==
   dependencies:
-    tslib "~2.4.0"
+    tslib "^2.4.0"
 
 "@graphql-tools/utils@^7.6.0", "@graphql-tools/utils@^7.9.1":
   version "7.10.0"
@@ -5422,13 +5422,13 @@ graphql-tag@^2.11.0, graphql-tag@^2.12.6:
   dependencies:
     tslib "^2.1.0"
 
-graphql-tools@8.2.11:
-  version "8.2.11"
-  resolved "https://registry.yarnpkg.com/graphql-tools/-/graphql-tools-8.2.11.tgz#cf4fcd8a91c2185888b355abdd4eb283917fc7cb"
-  integrity sha512-Lv807vs03b+oCtpy1a6jcEr5gxBCHDXsC7dS/YHMsFM+XQvIX19kGJebJT9xP5xL9ABWKsR143Srr4HxGknYEw==
+graphql-tools@8.2.12:
+  version "8.2.12"
+  resolved "https://registry.yarnpkg.com/graphql-tools/-/graphql-tools-8.2.12.tgz#0b5dd71099db7312dd55dbe7d9a1ba70a13404d2"
+  integrity sha512-aZ9kZ0YI2rv0YNojnUtJQbtGkZtJYMFmWmBNn9XOP+nwZuv6j+Byr/teVlrmA0I1t+3+WE64lfcgxmwNo3frUg==
   dependencies:
-    "@graphql-tools/schema" "8.3.13"
-    tslib "~2.4.0"
+    "@graphql-tools/schema" "8.3.14"
+    tslib "^2.4.0"
   optionalDependencies:
     "@apollo/client" "~3.2.5 || ~3.3.0 || ~3.4.0 || ~3.5.0 || ~3.6.0"
 
@@ -9205,7 +9205,7 @@ tslib@^1.0.0, tslib@^1.10.0, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2, tslib@^2.0.0, tslib@^2.0.3, tslib@^2.1.0, tslib@^2.3.0, tslib@^2.3.1, tslib@~2.4.0:
+tslib@^2, tslib@^2.0.0, tslib@^2.0.3, tslib@^2.1.0, tslib@^2.3.0, tslib@^2.3.1, tslib@^2.4.0, tslib@~2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
   integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
