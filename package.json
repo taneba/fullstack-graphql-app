@@ -12,7 +12,9 @@
     "test:frontend": "turbo run test --scope=frontend",
     "test:watch": "turbo run test:watch",
     "lint:frontend": "turbo run lint --scope=frontend",
-    "type-check:frontend": "turbo run type-check --scope=frontend"
+    "type-check:frontend": "turbo run type-check --scope=frontend",
+    "lint:backend": "turbo run lint --scope=backend",
+    "type-check:backend": "turbo run type-check --scope=backend"
   },
   "workspaces": [
     "apps/*",
