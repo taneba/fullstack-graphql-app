@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon 'src/index.ts' --exec 'ts-node -r tsconfig-paths/register'",
+    "dev": "tsx watch src/index.ts",
     "db:migration:generate": "dotenv -e .env.localhost prisma migrate dev --create-only",
     "db:migration:run": "dotenv -e .env.localhost prisma migrate dev",
     "db:reset": "dotenv -e .env.localhost prisma migrate reset",
@@ -39,6 +39,7 @@
     "prisma": "^3.9.2",
     "ts-pattern": "3.3.5",
     "tsconfig": "*",
+    "tsx": "^3.4.3",
     "typescript": "4.7.3"
   },
   "devDependencies": {
