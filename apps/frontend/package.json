@@ -33,7 +33,7 @@
     "tailwindcss": "2.2.19",
     "ts-pattern": "3.3.5",
     "twin.macro": "2.8.2",
-    "typescript": "4.5.5",
+    "typescript": "4.7.3",
     "urql": "2.2.2",
     "wonka": "4.0.15",
     "zod": "3.17.3"
