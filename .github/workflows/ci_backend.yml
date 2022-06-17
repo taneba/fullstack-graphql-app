@@ -51,3 +51,7 @@ jobs:
       - name: Type-check
         working-directory: ./out
         run: yarn type-check:backend
+
+      - name: Build
+        working-directory: ./out
+        run: yarn build:backend
