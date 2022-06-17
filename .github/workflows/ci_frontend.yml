@@ -3,7 +3,7 @@ on: push
 
 jobs:
   test:
-    name: Lint, Type check & Test
+    name: Lint, Type check, Test
     runs-on: ubuntu-latest
     # defaults:
     #   run:
