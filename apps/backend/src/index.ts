@@ -1,9 +1,9 @@
 import fastifyCompress from '@fastify/compress'
 import fastifyCors from '@fastify/cors'
-import fastfyHelment from '@fastify/helmet'
+import fastifyHelmet from '@fastify/helmet'
 import { createServer } from '@graphql-yoga/node'
+import { renderGraphiQL } from '@graphql-yoga/render-graphiql'
 import fastify, { FastifyReply, FastifyRequest } from 'fastify'
-import { Readable } from 'stream'
 
 import { schema } from './api/graphql/typeDefs'
 import { envelopPlugins } from './envelopPlugins'
@@ -15,7 +15,7 @@ const app = fastify({ logger: true })
 app.register(fastifyCors, {
   origin: clientUrl,
 })
-app.register(fastfyHelment, {
+app.register(fastifyHelmet, {
   contentSecurityPolicy: false,
 })
 app.register(fastifyCompress)
@@ -27,13 +27,17 @@ const graphQLServer = createServer<{
   schema: schema,
   plugins: envelopPlugins,
   logging: app.log,
-  graphiql: process.env.NODE_ENV !== 'production' && {
-    defaultQuery: /* GraphQL */ `
-      query {
-        timer # health check
-      }
-    `,
-  },
+  renderGraphiQL:
+    process.env.NODE_ENV !== 'production'
+      ? () =>
+          renderGraphiQL({
+            defaultQuery: /* GraphQL */ `
+              query {
+                time # health check
+              }
+            `,
+          })
+      : undefined,
 })
 
 app.route({
@@ -45,16 +49,34 @@ app.route({
       reply,
     })
 
-    for (const [name, value] of response.headers as any) {
-      reply.header(name, value)
-    }
+    response.headers.forEach((value, key) => {
+      reply.header(key, value)
+    })
 
     reply.status(response.status)
-    const nodeStream = Readable.from(response.body!)
-    reply.send(nodeStream)
+    reply.send(response.body)
+
+    return reply
   },
 })
 
-app.listen(5000, '0.0.0.0', () => {
-  console.log('graphql server is running on http://localhost:5000/graphql')
-})
+const start = async () => {
+  try {
+    app.listen(
+      {
+        port: 5000,
+        host: '0.0.0.0',
+      },
+      () => {
+        console.log(
+          'graphql server is running on http://localhost:5000/graphql'
+        )
+      }
+    )
+  } catch (err) {
+    app.log.error(err)
+    process.exit(1)
+  }
+}
+
+start()
