@@ -1,13 +1,11 @@
-name: CI FE
+name: CI BE
 on: push
 
 jobs:
   test:
-    name: Lint, Type check, Test
+    name: Link, Type check, Build
     runs-on: ubuntu-latest
-    # defaults:
-    #   run:
-    #     working-directory: ./frontend
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -30,7 +28,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Prune
-        run: npx turbo prune --scope=frontend
+        run: npx turbo prune --scope=backend
 
       - name: Turbo Cache
         id: turbo-cache
@@ -48,12 +46,12 @@ jobs:
 
       - name: Lint
         working-directory: ./out
-        run: yarn lint:frontend
+        run: yarn lint:backend
 
       - name: Type-check
         working-directory: ./out
-        run: yarn type-check:frontend
+        run: yarn type-check:backend
 
-      - name: Tests (Jest)
+      - name: Build
         working-directory: ./out
-        run: yarn test:frontend
+        run: yarn build:backend
