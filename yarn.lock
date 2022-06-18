@@ -9336,10 +9336,10 @@ ts-pattern@3.3.5:
   resolved "https://registry.yarnpkg.com/ts-pattern/-/ts-pattern-3.3.5.tgz#9a4bde1d44f9afe7e82409820f68790232c2544c"
   integrity sha512-LD+wFR/RNckk1DrKV0LTH4KIT9wRqnnOjtEf77ovhKcVi8gf83Uf6U7OdywEua6KD9SbHadUdfolayfIUiPxzw==
 
-tsc-alias@1.6.10:
-  version "1.6.10"
-  resolved "https://registry.yarnpkg.com/tsc-alias/-/tsc-alias-1.6.10.tgz#fe3713ace8eb4b6f0707f26b5df780d2f1179522"
-  integrity sha512-Dzaf+EttqfGCXuUMCauWvhICW9/8LLJdda4y6lF58WRmeRX0q3rGYQadh5j7g8hPIh+XYZD31MbVjiO1SbN1Ow==
+tsc-alias@1.6.11:
+  version "1.6.11"
+  resolved "https://registry.yarnpkg.com/tsc-alias/-/tsc-alias-1.6.11.tgz#d6d83f030ad11f48e4ead8ec5729929e5e60519b"
+  integrity sha512-mXEM21WriTJMQyo07B4Kc2nNFFk/1qOjU+jZ0ymXOyLz/A8J+dIBkimqZrh3s/x1qLGoJ1cNZQxa8GGoWOGX1Q==
   dependencies:
     chokidar "^3.5.3"
     commander "^9.0.0"
