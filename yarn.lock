@@ -62,21 +62,21 @@
     signedsource "^1.0.0"
     yargs "^15.3.1"
 
-"@auth0/auth0-react@1.10.1":
-  version "1.10.1"
-  resolved "https://registry.yarnpkg.com/@auth0/auth0-react/-/auth0-react-1.10.1.tgz#bb8b2917fe86d080c5375e2e04e7b8acd0182d6a"
-  integrity sha512-aBCRQ3PPqy+bcieD1/QQhv7ahbv7enegwhbApBPSKn7xPMzXYKQAfRRm7mkCwMGNNaYMFuejKgxbiTMD+gz5fA==
+"@auth0/auth0-react@1.10.2":
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/@auth0/auth0-react/-/auth0-react-1.10.2.tgz#036d2d73ea65a8f7096a30087b6bc44e34b66de3"
+  integrity sha512-s622ac/gLZ9pUX7d5dOhRggF4VI3MaLLCPVBFR5CKOGcPtPG80/4w2jMoBQtRRn6uKS6IVMWAUAFKWB7yATAoQ==
   dependencies:
-    "@auth0/auth0-spa-js" "^1.21.0"
+    "@auth0/auth0-spa-js" "^1.22.0"
 
-"@auth0/auth0-spa-js@^1.21.0":
-  version "1.21.1"
-  resolved "https://registry.yarnpkg.com/@auth0/auth0-spa-js/-/auth0-spa-js-1.21.1.tgz#85c6bdfbc35909e215edc1caaba5fcda51efc2e2"
-  integrity sha512-0gIOXw7dnj/8A8MIff2rVX3fDDu5YtLVaGR1IpFd7qbMIhOayeRnuXWOnUDQMLX7zETt+N6/AvC7G99THpqgBA==
+"@auth0/auth0-spa-js@^1.22.0":
+  version "1.22.1"
+  resolved "https://registry.yarnpkg.com/@auth0/auth0-spa-js/-/auth0-spa-js-1.22.1.tgz#ae463b9820aa323525918e2f49cededb042f84e3"
+  integrity sha512-l0FCmiN3XubpgCtB3U0ds4h+5WQNTnIF4eLT/fudHEtcyrT65QF/03LybGVdLyuvqdIF/D6OQsfjwYw0Ms605Q==
   dependencies:
     abortcontroller-polyfill "^1.7.3"
     browser-tabs-lock "^1.2.15"
-    core-js "^3.22.0"
+    core-js "^3.22.6"
     es-cookie "^1.3.2"
     fast-text-encoding "^1.0.3"
     promise-polyfill "^8.2.3"
@@ -4098,10 +4098,10 @@ core-js-pure@^3.20.2:
   resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.22.5.tgz#bdee0ed2f9b78f2862cda4338a07b13a49b6c9a9"
   integrity sha512-8xo9R00iYD7TcV7OrC98GwxiUEAabVWO3dix+uyWjnYrx9fyASLlIX+f/3p5dW5qByaP2bcZ8X/T47s55et/tA==
 
-core-js@^3.22.0:
-  version "3.22.5"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.22.5.tgz#a5f5a58e663d5c0ebb4e680cd7be37536fb2a9cf"
-  integrity sha512-VP/xYuvJ0MJWRAobcmQ8F2H6Bsn+s7zqAAjFaHGBMc5AQm7zaelhD1LGduFn2EehEcQcU+br6t+fwbpQ5d1ZWA==
+core-js@^3.22.6:
+  version "3.23.2"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.23.2.tgz#e07a60ca8b14dd129cabdc3d2551baf5a01c76f0"
+  integrity sha512-ELJOWxNrJfOH/WK4VJ3Qd+fOqZuOuDNDJz0xG6Bt4mGg2eO/UT9CljCrbqDGovjLKUrGajEEBcoTOc0w+yBYeQ==
 
 core-util-is@~1.0.0:
   version "1.0.3"
