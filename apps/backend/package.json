@@ -43,7 +43,7 @@
     "typescript": "4.7.4"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "2.6.2",
+    "@graphql-codegen/cli": "2.6.4",
     "@graphql-codegen/typescript-resolvers": "2.6.6",
     "@graphql-codegen/visitor-plugin-common": "2.9.1",
     "@graphql-yoga/render-graphiql": "^2.9.3",
