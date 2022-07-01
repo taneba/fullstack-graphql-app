@@ -1361,10 +1361,10 @@
     ts-node "^9"
     tslib "^2"
 
-"@envelop/auth0@3.3.3":
-  version "3.3.3"
-  resolved "https://registry.yarnpkg.com/@envelop/auth0/-/auth0-3.3.3.tgz#ca24282852abebecde5e76bdfa168456c09d0c2e"
-  integrity sha512-vLqPfmelXmx7HMzkTjdgFa9ZMEBRiQjKyzdu3G+lrAOAvTN/Ww/ho/XxCPaNF8KQqCW7PNhSefA4GQpMhhl3/w==
+"@envelop/auth0@3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@envelop/auth0/-/auth0-3.4.0.tgz#9bb255e8f0e69272a51d31d68d887a4944572bb0"
+  integrity sha512-Oh+Gb3SCB7ICF/+NUL7GDKc3jFmPCgCM8xZC316PapipvPI/oQ8TV83izcNISn3GnrcBtc/917mihFpC6tGt0Q==
   dependencies:
     jsonwebtoken "^8.5.1"
     jwks-rsa "^2.0.1"
