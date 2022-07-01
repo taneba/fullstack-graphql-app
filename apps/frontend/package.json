@@ -43,7 +43,7 @@
     "@babel/preset-env": "7.18.2",
     "@babel/preset-react": "7.17.12",
     "@babel/preset-typescript": "7.17.12",
-    "@graphql-codegen/cli": "2.6.2",
+    "@graphql-codegen/cli": "2.6.4",
     "@graphql-codegen/gql-tag-operations-preset": "1.4.0",
     "@graphql-codegen/schema-ast": "2.4.1",
     "@graphql-codegen/typed-document-node": "2.2.13",
