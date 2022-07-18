@@ -19,7 +19,7 @@
   "dependencies": {
     "@envelop/auth0": "3.4.0",
     "@envelop/core": "2.4.0",
-    "@envelop/depth-limit": "1.5.3",
+    "@envelop/depth-limit": "1.6.0",
     "@envelop/generic-auth": "4.2.4",
     "@envelop/rate-limiter": "3.3.3",
     "@fastify/compress": "^6.1.0",
