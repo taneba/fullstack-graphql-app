@@ -1553,19 +1553,19 @@
   dependencies:
     graphql-depth-limit "^1.1.0"
 
-"@envelop/extended-validation@^1.6.3":
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/@envelop/extended-validation/-/extended-validation-1.6.3.tgz#6b899c08eb203217873ae9ea6f853a7ce32d056b"
-  integrity sha512-qFw7ZmdyORGAVeKWqD/KKsY+Cbm3QM48uBcMWlO2DHqVqoEg7zGY5c9Eu2RE9gn5eFHSgHupIDeMt8ilZVLQ/Q==
+"@envelop/extended-validation@^1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@envelop/extended-validation/-/extended-validation-1.7.0.tgz#0867ab2c3d7e4b9edb2508c853a5ee359f8bb824"
+  integrity sha512-tvp5CqPFswncQKzbud9u1+dK2vQwum9ulu8HtUBut8LxALqqPEg0weUfx9crW4Z/hJo6TV1rBp6BdUfwkiY28g==
   dependencies:
-    "@graphql-tools/utils" "^8.6.1"
+    "@graphql-tools/utils" "^8.8.0"
 
-"@envelop/generic-auth@4.2.4":
-  version "4.2.4"
-  resolved "https://registry.yarnpkg.com/@envelop/generic-auth/-/generic-auth-4.2.4.tgz#781d1a8bfbf223a662d295e5fc79af33e3d280cd"
-  integrity sha512-Ew4c4nQ+lFCs1bW5mC15dZQRWNxm+2fqKxS5my68ep56+lb60/u3EUJuqxbFyjsS/40OhAAdvQohYFePoPmqJA==
+"@envelop/generic-auth@4.3.0":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@envelop/generic-auth/-/generic-auth-4.3.0.tgz#cfa8b8e027fb7843cab422b33327ca05195cf00e"
+  integrity sha512-beiUR2N4L6AMXxGs5oVFvoaW8SURRfUKQDn79VES9OAX1hy9L2t9AgUyeyfrIFdMCzft8JR9QQPdXEG9YHSk7Q==
   dependencies:
-    "@envelop/extended-validation" "^1.6.3"
+    "@envelop/extended-validation" "^1.7.0"
 
 "@envelop/parser-cache@^4.4.0":
   version "4.5.0"
@@ -2221,7 +2221,7 @@
     value-or-promise "^1.0.11"
     ws "^8.3.0"
 
-"@graphql-tools/utils@8.6.10", "@graphql-tools/utils@^8.1.1", "@graphql-tools/utils@^8.3.0", "@graphql-tools/utils@^8.5.2", "@graphql-tools/utils@^8.6.1", "@graphql-tools/utils@^8.6.5":
+"@graphql-tools/utils@8.6.10", "@graphql-tools/utils@^8.1.1", "@graphql-tools/utils@^8.3.0", "@graphql-tools/utils@^8.5.2", "@graphql-tools/utils@^8.6.5":
   version "8.6.10"
   resolved "https://registry.yarnpkg.com/@graphql-tools/utils/-/utils-8.6.10.tgz#38e42a97a74ffcf5a21e816401e2ca1647194f6a"
   integrity sha512-bJH9qwuyM3BP0PTU6/lvBDkk6jdEIOn+dbyk4pHMVNnvbJ1gZQwo62To8SHxxaUTus8OMhhVPSh9ApWXREURcg==
