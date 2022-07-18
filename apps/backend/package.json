@@ -38,7 +38,7 @@
     "jsonwebtoken": "8.5.1",
     "jwks-rsa": "2.1.4",
     "prisma": "3.15.2",
-    "ts-pattern": "3.3.5",
+    "ts-pattern": "^4.0.5",
     "tsconfig": "*",
     "typescript": "4.7.4"
   },
