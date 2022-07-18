@@ -1,5 +1,5 @@
 import { EnvelopError } from '@envelop/core'
-import { match, Pattern, when } from 'ts-pattern'
+import { match, P } from 'ts-pattern'
 
 import { AppErrorType } from './error'
 
@@ -20,25 +20,12 @@ export const err = <E extends AppErrorType>(error: E): Err<E> => ({
 })
 
 export const matchResult = <T extends Result<any, AppErrorType>>(result: T) =>
-  match(result).with<Pattern<any>, unknown, any>(
+  match(result).with<P.Pattern<any>, unknown, any>(
     { type: 'error', error: 'DATABASE' },
     () => {
       throw new EnvelopError('database error')
     }
   )
 
-export const isOk = <T, E extends AppErrorType>(
-  as: Result<T, E>
-): as is Ok<T> => {
-  return (as as Ok<T>).type === 'ok'
-}
-
-export const isErr = <T, E extends AppErrorType>(
-  as: Result<T, E>
-): as is Err<E> => {
-  return (as as Err<E>).type === 'error'
-}
-
-export const whenIsOk = when(isOk)
-
-export const whenIsErr = when(isErr)
+export const whenIsErr = { type: 'error' } as const
+export const whenIsOk = { type: 'ok' } as const

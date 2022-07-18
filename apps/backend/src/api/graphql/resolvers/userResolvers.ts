@@ -1,4 +1,4 @@
-import { match, Pattern } from 'ts-pattern'
+import { match } from 'ts-pattern'
 
 import { handleAppError } from '~/common/error'
 import { whenIsErr, whenIsOk } from '~/common/result'
