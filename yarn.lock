@@ -1574,10 +1574,10 @@
   dependencies:
     lru-cache "^6.0.0"
 
-"@envelop/rate-limiter@3.3.3":
-  version "3.3.3"
-  resolved "https://registry.yarnpkg.com/@envelop/rate-limiter/-/rate-limiter-3.3.3.tgz#acaf176289f635f2c6bdd56252d040c217b4b68e"
-  integrity sha512-gRf5CaqVo+T8wOI6+K+6WChi/bC5wHswdv4fOhS9cEwLQ1zbwZ8gSiwXKxjbXRbiQoMpAnVD6bYaEHmFlpt+Gw==
+"@envelop/rate-limiter@3.4.0":
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/@envelop/rate-limiter/-/rate-limiter-3.4.0.tgz#f3e75a84b499aba19c7cbb347173402863e442d5"
+  integrity sha512-mCOKdh+MUM20zJeXE25eBGV6tyBrO/MkZHeB4MyY6MEsiNvCBzVXmbClbPh57NIkQJVwdgcWLr7WGTN8WUMpKA==
   dependencies:
     graphql-rate-limit "3.3.0"
 
