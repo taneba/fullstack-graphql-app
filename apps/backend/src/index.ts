@@ -64,12 +64,12 @@ const start = async () => {
   try {
     app.listen(
       {
-        port: 5000,
+        port: 5001,
         host: '0.0.0.0',
       },
       () => {
         console.log(
-          'graphql server is running on http://localhost:5000/graphql'
+          'graphql server is running on http://localhost:5001/graphql'
         )
       }
     )
