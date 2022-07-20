@@ -78,14 +78,14 @@ You can manage role-based authorization with auth0 Rules, which is a mechanism t
 
 To do so, got to the Auth0 dashboard and create a new Rule (which can be found in Auth Pipeline on the side menu). Then fill the field with [example code](https://github.com/taneba/fullstack-graphql-app/blob/main/apps/backend/src/lib/auth0/rules/setRolesToUser.js) (Note that you should specify your own audience to namespace e.g. `const namespace = 'https://api.fullstack-graphql-app.com'`). And finally name the rule whatever you like.
 
-After attached the rule, auth0 now add role to the user after a user registered the account on auth0. 
+After attached the rule, auth0 now add role to the user after a user registered the account on auth0.
 
 ```ts
 const { loginWithRedirect } = useAuth0()
 
 // Here "ADMIN" will be sent to auth0 and the rule put the role to jwt token.
 loginWithRedirect({
-  role: "ADMIN",
+  role: 'ADMIN',
 })
 ```
 
@@ -100,7 +100,7 @@ DATABASE_URL="mysql://fga:fga@db:3306/fga"
 AUTH0_CLIENT_ID=<Client Id>
 AUTH0_DOMAIN=<Domain>
 AUTH0_AUDIENCE=<Audience>
-GRAPHQL_END_POINT=http://localhost:5000/graphql
+GRAPHQL_END_POINT=http://localhost:5001/graphql
 ```
 
 .env.localhost
@@ -110,7 +110,7 @@ DATABASE_URL="mysql://fga:fga@localhost:3306/fga"
 AUTH0_CLIENT_ID=<Client Id>
 AUTH0_DOMAIN=<Domain>
 AUTH0_AUDIENCE=<Audience>
-GRAPHQL_END_POINT=http://localhost:5000/graphql
+GRAPHQL_END_POINT=http://localhost:5001/graphql
 ```
 
 And in the frontend root directory, Specify .env.local file with the following environment variables:
@@ -119,7 +119,7 @@ And in the frontend root directory, Specify .env.local file with the following e
 NEXT_PUBLIC_AUTH0_CLIENT_ID=<Client Id>
 NEXT_PUBLIC_AUTH0_DOMAIN=<Domain>
 NEXT_PUBLIC_AUTH0_AUDIENCE=<Audience>
-NEXT_PUBLIC_GRAPHQL_END_POINT=http://localhost:5000/graphql
+NEXT_PUBLIC_GRAPHQL_END_POINT=http://localhost:5001/graphql
 ```
 
 ## Backend
@@ -136,7 +136,7 @@ yarn install
 docker-compose up
 ```
 
-[Graphql Playground](https://github.com/graphql/graphql-playground) will start on localhost:5000
+[Graphql Playground](https://github.com/graphql/graphql-playground) will start on localhost:5001
 
 ### scripts
 
