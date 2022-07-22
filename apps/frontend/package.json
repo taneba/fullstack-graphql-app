@@ -65,7 +65,7 @@
     "babel-plugin-twin": "1.0.2",
     "config": "*",
     "graphql-playground-html": "1.6.30",
-    "graphql-typescript-integration": "1.2.0",
+    "graphql-typescript-integration": "1.2.1",
     "isomorphic-unfetch": "3.1.0",
     "jest": "27.5.1",
     "msw": "0.42.3",

@@ -5568,10 +5568,10 @@ graphql-tools@8.2.12:
   optionalDependencies:
     "@apollo/client" "~3.2.5 || ~3.3.0 || ~3.4.0 || ~3.5.0 || ~3.6.0"
 
-graphql-typescript-integration@1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/graphql-typescript-integration/-/graphql-typescript-integration-1.2.0.tgz#6fc13f4f437db0e720b53aae4de6e31c63ac62b8"
-  integrity sha512-cCkMiCdpZPJ7w0gTYOsMcxqcvX5msO9vBmJLHnKQNuQBW+Pprm4ZmEDozpVPnlq8LfqDfkPNyeOQRTZ6ohLKhg==
+graphql-typescript-integration@1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/graphql-typescript-integration/-/graphql-typescript-integration-1.2.1.tgz#678f15c26b9f4a0fd1801a54c7cbaace53998e37"
+  integrity sha512-mEsHIyxqlhvLUF1tjI1NOfV27itK2e/0hnY6V8iXM9lERBpqVsRm99ge5A3srHXGUjNrR60CyBhpqn6FgQpGzA==
   dependencies:
     "@graphql-codegen/add" "^2.0.2"
     "@graphql-codegen/typed-document-node" "^1.18.9"
