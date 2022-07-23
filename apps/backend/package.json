@@ -51,7 +51,7 @@
     "config": "*",
     "dotenv-cli": "5.1.0",
     "nodemon": "2.0.19",
-    "tsc-alias": "1.6.11",
+    "tsc-alias": "1.7.0",
     "tsconfig-paths": "4.0.0",
     "tsx": "^3.4.3"
   }
