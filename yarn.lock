@@ -1124,10 +1124,10 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
-"@envelop/auth0@3.4.0":
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/@envelop/auth0/-/auth0-3.4.0.tgz#9bb255e8f0e69272a51d31d68d887a4944572bb0"
-  integrity sha512-Oh+Gb3SCB7ICF/+NUL7GDKc3jFmPCgCM8xZC316PapipvPI/oQ8TV83izcNISn3GnrcBtc/917mihFpC6tGt0Q==
+"@envelop/auth0@3.4.1":
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/@envelop/auth0/-/auth0-3.4.1.tgz#37fcba0fc653a9b69870512c882c9aeca8457b0e"
+  integrity sha512-57Vipa6ycfUpOnF9cRUdb1XKviaIxyTsCOtu+zZaf0FU8qkJY74fdyA5Iytl/KwOIgvU1Iumt3YOX7LRpik5kw==
   dependencies:
     jsonwebtoken "^8.5.1"
     jwks-rsa "^2.0.1"
