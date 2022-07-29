@@ -1890,10 +1890,10 @@
   resolved "https://registry.yarnpkg.com/@graphql-typed-document-node/core/-/core-3.1.1.tgz#076d78ce99822258cf813ecc1e7fa460fa74d052"
   integrity sha512-NQ17ii0rK1b34VZonlmT2QMJFI70m0TRwbknO/ihlbatXyaktDhN/98vBiUU6kNBPljqGqyIrl2T4nY2RpFANg==
 
-"@graphql-yoga/common@^2.12.3":
-  version "2.12.3"
-  resolved "https://registry.yarnpkg.com/@graphql-yoga/common/-/common-2.12.3.tgz#8367847c89883aece94e43d66026666212d8f0a7"
-  integrity sha512-enyyl4qyd7SRaTQ8mZehoYVn6yvxFx9MvCd7KcAEo50s0g8oFSQj72TjQZk7eS4llHQ8dfqPiROq2af1GMnsnA==
+"@graphql-yoga/common@^2.12.4":
+  version "2.12.4"
+  resolved "https://registry.yarnpkg.com/@graphql-yoga/common/-/common-2.12.4.tgz#2c29e9edbb21f0eb4afbacb6e36865957dd70710"
+  integrity sha512-ZGOGhSnpY6bW5z5hh2/gu+bvTSmjmJ2PMXT+cfrqjnSYGBI16e3glH0BQWOgPpRlQPJ0cLYLJVaIe3P0yYOrbA==
   dependencies:
     "@envelop/core" "^2.4.0"
     "@envelop/parser-cache" "^4.4.0"
@@ -1902,20 +1902,20 @@
     "@graphql-tools/utils" "^8.8.0"
     "@graphql-typed-document-node/core" "^3.1.1"
     "@graphql-yoga/subscription" "^2.2.2"
-    cross-undici-fetch "^0.4.13"
+    "@whatwg-node/fetch" "^0.2.6"
     dset "^3.1.1"
     tslib "^2.3.1"
 
-"@graphql-yoga/node@2.13.4":
-  version "2.13.4"
-  resolved "https://registry.yarnpkg.com/@graphql-yoga/node/-/node-2.13.4.tgz#869593b83a24501d1497a7cf731d31eb72084f07"
-  integrity sha512-oxnEqIaqwm625h8xpI4dcLwk6l4yFQN/+tey5m7gW3blK21e2L2J78qGT9dG/1vITDggjM+z5A+WL+M9ztbkbw==
+"@graphql-yoga/node@2.13.5":
+  version "2.13.5"
+  resolved "https://registry.yarnpkg.com/@graphql-yoga/node/-/node-2.13.5.tgz#b6b3e206ac45671faa09349efcb41547669599ba"
+  integrity sha512-oFdo4hwhW9wFFBjFMruE126mtFlkB9IcUB7CoCu4XeN/2izMmYe0d6znPe51hcrm293ipzGvZgxG9LSJFKrUfg==
   dependencies:
     "@envelop/core" "^2.4.0"
     "@graphql-tools/utils" "^8.8.0"
-    "@graphql-yoga/common" "^2.12.3"
+    "@graphql-yoga/common" "^2.12.4"
     "@graphql-yoga/subscription" "^2.2.2"
-    cross-undici-fetch "^0.4.13"
+    "@whatwg-node/fetch" "^0.2.6"
     tslib "^2.3.1"
 
 "@graphql-yoga/render-graphiql@^2.9.3":
@@ -3161,7 +3161,7 @@
     "@graphql-typed-document-node/core" "^3.1.1"
     wonka "^4.0.14"
 
-"@whatwg-node/fetch@^0.2.3", "@whatwg-node/fetch@^0.2.4":
+"@whatwg-node/fetch@^0.2.3", "@whatwg-node/fetch@^0.2.4", "@whatwg-node/fetch@^0.2.6":
   version "0.2.6"
   resolved "https://registry.yarnpkg.com/@whatwg-node/fetch/-/fetch-0.2.6.tgz#eb8e68624c55aecfa4c6d7ea36b3ce3ad5d5f79e"
   integrity sha512-NhHiqeGcKjgqUZvJTZSou9qsFEPBBG1LPm2Npz0cmcPvukhhQfjX+p3quRx6b9AyjNPp1f73VB1z4ApHy9FcNg==
@@ -4280,7 +4280,7 @@ cross-spawn@^7.0.2, cross-spawn@^7.0.3:
     shebang-command "^2.0.0"
     which "^2.0.1"
 
-cross-undici-fetch@^0.4.11, cross-undici-fetch@^0.4.13:
+cross-undici-fetch@^0.4.11:
   version "0.4.14"
   resolved "https://registry.yarnpkg.com/cross-undici-fetch/-/cross-undici-fetch-0.4.14.tgz#c841b4fa3cb12b3c3da13dd09f7be45a7bef5ae7"
   integrity sha512-CCep44A/baoO8kYJBIR1cRO/tRAk29xzb/tH3O85OtgwZGkL5I0tJZ47ccZdrnAJxrl5tlaYhAOx09fJXMcUqQ==
