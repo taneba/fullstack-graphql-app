@@ -1153,19 +1153,19 @@
   dependencies:
     graphql-depth-limit "^1.1.0"
 
-"@envelop/extended-validation@^1.7.0":
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/@envelop/extended-validation/-/extended-validation-1.7.0.tgz#0867ab2c3d7e4b9edb2508c853a5ee359f8bb824"
-  integrity sha512-tvp5CqPFswncQKzbud9u1+dK2vQwum9ulu8HtUBut8LxALqqPEg0weUfx9crW4Z/hJo6TV1rBp6BdUfwkiY28g==
+"@envelop/extended-validation@^1.7.1":
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/@envelop/extended-validation/-/extended-validation-1.7.1.tgz#28fb5ffbc95b192bf0b5c469ad699e7bc6380649"
+  integrity sha512-jEkIq6kqFvFwvxJlFETK5dDvLmJKPeyeSPjkysPwHAa+WuQVnawSPFwwxl0wshW4aOyIlayV9U4pEBbQm42/YQ==
   dependencies:
     "@graphql-tools/utils" "^8.8.0"
 
-"@envelop/generic-auth@4.3.0":
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/@envelop/generic-auth/-/generic-auth-4.3.0.tgz#cfa8b8e027fb7843cab422b33327ca05195cf00e"
-  integrity sha512-beiUR2N4L6AMXxGs5oVFvoaW8SURRfUKQDn79VES9OAX1hy9L2t9AgUyeyfrIFdMCzft8JR9QQPdXEG9YHSk7Q==
+"@envelop/generic-auth@4.3.1":
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/@envelop/generic-auth/-/generic-auth-4.3.1.tgz#4fe4226e30bca264c7743400c7127a0ef5dddb79"
+  integrity sha512-G/WcCYWmeP/+ezCL1UMx63+1FIDlydLL6rQ3HruR8VJwcKuPh3mRwUUukv/qlC9PzlVEx9C7rBPTdw7AjmCFhg==
   dependencies:
-    "@envelop/extended-validation" "^1.7.0"
+    "@envelop/extended-validation" "^1.7.1"
 
 "@envelop/parser-cache@^4.4.0":
   version "4.5.0"
