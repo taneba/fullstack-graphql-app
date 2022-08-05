@@ -44,7 +44,7 @@
     "@babel/preset-react": "7.18.6",
     "@babel/preset-typescript": "7.18.6",
     "@graphql-codegen/cli": "2.11.3",
-    "@graphql-codegen/gql-tag-operations-preset": "1.5.2",
+    "@graphql-codegen/gql-tag-operations-preset": "1.5.3",
     "@graphql-codegen/schema-ast": "2.5.0",
     "@graphql-codegen/typed-document-node": "2.3.2",
     "@graphql-codegen/typescript": "2.7.2",
