@@ -1158,10 +1158,10 @@
   dependencies:
     "@envelop/types" "2.3.0"
 
-"@envelop/depth-limit@1.6.1":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@envelop/depth-limit/-/depth-limit-1.6.1.tgz#cc8cd5e20d805fefc5b2ef38df851ba1548889c3"
-  integrity sha512-nWMo3UHYv0yeqZFZsmYw5f+CWxC3Qz/Q13Y+bVFuX1mH4T1J74O9fprD3FvTe2Zg/3rb2awdgJjvGZxIicNeRg==
+"@envelop/depth-limit@1.6.2":
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@envelop/depth-limit/-/depth-limit-1.6.2.tgz#9a9209dfdd3b2dc3252cab33a735a55f40717bbb"
+  integrity sha512-UgKIxVqZoi5aPxuUD9ZNS6+gWxbVpSGLReHx/UdvVibFMx9IWmesNairEErloj7+3/4VYDBId0HO6NVVl/uBlQ==
   dependencies:
     graphql-depth-limit "^1.1.0"
 
