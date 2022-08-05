@@ -1186,10 +1186,10 @@
   dependencies:
     lru-cache "^6.0.0"
 
-"@envelop/rate-limiter@3.4.1":
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/@envelop/rate-limiter/-/rate-limiter-3.4.1.tgz#046d4789e4fb9dd654b5ccfbcffc615a95281175"
-  integrity sha512-onol+ME4BR/JDDOYZeG832pjwQvo4J4ftyCyBp3UT61qDqOTqKlDHYI+sApY/kIqQSFPKx87zA77C1WO5AdLFg==
+"@envelop/rate-limiter@3.4.2":
+  version "3.4.2"
+  resolved "https://registry.yarnpkg.com/@envelop/rate-limiter/-/rate-limiter-3.4.2.tgz#0330b691f5b6129b6c9e44fdaa99810b99746aeb"
+  integrity sha512-ys+2dYdqNMVrD49XK1da9G3kmedE0e4oPrugp2dOAp+inMiLYsb2eMoaTUzhhJbLRf6R4ShnU/HBW6ku8Gr7ZQ==
   dependencies:
     graphql-rate-limit "3.3.0"
 
