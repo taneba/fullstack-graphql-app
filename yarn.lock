@@ -1144,12 +1144,12 @@
     jsonwebtoken "^8.5.1"
     jwks-rsa "^2.0.1"
 
-"@envelop/core@2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@envelop/core/-/core-2.4.1.tgz#d1f6c62867415a9fb93fd598c6263397a730c340"
-  integrity sha512-27vOytvJSmKo8ny90coegQ9/Js8zaJtQ570vWGEqYbT7losSqJzgyg8tkNAz1WeJoJh3B4Nw4KiuAG1h2jeH3A==
+"@envelop/core@2.4.2":
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/@envelop/core/-/core-2.4.2.tgz#94713bb5fc459c1b8ee57abb7e5f5fa76068beda"
+  integrity sha512-C63lf0feBpBFpLM2pD++pzgRiYZu9uxxj55fsRnihEAQaC5iZTmffbVyfJkzRyd4WoPDT6BQpQYequI9yh8dPg==
   dependencies:
-    "@envelop/types" "2.3.0"
+    "@envelop/types" "2.3.1"
 
 "@envelop/core@^2.4.0":
   version "2.4.0"
@@ -1197,6 +1197,11 @@
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/@envelop/types/-/types-2.3.0.tgz#d633052eb3c7e7913380165ce041e2c0e358d5b6"
   integrity sha512-K20KxpGlY+HKenms4Kccuh/YcCm0ytj1Zk0Ak6b6hKA68JI4YQ2GwGMq7A7gSOb1MxlbKqrnVdeQdXaDpQfCmA==
+
+"@envelop/types@2.3.1":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@envelop/types/-/types-2.3.1.tgz#b857b3fa5d4df7fadd53ef0ee17cf70b54e827b9"
+  integrity sha512-c5VLCVVRJ2R9LpDHg/N2BO2l4veaJhklquW+FX8GfzXU79DPWe8WmX4MbM6ABUZmSLOJkYInifHrnlqAoucxpQ==
 
 "@envelop/validation-cache@^4.4.0":
   version "4.5.0"

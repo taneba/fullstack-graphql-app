@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@envelop/auth0": "3.4.2",
-    "@envelop/core": "2.4.1",
+    "@envelop/core": "2.4.2",
     "@envelop/depth-limit": "1.6.1",
     "@envelop/generic-auth": "4.3.1",
     "@envelop/rate-limiter": "3.4.1",
