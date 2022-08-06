@@ -1935,10 +1935,10 @@
     "@whatwg-node/fetch" "^0.2.6"
     tslib "^2.3.1"
 
-"@graphql-yoga/render-graphiql@2.13.4":
-  version "2.13.4"
-  resolved "https://registry.yarnpkg.com/@graphql-yoga/render-graphiql/-/render-graphiql-2.13.4.tgz#c86f10c3bcc2ec6cbfc44740d171df2fca6c5512"
-  integrity sha512-1eMDrrzF+5M+L1m7dssu2sTPKU43AapO1VCgkHNERInzZhsclzpM+T+hNFUXi88TFKdvLL64zD5XY6Uii/qU5A==
+"@graphql-yoga/render-graphiql@2.13.5":
+  version "2.13.5"
+  resolved "https://registry.yarnpkg.com/@graphql-yoga/render-graphiql/-/render-graphiql-2.13.5.tgz#0311f1b806d2ece54145097494776ce9043bc319"
+  integrity sha512-5GC1shnUG1PZ+OgLPesxPjcgjXCqFy36p+73d/iliPzX28HZew3UF+0py8hXg6AuPo1z6MHhb6AdVWTF/SVNzg==
 
 "@graphql-yoga/subscription@^2.2.3":
   version "2.2.3"
