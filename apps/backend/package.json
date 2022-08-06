@@ -26,7 +26,7 @@
     "@fastify/cors": "^8.0.0",
     "@fastify/helmet": "^9.1.0",
     "@graphql-tools/schema": "8.5.1",
-    "@graphql-yoga/node": "2.13.5",
+    "@graphql-yoga/node": "2.13.6",
     "@prisma/client": "4.1.1",
     "@types/got": "9.6.12",
     "@types/jsonwebtoken": "8.5.8",
