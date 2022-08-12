@@ -30,7 +30,7 @@
     "@prisma/client": "4.1.1",
     "@types/got": "9.6.12",
     "@types/jsonwebtoken": "8.5.8",
-    "@types/node": "16.11.47",
+    "@types/node": "16.11.48",
     "fastify": "4.3.0",
     "got": "11.8.5",
     "graphql": "15.8.0",
