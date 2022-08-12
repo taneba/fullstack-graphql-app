@@ -1215,10 +1215,10 @@
   dependencies:
     lru-cache "^6.0.0"
 
-"@esbuild-kit/cjs-loader@^2.3.1":
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/@esbuild-kit/cjs-loader/-/cjs-loader-2.3.1.tgz#462981d49d9af0dba1c9d8f0f1b73ba0b57f187d"
-  integrity sha512-ov6ALYD9xZSPoo5mmGOQtEC/b0xXeUlPy65p8aHMHLF4DfBEe8Y+iquH2lTDsy6Iskc1uMTadF+SVADTSTNJMA==
+"@esbuild-kit/cjs-loader@^2.3.3":
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/@esbuild-kit/cjs-loader/-/cjs-loader-2.3.3.tgz#d65a8cc099d88ac58a571403428d82d1a791aefa"
+  integrity sha512-Rt4O1mXlPEDVxvjsHLgbtHVdUXYK9C1/6ThpQnt7FaXIjUOsI6qhHYMgALhNnlIMZffag44lXd6Dqgx3xALbpQ==
   dependencies:
     "@esbuild-kit/core-utils" "^2.1.0"
     get-tsconfig "^4.1.0"
@@ -1231,10 +1231,10 @@
     esbuild "~0.14.47"
     source-map-support "^0.5.21"
 
-"@esbuild-kit/esm-loader@^2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@esbuild-kit/esm-loader/-/esm-loader-2.4.1.tgz#5319a95fb46f89ce9d8bdf657c7ac67ebe61b1f9"
-  integrity sha512-6x44rygVfNODm27v0RW3wX5y61mqSrXDvB39G0nomgWWqxG3mjiKtPSwrFppdkrA39QIqDgVlD4gJmPOxnleSw==
+"@esbuild-kit/esm-loader@^2.4.2":
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/@esbuild-kit/esm-loader/-/esm-loader-2.4.2.tgz#b358112c6592f422cc43c0439396537481518412"
+  integrity sha512-N9dPKAj8WOx6djVnStgILWXip4fjDcBk9L7azO0/uQDpu8Ee0eaL78mkN4Acid9BzvNAKWwdYXFJZnsVahNEew==
   dependencies:
     "@esbuild-kit/core-utils" "^2.1.0"
     get-tsconfig "^4.1.0"
@@ -9312,14 +9312,14 @@ tsutils@^3.21.0:
   dependencies:
     tslib "^1.8.1"
 
-tsx@^3.4.3:
-  version "3.8.0"
-  resolved "https://registry.yarnpkg.com/tsx/-/tsx-3.8.0.tgz#40528c8e5d44fa98877db9dfd463b46fb1c00a23"
-  integrity sha512-PcvTwRXTm6hDWfPihA4n5WW/9SmgFNxKaDKqvLLG+FKNEPA4crsipChzC7PVozPtdOaMfR5QctDlkC/hKoIsxw==
+tsx@3.8.2:
+  version "3.8.2"
+  resolved "https://registry.yarnpkg.com/tsx/-/tsx-3.8.2.tgz#5522dbe28890b63dedb659fc86fb9c5224207c5e"
+  integrity sha512-Jf9izq3Youry5aEarspf6Gm+v/IE2A2xP7YVhtNH1VSCpM0jjACg7C3oD5rIoLBfXWGJSZj4KKC2bwE0TgLb2Q==
   dependencies:
-    "@esbuild-kit/cjs-loader" "^2.3.1"
+    "@esbuild-kit/cjs-loader" "^2.3.3"
     "@esbuild-kit/core-utils" "^2.1.0"
-    "@esbuild-kit/esm-loader" "^2.4.1"
+    "@esbuild-kit/esm-loader" "^2.4.2"
   optionalDependencies:
     fsevents "~2.3.2"
 
