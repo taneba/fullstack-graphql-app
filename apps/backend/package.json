@@ -29,7 +29,7 @@
     "@graphql-yoga/node": "2.13.13",
     "@prisma/client": "4.1.1",
     "@types/got": "9.6.12",
-    "@types/jsonwebtoken": "8.5.8",
+    "@types/jsonwebtoken": "8.5.9",
     "@types/node": "16.11.48",
     "fastify": "4.6.0",
     "got": "11.8.5",
