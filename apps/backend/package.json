@@ -24,7 +24,7 @@
     "@envelop/rate-limiter": "3.4.2",
     "@fastify/compress": "6.1.1",
     "@fastify/cors": "8.1.0",
-    "@fastify/helmet": "^9.1.0",
+    "@fastify/helmet": "9.1.0",
     "@graphql-tools/schema": "8.5.1",
     "@graphql-yoga/node": "2.13.13",
     "@prisma/client": "4.1.1",
@@ -38,7 +38,7 @@
     "jsonwebtoken": "8.5.1",
     "jwks-rsa": "2.1.4",
     "prisma": "4.1.1",
-    "ts-pattern": "^4.0.5",
+    "ts-pattern": "4.0.5",
     "tsconfig": "*",
     "typescript": "4.7.4"
   },
