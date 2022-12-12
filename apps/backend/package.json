@@ -25,7 +25,7 @@
     "@fastify/compress": "6.1.1",
     "@fastify/cors": "8.1.1",
     "@fastify/helmet": "^9.1.0",
-    "@graphql-tools/schema": "8.5.1",
+    "@graphql-tools/schema": "9.0.12",
     "@graphql-yoga/node": "2.13.13",
     "@prisma/client": "4.1.1",
     "@types/got": "9.6.12",
