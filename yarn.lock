@@ -1339,14 +1339,7 @@
     jwks-rsa "^2.0.1"
     tslib "^2.4.0"
 
-"@envelop/core@2.4.2":
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/@envelop/core/-/core-2.4.2.tgz#94713bb5fc459c1b8ee57abb7e5f5fa76068beda"
-  integrity sha512-C63lf0feBpBFpLM2pD++pzgRiYZu9uxxj55fsRnihEAQaC5iZTmffbVyfJkzRyd4WoPDT6BQpQYequI9yh8dPg==
-  dependencies:
-    "@envelop/types" "2.3.1"
-
-"@envelop/core@^2.5.0":
+"@envelop/core@2.6.0", "@envelop/core@^2.5.0":
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/@envelop/core/-/core-2.6.0.tgz#1b7a346a37040c217f0f9b60c3358efc6c3b1b94"
   integrity sha512-yTptKinJN//i6m1kXUbnLBl/FobzddI4ehURAMS08eRUOQwAuXqJU9r8VdTav8nIZLb4t6cuDWFb3n331LiwLw==
@@ -1389,11 +1382,6 @@
   integrity sha512-ys+2dYdqNMVrD49XK1da9G3kmedE0e4oPrugp2dOAp+inMiLYsb2eMoaTUzhhJbLRf6R4ShnU/HBW6ku8Gr7ZQ==
   dependencies:
     graphql-rate-limit "3.3.0"
-
-"@envelop/types@2.3.1":
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/@envelop/types/-/types-2.3.1.tgz#b857b3fa5d4df7fadd53ef0ee17cf70b54e827b9"
-  integrity sha512-c5VLCVVRJ2R9LpDHg/N2BO2l4veaJhklquW+FX8GfzXU79DPWe8WmX4MbM6ABUZmSLOJkYInifHrnlqAoucxpQ==
 
 "@envelop/types@2.4.0":
   version "2.4.0"
