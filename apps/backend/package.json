@@ -32,7 +32,7 @@
     "@types/jsonwebtoken": "8.5.9",
     "@types/node": "16.11.60",
     "fastify": "4.6.0",
-    "got": "11.8.5",
+    "got": "11.8.6",
     "graphql": "15.8.0",
     "graphql-tools": "8.3.14",
     "jsonwebtoken": "8.5.1",
