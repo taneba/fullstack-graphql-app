@@ -27,7 +27,7 @@
     "@fastify/helmet": "^9.1.0",
     "@graphql-tools/schema": "9.0.12",
     "@graphql-yoga/node": "2.13.13",
-    "@prisma/client": "4.1.1",
+    "@prisma/client": "4.8.1",
     "@types/got": "9.6.12",
     "@types/jsonwebtoken": "8.5.9",
     "@types/node": "16.11.60",
@@ -37,7 +37,7 @@
     "graphql-tools": "8.3.14",
     "jsonwebtoken": "8.5.1",
     "jwks-rsa": "2.1.5",
-    "prisma": "4.1.1",
+    "prisma": "4.8.1",
     "ts-pattern": "^4.0.5",
     "tsconfig": "*",
     "typescript": "4.7.4"
