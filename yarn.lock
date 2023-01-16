@@ -1347,12 +1347,13 @@
     "@envelop/types" "2.4.0"
     tslib "2.4.0"
 
-"@envelop/depth-limit@1.6.2":
-  version "1.6.2"
-  resolved "https://registry.yarnpkg.com/@envelop/depth-limit/-/depth-limit-1.6.2.tgz#9a9209dfdd3b2dc3252cab33a735a55f40717bbb"
-  integrity sha512-UgKIxVqZoi5aPxuUD9ZNS6+gWxbVpSGLReHx/UdvVibFMx9IWmesNairEErloj7+3/4VYDBId0HO6NVVl/uBlQ==
+"@envelop/depth-limit@1.8.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@envelop/depth-limit/-/depth-limit-1.8.0.tgz#d64ec52785ecad5a82fdaeb0425b7f37c58beb6a"
+  integrity sha512-zI3zLePXN7rks1+5yQnk2cQF10bVbBB3gkXLc4LzCUhmN/tCuiYNmjyOh6AvwwnwxbD5aHPFpaTRvWUsSm7epg==
   dependencies:
     graphql-depth-limit "^1.1.0"
+    tslib "^2.4.0"
 
 "@envelop/extended-validation@^1.7.2":
   version "1.7.2"
