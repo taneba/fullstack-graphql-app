@@ -1377,12 +1377,13 @@
     lru-cache "^6.0.0"
     tslib "^2.4.0"
 
-"@envelop/rate-limiter@3.4.2":
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/@envelop/rate-limiter/-/rate-limiter-3.4.2.tgz#0330b691f5b6129b6c9e44fdaa99810b99746aeb"
-  integrity sha512-ys+2dYdqNMVrD49XK1da9G3kmedE0e4oPrugp2dOAp+inMiLYsb2eMoaTUzhhJbLRf6R4ShnU/HBW6ku8Gr7ZQ==
+"@envelop/rate-limiter@3.6.0":
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/@envelop/rate-limiter/-/rate-limiter-3.6.0.tgz#6441fa9bd8e56dfd1b4f2931b4c6759f9a81185a"
+  integrity sha512-Sle787N50BBIefJ1to0VPqB0+h3yvBVCDyJn9lKOmBhNVeaFEG9mNkWACDr4HRmyeRSsfXcdCrGQ3KMX+lPRKA==
   dependencies:
     graphql-rate-limit "3.3.0"
+    tslib "^2.4.0"
 
 "@envelop/types@2.4.0":
   version "2.4.0"
