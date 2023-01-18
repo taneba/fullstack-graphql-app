@@ -18,7 +18,7 @@ export function Navbar() {
       alignItems="center"
       justifyContent="space-between"
       borderBottomWidth={1}
-      borderBottomColor={them}
+      borderBottomColor="blue"
       paddingVertical={6}
     >
       {isOnboarded && (
