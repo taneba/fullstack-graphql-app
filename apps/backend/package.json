@@ -22,7 +22,7 @@
     "@envelop/depth-limit": "1.8.0",
     "@envelop/generic-auth": "4.6.0",
     "@envelop/rate-limiter": "3.6.0",
-    "@fastify/compress": "6.1.1",
+    "@fastify/compress": "6.2.0",
     "@fastify/cors": "8.1.1",
     "@fastify/helmet": "^9.1.0",
     "@graphql-tools/schema": "9.0.12",

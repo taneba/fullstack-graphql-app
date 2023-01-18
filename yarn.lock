@@ -1455,10 +1455,10 @@
     ajv-formats "^2.1.1"
     fast-uri "^2.0.0"
 
-"@fastify/compress@6.1.1":
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/@fastify/compress/-/compress-6.1.1.tgz#fa10087d5bb77fa03caa86ab26feb8fe4400daf4"
-  integrity sha512-uwgomk59nAWKR2WqXugyn3tXzRJqlBaGCzXHb4ZnKA3sxA9G/JWZSAd6GEF29mJucTLi32iZaFZRAwf7O8bJMg==
+"@fastify/compress@6.2.0":
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/@fastify/compress/-/compress-6.2.0.tgz#082661f2b455fcdbe0e71c2ffa3becedfd405ed3"
+  integrity sha512-ldFaNHurMNpypkt1AlI3HDXcdIVqkuhPeYHvlVsfIzM+1YHM0qrdWgrBESuwUCxohSCJNZmyXp4FBCxVJX8zaA==
   dependencies:
     "@fastify/accept-negotiator" "^1.0.0"
     fastify-plugin "^4.0.0"
