@@ -1,8 +1,6 @@
-// setup for twin.macro to work
-
 const babelOptions = {
   presets: ['@babel/preset-typescript'],
-  plugins: ['babel-plugin-macros'],
+  // plugins: ['babel-plugin-macros'],
 }
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires

@@ -1,0 +1,31 @@
+{
+  "name": "ui",
+  "version": "0.0.1",
+  "sideEffects": [
+    "*.css"
+  ],
+  "private": true,
+  "types": "src/index.tsx",
+  "main": "src/index.tsx",
+  "module:jsx": "src",
+  "files": [
+    "types",
+    "dist"
+  ],
+  "scripts": {
+    "build": "tamagui-build",
+    "watch": "tamagui-build --watch"
+  },
+  "dependencies": {
+    "@tamagui/animations-react-native": "^1.0.15",
+    "@tamagui/font-inter": "^1.0.15",
+    "@tamagui/react-native-media-driver": "^1.0.15",
+    "@tamagui/shorthands": "^1.0.15",
+    "@tamagui/theme-base": "^1.0.15",
+    "tamagui": "^1.0.15",
+    "typescript": "4.7.4"
+  },
+  "devDependencies": {
+    "@tamagui/build": "^1.0.15"
+  }
+}

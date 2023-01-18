@@ -1,5 +1,5 @@
 import React from 'react'
-import tw from 'twin.macro'
+// import tw from 'twin.macro'
 
 interface Props {
   children: React.ReactNode
@@ -30,14 +30,14 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>(
         className={className}
         disabled={disabled}
         onClick={onClick}
-        tw="px-4 py-2 rounded-lg disabled:bg-placeholder"
-        css={[
-          primary &&
-            tw`
-        text-white bg-blue-500
-        `,
-          secondary && tw`text-white bg-gray-500`,
-        ]}
+        // tw="px-4 py-2 rounded-lg disabled:bg-placeholder"
+        // css={[
+        //   primary &&
+        //     tw`
+        // text-white bg-blue-500
+        // `,
+        //   secondary && tw`text-white bg-gray-500`,
+        // ]}
         ref={forwardedRef}
       >
         {children}

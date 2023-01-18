@@ -1,12 +1,9 @@
 // General
 export * from './general/Button'
 
-// Layout
-export * from './layout/Flex'
-
 // Feedback
 export * from './feedback/Spinner'
-export * from './feedback/Dialog'
+// export * from './feedback/_Dialog'
 
 // Form
 export * from './form/TextField'

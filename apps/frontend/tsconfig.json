@@ -11,6 +11,5 @@
     "types": ["node", "@types/jest", "@testing-library/jest-dom"]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "files": ["./src/types/twin.d.ts"],
   "exclude": ["node_modules/**/*", "src/generated/**/*"]
 }

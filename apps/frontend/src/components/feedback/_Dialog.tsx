@@ -1,7 +1,7 @@
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { Cross1Icon } from '@radix-ui/react-icons'
 import React from 'react'
-import tw from 'twin.macro'
+// import tw from 'twin.macro'
 
 export function Dialog({ children, ...props }: { children: React.ReactNode }) {
   return (

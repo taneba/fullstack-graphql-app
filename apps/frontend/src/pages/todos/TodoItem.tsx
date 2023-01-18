@@ -40,10 +40,14 @@ export function TodoItem({ todo }: Props) {
     <div
       key={todo.id}
       role="todo"
-      tw="flex flex-row items-center w-full py-1 px-4 my-1 rounded border bg-gray-100 text-gray-600"
+      // tw="flex flex-row items-center w-full py-1 px-4 my-1 rounded border bg-gray-100 text-gray-600"
     >
       <input type="checkbox" onClick={handleClick} />
-      <p tw="pl-2">{todo.title}</p>
+      <p
+      //  tw="pl-2"
+      >
+        {todo.title}
+      </p>
     </div>
   )
 }

@@ -2,16 +2,29 @@ import { PersonIcon } from '@radix-ui/react-icons'
 import Link, { LinkProps } from 'next/link'
 import { useRouter } from 'next/router'
 import React from 'react'
-import tw from 'twin.macro'
+import { useTheme, XStack } from 'ui'
 
+// import { useTheme, XStack } from 'tamagui'
+// import tw from 'twin.macro'
 import { useCurrentUser } from '~/contexts/currentUser'
 
 export function Navbar() {
   const { isOnboarded } = useCurrentUser()
+  const theme = useTheme()
   return (
-    <nav tw="flex h-16 w-full items-center justify-between border-b px-6">
+    <XStack
+      width="full"
+      height={60}
+      alignItems="center"
+      justifyContent="space-between"
+      borderBottomWidth={1}
+      borderBottomColor={them}
+      paddingVertical={6}
+    >
       {isOnboarded && (
-        <div tw="flex h-full space-x-6">
+        <div
+        // tw="flex h-full space-x-6"
+        >
           <NavItem href="/">Home</NavItem>
           <NavItem href="/todos">Todos</NavItem>
           <NavItem href="/users">All Users</NavItem>
@@ -19,7 +32,9 @@ export function Navbar() {
         </div>
       )}
       {isOnboarded ? (
-        <div tw="flex space-x-3">
+        <div
+        // tw="flex space-x-3"
+        >
           <NavItem href="/profile">
             <PersonIcon />
           </NavItem>
@@ -28,7 +43,7 @@ export function Navbar() {
       ) : (
         <NavItem href="/signin">Sign In</NavItem>
       )}
-    </nav>
+    </XStack>
   )
 }
 
@@ -45,11 +60,17 @@ function NavItem({
 
   return (
     <Link href={href}>
-      <div css={[tw`flex h-full`, isCurrent && tw`border-b border-blue-500`]}>
-        <p tw="flex cursor-pointer items-center text-gray-500 hover:text-gray-800">
+      <XStack
+        borderBottomColor="red"
+        borderBottomWidth={1}
+        // css={[tw`flex h-full`, isCurrent && tw`border-b border-blue-500`]}
+      >
+        <p
+        // tw="flex cursor-pointer items-center text-gray-500 hover:text-gray-800"
+        >
           {children}
         </p>
-      </div>
+      </XStack>
     </Link>
   )
 }
