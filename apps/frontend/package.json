@@ -2,6 +2,9 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "sideEffects": [
+    "*.css"
+  ],
   "scripts": {
     "dev": "next dev & yarn run codegen:watch",
     "build": "next build",
@@ -36,15 +39,20 @@
     "react-native-web-lite": "^1.0.15",
     "spinners-react": "1.0.7",
     "styled-components": "5.3.6",
-    "tailwindcss": "2.2.19",
     "tamagui": "^1.0.15",
+    "@tamagui/animations-react-native": "^1.0.15",
+    "@tamagui/colors": "^1.0.15",
+    "@tamagui/font-inter": "^1.0.15",
+    "@tamagui/lucide-icons": "^1.0.15",
+    "@tamagui/shorthands": "^1.0.15",
+    "@tamagui/theme-base": "^1.0.15",
     "ts-pattern": "3.3.5",
-    "twin.macro": "2.8.2",
     "typescript": "4.7.4",
     "ui": "*",
     "urql": "2.2.3",
     "wonka": "4.0.15",
-    "zod": "3.19.1"
+    "zod": "3.19.1",
+    "tsconfig": "*"
   },
   "devDependencies": {
     "@app/gql": "link:./src/generated/graphql.ts",
@@ -84,8 +92,7 @@
     "next-transpile-modules": "^10.0.0",
     "react-is": "18.2.0",
     "react-test-renderer": "18.2.0",
-    "ts-jest": "27.1.5",
-    "tsconfig": "*"
+    "ts-jest": "27.1.5"
   },
   "babelMacros": {
     "twin": {

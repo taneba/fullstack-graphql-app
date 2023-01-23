@@ -5,7 +5,7 @@
     "*.css"
   ],
   "private": true,
-  "types": "src/index.tsx",
+  "types": "./types/index.d.ts",
   "main": "src/index.tsx",
   "module:jsx": "src",
   "files": [
@@ -23,7 +23,7 @@
     "@tamagui/shorthands": "^1.0.15",
     "@tamagui/theme-base": "^1.0.15",
     "tamagui": "^1.0.15",
-    "typescript": "4.7.4"
+    "tsconfig": "*"
   },
   "devDependencies": {
     "@tamagui/build": "^1.0.15"

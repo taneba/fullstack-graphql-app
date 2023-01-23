@@ -8,6 +8,8 @@
     "lint": "turbo run lint",
     "type-check": "turbo run type-check",
     "codegen:graphql": "turbo run codegen:graphql",
+    "build:ui": "turbo run build --scope=ui",
+    "watch:ui": "turbo run watch --scope=ui",
     "dev:frontend": "turbo run dev --scope=frontend",
     "test:frontend": "turbo run test --scope=frontend",
     "test:watch": "turbo run test:watch",

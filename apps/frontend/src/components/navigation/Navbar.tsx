@@ -2,15 +2,13 @@ import { PersonIcon } from '@radix-ui/react-icons'
 import Link, { LinkProps } from 'next/link'
 import { useRouter } from 'next/router'
 import React from 'react'
-import { useTheme, XStack } from 'ui'
+import { Anchor, Button, useTheme, XStack } from 'ui'
 
-// import { useTheme, XStack } from 'tamagui'
-// import tw from 'twin.macro'
 import { useCurrentUser } from '~/contexts/currentUser'
 
 export function Navbar() {
   const { isOnboarded } = useCurrentUser()
-  const theme = useTheme()
+
   return (
     <XStack
       width="full"
@@ -18,9 +16,9 @@ export function Navbar() {
       alignItems="center"
       justifyContent="space-between"
       borderBottomWidth={1}
-      borderBottomColor="blue"
       paddingVertical={6}
     >
+      <Anchor color="" />
       {isOnboarded && (
         <div
         // tw="flex h-full space-x-6"
