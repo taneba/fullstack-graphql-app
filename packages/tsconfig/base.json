@@ -13,6 +13,7 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "preserveWatchOutput": true,
+    "removeComments": false,
     "skipLibCheck": true,
     "strict": true
   },

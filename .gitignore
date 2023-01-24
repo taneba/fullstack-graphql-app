@@ -11,6 +11,9 @@ yarn-error.log*
 
 .turbo
 
+# tamagui
+**/.tamagui/*
+
 build/**
 **/dist/**
 .next/**

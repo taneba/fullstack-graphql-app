@@ -1,54 +1,10 @@
-import { createTamagui } from 'tamagui'
-import { createInterFont } from '@tamagui/font-inter'
+import { createTamagui, TextNonStyleProps, TextProps } from 'tamagui'
 import { shorthands } from '@tamagui/shorthands'
-import { themes, tokens } from '@tamagui/theme-base'
+import { themes } from '@tamagui/theme-base'
 import { createMedia } from '@tamagui/react-native-media-driver'
 
 import { animations } from './animations'
-
-const headingFont = createInterFont({
-  size: {
-    6: 15,
-  },
-  transform: {
-    6: 'uppercase',
-    7: 'none',
-  },
-  weight: {
-    6: '400',
-    7: '700',
-  },
-  color: {
-    6: '$colorFocus',
-    7: '$color',
-  },
-  letterSpacing: {
-    5: 2,
-    6: 1,
-    7: 0,
-    8: -1,
-    9: -2,
-    10: -3,
-    12: -4,
-    14: -5,
-    15: -6,
-  },
-  face: {
-    700: { normal: 'InterBold' },
-  },
-})
-
-const bodyFont = createInterFont(
-  {
-    face: {
-      700: { normal: 'InterBold' },
-    },
-  },
-  {
-    sizeSize: (size) => Math.round(size * 1.1),
-    sizeLineHeight: (size) => Math.round(size * 1.1 + (size > 20 ? 10 : 10)),
-  }
-)
+import { fontTokens, tokens } from './token'
 
 export const config = createTamagui({
   animations,
@@ -56,8 +12,8 @@ export const config = createTamagui({
   themeClassNameOnRoot: true,
   shorthands,
   fonts: {
-    heading: headingFont,
-    body: bodyFont,
+    heading: fontTokens.headingFont,
+    body: fontTokens.bodyFont,
   },
   themes,
   tokens,
@@ -77,4 +33,17 @@ export const config = createTamagui({
     hoverNone: { hover: 'none' },
     pointerCoarse: { pointer: 'coarse' },
   }),
+  defaultProps: {
+    Text: {
+      fontFamily: '$body',
+    },
+  } as any,
 })
+
+type AppConfig = typeof config
+
+// this will give you types for your components
+// note - if using your own design system, put the package name here instead of tamagui
+declare module 'tamagui' {
+  interface TamaguiCustomConfig extends AppConfig {}
+}

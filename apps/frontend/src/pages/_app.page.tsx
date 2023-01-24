@@ -1,16 +1,22 @@
-// import 'twin.macro'
+import '@tamagui/core/reset.css'
+import '../style/reset.css'
 
 import { Auth0Provider } from '@auth0/auth0-react'
+import { Inter } from '@next/font/google'
+import { NextThemeProvider, useRootTheme } from '@tamagui/next-theme'
 import { AppProps } from 'next/app'
-import { config, TamaguiProvider } from 'ui'
+import { startTransition } from 'react'
+import { config, TamaguiProvider, Theme } from 'ui'
 
 import { Navbar, UrqlClientProvider } from '~/components/'
+import { Container, ContainerLarge } from '~/components/layout/Container'
 import { CurrentUserProvider } from '~/contexts/currentUser'
-// import { GlobalStyles } from '~/style/GlobalStyles'
+
+const inter = Inter({ subsets: ['latin'] })
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-      {/* <GlobalStyles /> */}
+    <main className={inter.className}>
       <Auth0Provider
         domain={process.env.NEXT_PUBLIC_AUTH0_DOMAIN || ''}
         clientId={process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID || ''}
@@ -19,25 +25,43 @@ function MyApp({ Component, pageProps }: AppProps) {
           typeof window !== 'undefined' ? window.location.origin : undefined
         }
       >
-        <TamaguiProvider
-          config={config}
-          disableInjectCSS
-          defaultTheme="light"
-          disableRootThemeClass
-        >
-          <UrqlClientProvider>
-            <CurrentUserProvider>
-              <Navbar />
-              <Component {...pageProps} />
-            </CurrentUserProvider>
-          </UrqlClientProvider>
-        </TamaguiProvider>
+        <ThemeProvider>
+          <Theme name="pink">
+            <UrqlClientProvider>
+              <CurrentUserProvider>
+                <Navbar />
+                <ContainerLarge>
+                  <Component {...pageProps} />
+                </ContainerLarge>
+              </CurrentUserProvider>
+            </UrqlClientProvider>
+          </Theme>
+        </ThemeProvider>
       </Auth0Provider>
-      <div
-        id="modal"
-        // tw="max-w-xl mx-auto relative"
-      />
-    </>
+    </main>
+  )
+}
+
+function ThemeProvider({ children }: { children: React.ReactNode }) {
+  const [theme, setTheme] = useRootTheme()
+
+  return (
+    <NextThemeProvider
+      onChangeTheme={(next) => {
+        startTransition(() => {
+          setTheme(next)
+        })
+      }}
+    >
+      <TamaguiProvider
+        config={config}
+        // disableInjectCSS
+        defaultTheme="light"
+        disableRootThemeClass
+      >
+        {children}
+      </TamaguiProvider>
+    </NextThemeProvider>
   )
 }
 

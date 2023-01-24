@@ -2,7 +2,7 @@ import { PersonIcon } from '@radix-ui/react-icons'
 import Link, { LinkProps } from 'next/link'
 import { useRouter } from 'next/router'
 import React from 'react'
-import { Anchor, Button, useTheme, XStack } from 'ui'
+import { Anchor, Button, Text, useTheme, XStack } from 'ui'
 
 import { useCurrentUser } from '~/contexts/currentUser'
 
@@ -11,33 +11,29 @@ export function Navbar() {
 
   return (
     <XStack
-      width="full"
+      width="100%"
       height={60}
       alignItems="center"
       justifyContent="space-between"
       borderBottomWidth={1}
-      paddingVertical={6}
+      borderBottomColor="$gray7Light"
+      px="$4"
     >
-      <Anchor color="" />
       {isOnboarded && (
-        <div
-        // tw="flex h-full space-x-6"
-        >
+        <XStack width="100%" space="$3">
           <NavItem href="/">Home</NavItem>
           <NavItem href="/todos">Todos</NavItem>
           <NavItem href="/users">All Users</NavItem>
           <NavItem href="/all-todos">All Todos</NavItem>
-        </div>
+        </XStack>
       )}
       {isOnboarded ? (
-        <div
-        // tw="flex space-x-3"
-        >
+        <XStack width="100%" space="$3">
           <NavItem href="/profile">
             <PersonIcon />
           </NavItem>
           <NavItem href="/signout">Sign Out</NavItem>
-        </div>
+        </XStack>
       ) : (
         <NavItem href="/signin">Sign In</NavItem>
       )}
@@ -57,18 +53,17 @@ function NavItem({
   const isCurrent = router.pathname === href
 
   return (
-    <Link href={href}>
-      <XStack
-        borderBottomColor="red"
-        borderBottomWidth={1}
-        // css={[tw`flex h-full`, isCurrent && tw`border-b border-blue-500`]}
-      >
-        <p
-        // tw="flex cursor-pointer items-center text-gray-500 hover:text-gray-800"
-        >
+    <XStack
+      borderBottomColor={isCurrent ? '$blue8Light' : undefined}
+      h="100%"
+      borderBottomWidth={isCurrent ? 2 : undefined}
+      alignItems="center"
+    >
+      <Link href={href}>
+        <Text textDecorationLine="none" fontFamily="$body">
           {children}
-        </p>
-      </XStack>
-    </Link>
+        </Text>
+      </Link>
+    </XStack>
   )
 }

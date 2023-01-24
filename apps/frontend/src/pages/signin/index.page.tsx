@@ -1,6 +1,6 @@
 import { useAuth0 } from '@auth0/auth0-react'
+import { Button, Theme, useTheme, XStack, YStack } from 'ui'
 
-import { Button } from '~/components'
 import { Role } from '~/generated/graphql'
 
 function SignIn() {
@@ -11,19 +11,20 @@ function SignIn() {
       role: Role.User,
     })
   }
+  const theme = useTheme()
+  theme.backgroundFocus
 
   return (
-    <div>
-      <Button primary onClick={loginAsUser}>
-        Sign in
-      </Button>
-      <div>
+    <YStack alignItems="flex-start" space="$5" mt="$7">
+      <Button onPress={loginAsUser}>Sign in</Button>
+
+      <XStack alignItems="center">
         if you don't have an account? then
-        <Button secondary tw="ml-1" onClick={loginAsUser}>
+        <Button chromeless onPress={loginAsUser} ml="$1">
           Sign up
         </Button>
-      </div>
-    </div>
+      </XStack>
+    </YStack>
   )
 }
 
