@@ -14,7 +14,8 @@
     "prisma-studio": "dotenv -e .env.localhost prisma studio",
     "type-check": "tsc --noEmit",
     "build": "tsc -p tsconfig.json && tsc-alias -p tsconfig.json",
-    "lint": "eslint --fix --cache --ext .ts,.tsx src"
+    "lint": "eslint --fix --cache --ext .ts,.tsx src",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@envelop/auth0": "3.6.0",
@@ -39,7 +40,7 @@
     "jwks-rsa": "2.1.5",
     "prisma": "4.8.1",
     "ts-pattern": "^4.0.5",
-    "tsconfig": "*",
+    "tsconfig": "workspace:*",
     "typescript": "4.7.4"
   },
   "devDependencies": {
@@ -48,7 +49,7 @@
     "@graphql-codegen/visitor-plugin-common": "2.12.1",
     "@graphql-yoga/render-graphiql": "2.13.12",
     "chalk": "4.1.2",
-    "config": "*",
+    "config": "workspace:*",
     "dotenv-cli": "6.0.0",
     "nodemon": "2.0.20",
     "tsc-alias": "1.7.0",

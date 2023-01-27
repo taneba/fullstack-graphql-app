@@ -127,7 +127,7 @@ NEXT_PUBLIC_GRAPHQL_END_POINT=http://localhost:5001/graphql
 ### install deps
 
 ```
-yarn install
+pnpm install
 ```
 
 ### start server
@@ -162,5 +162,5 @@ The scripts you might frequently use:
 Just run the command below, which uses turborepo cli inside.
 
 ```sh
-yarn run dev:frontend
+pnpm run dev:frontend
 ```

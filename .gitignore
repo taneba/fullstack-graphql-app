@@ -16,3 +16,5 @@ build/**
 .next/**
 
 docker/db/data/
+
+.pnpm-store/
