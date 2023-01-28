@@ -1,9 +1,10 @@
 import fastifyCompress from '@fastify/compress'
 import fastifyCors from '@fastify/cors'
 import fastifyHelmet from '@fastify/helmet'
-import { createServer } from '@graphql-yoga/node'
 import { renderGraphiQL } from '@graphql-yoga/render-graphiql'
 import fastify, { FastifyReply, FastifyRequest } from 'fastify'
+// import { createServer } from '@graphql-yoga/node'
+import { createYoga } from 'graphql-yoga'
 
 import { schema } from './api/graphql/typeDefs'
 import { envelopPlugins } from './envelopPlugins'
@@ -20,35 +21,59 @@ app.register(fastifyHelmet, {
 })
 app.register(fastifyCompress)
 
-const graphQLServer = createServer<{
+// const graphQLServer = createServer<{
+//   req: FastifyRequest
+//   reply: FastifyReply
+// }>({
+//   schema: schema,
+//   plugins: envelopPlugins,
+//   logging: app.log,
+//   renderGraphiQL:
+// process.env.NODE_ENV !== 'production'
+//   ? () =>
+//       renderGraphiQL({
+//         defaultQuery: /* GraphQL */ `
+//           query {
+//             time # health check
+//           }
+//         `,
+//       })
+//   : undefined,
+// })
+
+const yoga = createYoga<{
   req: FastifyRequest
   reply: FastifyReply
 }>({
-  schema: schema,
   plugins: envelopPlugins,
-  logging: app.log,
-  renderGraphiQL:
+  // Integrate Fastify logger
+  logging: {
+    debug: (...args) => args.forEach((arg) => app.log.debug(arg)),
+    info: (...args) => args.forEach((arg) => app.log.info(arg)),
+    warn: (...args) => args.forEach((arg) => app.log.warn(arg)),
+    error: (...args) => args.forEach((arg) => app.log.error(arg)),
+  },
+  graphiql:
     process.env.NODE_ENV !== 'production'
-      ? () =>
-          renderGraphiQL({
-            defaultQuery: /* GraphQL */ `
-              query {
-                time # health check
-              }
-            `,
-          })
-      : undefined,
+      ? {
+          defaultQuery: /* GraphQL */ `
+            query {
+              time # health check
+            }
+          `,
+        }
+      : false,
 })
 
 app.route({
   url: '/graphql',
   method: ['GET', 'POST', 'OPTIONS'],
   handler: async (req, reply) => {
-    const response = await graphQLServer.handleIncomingMessage(req, {
+    // Second parameter adds Fastify's `req` and `reply` to the GraphQL Context
+    const response = await yoga.handleNodeRequest(req, {
       req,
       reply,
     })
-
     response.headers.forEach((value, key) => {
       reply.header(key, value)
     })

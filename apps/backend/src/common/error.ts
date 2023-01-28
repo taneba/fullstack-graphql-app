@@ -1,4 +1,4 @@
-import { EnvelopError } from '@envelop/core'
+import { GraphQLError } from 'graphql'
 import { match } from 'ts-pattern'
 
 import { err } from './result'
@@ -16,19 +16,33 @@ export type AppErrorType = typeof AppError[keyof typeof AppError]
 export const handleAppError = (result: ReturnType<typeof err>) =>
   match(result)
     .with({ error: 'DATABASE' }, () => {
-      throw new EnvelopError('database error')
+      throw new GraphQLError('database error')
     })
     .with({ error: 'RESOURCE_NOT_FOUND' }, () => {
-      throw new EnvelopError('resource not found error')
+      throw new GraphQLError('resource not found error')
     })
 
     .with({ error: 'AUTH0' }, () => {
-      throw new EnvelopError('auth0 error')
+      throw new GraphQLError('auth0 error')
     })
     .with({ error: 'VALIDATION' }, () => {
-      throw new EnvelopError('validation error')
+      throw new GraphQLError('validation error')
     })
     .with({ error: 'USER_NOT_FOUND' }, () => {
-      throw new EnvelopError('user not found error')
+      throw new GraphQLError('user not found error')
     })
     .exhaustive()
+
+export class GqlError extends GraphQLError {
+  constructor(message: string, extensions?: Record<string, any>) {
+    super(
+      message,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      undefined,
+      extensions
+    )
+  }
+}

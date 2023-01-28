@@ -1,4 +1,4 @@
-import { DefaultContext } from '@envelop/types'
+import { DefaultContext } from '@envelop/core'
 import { PrismaClient, User } from '@prisma/client'
 import chalk from 'chalk'
 

@@ -16,10 +16,10 @@ RUN turbo prune --scope=backend --docker
 FROM pruner as builder
 WORKDIR "/app"
 COPY --from=pruner /app/out/json/ .
-COPY --from=pruner /app/out/yarn.lock ./yarn.lock
+COPY --from=pruner /app/out/pnpm-lock ./pnpm-lock.yaml
 
 # Install only the deps needed to build the target
-RUN yarn install
+RUN pnpm install
 COPY --from=pruner /app/.git ./.git
 COPY --from=pruner /app/out/full/ .
 RUN turbo run build --scope=backend
@@ -32,6 +32,6 @@ WORKDIR "/app"
 EXPOSE 4000
 COPY --from=builder /app/apps/backend/dist/ .
 COPY --from=pruner /app/out/json/ .
-COPY --from=pruner /app/out/yarn.lock ./yarn.lock
-RUN yarn install --production
+COPY --from=pruner /app/out/pnpm-lock ./pnpm-lock.yaml
+RUN pnpm install --production
 CMD node ./apps/backend/dist/index.js

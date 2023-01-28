@@ -5,11 +5,12 @@ services:
     image: node:16
     volumes:
       - .:/app
+      - ~/.pnpm-store:/.pnpm-store
       - node_modules:/app/node_modules
     working_dir: /app
     ports:
       - '5001:5001'
-    command: bash -c 'yarn && yarn turbo run dev --scope=backend'
+    command: bash -c 'npm install -g pnpm && pnpm install --frozen-lockfile -r && pnpm turbo run dev --scope=backend'
     environment:
       AUTH0_DOMAIN:
       AUTH0_AUDIENCE:

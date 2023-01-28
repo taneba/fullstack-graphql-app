@@ -1,8 +1,9 @@
-import { EnvelopError, Plugin } from '@envelop/core'
+import { Plugin } from '@envelop/core'
 import { getDirective, MapperKind, mapSchema } from '@graphql-tools/utils'
 import { User } from '@prisma/client'
 import { defaultFieldResolver, GraphQLSchema } from 'graphql'
 
+import { GqlError } from '~/common/error'
 import { GraphqlServerContext } from '~/context'
 
 const schemaCache = new WeakMap<GraphQLSchema, GraphQLSchema>()
@@ -58,12 +59,12 @@ function applyOwnerCheckDirective(
             const ownerField: string | undefined = ownerDirective.ownerField
             if (!ownerField) {
               console.log('ownerField is not placed')
-              throw new EnvelopError('something went wrong')
+              throw new GqlError('something went wrong')
             }
             const isOwner =
               String(source[ownerField]) === String(currentUser.id)
             if (!isOwner) {
-              throw new EnvelopError(
+              throw new GqlError(
                 'request not authorized' + `, operation: ${info.fieldName}`,
                 {
                   code: 'NOT_AUTHORIZED',
