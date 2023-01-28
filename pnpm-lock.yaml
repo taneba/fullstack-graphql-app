@@ -122,7 +122,7 @@ importers:
       babel-jest: 27.5.1
       babel-plugin-macros: 3.1.0
       babel-plugin-styled-components: 2.0.7
-      babel-plugin-twin: 1.0.2
+      babel-plugin-twin: 1.1.0
       config: workspace:*
       graphql: 16.6.0
       graphql-anywhere: 4.2.8
@@ -196,7 +196,7 @@ importers:
       babel-jest: 27.5.1
       babel-plugin-macros: 3.1.0
       babel-plugin-styled-components: 2.0.7_styled-components@5.3.6
-      babel-plugin-twin: 1.0.2
+      babel-plugin-twin: 1.1.0
       config: link:../../packages/config
       graphql-playground-html: 1.6.30
       graphql-typescript-integration: 1.2.1_graphql@16.6.0
@@ -4775,8 +4775,8 @@ packages:
     resolution: {integrity: sha512-Xj9XuRuz3nTSbaTXWv3itLOcxyF4oPD8douBBmj7U9BBC6nEBYfyOJYQMf/8PJAFotC62UY5dFfIGEPr7WswzQ==}
     dev: true
 
-  /babel-plugin-twin/1.0.2:
-    resolution: {integrity: sha512-723f0tizypoy3Fn9ZAuidTCQ+sKh6sn/jX+Cjj3Pk148ew/hUa+fRUyqAPKACIFaVNqRFnZgI1DoNhNMDL+6QA==}
+  /babel-plugin-twin/1.1.0:
+    resolution: {integrity: sha512-x4AZ7JSh8MmC6uEN41nrU021jLA0B4E1UD7AI0KJOtAwvTH1wEMLugW5SyY4m/CWDtsqZc1fqT1lkDoO2rdmHg==}
     dependencies:
       '@babel/template': 7.20.7
     dev: true

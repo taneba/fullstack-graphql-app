@@ -63,7 +63,7 @@
     "babel-jest": "27.5.1",
     "babel-plugin-macros": "3.1.0",
     "babel-plugin-styled-components": "2.0.7",
-    "babel-plugin-twin": "1.0.2",
+    "babel-plugin-twin": "1.1.0",
     "config": "workspace:*",
     "graphql-playground-html": "1.6.30",
     "graphql-typescript-integration": "1.2.1",
