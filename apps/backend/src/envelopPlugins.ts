@@ -1,13 +1,9 @@
 import { useAuth0 } from '@envelop/auth0'
 import {
-  EnvelopError,
-  PluginOrDisabledPlugin,
   useErrorHandler,
   useExtendContext,
-  useLogger,
   useMaskedErrors,
   useSchema,
-  useTiming,
 } from '@envelop/core'
 import { useDepthLimit } from '@envelop/depth-limit'
 import {
@@ -17,12 +13,14 @@ import {
 } from '@envelop/generic-auth'
 import { makeExecutableSchema } from '@graphql-tools/schema'
 import { User } from '@prisma/client'
-import { EnumValueNode } from 'graphql'
+import { EnumValueNode, GraphQLError } from 'graphql'
+import { Plugin } from 'graphql-yoga'
 import { TokenExpiredError } from 'jsonwebtoken'
 
 import { Role } from './api/graphql/generated/graphql'
 import resolvers from './api/graphql/resolvers/resolvers'
 import { schema } from './api/graphql/typeDefs'
+import { GqlError } from './common/error'
 import { createContext, GraphqlServerContext, prisma } from './context'
 import { UserRepository } from './modules/user/UserRepository'
 import { useOwnerCheck } from './utils/useOwnerCheck'
@@ -55,7 +53,7 @@ const validateUserFn: ValidateUserFn<User> = ({
   fieldAuthDirectiveNode,
 }) => {
   if (!user) {
-    throw new EnvelopError('request not authenticated', {
+    throw new GqlError('request not authenticated', {
       code: 'NOT_AUTHENTICATED',
     })
   } else {
@@ -70,7 +68,7 @@ const validateUserFn: ValidateUserFn<User> = ({
     if (valueNode) {
       const role = valueNode.value as Role
       if (role !== user.role) {
-        throw new EnvelopError('request not authorized', {
+        throw new GqlError('request not authorized', {
           code: 'NOT_AUTHORIZED',
         })
       }
@@ -78,9 +76,8 @@ const validateUserFn: ValidateUserFn<User> = ({
   }
 }
 
-export const envelopPlugins: PluginOrDisabledPlugin[] = [
+export const envelopPlugins = [
   useSchema(executableSchema),
-  useLogger(),
   useAuth0({
     domain: process.env.AUTH0_DOMAIN || '',
     audience: process.env.AUTH0_AUDIENCE || '',
@@ -90,7 +87,7 @@ export const envelopPlugins: PluginOrDisabledPlugin[] = [
     tokenType: 'Bearer',
     onError: (e) => {
       if (e instanceof TokenExpiredError) {
-        throw new EnvelopError('jwt expired', {
+        throw new GqlError('jwt expired', {
           code: 'TOKEN_EXPIRED',
         })
       } else {
@@ -110,7 +107,6 @@ export const envelopPlugins: PluginOrDisabledPlugin[] = [
   useErrorHandler((error: unknown) => {
     console.log('ERROR: ' + JSON.stringify(error))
   }),
-  useTiming(),
   useDepthLimit({
     maxDepth: 10,
   }),

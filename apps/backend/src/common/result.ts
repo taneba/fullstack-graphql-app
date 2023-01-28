@@ -1,4 +1,4 @@
-import { EnvelopError } from '@envelop/core'
+import { GraphQLError } from 'graphql'
 import { match, P } from 'ts-pattern'
 
 import { AppErrorType } from './error'
@@ -23,7 +23,7 @@ export const matchResult = <T extends Result<any, AppErrorType>>(result: T) =>
   match(result).with<P.Pattern<any>, unknown, any>(
     { type: 'error', error: 'DATABASE' },
     () => {
-      throw new EnvelopError('database error')
+      throw new GraphQLError('database error')
     }
   )
 

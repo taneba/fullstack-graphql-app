@@ -1,4 +1,4 @@
-import { DefaultContext, EnvelopError, Plugin } from '@envelop/core'
+import { DefaultContext, Plugin } from '@envelop/core'
 import { getDirective, MapperKind, mapSchema } from '@graphql-tools/utils'
 import {
   defaultFieldResolver,
@@ -6,10 +6,12 @@ import {
   GraphQLSchema,
 } from 'graphql'
 
+import { GqlError } from '~/common/error'
+
 const schemaCache = new WeakMap<GraphQLSchema, GraphQLSchema>()
 
 function defaultErrorHandler(info: GraphQLResolveInfo) {
-  throw new EnvelopError(
+  throw new GqlError(
     'request not authorized' + `, operation: ${info.fieldName}`,
     {
       code: 'NOT_AUTHORIZED',
@@ -79,7 +81,7 @@ function applyOwnerCheckDirective(
             const ownerField: string | undefined = ownerDirective.ownerField
             if (!ownerField) {
               console.log('ownerField is not placed')
-              throw new EnvelopError('something went wrong')
+              throw new GqlError('something went wrong')
             }
             const isOwner =
               String(source[ownerField]) === String(currentUser[userIdField])
