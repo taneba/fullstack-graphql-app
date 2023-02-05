@@ -17,31 +17,31 @@
   "dependencies": {
     "@auth0/auth0-react": "1.12.1",
     "@heroicons/react": "1.0.6",
+    "@next/font": "^13.1.6",
     "@radix-ui/colors": "0.1.8",
     "@radix-ui/react-avatar": "1.0.1",
     "@radix-ui/react-dialog": "1.0.2",
     "@radix-ui/react-icons": "1.1.1",
     "@radix-ui/react-portal": "1.0.1",
+    "autoprefixer": "^10.4.13",
     "graphql": "16.6.0",
     "graphql-anywhere": "4.2.8",
     "next": "13.1.6",
+    "postcss": "^8.4.21",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "7.34.1",
     "spinners-react": "1.0.7",
-    "styled-components": "5.3.6",
-    "tailwindcss": "2.2.19",
+    "tailwindcss": "3.2.4",
     "ts-pattern": "3.3.5",
     "twin.macro": "2.8.2",
     "typescript": "4.7.4",
+    "ui": "workspace:*",
     "urql": "2.2.3",
     "wonka": "4.0.15",
     "zod": "3.19.1"
   },
   "devDependencies": {
-    "@babel/preset-env": "7.20.2",
-    "@babel/preset-react": "7.18.6",
-    "@babel/preset-typescript": "7.18.6",
     "@graphql-codegen/cli": "2.11.6",
     "@graphql-codegen/gql-tag-operations-preset": "1.5.4",
     "@graphql-codegen/schema-ast": "2.5.1",
@@ -61,24 +61,17 @@
     "@types/styled-components": "5.1.26",
     "@types/testing-library__jest-dom": "^5.14.5",
     "babel-jest": "27.5.1",
-    "babel-plugin-macros": "3.1.0",
-    "babel-plugin-styled-components": "2.0.7",
-    "babel-plugin-twin": "1.0.2",
     "config": "workspace:*",
     "graphql-playground-html": "1.6.30",
     "graphql-typescript-integration": "1.2.1",
     "isomorphic-unfetch": "3.1.0",
     "jest": "27.5.1",
     "msw": "0.44.2",
+    "prettier-plugin-tailwindcss": "^0.2.2",
     "react-is": "18.2.0",
     "react-test-renderer": "18.2.0",
+    "tailwind-config": "workspace:*",
     "ts-jest": "27.1.5",
     "tsconfig": "workspace:*"
-  },
-  "babelMacros": {
-    "twin": {
-      "preset": "styled-components",
-      "autoCssProp": false
-    }
   }
 }

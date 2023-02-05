@@ -37,7 +37,7 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: Prune
-        run: npx turbo prune --scope=backend
+        run: npx turbo prune --filter=backend
 
       - name: Turbo Cache
         id: turbo-cache

@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
+import { Spinner } from 'ui'
 
-import { Spinner } from '~/components'
 import { DevNote } from '~/components/general/DevNote'
 
 import { AllTodoList } from './AllTodoList'
@@ -8,8 +8,8 @@ import { AllTodoList } from './AllTodoList'
 function AllTodos() {
   return (
     <div>
-      <h1 tw="text-black font-bold text-3xl">Todos</h1>
-      <p tw="text-red-400">
+      <h1 className="text-3xl font-bold text-black">Todos</h1>
+      <p className="text-red-400">
         You should have an admin role to see todos of all users
       </p>
       <DevNote.Root>

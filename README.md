@@ -9,6 +9,7 @@ An opinionated fullstack GraphQL monorepo Boilerplate using modern tech stack.
 - graphql-code-generator
 - prisma
 - ts-pattern (for type-safe error handling)
+- and I code in a type-safe way and don't choose a library that doesn't have a good TypeScript support.
 
 **🛠Customizable**
 
@@ -17,7 +18,13 @@ An opinionated fullstack GraphQL monorepo Boilerplate using modern tech stack.
 
 **📈Simple but scalable**
 
-- a bit flavor of [clean architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+- a bit flavor of [clean architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) in backend.
+
+**Ever evolving**
+
+- I constantly maintain this repository.
+- TypeScript, React, GraphQL are ever evolving world too.
+- In that sense, any tech stack might be replaced in the future.
 
 ## Tech Stack
 
@@ -25,6 +32,7 @@ Common
 
 - TypeScript
 - Turborepo
+- pnpm
 - GraphQL
 - graphql-codegen
 
@@ -44,8 +52,8 @@ Frontend
 - Next.js
 - urql
 - tailwindcss
-- twin.macro
 - radix ui
+- shadcn/ui
 - React Hook Form
 
 Authentication
@@ -159,8 +167,8 @@ The scripts you might frequently use:
 
 ### start
 
-Just run the command below, which uses turborepo cli inside.
+Run the command below. which uses turborepo cli internally and it runs shared `ui` package's watch script as well.
 
 ```sh
-pnpm run dev:frontend
+pnpm run dev
 ```

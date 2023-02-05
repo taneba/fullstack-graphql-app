@@ -1,8 +1,8 @@
 {
-    "singleQuote": true,
-    "bracketSpacing": true,
-    "jsxBracketSameLine": false,
-    "trailingComma": "es5",
-    "semi": false
-  }
-  
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "singleQuote": true,
+  "bracketSpacing": true,
+  "jsxBracketSameLine": false,
+  "trailingComma": "es5",
+  "semi": false
+}

@@ -1,16 +1,22 @@
-import 'twin.macro'
+import '../styles/globals.css'
+import 'ui/styles.css'
 
 import { Auth0Provider } from '@auth0/auth0-react'
+import { Inter } from '@next/font/google'
 import { AppProps } from 'next/app'
 
 import { Navbar, UrqlClientProvider } from '~/components/'
 import { CurrentUserProvider } from '~/contexts/currentUser'
-import { GlobalStyles } from '~/style/GlobalStyles'
+
+// If loading a variable font, you don't need to specify the font weight
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+})
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <GlobalStyles />
+    <main className={`${inter.variable} font-sans`}>
       <Auth0Provider
         domain={process.env.NEXT_PUBLIC_AUTH0_DOMAIN || ''}
         clientId={process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID || ''}
@@ -22,14 +28,14 @@ function MyApp({ Component, pageProps }: AppProps) {
         <UrqlClientProvider>
           <CurrentUserProvider>
             <Navbar />
-            <div tw="bg-white px-5 pt-4 mx-auto container">
+            <div className="container mx-auto bg-white px-5 pt-4">
               <Component {...pageProps} />
             </div>
           </CurrentUserProvider>
         </UrqlClientProvider>
       </Auth0Provider>
-      <div id="modal" tw="max-w-xl mx-auto relative" />
-    </>
+      <div id="modal" className="relative mx-auto max-w-xl" />
+    </main>
   )
 }
 

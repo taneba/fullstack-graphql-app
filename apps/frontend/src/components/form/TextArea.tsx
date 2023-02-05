@@ -1,5 +1,6 @@
 import { TextareaHTMLAttributes } from 'react'
 import React from 'react'
+import { cn } from 'ui'
 
 interface Props extends TextareaHTMLAttributes<HTMLElement> {
   label?: string
@@ -11,9 +12,8 @@ export const TextArea = React.forwardRef<HTMLTextAreaElement, Props>(
     return (
       <textarea
         {...restProps}
-        className={className}
+        className={cn(className, 'h-40 w-full rounded-lg border p-3')}
         value={restProps.value ?? undefined}
-        tw="border rounded-lg w-full h-40 p-3"
         ref={ref}
       />
     )

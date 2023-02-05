@@ -10,7 +10,7 @@ RUN pwd
 COPY .git ./.git
 COPY . .
 RUN pwd
-RUN turbo prune --scope=backend --docker
+RUN turbo prune --filter=backend --docker
 
 # Add pruned lockfile and package.json's of the pruned subworkspace
 FROM pruner as builder
@@ -22,7 +22,7 @@ COPY --from=pruner /app/out/pnpm-lock ./pnpm-lock.yaml
 RUN pnpm install
 COPY --from=pruner /app/.git ./.git
 COPY --from=pruner /app/out/full/ .
-RUN turbo run build --scope=backend
+RUN turbo run build --filter=backend
 RUN pwd
 RUN ls
 

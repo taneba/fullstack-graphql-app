@@ -12,6 +12,7 @@
     "**/.git/subtree-cache/**": true,
     "**/node_modules/*/**": true,
     "**/.hg/store/**": true,
-    "**/graphql/**": true
+    "**/graphql/**": true,
+    "**/ui/dist/**": true
   }
 }

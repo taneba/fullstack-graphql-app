@@ -1,16 +1,9 @@
 import React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
+import { Button, DialogContent, DialogDescription, DialogTitle } from 'ui'
 import { useMutation } from 'urql'
 
-import {
-  Button,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogTitle,
-  TextArea,
-  TextField,
-} from '~/components'
+import { TextArea, TextField } from '~/components'
 import { gql } from '~/generated'
 import { TodoInput } from '~/generated/graphql'
 import { removeEmptyFields } from '~/utils/form'
@@ -51,12 +44,12 @@ export function CreateTodoModal() {
           id={register('title').name}
           {...register('title', { required: true })}
         />
-        {errors.title && <span tw="text-red-500">title is required</span>}
+        {errors.title && (
+          <span className="text-red-500">title is required</span>
+        )}
         <label htmlFor={register('content').name}>content</label>
         <TextArea {...register('content')} />
-        <Button primary type="submit">
-          Submit
-        </Button>
+        <Button type="submit">Submit</Button>
       </form>
     </DialogContent>
   )
