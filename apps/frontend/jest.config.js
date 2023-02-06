@@ -10,9 +10,6 @@ module.exports = {
     '^~/(.*)$': '<rootDir>/src/$1',
   },
   moduleDirectories: ['node_modules', '<rootDir>'],
-  transform: {
-    '^.+\\.(ts|tsx|js)$': '<rootDir>/jest-preprocess.js',
-  },
   globals: {
     'ts-jest': {
       tsconfig: {
