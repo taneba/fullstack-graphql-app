@@ -22,7 +22,7 @@ COPY --from=pruner /app/out/pnpm-lock ./pnpm-lock.yaml
 RUN pnpm install
 COPY --from=pruner /app/.git ./.git
 COPY --from=pruner /app/out/full/ .
-RUN turbo run build --scope=backend
+RUN turbo run build --filter=backend
 RUN pwd
 RUN ls
 

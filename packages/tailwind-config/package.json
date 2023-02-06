@@ -1,0 +1,10 @@
+{
+  "name": "tailwind-config",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "devDependencies": {
+    "tailwindcss": "3.2.4",
+    "tailwindcss-animate": "^1.0.5"
+  }
+}

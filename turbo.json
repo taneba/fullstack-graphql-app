@@ -18,7 +18,7 @@
     "test:watch": {
       "outputs": []
     },
-    "dev": { "cache": false },
+    "dev": { "cache": false, "persistent": true },
     "codegen:graphql": { "cache": false }
   }
 }

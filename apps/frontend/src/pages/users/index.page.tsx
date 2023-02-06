@@ -1,13 +1,12 @@
 import { Suspense } from 'react'
-
-import { Spinner } from '~/components'
+import { Spinner } from 'ui'
 
 import { UserList } from './UserList'
 
 function Users() {
   return (
-    <div tw="mt-4">
-      <h1 tw="text-black font-bold text-3xl">All Users</h1>
+    <div className="mt-4">
+      <h1 className="text-3xl font-bold text-black">All Users</h1>
       <Suspense fallback={<Spinner />}>
         <UserList />
       </Suspense>

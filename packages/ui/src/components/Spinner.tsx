@@ -16,7 +16,7 @@ export function Spinner({ global = false, size = 40 }: Props) {
   )
   return global ? (
     <Portal>
-      <div tw="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         {Inner}
       </div>
     </Portal>

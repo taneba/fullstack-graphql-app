@@ -1,8 +1,9 @@
 import { useRouter } from 'next/router'
 import { SubmitHandler, useForm } from 'react-hook-form'
+import { Button } from 'ui'
 import { useMutation } from 'urql'
 
-import { Button, TextField } from '~/components'
+import { TextField } from '~/components'
 import { DevNote } from '~/components/general/DevNote'
 import { useCurrentUser } from '~/contexts/currentUser'
 import { gql } from '~/generated'
@@ -50,7 +51,7 @@ function Onboarding() {
 
   return (
     <div>
-      <h1 tw="text-black font-bold text-3xl">
+      <h1 className="text-3xl font-bold text-black">
         Tell me a little about yourself
       </h1>
       <DevNote.Root>
@@ -59,7 +60,7 @@ function Onboarding() {
         </DevNote.P>
       </DevNote.Root>
 
-      <div tw="mt-4">
+      <div className="mt-4">
         <form onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor={register('name').name}>Name</label>
           <TextField
@@ -67,7 +68,7 @@ function Onboarding() {
             {...register('name', { required: true })}
           />
 
-          <Button primary type="submit" tw="mt-4">
+          <Button type="submit" className="mt-4">
             Submit
           </Button>
         </form>

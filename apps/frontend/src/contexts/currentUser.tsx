@@ -1,9 +1,9 @@
 import { useAuth0 } from '@auth0/auth0-react'
 import { useRouter } from 'next/router'
 import React, { createContext, useContext, useMemo } from 'react'
+import { Spinner } from 'ui'
 import { useQuery } from 'urql'
 
-import { Spinner } from '~/components'
 import { gql } from '~/generated'
 
 type CurrentUserModel = Omit<
