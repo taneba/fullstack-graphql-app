@@ -10,7 +10,7 @@ RUN pwd
 COPY .git ./.git
 COPY . .
 RUN pwd
-RUN turbo prune --filter=backend --docker
+RUN turbo prune --scope=backend --docker
 
 # Add pruned lockfile and package.json's of the pruned subworkspace
 FROM pruner as builder
