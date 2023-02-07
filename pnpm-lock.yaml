@@ -58,7 +58,7 @@ importers:
       tsconfig: workspace:*
       tsconfig-paths: 4.1.2
       tsx: 3.8.2
-      typescript: 4.7.4
+      typescript: 4.9.5
     dependencies:
       '@envelop/auth0': 4.0.4_@envelop+core@3.0.4
       '@envelop/core': 3.0.4
@@ -84,7 +84,7 @@ importers:
       prisma: 4.8.1
       ts-pattern: 4.1.3
       tsconfig: link:../../packages/tsconfig
-      typescript: 4.7.4
+      typescript: 4.9.5
     devDependencies:
       '@graphql-codegen/cli': 2.11.6_yj7ds5aogkvyuxyljhbabepxei
       '@graphql-codegen/typescript-resolvers': 2.7.3_graphql@16.6.0
@@ -150,7 +150,7 @@ importers:
       ts-jest: 27.1.5
       ts-pattern: 3.3.5
       tsconfig: workspace:*
-      typescript: 4.7.4
+      typescript: 4.9.5
       ui: workspace:*
       urql: 2.2.3
       wonka: 4.0.15
@@ -175,7 +175,7 @@ importers:
       spinners-react: 1.0.7_fxtgt6bjwd6p4cwoordejim2zi
       tailwindcss: 3.2.4_postcss@8.4.21
       ts-pattern: 3.3.5
-      typescript: 4.7.4
+      typescript: 4.9.5
       ui: link:../../packages/ui
       urql: 2.2.3_onqnqwb3ubg5opvemcqf7c2qhy
       wonka: 4.0.15
@@ -205,12 +205,12 @@ importers:
       graphql-typescript-integration: 1.2.1_graphql@16.6.0
       isomorphic-unfetch: 3.1.0
       jest: 27.5.1
-      msw: 0.44.2_typescript@4.7.4
+      msw: 0.44.2_typescript@4.9.5
       prettier-plugin-tailwindcss: 0.2.2
       react-is: 18.2.0
       react-test-renderer: 18.2.0_react@18.2.0
       tailwind-config: link:../../packages/tailwind-config
-      ts-jest: 27.1.5_7afnqjyxbzjxnthz6aklyw6cea
+      ts-jest: 27.1.5_gy2w2unevcycrhih2qxqkdetla
       tsconfig: link:../../packages/tsconfig
 
   packages/config:
@@ -265,7 +265,7 @@ importers:
       tailwindcss-animate: ^1.0.5
       tsconfig: workspace:*
       tsup: ^6.5.0
-      typescript: 4.7.4
+      typescript: 4.9.5
     devDependencies:
       '@radix-ui/react-avatar': 1.0.1
       '@radix-ui/react-dialog': 1.0.2_@types+react@18.0.27
@@ -273,7 +273,7 @@ importers:
       '@types/react': 18.0.27
       '@types/react-dom': 18.0.10
       autoprefixer: 10.4.13_postcss@8.4.21
-      class-variance-authority: 0.4.0_typescript@4.7.4
+      class-variance-authority: 0.4.0_typescript@4.9.5
       clsx: 1.2.1
       lucide-react: 0.108.0
       postcss: 8.4.21
@@ -283,8 +283,8 @@ importers:
       tailwindcss: 3.2.4_postcss@8.4.21
       tailwindcss-animate: 1.0.5_tailwindcss@3.2.4
       tsconfig: link:../tsconfig
-      tsup: 6.5.0_a2jjuwtpe5wwe66qqyuhpvyeky
-      typescript: 4.7.4
+      tsup: 6.5.0_uujdqti2krmttzhqvubwnsmcci
+      typescript: 4.9.5
 
 packages:
 
@@ -300,8 +300,8 @@ packages:
       '@jridgewell/trace-mapping': 0.3.17
     dev: true
 
-  /@apollo/client/3.7.5_graphql@16.6.0:
-    resolution: {integrity: sha512-HEAhX2n2Y8Y2BwRr0UdteT94OTM7pn64K5/rTk/oLIdg/h7R2d83LdsCGDxSH5sBiqDqlv9vou4xdyTxxRWj/g==}
+  /@apollo/client/3.7.7_graphql@16.6.0:
+    resolution: {integrity: sha512-Rp/pCWuJSjLN7Xl5Qi2NoeURmZYEU/TIUz0n/LOwEo1tGdU2W7/fGVZ8+5um58JeVYq4UoTGBKFxSVeG4s411A==}
     requiresBuild: true
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -4481,7 +4481,7 @@ packages:
     resolution: {integrity: sha512-cOU9usZw8/dXIXKtwa8pM0OTJQuJkxMN6w30csNRUerHfeQ5R6U3kkU/FtJeIf3M202OHfY2U8ccInBG7/xogA==}
     dev: true
 
-  /class-variance-authority/0.4.0_typescript@4.7.4:
+  /class-variance-authority/0.4.0_typescript@4.9.5:
     resolution: {integrity: sha512-74enNN8O9ZNieycac/y8FxqgyzZhZbxmCitAtAeUrLPlxjSd5zA7LfpprmxEcOmQBnaGs5hYhiSGnJ0mqrtBLQ==}
     peerDependencies:
       typescript: '>= 4.5.5 < 5'
@@ -4489,7 +4489,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      typescript: 4.7.4
+      typescript: 4.9.5
     dev: true
 
   /clean-stack/2.2.0:
@@ -6321,7 +6321,7 @@ packages:
       graphql: 16.6.0
       tslib: 2.5.0
     optionalDependencies:
-      '@apollo/client': 3.7.5_graphql@16.6.0
+      '@apollo/client': 3.7.7_graphql@16.6.0
     transitivePeerDependencies:
       - graphql-ws
       - react
@@ -7936,7 +7936,7 @@ packages:
   /ms/2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
-  /msw/0.44.2_typescript@4.7.4:
+  /msw/0.44.2_typescript@4.9.5:
     resolution: {integrity: sha512-u8wjzzcMWouoZtuIShCwx4M3wFF5sBAV1f8K4a0WX8kiihFjzl89IKE1VYmTclLyMIwpOq8qQ1HTpuh2BFX/3A==}
     engines: {node: '>=14'}
     hasBin: true
@@ -7966,7 +7966,7 @@ packages:
       statuses: 2.0.1
       strict-event-emitter: 0.2.8
       type-fest: 1.4.0
-      typescript: 4.7.4
+      typescript: 4.9.5
       yargs: 17.6.2
     transitivePeerDependencies:
       - encoding
@@ -9931,7 +9931,7 @@ packages:
       tslib: 1.14.1
     dev: false
 
-  /ts-jest/27.1.5_7afnqjyxbzjxnthz6aklyw6cea:
+  /ts-jest/27.1.5_gy2w2unevcycrhih2qxqkdetla:
     resolution: {integrity: sha512-Xv6jBQPoBEvBq/5i2TeSG9tt/nqkbpcurrEG1b+2yfBrcJelOZF9Ml6dmyMh7bcW9JyFbRYpR5rxROSlBLTZHA==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     hasBin: true
@@ -9962,7 +9962,7 @@ packages:
       lodash.memoize: 4.1.2
       make-error: 1.3.6
       semver: 7.3.8
-      typescript: 4.7.4
+      typescript: 4.9.5
       yargs-parser: 20.2.9
     dev: true
 
@@ -10031,7 +10031,7 @@ packages:
   /tslib/2.5.0:
     resolution: {integrity: sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==}
 
-  /tsup/6.5.0_a2jjuwtpe5wwe66qqyuhpvyeky:
+  /tsup/6.5.0_uujdqti2krmttzhqvubwnsmcci:
     resolution: {integrity: sha512-36u82r7rYqRHFkD15R20Cd4ercPkbYmuvRkz3Q1LCm5BsiFNUgpo36zbjVhCOgvjyxNBWNKHsaD5Rl8SykfzNA==}
     engines: {node: '>=14'}
     hasBin: true
@@ -10062,7 +10062,7 @@ packages:
       source-map: 0.8.0-beta.0
       sucrase: 3.29.0
       tree-kill: 1.2.2
-      typescript: 4.7.4
+      typescript: 4.9.5
     transitivePeerDependencies:
       - supports-color
       - ts-node
@@ -10194,8 +10194,8 @@ packages:
       is-typedarray: 1.0.0
     dev: true
 
-  /typescript/4.7.4:
-    resolution: {integrity: sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==}
+  /typescript/4.9.5:
+    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
     engines: {node: '>=4.2.0'}
     hasBin: true
 
