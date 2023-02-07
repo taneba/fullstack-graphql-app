@@ -42,7 +42,7 @@
     "prisma": "4.8.1",
     "ts-pattern": "^4.0.5",
     "tsconfig": "workspace:*",
-    "typescript": "4.7.4"
+    "typescript": "4.9.5"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "2.11.6",

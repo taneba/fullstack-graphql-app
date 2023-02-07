@@ -6,18 +6,14 @@
       "dependsOn": ["type-check", "^build"],
       "outputs": ["dist/**", ".next/**"]
     },
-    "lint": {
-      "outputs": []
-    },
+    "lint": {},
     "type-check": {
       "dependsOn": ["^type-check"]
     },
     "test": {
       "outputs": ["coverage/**"]
     },
-    "test:watch": {
-      "outputs": []
-    },
+    "test:watch": {},
     "dev": { "cache": false, "persistent": true },
     "codegen:graphql": { "cache": false }
   }

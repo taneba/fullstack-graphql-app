@@ -13,21 +13,21 @@ type AlignValues = 'center' | 'start' | 'end' | 'baseline'
 
 type StackSpace = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 12 | 14 | 16 | 20
 
-const justifyValues: Record<JustifyValues, string> = {
+const justifyValues  = {
   center: `justify-center`,
   between: `justify-between`,
   start: `justify-start`,
   end: `justify-end`,
-}
+} as const satisfies Record<JustifyValues, string>
 
-const alignValues: Record<AlignValues, string> = {
+const alignValues = {
   center: `items-center`,
   baseline: `items-baseline`,
   start: `items-start`,
   end: `items-end`,
-}
+}  as const satisfies Record<AlignValues, string>
 
-const vSpaces: Record<StackSpace, string> = {
+const vSpaces = {
   0: `space-y-0`,
   1: `space-y-1`,
   2: `space-y-2`,
@@ -43,9 +43,9 @@ const vSpaces: Record<StackSpace, string> = {
   14: `space-y-14`,
   16: `space-y-16`,
   20: `space-y-20`,
-}
+} as const satisfies Record<StackSpace, string>
 
-const hSpaces: Record<StackSpace, string> = {
+const hSpaces = {
   0: `space-x-0`,
   1: `space-x-1`,
   2: `space-x-2`,
@@ -61,8 +61,8 @@ const hSpaces: Record<StackSpace, string> = {
   14: `space-x-14`,
   16: `space-x-16`,
   20: `space-x-20`,
-}
-
+} as const satisfies Record<StackSpace, string>
+ 
 const BaseStack: React.FC<StackProps & { dir: 'vertical' | 'horizontal' }> = ({
   dir,
   justify,
@@ -83,10 +83,10 @@ const BaseStack: React.FC<StackProps & { dir: 'vertical' | 'horizontal' }> = ({
   />
 )
 
-export const HStack: React.FC<StackProps> = (props) => (
+export const HStack = (props: StackProps) => (
   <BaseStack {...props} dir="horizontal" />
 )
 
-export const VStack: React.FC<StackProps> = (props) => (
+export const VStack = (props: StackProps) => (
   <BaseStack {...props} dir="vertical" />
 )
