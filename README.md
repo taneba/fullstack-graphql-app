@@ -152,7 +152,7 @@ The scripts you might frequently use:
 
 - **`db:migration:generate`**: Generates migration file (not apply automatically). Run this whenever you change your database schema.
 - **`db:migration:run`**: Runs generated migration file. Run this after you generate the migration file.
-- **`prisma-gen`**: Generates the Prisma clien
+- **`prisma-gen`**: Generates the Prisma client
 - **`prisma-studio`**: Starts Prisma Studio on localhost:5555 where you can inspect your local development database.
 
 ### connect to your mysql database
@@ -172,3 +172,19 @@ Run the command below. which uses turborepo cli internally and it runs shared `u
 ```sh
 pnpm run dev
 ```
+
+## workflow
+
+### Update GraphQL API
+
+**1. Edit Schema file**
+
+path: apps/backend/src/api/graphql/typeDefs.ts
+
+**2. run graphql-codegen to generate files based on the latest schema**
+
+```sh
+pnpm run generate:graphql
+```
+
+this will run `turbo run codgen:graphql`, which runs all codegen:graphql in each package.

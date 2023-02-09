@@ -16,7 +16,12 @@ const inter = Inter({
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <main className={`${inter.variable} font-sans`}>
+    <>
+      <style jsx global>{`
+        html {
+          font-family: ${inter.style.fontFamily};
+        }
+      `}</style>
       <Auth0Provider
         domain={process.env.NEXT_PUBLIC_AUTH0_DOMAIN || ''}
         clientId={process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID || ''}
@@ -35,7 +40,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </UrqlClientProvider>
       </Auth0Provider>
       <div id="modal" className="relative mx-auto max-w-xl" />
-    </main>
+    </>
   )
 }
 

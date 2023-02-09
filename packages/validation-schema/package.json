@@ -1,0 +1,26 @@
+{
+  "name": "validation-schema",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "codegen:graphql": "graphql-codegen",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@graphql-codegen/cli": "3.0.0",
+    "@graphql-codegen/typescript": "3.0.0",
+    "graphql": "16.6.0",
+    "graphql-codegen-typescript-validation-schema": "^0.7.1",
+    "tsconfig": "workspace:*",
+    "tsup": "^6.5.0",
+    "typescript": "4.9.5",
+    "zod": "3.20.2"
+  }
+}
