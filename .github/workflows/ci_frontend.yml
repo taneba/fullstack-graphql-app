@@ -54,13 +54,13 @@ jobs:
         working-directory: ./out
         run: pnpm install
 
-      - name: Type-check ui
+      - name: Type-check dependencies
         working-directory: ./out
-        run: pnpm run type-check:ui
+        run: pnpm run type-check:^frontend
 
-      - name: Build ui
+      - name: Build dependencies
         working-directory: ./out
-        run: pnpm run build:ui
+        run: pnpm run build:^frontend
 
       - name: Lint
         working-directory: ./out
