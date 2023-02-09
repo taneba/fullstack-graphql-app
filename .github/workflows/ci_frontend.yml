@@ -60,7 +60,7 @@ jobs:
 
       - name: Build dependencies
         working-directory: ./out
-        run: pnpm run build:frontend...^
+        run: pnpm run build:frontend^...
 
       - name: Lint
         working-directory: ./out
