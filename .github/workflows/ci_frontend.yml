@@ -56,11 +56,11 @@ jobs:
 
       - name: Type-check dependencies
         working-directory: ./out
-        run: pnpm run type-check:^frontend
+        run: pnpm run type-check:frontend^
 
       - name: Build dependencies
         working-directory: ./out
-        run: pnpm run build:^frontend
+        run: pnpm run build:frontend^
 
       - name: Lint
         working-directory: ./out
