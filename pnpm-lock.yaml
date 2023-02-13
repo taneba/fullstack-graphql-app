@@ -36,7 +36,7 @@ importers:
       '@graphql-codegen/visitor-plugin-common': 2.12.1
       '@graphql-tools/schema': 9.0.16
       '@graphql-tools/utils': ^9.1.4
-      '@graphql-yoga/render-graphiql': 3.4.0
+      '@graphql-yoga/render-graphiql': 3.6.0
       '@prisma/client': 4.8.1
       '@types/got': 9.6.12
       '@types/jsonwebtoken': 8.5.9
@@ -89,7 +89,7 @@ importers:
       '@graphql-codegen/cli': 2.11.6_quvalxb4nnhr6i2ezffrwifxsu
       '@graphql-codegen/typescript-resolvers': 2.7.3_graphql@16.6.0
       '@graphql-codegen/visitor-plugin-common': 2.12.1_graphql@16.6.0
-      '@graphql-yoga/render-graphiql': 3.4.0_graphql-yoga@3.4.0
+      '@graphql-yoga/render-graphiql': 3.6.0_graphql-yoga@3.4.0
       chalk: 4.1.2
       config: link:../../packages/config
       dotenv-cli: 6.0.0
@@ -2184,10 +2184,10 @@ packages:
     dependencies:
       graphql: 16.6.0
 
-  /@graphql-yoga/render-graphiql/3.4.0_graphql-yoga@3.4.0:
-    resolution: {integrity: sha512-m+wXC3iHaZzvbAT3EEdbpeuCioxwrJR1R+grF8IEHd5O5i65IPnh41P0Y3S1W1+0gq7Hyh8csC+tK1gxmiCxPw==}
+  /@graphql-yoga/render-graphiql/3.6.0_graphql-yoga@3.4.0:
+    resolution: {integrity: sha512-sJHMX5kjS1vZ2zkVaW4RRBg9klV1iWqDo8SoEU3gPyofo1Uwz17HTubFmvVIWz9+hPjK7IsaNYgo9KSLPySFbA==}
     peerDependencies:
-      graphql-yoga: ^3.4.0
+      graphql-yoga: ^3.6.0
     dependencies:
       graphql-yoga: 3.4.0_quvalxb4nnhr6i2ezffrwifxsu
     dev: true

@@ -48,7 +48,7 @@
     "@graphql-codegen/cli": "2.11.6",
     "@graphql-codegen/typescript-resolvers": "2.7.3",
     "@graphql-codegen/visitor-plugin-common": "2.12.1",
-    "@graphql-yoga/render-graphiql": "3.4.0",
+    "@graphql-yoga/render-graphiql": "3.6.0",
     "chalk": "4.1.2",
     "config": "workspace:*",
     "dotenv-cli": "6.0.0",
