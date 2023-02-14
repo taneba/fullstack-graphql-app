@@ -21,26 +21,6 @@ app.register(fastifyHelmet, {
 })
 app.register(fastifyCompress)
 
-// const graphQLServer = createServer<{
-//   req: FastifyRequest
-//   reply: FastifyReply
-// }>({
-//   schema: schema,
-//   plugins: envelopPlugins,
-//   logging: app.log,
-//   renderGraphiQL:
-// process.env.NODE_ENV !== 'production'
-//   ? () =>
-//       renderGraphiQL({
-//         defaultQuery: /* GraphQL */ `
-//           query {
-//             time # health check
-//           }
-//         `,
-//       })
-//   : undefined,
-// })
-
 const yoga = createYoga<{
   req: FastifyRequest
   reply: FastifyReply

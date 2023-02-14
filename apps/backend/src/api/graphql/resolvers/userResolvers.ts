@@ -1,7 +1,9 @@
 import { match } from 'ts-pattern'
+import { UserInputSchema } from 'validation-schema'
 
 import { handleAppError } from '~/common/error'
 import { whenIsErr, whenIsOk } from '~/common/result'
+import { validateParams } from '~/utils/validationHelper'
 
 import { GraphqlServerContext } from '../../../context'
 import { UserMapper } from '../../../modules/user/UserMapper'
@@ -55,6 +57,7 @@ export const ProfileResult: gql.ProfileResultResolvers = {
 export const userMutationResolvers: gql.MutationResolvers<GraphqlServerContext> =
   {
     saveUser: async (_, params, ctx) => {
+      validateParams(params, UserInputSchema)
       const result = await ctx.useCase.user.save(params.user)
       return match(result)
         .with(whenIsErr, handleAppError)

@@ -1,7 +1,9 @@
 import { match } from 'ts-pattern'
+import { TodoInputSchema } from 'validation-schema'
 
 import { handleAppError } from '~/common/error'
 import { whenIsErr, whenIsOk } from '~/common/result'
+import { validateParams } from '~/utils/validationHelper'
 
 import { GraphqlServerContext } from '../../../context'
 import { TodoMapper } from '../../../modules/todo/todoMappers'
@@ -45,6 +47,8 @@ export const todoResolvers: gql.TodoResolvers<GraphqlServerContext> = {
 export const todoMutationResolvers: gql.MutationResolvers<GraphqlServerContext> =
   {
     saveTodo: async (_, params, ctx) => {
+      validateParams(params, TodoInputSchema)
+
       const result = await ctx.useCase.todo.save(params.todo)
       return match(result)
         .with(whenIsErr, handleAppError)
