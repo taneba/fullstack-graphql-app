@@ -18,6 +18,7 @@
     "type-check:frontend": "turbo run type-check --filter=frontend",
     "type-check:frontend^...": "turbo run type-check --filter=frontend^...",
     "build:backend": "turbo run build --filter=backend",
+    "build:backend^...": "turbo run build --filter=backend^...",
     "dev:ui": "turbo run dev --filter=ui",
     "type-check:ui": "turbo run type-check --filter=ui",
     "build:ui": "turbo run build --filter=ui",

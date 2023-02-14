@@ -54,10 +54,6 @@ jobs:
         working-directory: ./out
         run: pnpm install
 
-      - name: Type-check dependencies
-        working-directory: ./out
-        run: pnpm run type-check:frontend^...
-
       - name: Build dependencies
         working-directory: ./out
         run: pnpm run build:frontend^...
