@@ -146,7 +146,7 @@ importers:
       prettier-plugin-tailwindcss: ^0.2.2
       react: 18.2.0
       react-dom: 18.2.0
-      react-hook-form: 7.34.1
+      react-hook-form: 7.43.1
       react-is: 18.2.0
       react-test-renderer: 18.2.0
       spinners-react: 1.0.7
@@ -178,7 +178,7 @@ importers:
       postcss: 8.4.21
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      react-hook-form: 7.34.1_react@18.2.0
+      react-hook-form: 7.43.1_react@18.2.0
       spinners-react: 1.0.7_fxtgt6bjwd6p4cwoordejim2zi
       tailwindcss: 3.2.6_postcss@8.4.21
       ts-pattern: 3.3.5
@@ -9804,8 +9804,8 @@ packages:
       react: 18.2.0
       scheduler: 0.23.0
 
-  /react-hook-form/7.34.1_react@18.2.0:
-    resolution: {integrity: sha512-tH7TaZgAURMhjzVE2M/EFmxHz2HdaPMAVs9FXTweNW551VlhXSuVcpcYlkiMZf2zHQiTztupVFpBHJFTma+N7w==}
+  /react-hook-form/7.43.1_react@18.2.0:
+    resolution: {integrity: sha512-+s3+s8LLytRMriwwuSqeLStVjRXFGxgjjx2jED7Z+wz1J/88vpxieRQGvJVvzrzVxshZ0BRuocFERb779m2kNg==}
     engines: {node: '>=12.22.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
