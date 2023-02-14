@@ -14,6 +14,8 @@ module.exports = {
   moduleNameMapper: {
     '^~/(.*)$': '<rootDir>/src/$1',
     '^ui$': '<rootDir>/node_modules/ui/src/index.tsx',
+    '^validation-schema$':
+      '<rootDir>/node_modules/validation-schema/src/index.ts',
   },
   moduleDirectories: ['node_modules', '<rootDir>'],
   modulePathIgnorePatterns: [
