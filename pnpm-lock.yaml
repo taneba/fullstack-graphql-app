@@ -25,7 +25,7 @@ importers:
     specifiers:
       '@envelop/auth0': 4.0.5
       '@envelop/core': 3.0.5
-      '@envelop/depth-limit': 2.0.4
+      '@envelop/depth-limit': 2.0.5
       '@envelop/generic-auth': 5.0.4
       '@envelop/rate-limiter': 4.0.4
       '@fastify/compress': 6.2.0
@@ -64,7 +64,7 @@ importers:
     dependencies:
       '@envelop/auth0': 4.0.5_@envelop+core@3.0.5
       '@envelop/core': 3.0.5
-      '@envelop/depth-limit': 2.0.4_uqioltj7hgx2ihhktcvuwrguru
+      '@envelop/depth-limit': 2.0.5_uqioltj7hgx2ihhktcvuwrguru
       '@envelop/generic-auth': 5.0.4_uqioltj7hgx2ihhktcvuwrguru
       '@envelop/rate-limiter': 4.0.4_uqioltj7hgx2ihhktcvuwrguru
       '@fastify/compress': 6.2.0
@@ -1253,10 +1253,10 @@ packages:
       tslib: 2.5.0
     dev: false
 
-  /@envelop/depth-limit/2.0.4_uqioltj7hgx2ihhktcvuwrguru:
-    resolution: {integrity: sha512-C723KKsjUjoujQOevsEyl75oPBAXLMob1IMLyB1yO6MQNhZILbuHCgTTf/8w+U2R78gSS7QEHXFb2t4ZYD7e2w==}
+  /@envelop/depth-limit/2.0.5_uqioltj7hgx2ihhktcvuwrguru:
+    resolution: {integrity: sha512-gwyHJkrz/GS2WhO3zWZNt+mjFCIz46ZMTfreB1HFhdqsY9F46OSdAG0ZoSq6l0qXboav75AR/ozNhGPoXFjgEQ==}
     peerDependencies:
-      '@envelop/core': ^3.0.4
+      '@envelop/core': ^3.0.5
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
       '@envelop/core': 3.0.5
