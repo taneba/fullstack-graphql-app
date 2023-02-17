@@ -23,7 +23,7 @@ importers:
 
   apps/backend:
     specifiers:
-      '@envelop/auth0': 4.0.4
+      '@envelop/auth0': 4.0.5
       '@envelop/core': 3.0.4
       '@envelop/depth-limit': 2.0.4
       '@envelop/generic-auth': 5.0.4
@@ -62,7 +62,7 @@ importers:
       validation-schema: workspace:*
       zod: 3.20.2
     dependencies:
-      '@envelop/auth0': 4.0.4_@envelop+core@3.0.4
+      '@envelop/auth0': 4.0.5_@envelop+core@3.0.4
       '@envelop/core': 3.0.4
       '@envelop/depth-limit': 2.0.4_a6sekiasy2tqr6d5gj7n2wtjli
       '@envelop/generic-auth': 5.0.4_a6sekiasy2tqr6d5gj7n2wtjli
@@ -1227,10 +1227,10 @@ packages:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
 
-  /@envelop/auth0/4.0.4_@envelop+core@3.0.4:
-    resolution: {integrity: sha512-sMRpXfgBcS0KuDQxx8EEdZ4E3Os5qeK0hM8z759npm2rxiNUQ0/tibED1fXlM9RuBfVqWYX/9fklh+bmOHw36A==}
+  /@envelop/auth0/4.0.5_@envelop+core@3.0.4:
+    resolution: {integrity: sha512-XKJmgecGRHodo4535u3F9hVIcU3O6OgD6rNGlsv2gvRnj0xa0CdzOA23dzhRYgU6OLhu5Kh3+g2RI+4CKksXVw==}
     peerDependencies:
-      '@envelop/core': ^3.0.4
+      '@envelop/core': ^3.0.5
     dependencies:
       '@envelop/core': 3.0.4
       jsonwebtoken: 8.5.1
