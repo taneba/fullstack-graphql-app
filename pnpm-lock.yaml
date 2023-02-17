@@ -26,7 +26,7 @@ importers:
       '@envelop/auth0': 4.0.5
       '@envelop/core': 3.0.5
       '@envelop/depth-limit': 2.0.5
-      '@envelop/generic-auth': 5.0.4
+      '@envelop/generic-auth': 5.0.5
       '@envelop/rate-limiter': 4.0.4
       '@fastify/compress': 6.2.0
       '@fastify/cors': 8.2.0
@@ -65,7 +65,7 @@ importers:
       '@envelop/auth0': 4.0.5_@envelop+core@3.0.5
       '@envelop/core': 3.0.5
       '@envelop/depth-limit': 2.0.5_uqioltj7hgx2ihhktcvuwrguru
-      '@envelop/generic-auth': 5.0.4_uqioltj7hgx2ihhktcvuwrguru
+      '@envelop/generic-auth': 5.0.5_uqioltj7hgx2ihhktcvuwrguru
       '@envelop/rate-limiter': 4.0.4_uqioltj7hgx2ihhktcvuwrguru
       '@fastify/compress': 6.2.0
       '@fastify/cors': 8.2.0
@@ -1265,10 +1265,10 @@ packages:
       tslib: 2.5.0
     dev: false
 
-  /@envelop/extended-validation/2.0.4_uqioltj7hgx2ihhktcvuwrguru:
-    resolution: {integrity: sha512-23B6VgizjItYehAGB4ZDT9VVmYCHxYVnbJ4XPvlT5R0KSEmTAzoCHTJ5Y+hnQ/lP3wk5OgZZI5HTDSi8CcSNug==}
+  /@envelop/extended-validation/2.0.5_uqioltj7hgx2ihhktcvuwrguru:
+    resolution: {integrity: sha512-3exQGS9mofw9lr7xzTd8lHhnLZq0o7TVgzIthWRCLK7Ays+wHOQies3vP/wSq5v/OkhiWaSayndABE8C2kH/eQ==}
     peerDependencies:
-      '@envelop/core': ^3.0.4
+      '@envelop/core': ^3.0.5
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
       '@envelop/core': 3.0.5
@@ -1277,14 +1277,14 @@ packages:
       tslib: 2.5.0
     dev: false
 
-  /@envelop/generic-auth/5.0.4_uqioltj7hgx2ihhktcvuwrguru:
-    resolution: {integrity: sha512-D6cSPjNlVV6lJUoTJZVkzjN/F9/nFLvYuotjcZQHue7tCBxegFDUrXf30AfJj3g/RMLZC7U2O6kWvZx5qzTK+w==}
+  /@envelop/generic-auth/5.0.5_uqioltj7hgx2ihhktcvuwrguru:
+    resolution: {integrity: sha512-I4v5VATh9XfAv6H9BUWFz1yggtCbuo+sSjp8amQtmvAMOL6dP+hyEfZOJB3SzRLgXZQ04xASztUgATezruluUQ==}
     peerDependencies:
-      '@envelop/core': ^3.0.4
+      '@envelop/core': ^3.0.5
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
       '@envelop/core': 3.0.5
-      '@envelop/extended-validation': 2.0.4_uqioltj7hgx2ihhktcvuwrguru
+      '@envelop/extended-validation': 2.0.5_uqioltj7hgx2ihhktcvuwrguru
       graphql: 16.6.0
       tslib: 2.5.0
     dev: false
