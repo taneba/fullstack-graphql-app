@@ -24,7 +24,7 @@ importers:
   apps/backend:
     specifiers:
       '@envelop/auth0': 4.0.5
-      '@envelop/core': 3.0.4
+      '@envelop/core': 3.0.5
       '@envelop/depth-limit': 2.0.4
       '@envelop/generic-auth': 5.0.4
       '@envelop/rate-limiter': 4.0.4
@@ -62,11 +62,11 @@ importers:
       validation-schema: workspace:*
       zod: 3.20.2
     dependencies:
-      '@envelop/auth0': 4.0.5_@envelop+core@3.0.4
-      '@envelop/core': 3.0.4
-      '@envelop/depth-limit': 2.0.4_a6sekiasy2tqr6d5gj7n2wtjli
-      '@envelop/generic-auth': 5.0.4_a6sekiasy2tqr6d5gj7n2wtjli
-      '@envelop/rate-limiter': 4.0.4_a6sekiasy2tqr6d5gj7n2wtjli
+      '@envelop/auth0': 4.0.5_@envelop+core@3.0.5
+      '@envelop/core': 3.0.5
+      '@envelop/depth-limit': 2.0.4_uqioltj7hgx2ihhktcvuwrguru
+      '@envelop/generic-auth': 5.0.4_uqioltj7hgx2ihhktcvuwrguru
+      '@envelop/rate-limiter': 4.0.4_uqioltj7hgx2ihhktcvuwrguru
       '@fastify/compress': 6.2.0
       '@fastify/cors': 8.2.0
       '@fastify/helmet': 9.1.0
@@ -1227,12 +1227,12 @@ packages:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
 
-  /@envelop/auth0/4.0.5_@envelop+core@3.0.4:
+  /@envelop/auth0/4.0.5_@envelop+core@3.0.5:
     resolution: {integrity: sha512-XKJmgecGRHodo4535u3F9hVIcU3O6OgD6rNGlsv2gvRnj0xa0CdzOA23dzhRYgU6OLhu5Kh3+g2RI+4CKksXVw==}
     peerDependencies:
       '@envelop/core': ^3.0.5
     dependencies:
-      '@envelop/core': 3.0.4
+      '@envelop/core': 3.0.5
       jsonwebtoken: 8.5.1
       jwks-rsa: 2.1.5
       tslib: 2.5.0
@@ -1246,49 +1246,56 @@ packages:
       '@envelop/types': 3.0.1
       tslib: 2.4.0
 
-  /@envelop/depth-limit/2.0.4_a6sekiasy2tqr6d5gj7n2wtjli:
+  /@envelop/core/3.0.5:
+    resolution: {integrity: sha512-qMnjdZwlvGxlhXZS8SIEJ6F4eCYbGp/gwVyF2DoMCmKriy4NS+gSDbpl/9t13c/fql5x3/zhnzaL39OAhX532A==}
+    dependencies:
+      '@envelop/types': 3.0.1
+      tslib: 2.5.0
+    dev: false
+
+  /@envelop/depth-limit/2.0.4_uqioltj7hgx2ihhktcvuwrguru:
     resolution: {integrity: sha512-C723KKsjUjoujQOevsEyl75oPBAXLMob1IMLyB1yO6MQNhZILbuHCgTTf/8w+U2R78gSS7QEHXFb2t4ZYD7e2w==}
     peerDependencies:
       '@envelop/core': ^3.0.4
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
-      '@envelop/core': 3.0.4
+      '@envelop/core': 3.0.5
       graphql: 16.6.0
       graphql-depth-limit: 1.1.0_graphql@16.6.0
       tslib: 2.5.0
     dev: false
 
-  /@envelop/extended-validation/2.0.4_a6sekiasy2tqr6d5gj7n2wtjli:
+  /@envelop/extended-validation/2.0.4_uqioltj7hgx2ihhktcvuwrguru:
     resolution: {integrity: sha512-23B6VgizjItYehAGB4ZDT9VVmYCHxYVnbJ4XPvlT5R0KSEmTAzoCHTJ5Y+hnQ/lP3wk5OgZZI5HTDSi8CcSNug==}
     peerDependencies:
       '@envelop/core': ^3.0.4
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
-      '@envelop/core': 3.0.4
+      '@envelop/core': 3.0.5
       '@graphql-tools/utils': 8.13.1_graphql@16.6.0
       graphql: 16.6.0
       tslib: 2.5.0
     dev: false
 
-  /@envelop/generic-auth/5.0.4_a6sekiasy2tqr6d5gj7n2wtjli:
+  /@envelop/generic-auth/5.0.4_uqioltj7hgx2ihhktcvuwrguru:
     resolution: {integrity: sha512-D6cSPjNlVV6lJUoTJZVkzjN/F9/nFLvYuotjcZQHue7tCBxegFDUrXf30AfJj3g/RMLZC7U2O6kWvZx5qzTK+w==}
     peerDependencies:
       '@envelop/core': ^3.0.4
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
-      '@envelop/core': 3.0.4
-      '@envelop/extended-validation': 2.0.4_a6sekiasy2tqr6d5gj7n2wtjli
+      '@envelop/core': 3.0.5
+      '@envelop/extended-validation': 2.0.4_uqioltj7hgx2ihhktcvuwrguru
       graphql: 16.6.0
       tslib: 2.5.0
     dev: false
 
-  /@envelop/on-resolve/2.0.4_a6sekiasy2tqr6d5gj7n2wtjli:
+  /@envelop/on-resolve/2.0.4_uqioltj7hgx2ihhktcvuwrguru:
     resolution: {integrity: sha512-1Yi+AkB8K0VmS6qh6jyTWdJbcRofTCtEY0esdF/y2Q1rVe+1z6CxBHj+f2dRhJVixSxmjemBZR9iqfEpg9oRIQ==}
     peerDependencies:
       '@envelop/core': ^3.0.4
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
-      '@envelop/core': 3.0.4
+      '@envelop/core': 3.0.5
       graphql: 16.6.0
     dev: false
 
@@ -1303,14 +1310,14 @@ packages:
       lru-cache: 6.0.0
       tslib: 2.5.0
 
-  /@envelop/rate-limiter/4.0.4_a6sekiasy2tqr6d5gj7n2wtjli:
+  /@envelop/rate-limiter/4.0.4_uqioltj7hgx2ihhktcvuwrguru:
     resolution: {integrity: sha512-0GGRIDTNC0PRFTwlM0wtzdT/bc2EUK1wiYfF4fC5SzGHc0qbdsW3S7yr/DwkXjnpx0Gsy7wwn74KGfs4iub3Xg==}
     peerDependencies:
       '@envelop/core': ^3.0.4
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
-      '@envelop/core': 3.0.4
-      '@envelop/on-resolve': 2.0.4_a6sekiasy2tqr6d5gj7n2wtjli
+      '@envelop/core': 3.0.5
+      '@envelop/on-resolve': 2.0.4_uqioltj7hgx2ihhktcvuwrguru
       graphql: 16.6.0
       graphql-rate-limit: 3.3.0_graphql@16.6.0
       tslib: 2.5.0
