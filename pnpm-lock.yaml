@@ -27,7 +27,7 @@ importers:
       '@envelop/core': 3.0.5
       '@envelop/depth-limit': 2.0.5
       '@envelop/generic-auth': 5.0.5
-      '@envelop/rate-limiter': 4.0.4
+      '@envelop/rate-limiter': 4.0.5
       '@fastify/compress': 6.2.0
       '@fastify/cors': 8.2.0
       '@fastify/helmet': ^9.1.0
@@ -66,7 +66,7 @@ importers:
       '@envelop/core': 3.0.5
       '@envelop/depth-limit': 2.0.5_uqioltj7hgx2ihhktcvuwrguru
       '@envelop/generic-auth': 5.0.5_uqioltj7hgx2ihhktcvuwrguru
-      '@envelop/rate-limiter': 4.0.4_uqioltj7hgx2ihhktcvuwrguru
+      '@envelop/rate-limiter': 4.0.5_uqioltj7hgx2ihhktcvuwrguru
       '@fastify/compress': 6.2.0
       '@fastify/cors': 8.2.0
       '@fastify/helmet': 9.1.0
@@ -1289,10 +1289,10 @@ packages:
       tslib: 2.5.0
     dev: false
 
-  /@envelop/on-resolve/2.0.4_uqioltj7hgx2ihhktcvuwrguru:
-    resolution: {integrity: sha512-1Yi+AkB8K0VmS6qh6jyTWdJbcRofTCtEY0esdF/y2Q1rVe+1z6CxBHj+f2dRhJVixSxmjemBZR9iqfEpg9oRIQ==}
+  /@envelop/on-resolve/2.0.5_uqioltj7hgx2ihhktcvuwrguru:
+    resolution: {integrity: sha512-kwKBBYf9p7UaHW4QACH/28C4Os0arIRMIgq0J14ItrggNcbCnXE9laDn+IABqK5n9fvzPuZ5GonAbfgpE36XUA==}
     peerDependencies:
-      '@envelop/core': ^3.0.4
+      '@envelop/core': ^3.0.5
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
       '@envelop/core': 3.0.5
@@ -1310,14 +1310,14 @@ packages:
       lru-cache: 6.0.0
       tslib: 2.5.0
 
-  /@envelop/rate-limiter/4.0.4_uqioltj7hgx2ihhktcvuwrguru:
-    resolution: {integrity: sha512-0GGRIDTNC0PRFTwlM0wtzdT/bc2EUK1wiYfF4fC5SzGHc0qbdsW3S7yr/DwkXjnpx0Gsy7wwn74KGfs4iub3Xg==}
+  /@envelop/rate-limiter/4.0.5_uqioltj7hgx2ihhktcvuwrguru:
+    resolution: {integrity: sha512-u7Uy2P8ZTzk+LWrQmoObla9AKfzPt4HM8da+DhXMAKIPAsTxoP7ttmrLxjbPnjGLTFScM76S6FCHA555Y9Ak+Q==}
     peerDependencies:
-      '@envelop/core': ^3.0.4
+      '@envelop/core': ^3.0.5
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
       '@envelop/core': 3.0.5
-      '@envelop/on-resolve': 2.0.4_uqioltj7hgx2ihhktcvuwrguru
+      '@envelop/on-resolve': 2.0.5_uqioltj7hgx2ihhktcvuwrguru
       graphql: 16.6.0
       graphql-rate-limit: 3.3.0_graphql@16.6.0
       tslib: 2.5.0
