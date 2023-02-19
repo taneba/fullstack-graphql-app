@@ -9,12 +9,12 @@ importers:
       postcss: ^8.4.21
       prettier: 2.8.4
       prettier-plugin-tailwindcss: ^0.2.2
-      tailwindcss: 3.2.6
+      tailwindcss: 3.2.7
       turbo: 1.7.4
     dependencies:
       autoprefixer: 10.4.13_postcss@8.4.21
       postcss: 8.4.21
-      tailwindcss: 3.2.6_postcss@8.4.21
+      tailwindcss: 3.2.7_postcss@8.4.21
     devDependencies:
       eslint: 8.33.0
       prettier: 2.8.4
@@ -151,7 +151,7 @@ importers:
       react-test-renderer: 18.2.0
       spinners-react: 1.0.7
       tailwind-config: workspace:*
-      tailwindcss: 3.2.6
+      tailwindcss: 3.2.7
       ts-jest: 27.1.5
       ts-pattern: 3.3.5
       tsconfig: workspace:*
@@ -180,7 +180,7 @@ importers:
       react-dom: 18.2.0_react@18.2.0
       react-hook-form: 7.43.1_react@18.2.0
       spinners-react: 1.0.7_3xleytyzprlgycb2ded54tx72i
-      tailwindcss: 3.2.6_postcss@8.4.21
+      tailwindcss: 3.2.7_postcss@8.4.21
       ts-pattern: 3.3.5
       typescript: 4.9.5
       ui: link:../../packages/ui
@@ -245,11 +245,11 @@ importers:
 
   packages/tailwind-config:
     specifiers:
-      tailwindcss: 3.2.6
+      tailwindcss: 3.2.7
       tailwindcss-animate: ^1.0.5
     devDependencies:
-      tailwindcss: 3.2.6
-      tailwindcss-animate: 1.0.5_tailwindcss@3.2.6
+      tailwindcss: 3.2.7
+      tailwindcss-animate: 1.0.5_tailwindcss@3.2.7
 
   packages/tsconfig:
     specifiers: {}
@@ -270,7 +270,7 @@ importers:
       spinners-react: 1.0.7
       tailwind-config: workspace:*
       tailwind-merge: ^1.9.0
-      tailwindcss: 3.2.6
+      tailwindcss: 3.2.7
       tailwindcss-animate: ^1.0.5
       tsconfig: workspace:*
       tsup: ^6.6.0
@@ -290,8 +290,8 @@ importers:
       spinners-react: 1.0.7_k5cacgh3g6vd4x3ocdhfxh2nuq
       tailwind-config: link:../tailwind-config
       tailwind-merge: 1.9.0
-      tailwindcss: 3.2.6_postcss@8.4.21
-      tailwindcss-animate: 1.0.5_tailwindcss@3.2.6
+      tailwindcss: 3.2.7_postcss@8.4.21
+      tailwindcss-animate: 1.0.5_tailwindcss@3.2.7
       tsconfig: link:../tsconfig
       tsup: 6.6.0_uujdqti2krmttzhqvubwnsmcci
       typescript: 4.9.5
@@ -10632,16 +10632,16 @@ packages:
     resolution: {integrity: sha512-coziXxViLHbVtFvD1+jwSu+UmDJSFX4dhj9ZuqHCuhTzu9Wk5wMedAz5AVY3uUYw95TaO7NwgUS/dLGcWvtgqw==}
     dev: true
 
-  /tailwindcss-animate/1.0.5_tailwindcss@3.2.6:
+  /tailwindcss-animate/1.0.5_tailwindcss@3.2.7:
     resolution: {integrity: sha512-UU3qrOJ4lFQABY+MVADmBm+0KW3xZyhMdRvejwtXqYOL7YjHYxmuREFAZdmVG5LPe5E9CAst846SLC4j5I3dcw==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
     dependencies:
-      tailwindcss: 3.2.6
+      tailwindcss: 3.2.7
     dev: true
 
-  /tailwindcss/3.2.6:
-    resolution: {integrity: sha512-BfgQWZrtqowOQMC2bwaSNe7xcIjdDEgixWGYOd6AL0CbKHJlvhfdbINeAW76l1sO+1ov/MJ93ODJ9yluRituIw==}
+  /tailwindcss/3.2.7:
+    resolution: {integrity: sha512-B6DLqJzc21x7wntlH/GsZwEXTBttVSl1FtCzC8WP4oBc/NKef7kaax5jeihkkCEWc831/5NDJ9gRNDK6NEioQQ==}
     engines: {node: '>=12.13.0'}
     hasBin: true
     peerDependencies:
@@ -10673,8 +10673,8 @@ packages:
       - ts-node
     dev: true
 
-  /tailwindcss/3.2.6_postcss@8.4.21:
-    resolution: {integrity: sha512-BfgQWZrtqowOQMC2bwaSNe7xcIjdDEgixWGYOd6AL0CbKHJlvhfdbINeAW76l1sO+1ov/MJ93ODJ9yluRituIw==}
+  /tailwindcss/3.2.7_postcss@8.4.21:
+    resolution: {integrity: sha512-B6DLqJzc21x7wntlH/GsZwEXTBttVSl1FtCzC8WP4oBc/NKef7kaax5jeihkkCEWc831/5NDJ9gRNDK6NEioQQ==}
     engines: {node: '>=12.13.0'}
     hasBin: true
     peerDependencies:
