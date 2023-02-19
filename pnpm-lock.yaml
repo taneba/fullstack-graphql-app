@@ -60,7 +60,7 @@ importers:
       tsx: 3.12.3
       typescript: 4.9.5
       validation-schema: workspace:*
-      zod: 3.20.2
+      zod: 3.20.6
     dependencies:
       '@envelop/auth0': 4.0.5_@envelop+core@3.0.5
       '@envelop/core': 3.0.5
@@ -88,7 +88,7 @@ importers:
       tsconfig: link:../../packages/tsconfig
       typescript: 4.9.5
       validation-schema: link:../../packages/validation-schema
-      zod: 3.20.2
+      zod: 3.20.6
     devDependencies:
       '@graphql-codegen/cli': 2.11.6_quvalxb4nnhr6i2ezffrwifxsu
       '@graphql-codegen/typescript-resolvers': 2.7.3_graphql@16.6.0
@@ -160,7 +160,7 @@ importers:
       urql: 2.2.3
       validation-schema: workspace:*
       wonka: 4.0.15
-      zod: 3.20.2
+      zod: 3.20.6
     dependencies:
       '@auth0/auth0-react': 1.12.1_biqbaboplfbrettd7655fr4n2y
       '@heroicons/react': 1.0.6_react@18.2.0
@@ -187,7 +187,7 @@ importers:
       urql: 2.2.3_onqnqwb3ubg5opvemcqf7c2qhy
       validation-schema: link:../../packages/validation-schema
       wonka: 4.0.15
-      zod: 3.20.2
+      zod: 3.20.6
     devDependencies:
       '@graphql-codegen/cli': 2.11.6_quvalxb4nnhr6i2ezffrwifxsu
       '@graphql-codegen/gql-tag-operations-preset': 1.5.4_graphql@16.6.0
@@ -306,7 +306,7 @@ importers:
       tsconfig: workspace:*
       tsup: ^6.6.0
       typescript: 4.9.5
-      zod: 3.20.2
+      zod: 3.20.6
     devDependencies:
       '@graphql-codegen/cli': 3.0.0_23wxar7uaxzh6yh3emhljcqjb4
       '@graphql-codegen/typescript': 3.0.0_graphql@16.6.0
@@ -316,7 +316,7 @@ importers:
       tsconfig: link:../tsconfig
       tsup: 6.6.0_typescript@4.9.5
       typescript: 4.9.5
-      zod: 3.20.2
+      zod: 3.20.6
 
 packages:
 
@@ -11765,5 +11765,5 @@ packages:
     dev: false
     optional: true
 
-  /zod/3.20.2:
-    resolution: {integrity: sha512-1MzNQdAvO+54H+EaK5YpyEy0T+Ejo/7YLHS93G3RnYWh5gaotGHwGeN/ZO687qEDU2y4CdStQYXVHIgrUl5UVQ==}
+  /zod/3.20.6:
+    resolution: {integrity: sha512-oyu0m54SGCtzh6EClBVqDDlAYRz4jrVtKwQ7ZnsEmMI9HnzuZFj8QFwAY1M5uniIYACdGvv0PBWPF2kO0aNofA==}

@@ -44,7 +44,7 @@
     "tsconfig": "workspace:*",
     "typescript": "4.9.5",
     "validation-schema": "workspace:*",
-    "zod": "3.20.2"
+    "zod": "3.20.6"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "2.11.6",
