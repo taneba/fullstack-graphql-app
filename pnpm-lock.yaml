@@ -128,7 +128,7 @@ importers:
       '@types/jest': 27.5.2
       '@types/node': 16.18.12
       '@types/react': 18.0.28
-      '@types/react-dom': 18.0.10
+      '@types/react-dom': 18.0.11
       '@types/styled-components': 5.1.26
       '@types/testing-library__jest-dom': ^5.14.5
       autoprefixer: ^10.4.13
@@ -179,7 +179,7 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-hook-form: 7.43.1_react@18.2.0
-      spinners-react: 1.0.7_ffd5foczrxyy7gyjqbwgwcqlbq
+      spinners-react: 1.0.7_3xleytyzprlgycb2ded54tx72i
       tailwindcss: 3.2.6_postcss@8.4.21
       ts-pattern: 3.3.5
       typescript: 4.9.5
@@ -204,7 +204,7 @@ importers:
       '@types/jest': 27.5.2
       '@types/node': 16.18.12
       '@types/react': 18.0.28
-      '@types/react-dom': 18.0.10
+      '@types/react-dom': 18.0.11
       '@types/styled-components': 5.1.26
       '@types/testing-library__jest-dom': 5.14.5
       babel-jest: 27.5.1
@@ -261,7 +261,7 @@ importers:
       '@radix-ui/react-portal': 1.0.1
       '@types/node': 16.18.11
       '@types/react': 18.0.28
-      '@types/react-dom': 18.0.10
+      '@types/react-dom': 18.0.11
       autoprefixer: ^10.4.13
       class-variance-authority: ^0.4.0
       clsx: ^1.2.1
@@ -281,13 +281,13 @@ importers:
       '@radix-ui/react-portal': 1.0.1
       '@types/node': 16.18.11
       '@types/react': 18.0.28
-      '@types/react-dom': 18.0.10
+      '@types/react-dom': 18.0.11
       autoprefixer: 10.4.13_postcss@8.4.21
       class-variance-authority: 0.4.0_typescript@4.9.5
       clsx: 1.2.1
       lucide-react: 0.108.0
       postcss: 8.4.21
-      spinners-react: 1.0.7_7szccoj7hz73qyaaj2w4z6eici
+      spinners-react: 1.0.7_k5cacgh3g6vd4x3ocdhfxh2nuq
       tailwind-config: link:../tailwind-config
       tailwind-merge: 1.9.0
       tailwindcss: 3.2.6_postcss@8.4.21
@@ -3908,7 +3908,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.20.13
       '@testing-library/dom': 8.20.0
-      '@types/react-dom': 18.0.10
+      '@types/react-dom': 18.0.11
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: true
@@ -4155,8 +4155,8 @@ packages:
     resolution: {integrity: sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==}
     dev: false
 
-  /@types/react-dom/18.0.10:
-    resolution: {integrity: sha512-E42GW/JA4Qv15wQdqJq8DL4JhNpB3prJgjgapN3qJT9K2zO5IIAQh4VXvCEDupoqAwnz0cY4RlXeC/ajX5SFHg==}
+  /@types/react-dom/18.0.11:
+    resolution: {integrity: sha512-O38bPbI2CWtgw/OoQoY+BRelw7uysmXbWvw3nLWO21H1HSh+GOlqPuXshJfjmpNlKiiSDG9cc1JZAaMmVdcTlw==}
     dependencies:
       '@types/react': 18.0.28
 
@@ -10379,7 +10379,7 @@ packages:
       whatwg-url: 7.1.0
     dev: true
 
-  /spinners-react/1.0.7_7szccoj7hz73qyaaj2w4z6eici:
+  /spinners-react/1.0.7_3xleytyzprlgycb2ded54tx72i:
     resolution: {integrity: sha512-Xcgpc7Ybm6HOrpCVJjbH1G/NV852HaV4Zc9T1sJ2+S2hn05lGiBZS1dBOKGLc1kp8wv2sd3wtt94I/NNqDjs3Q==}
     peerDependencies:
       '@types/react': ^16.x || ^17.x || ^18.x
@@ -10388,22 +10388,22 @@ packages:
       react-dom: ^16.x || ^17.x || ^18.x
     dependencies:
       '@types/react': 18.0.28
-      '@types/react-dom': 18.0.10
-    dev: true
-
-  /spinners-react/1.0.7_ffd5foczrxyy7gyjqbwgwcqlbq:
-    resolution: {integrity: sha512-Xcgpc7Ybm6HOrpCVJjbH1G/NV852HaV4Zc9T1sJ2+S2hn05lGiBZS1dBOKGLc1kp8wv2sd3wtt94I/NNqDjs3Q==}
-    peerDependencies:
-      '@types/react': ^16.x || ^17.x || ^18.x
-      '@types/react-dom': ^16.x || ^17.x || ^18.x
-      react: ^16.x || ^17.x || ^18.x
-      react-dom: ^16.x || ^17.x || ^18.x
-    dependencies:
-      '@types/react': 18.0.28
-      '@types/react-dom': 18.0.10
+      '@types/react-dom': 18.0.11
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: false
+
+  /spinners-react/1.0.7_k5cacgh3g6vd4x3ocdhfxh2nuq:
+    resolution: {integrity: sha512-Xcgpc7Ybm6HOrpCVJjbH1G/NV852HaV4Zc9T1sJ2+S2hn05lGiBZS1dBOKGLc1kp8wv2sd3wtt94I/NNqDjs3Q==}
+    peerDependencies:
+      '@types/react': ^16.x || ^17.x || ^18.x
+      '@types/react-dom': ^16.x || ^17.x || ^18.x
+      react: ^16.x || ^17.x || ^18.x
+      react-dom: ^16.x || ^17.x || ^18.x
+    dependencies:
+      '@types/react': 18.0.28
+      '@types/react-dom': 18.0.11
+    dev: true
 
   /split2/4.1.0:
     resolution: {integrity: sha512-VBiJxFkxiXRlUIeyMQi8s4hgvKCSjtknJv/LVYbrgALPwf5zSKmEwV9Lst25AkvMDnvxODugjdl6KZgwKM1WYQ==}
