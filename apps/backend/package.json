@@ -24,7 +24,7 @@
     "@envelop/generic-auth": "5.0.6",
     "@envelop/rate-limiter": "4.0.6",
     "@fastify/compress": "6.2.1",
-    "@fastify/cors": "8.2.0",
+    "@fastify/cors": "8.2.1",
     "@fastify/helmet": "^9.1.0",
     "@graphql-tools/schema": "9.0.16",
     "@graphql-tools/utils": "^9.1.4",

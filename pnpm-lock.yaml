@@ -29,7 +29,7 @@ importers:
       '@envelop/generic-auth': 5.0.6
       '@envelop/rate-limiter': 4.0.6
       '@fastify/compress': 6.2.1
-      '@fastify/cors': 8.2.0
+      '@fastify/cors': 8.2.1
       '@fastify/helmet': ^9.1.0
       '@graphql-codegen/cli': 2.11.6
       '@graphql-codegen/typescript-resolvers': 2.7.3
@@ -68,7 +68,7 @@ importers:
       '@envelop/generic-auth': 5.0.6_adj6itjezth6avcd67ktx7eo6a
       '@envelop/rate-limiter': 4.0.6_adj6itjezth6avcd67ktx7eo6a
       '@fastify/compress': 6.2.1
-      '@fastify/cors': 8.2.0
+      '@fastify/cors': 8.2.1
       '@fastify/helmet': 9.1.0
       '@graphql-tools/schema': 9.0.16_graphql@16.6.0
       '@graphql-tools/utils': 9.1.4_graphql@16.6.0
@@ -1626,8 +1626,8 @@ packages:
       pumpify: 2.0.1
     dev: false
 
-  /@fastify/cors/8.2.0:
-    resolution: {integrity: sha512-qDgwpmg6C4D0D3nh8MTMuRXWyEwPnDZDBODaJv90FP2o9ukbahJByW4FtrM5Bpod5KbTf1oIExBmpItbUTQmHg==}
+  /@fastify/cors/8.2.1:
+    resolution: {integrity: sha512-2H2MrDD3ea7g707g1CNNLWb9/tYbmw7HS+MK2SDcgjxwzbOFR93JortelTIO8DBFsZqFtEpKNxiZfSyrGgYcbw==}
     dependencies:
       fastify-plugin: 4.5.0
       mnemonist: 0.39.5
