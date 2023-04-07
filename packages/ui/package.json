@@ -24,7 +24,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@radix-ui/react-avatar": "1.0.1",
+    "@radix-ui/react-avatar": "1.0.2",
     "@radix-ui/react-dialog": "1.0.2",
     "@radix-ui/react-portal": "1.0.1",
     "@types/node": "16.18.11",

@@ -118,7 +118,7 @@ importers:
       '@next/bundle-analyzer': 12.3.4
       '@next/font': ^13.1.6
       '@radix-ui/colors': 0.1.8
-      '@radix-ui/react-avatar': 1.0.1
+      '@radix-ui/react-avatar': 1.0.2
       '@radix-ui/react-dialog': 1.0.2
       '@radix-ui/react-icons': 1.3.0
       '@radix-ui/react-portal': 1.0.1
@@ -167,7 +167,7 @@ importers:
       '@hookform/resolvers': 2.9.10_react-hook-form@7.43.2
       '@next/font': 13.1.6
       '@radix-ui/colors': 0.1.8
-      '@radix-ui/react-avatar': 1.0.1_biqbaboplfbrettd7655fr4n2y
+      '@radix-ui/react-avatar': 1.0.2_biqbaboplfbrettd7655fr4n2y
       '@radix-ui/react-dialog': 1.0.2_zula6vjvt3wdocc4mwcxqa6nzi
       '@radix-ui/react-icons': 1.3.0_react@18.2.0
       '@radix-ui/react-portal': 1.0.1_biqbaboplfbrettd7655fr4n2y
@@ -256,7 +256,7 @@ importers:
 
   packages/ui:
     specifiers:
-      '@radix-ui/react-avatar': 1.0.1
+      '@radix-ui/react-avatar': 1.0.2
       '@radix-ui/react-dialog': 1.0.2
       '@radix-ui/react-portal': 1.0.1
       '@types/node': 16.18.11
@@ -276,7 +276,7 @@ importers:
       tsup: ^6.6.0
       typescript: 4.9.5
     devDependencies:
-      '@radix-ui/react-avatar': 1.0.1
+      '@radix-ui/react-avatar': 1.0.2
       '@radix-ui/react-dialog': 1.0.2_@types+react@18.0.28
       '@radix-ui/react-portal': 1.0.1
       '@types/node': 16.18.11
@@ -3473,28 +3473,28 @@ packages:
     dependencies:
       '@babel/runtime': 7.20.13
 
-  /@radix-ui/react-avatar/1.0.1:
-    resolution: {integrity: sha512-GfUgw4i/OWmb76bmM9qLnedYOsXhPvRXL6xaxyZzhiIVEwo2KbmxTaSQv5r1Oh8nNqBs1vfYPGuVmhEfpxpnvw==}
+  /@radix-ui/react-avatar/1.0.2:
+    resolution: {integrity: sha512-XRL8z2l9V7hRLCPjHWg/34RBPZUGpmOjmsRSNvIh2DI28GyIWDChbcsDUVc63MzOItk6Q83Ob2KK8k2FUlXlGA==}
     peerDependencies:
       react: ^16.8 || ^17.0 || ^18.0
       react-dom: ^16.8 || ^17.0 || ^18.0
     dependencies:
       '@babel/runtime': 7.20.13
       '@radix-ui/react-context': 1.0.0
-      '@radix-ui/react-primitive': 1.0.1
+      '@radix-ui/react-primitive': 1.0.2
       '@radix-ui/react-use-callback-ref': 1.0.0
       '@radix-ui/react-use-layout-effect': 1.0.0
     dev: true
 
-  /@radix-ui/react-avatar/1.0.1_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-GfUgw4i/OWmb76bmM9qLnedYOsXhPvRXL6xaxyZzhiIVEwo2KbmxTaSQv5r1Oh8nNqBs1vfYPGuVmhEfpxpnvw==}
+  /@radix-ui/react-avatar/1.0.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-XRL8z2l9V7hRLCPjHWg/34RBPZUGpmOjmsRSNvIh2DI28GyIWDChbcsDUVc63MzOItk6Q83Ob2KK8k2FUlXlGA==}
     peerDependencies:
       react: ^16.8 || ^17.0 || ^18.0
       react-dom: ^16.8 || ^17.0 || ^18.0
     dependencies:
       '@babel/runtime': 7.20.13
       '@radix-ui/react-context': 1.0.0_react@18.2.0
-      '@radix-ui/react-primitive': 1.0.1_biqbaboplfbrettd7655fr4n2y
+      '@radix-ui/react-primitive': 1.0.2_biqbaboplfbrettd7655fr4n2y
       '@radix-ui/react-use-callback-ref': 1.0.0_react@18.2.0
       '@radix-ui/react-use-layout-effect': 1.0.0_react@18.2.0
       react: 18.2.0
@@ -3745,6 +3745,28 @@ packages:
 
   /@radix-ui/react-primitive/1.0.1_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-fHbmislWVkZaIdeF6GZxF0A/NH/3BjrGIYj+Ae6eTmTCr7EB0RQAAVEiqsXK6p3/JcRqVSBQoceZroj30Jj3XA==}
+    peerDependencies:
+      react: ^16.8 || ^17.0 || ^18.0
+      react-dom: ^16.8 || ^17.0 || ^18.0
+    dependencies:
+      '@babel/runtime': 7.20.13
+      '@radix-ui/react-slot': 1.0.1_react@18.2.0
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /@radix-ui/react-primitive/1.0.2:
+    resolution: {integrity: sha512-zY6G5Qq4R8diFPNwtyoLRZBxzu1Z+SXMlfYpChN7Dv8gvmx9X3qhDqiLWvKseKVJMuedFeU/Sa0Sy/Ia+t06Dw==}
+    peerDependencies:
+      react: ^16.8 || ^17.0 || ^18.0
+      react-dom: ^16.8 || ^17.0 || ^18.0
+    dependencies:
+      '@babel/runtime': 7.20.13
+      '@radix-ui/react-slot': 1.0.1
+    dev: true
+
+  /@radix-ui/react-primitive/1.0.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-zY6G5Qq4R8diFPNwtyoLRZBxzu1Z+SXMlfYpChN7Dv8gvmx9X3qhDqiLWvKseKVJMuedFeU/Sa0Sy/Ia+t06Dw==}
     peerDependencies:
       react: ^16.8 || ^17.0 || ^18.0
       react-dom: ^16.8 || ^17.0 || ^18.0
