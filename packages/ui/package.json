@@ -28,7 +28,7 @@
     "@radix-ui/react-dialog": "1.0.3",
     "@radix-ui/react-portal": "1.0.2",
     "@types/node": "16.18.23",
-    "@types/react": "18.0.28",
+    "@types/react": "18.0.33",
     "@types/react-dom": "18.0.11",
     "autoprefixer": "^10.4.13",
     "class-variance-authority": "^0.4.0",
