@@ -265,7 +265,7 @@ importers:
       autoprefixer: ^10.4.13
       class-variance-authority: ^0.4.0
       clsx: ^1.2.1
-      lucide-react: ^0.108.0
+      lucide-react: ^0.161.0
       postcss: ^8.4.21
       spinners-react: 1.0.7
       tailwind-config: workspace:*
@@ -285,7 +285,7 @@ importers:
       autoprefixer: 10.4.13_postcss@8.4.21
       class-variance-authority: 0.4.0_typescript@4.9.5
       clsx: 1.2.1
-      lucide-react: 0.108.0
+      lucide-react: 0.161.0
       postcss: 8.4.21
       spinners-react: 1.0.7_ikgrxhbyq6nhnfavlrtts5coj4
       tailwind-config: link:../tailwind-config
@@ -8728,8 +8728,8 @@ packages:
       lru-cache: 4.0.2
     dev: false
 
-  /lucide-react/0.108.0:
-    resolution: {integrity: sha512-dL8F1DZibvqcWRhCrMghFSYpovsKLcoAcLbh1oZNWo1UxadrDesl8K8Eh6qYrWJwvj95bdSA69ZKc8k+KRxrvg==}
+  /lucide-react/0.161.0:
+    resolution: {integrity: sha512-Yr0VR0l6r+t65JCE9q+rTMItWqbhF4Wn3l73PHMwxves2wDhEPH7V2JqxvqS0In/brIwiyBV90++r/rHxNK9ug==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
     dev: true
