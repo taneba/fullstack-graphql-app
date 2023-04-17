@@ -51,7 +51,7 @@ importers:
       graphql-yoga: 3.4.0
       jsonwebtoken: 8.5.1
       jwks-rsa: 2.1.5
-      nodemon: 2.0.20
+      nodemon: 2.0.22
       prisma: 4.8.1
       ts-pattern: ^4.0.5
       tsc-alias: 1.8.2
@@ -97,7 +97,7 @@ importers:
       chalk: 4.1.2
       config: link:../../packages/config
       dotenv-cli: 6.0.0
-      nodemon: 2.0.20
+      nodemon: 2.0.22
       tsc-alias: 1.8.2
       tsconfig-paths: 4.1.2
       tsx: 3.12.3
@@ -8679,8 +8679,8 @@ packages:
   /node-releases/2.0.10:
     resolution: {integrity: sha512-5GFldHPXVG/YZmFzJvKK2zDSzPKhEp0+ZR5SVaoSag9fsL5YgHbUHDfnG5494ISANDcK4KwPXAx2xqVEydmd7w==}
 
-  /nodemon/2.0.20:
-    resolution: {integrity: sha512-Km2mWHKKY5GzRg6i1j5OxOHQtuvVsgskLfigG25yTtbyfRGn/GNvIbRyOf1PSCKJ2aT/58TiuUsuOU5UToVViw==}
+  /nodemon/2.0.22:
+    resolution: {integrity: sha512-B8YqaKMmyuCO7BowF1Z1/mkPqLk6cs/l63Ojtd6otKjMx47Dq1utxfRxcavH1I7VSaL8n5BUaoutadnsX3AAVQ==}
     engines: {node: '>=8.10.0'}
     hasBin: true
     dependencies:
