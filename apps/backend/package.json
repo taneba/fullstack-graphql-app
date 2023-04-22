@@ -57,6 +57,6 @@
     "nodemon": "2.0.22",
     "tsc-alias": "1.8.5",
     "tsconfig-paths": "4.1.2",
-    "tsx": "3.12.3"
+    "tsx": "3.12.6"
   }
 }
