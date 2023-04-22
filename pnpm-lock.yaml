@@ -48,7 +48,7 @@ importers:
       got: 11.8.6
       graphql: 16.6.0
       graphql-tools: 8.3.18
-      graphql-yoga: 3.9.0
+      graphql-yoga: 3.9.1
       jsonwebtoken: 8.5.1
       jwks-rsa: 2.1.5
       nodemon: 2.0.22
@@ -80,7 +80,7 @@ importers:
       got: 11.8.6
       graphql: 16.6.0
       graphql-tools: 8.3.18_graphql@16.6.0
-      graphql-yoga: 3.9.0_graphql@16.6.0
+      graphql-yoga: 3.9.1_graphql@16.6.0
       jsonwebtoken: 8.5.1
       jwks-rsa: 2.1.5
       prisma: 4.8.1
@@ -93,7 +93,7 @@ importers:
       '@graphql-codegen/cli': 2.16.5_ape6tvyg75c54si4adye77uiju
       '@graphql-codegen/typescript-resolvers': 2.7.13_graphql@16.6.0
       '@graphql-codegen/visitor-plugin-common': 2.13.8_graphql@16.6.0
-      '@graphql-yoga/render-graphiql': 3.6.1_graphql-yoga@3.9.0
+      '@graphql-yoga/render-graphiql': 3.6.1_graphql-yoga@3.9.1
       chalk: 4.1.2
       config: link:../../packages/config
       dotenv-cli: 6.0.0
@@ -1750,7 +1750,7 @@ packages:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
       '@graphql-codegen/plugin-helpers': 3.1.2_graphql@16.6.0
-      '@graphql-tools/schema': 9.0.16_graphql@16.6.0
+      '@graphql-tools/schema': 9.0.18_graphql@16.6.0
       '@graphql-tools/utils': 9.2.1_graphql@16.6.0
       graphql: 16.6.0
       tslib: 2.4.1
@@ -1762,7 +1762,7 @@ packages:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
       '@graphql-codegen/plugin-helpers': 4.2.0_graphql@16.6.0
-      '@graphql-tools/schema': 9.0.16_graphql@16.6.0
+      '@graphql-tools/schema': 9.0.18_graphql@16.6.0
       '@graphql-tools/utils': 9.2.1_graphql@16.6.0
       graphql: 16.6.0
       tslib: 2.5.0
@@ -2269,8 +2269,8 @@ packages:
       value-or-promise: 1.0.12
     dev: true
 
-  /@graphql-tools/executor/0.0.16_graphql@16.6.0:
-    resolution: {integrity: sha512-TGhvJPNaZbvhurLQtYBfedvNRuokvoPRC3vCjeHCe9AOUfb8Vn7Jvrpnys5R/wdCnXKsOpCm9QZt9OqNMfkByQ==}
+  /@graphql-tools/executor/0.0.18_graphql@16.6.0:
+    resolution: {integrity: sha512-xZC0C+/npXoSHBB5bsJdwxDLgtl1Gu4fL9J2TPQmXoZC3L2N506KJoppf9LgWdHU/xK04luJrhP6WjhfkIN0pQ==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
@@ -2390,6 +2390,15 @@ packages:
       graphql: 16.6.0
       tslib: 2.5.0
 
+  /@graphql-tools/merge/8.4.1_graphql@16.6.0:
+    resolution: {integrity: sha512-hssnPpZ818mxgl5+GfyOOSnnflAxiaTn1A1AojZcIbh4J52sS1Q0gSuBR5VrnUDjuxiqoCotpXdAQl+K+U6KLQ==}
+    peerDependencies:
+      graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
+    dependencies:
+      '@graphql-tools/utils': 9.2.1_graphql@16.6.0
+      graphql: 16.6.0
+      tslib: 2.5.0
+
   /@graphql-tools/optimize/1.3.1_graphql@16.6.0:
     resolution: {integrity: sha512-5j5CZSRGWVobt4bgRRg7zhjPiSimk+/zIuColih8E8DxuFOaJ+t0qu7eZS5KXWBkjcd4BPNuhUPpNlEmHPqVRQ==}
     peerDependencies:
@@ -2457,6 +2466,17 @@ packages:
       tslib: 2.5.0
       value-or-promise: 1.0.12
 
+  /@graphql-tools/schema/9.0.18_graphql@16.6.0:
+    resolution: {integrity: sha512-Kckb+qoo36o5RSIVfBNU5XR5fOg4adNa1xuhhUgbQejDaI684tIJbTWwYbrDPVEGL/dqJJX3rrsq7RLufjNFoQ==}
+    peerDependencies:
+      graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
+    dependencies:
+      '@graphql-tools/merge': 8.4.1_graphql@16.6.0
+      '@graphql-tools/utils': 9.2.1_graphql@16.6.0
+      graphql: 16.6.0
+      tslib: 2.5.0
+      value-or-promise: 1.0.12
+
   /@graphql-tools/url-loader/7.17.11_v5ak7o4fp6t3nuf22slbftzhhu:
     resolution: {integrity: sha512-zGTrdz5hVm/0+vLZJexhB/B4m95ZCP0eqD2QoNP0hsstaqTyn9u84kTtYUpbPlz7hAxZsdu+VcLaypE4qPGGGw==}
     peerDependencies:
@@ -2515,7 +2535,7 @@ packages:
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
-      '@graphql-typed-document-node/core': 3.1.2_graphql@16.6.0
+      '@graphql-typed-document-node/core': 3.2.0_graphql@16.6.0
       graphql: 16.6.0
       tslib: 2.5.0
 
@@ -2559,12 +2579,12 @@ packages:
     dependencies:
       tslib: 2.5.0
 
-  /@graphql-yoga/render-graphiql/3.6.1_graphql-yoga@3.9.0:
+  /@graphql-yoga/render-graphiql/3.6.1_graphql-yoga@3.9.1:
     resolution: {integrity: sha512-3E6tEP8O0JR59PiU2kGwh51yJjs+hCTi6DvGLQYSPJptqsuDuxoIuukCf13vRPusVS+Xb4upge5KfmGC8j4AhQ==}
     peerDependencies:
       graphql-yoga: ^3.6.1
     dependencies:
-      graphql-yoga: 3.9.0_graphql@16.6.0
+      graphql-yoga: 3.9.1_graphql@16.6.0
     dev: true
 
   /@graphql-yoga/subscription/3.1.0:
@@ -6720,7 +6740,7 @@ packages:
       '@graphql-tools/graphql-file-loader': 7.5.16_graphql@16.6.0
       '@graphql-tools/json-file-loader': 7.4.17_graphql@16.6.0
       '@graphql-tools/load': 7.8.12_graphql@16.6.0
-      '@graphql-tools/merge': 8.3.18_graphql@16.6.0
+      '@graphql-tools/merge': 8.4.1_graphql@16.6.0
       '@graphql-tools/url-loader': 7.17.11_v5ak7o4fp6t3nuf22slbftzhhu
       '@graphql-tools/utils': 9.2.1_graphql@16.6.0
       cosmiconfig: 8.0.0
@@ -6749,7 +6769,7 @@ packages:
       '@graphql-tools/graphql-file-loader': 7.5.16_graphql@16.6.0
       '@graphql-tools/json-file-loader': 7.4.17_graphql@16.6.0
       '@graphql-tools/load': 7.8.12_graphql@16.6.0
-      '@graphql-tools/merge': 8.3.18_graphql@16.6.0
+      '@graphql-tools/merge': 8.4.1_graphql@16.6.0
       '@graphql-tools/url-loader': 7.17.11_v5ak7o4fp6t3nuf22slbftzhhu
       '@graphql-tools/utils': 9.2.1_graphql@16.6.0
       cosmiconfig: 8.0.0
@@ -6872,15 +6892,15 @@ packages:
       graphql: 16.6.0
     dev: true
 
-  /graphql-yoga/3.9.0_graphql@16.6.0:
-    resolution: {integrity: sha512-iHHY8iGBd++p1lLoIAknNc6cFTjkKjD7kFYp8zP+svv87SVM1sx0ep+0EHTT+Ye11ZGW375REbYgS3P46x+Kkw==}
+  /graphql-yoga/3.9.1_graphql@16.6.0:
+    resolution: {integrity: sha512-BB6EkN64VBTXWmf9Kym2OsVZFzBC0mAsQNo9eNB5xIr3t+x7qepQ34xW5A353NWol3Js3xpzxwIKFVF6l9VsPg==}
     peerDependencies:
       graphql: ^15.2.0 || ^16.0.0
     dependencies:
       '@envelop/core': 3.0.6
       '@envelop/validation-cache': 5.1.2_adj6itjezth6avcd67ktx7eo6a
-      '@graphql-tools/executor': 0.0.16_graphql@16.6.0
-      '@graphql-tools/schema': 9.0.16_graphql@16.6.0
+      '@graphql-tools/executor': 0.0.18_graphql@16.6.0
+      '@graphql-tools/schema': 9.0.18_graphql@16.6.0
       '@graphql-tools/utils': 9.2.1_graphql@16.6.0
       '@graphql-yoga/logger': 0.0.1
       '@graphql-yoga/subscription': 3.1.0
