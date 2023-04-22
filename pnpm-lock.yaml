@@ -7,7 +7,7 @@ importers:
       autoprefixer: ^10.4.13
       eslint: ^8.33.0
       postcss: ^8.4.21
-      prettier: 2.8.4
+      prettier: 2.8.7
       prettier-plugin-tailwindcss: ^0.2.2
       tailwindcss: 3.2.7
       turbo: 1.9.1
@@ -17,8 +17,8 @@ importers:
       tailwindcss: 3.2.7_postcss@8.4.21
     devDependencies:
       eslint: 8.33.0
-      prettier: 2.8.4
-      prettier-plugin-tailwindcss: 0.2.2_prettier@2.8.4
+      prettier: 2.8.7
+      prettier-plugin-tailwindcss: 0.2.2_prettier@2.8.7
       turbo: 1.9.1
 
   apps/backend:
@@ -9245,7 +9245,7 @@ packages:
         optional: true
     dev: true
 
-  /prettier-plugin-tailwindcss/0.2.2_prettier@2.8.4:
+  /prettier-plugin-tailwindcss/0.2.2_prettier@2.8.7:
     resolution: {integrity: sha512-5RjUbWRe305pUpc48MosoIp6uxZvZxrM6GyOgsbGLTce+ehePKNm7ziW2dLG2air9aXbGuXlHVSQQw4Lbosq3w==}
     engines: {node: '>=12.17.0'}
     peerDependencies:
@@ -9294,11 +9294,11 @@ packages:
       prettier-plugin-twig-melody:
         optional: true
     dependencies:
-      prettier: 2.8.4
+      prettier: 2.8.7
     dev: true
 
-  /prettier/2.8.4:
-    resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
+  /prettier/2.8.7:
+    resolution: {integrity: sha512-yPngTo3aXUUmyuTjeTUT75txrf+aMh9FiD7q9ZE/i6r0bPb22g4FsE6Y338PQX1bmfy08i9QQCB7/rcUAVntfw==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
