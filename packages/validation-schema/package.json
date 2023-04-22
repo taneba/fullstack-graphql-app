@@ -14,8 +14,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@graphql-codegen/cli": "3.3.0",
-    "@graphql-codegen/typescript": "3.0.3",
+    "@graphql-codegen/cli": "3.3.1",
+    "@graphql-codegen/typescript": "3.0.4",
     "@types/node": "16.18.24",
     "graphql": "16.6.0",
     "graphql-codegen-typescript-validation-schema": "^0.7.1",
