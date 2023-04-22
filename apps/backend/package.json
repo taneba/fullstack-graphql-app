@@ -55,7 +55,7 @@
     "config": "workspace:*",
     "dotenv-cli": "6.0.0",
     "nodemon": "2.0.22",
-    "tsc-alias": "1.8.2",
+    "tsc-alias": "1.8.5",
     "tsconfig-paths": "4.1.2",
     "tsx": "3.12.3"
   }

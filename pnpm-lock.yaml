@@ -54,7 +54,7 @@ importers:
       nodemon: 2.0.22
       prisma: 4.8.1
       ts-pattern: ^4.0.5
-      tsc-alias: 1.8.2
+      tsc-alias: 1.8.5
       tsconfig: workspace:*
       tsconfig-paths: 4.1.2
       tsx: 3.12.3
@@ -98,7 +98,7 @@ importers:
       config: link:../../packages/config
       dotenv-cli: 6.0.0
       nodemon: 2.0.22
-      tsc-alias: 1.8.2
+      tsc-alias: 1.8.5
       tsconfig-paths: 4.1.2
       tsx: 3.12.3
 
@@ -10588,8 +10588,8 @@ packages:
     resolution: {integrity: sha512-8beXMWTGEv1JfDjSxfNhe4uT5jKYdhmEUKzt4gZW9dmHlquq3b+IbEyA7vX9LjBfzHmvKnM4HiomAUCyaW2Pew==}
     dev: false
 
-  /tsc-alias/1.8.2:
-    resolution: {integrity: sha512-ukBkcNekOgwtnSWYLD5QsMX3yQWg7JviAs8zg3qJGgu4LGtY3tsV4G6vnqvOXIDkbC+XL9vbhObWSpRA5/6wbg==}
+  /tsc-alias/1.8.5:
+    resolution: {integrity: sha512-Y3ka0olwSRdbHPyX5kXhYY2aoBKuT53DFdeY+PpQUR4hg5M/b8eIRmC8dL4FBdd0wT366iWc6iDUUGe6QwI7mg==}
     hasBin: true
     dependencies:
       chokidar: 3.5.3
