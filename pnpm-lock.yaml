@@ -298,8 +298,8 @@ importers:
 
   packages/validation-schema:
     specifiers:
-      '@graphql-codegen/cli': 3.3.0
-      '@graphql-codegen/typescript': 3.0.3
+      '@graphql-codegen/cli': 3.3.1
+      '@graphql-codegen/typescript': 3.0.4
       '@types/node': 16.18.24
       graphql: 16.6.0
       graphql-codegen-typescript-validation-schema: ^0.7.1
@@ -308,8 +308,8 @@ importers:
       typescript: 4.9.5
       zod: 3.20.6
     devDependencies:
-      '@graphql-codegen/cli': 3.3.0_v5ak7o4fp6t3nuf22slbftzhhu
-      '@graphql-codegen/typescript': 3.0.3_graphql@16.6.0
+      '@graphql-codegen/cli': 3.3.1_v5ak7o4fp6t3nuf22slbftzhhu
+      '@graphql-codegen/typescript': 3.0.4_graphql@16.6.0
       '@types/node': 16.18.24
       graphql: 16.6.0
       graphql-codegen-typescript-validation-schema: 0.7.1_graphql@16.6.0
@@ -1691,8 +1691,8 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@graphql-codegen/cli/3.3.0_v5ak7o4fp6t3nuf22slbftzhhu:
-    resolution: {integrity: sha512-KRQoAG0stor/ztMsBxHqxnwQzcM1DEZigwzah1LFej8bh6TT1WpUt37zt6PH0EdlMpelmeN3keY4Pq6GMd4ADw==}
+  /@graphql-codegen/cli/3.3.1_v5ak7o4fp6t3nuf22slbftzhhu:
+    resolution: {integrity: sha512-4Es8Y9zFeT0Zx2qRL7L3qXDbbqvXK6aID+8v8lP6gaYD+uWx3Jd4Hsq5vxwVBR+6flm0BW/C85Qm0cvmT7O6LA==}
     hasBin: true
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -2025,14 +2025,14 @@ packages:
       - supports-color
     dev: true
 
-  /@graphql-codegen/typescript/3.0.3_graphql@16.6.0:
-    resolution: {integrity: sha512-oVV4/RPs3Lmr2XqywlNDmLhNBCIhefA8rYcuxoWcnd/WRc6GNRm1b2NOIzDhhF4xriVluMyk3QQVRepkdj9enw==}
+  /@graphql-codegen/typescript/3.0.4_graphql@16.6.0:
+    resolution: {integrity: sha512-x4O47447DZrWNtE/l5CU9QzzW4m1RbmCEdijlA3s2flG/y1Ckqdemob4CWfilSm5/tZ3w1junVDY616RDTSvZw==}
     peerDependencies:
       graphql: ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
       '@graphql-codegen/plugin-helpers': 4.2.0_graphql@16.6.0
       '@graphql-codegen/schema-ast': 3.0.1_graphql@16.6.0
-      '@graphql-codegen/visitor-plugin-common': 3.1.0_graphql@16.6.0
+      '@graphql-codegen/visitor-plugin-common': 3.1.1_graphql@16.6.0
       auto-bind: 4.0.0
       graphql: 16.6.0
       tslib: 2.5.0
@@ -2125,8 +2125,8 @@ packages:
       - supports-color
     dev: true
 
-  /@graphql-codegen/visitor-plugin-common/3.1.0_graphql@16.6.0:
-    resolution: {integrity: sha512-S4BO/xP38eoEDULwbem5QeV7yWA8DpbcSGkvwrnMfVQW08nL6uHliCSV8hiuAi7Mhx7snVir4Iumk8uIDRVu6Q==}
+  /@graphql-codegen/visitor-plugin-common/3.1.1_graphql@16.6.0:
+    resolution: {integrity: sha512-uAfp+zu/009R3HUAuTK2AamR1bxIltM6rrYYI6EXSmkM3rFtFsLTuJhjUDj98HcUCszJZrADppz8KKLGRUVlNg==}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
