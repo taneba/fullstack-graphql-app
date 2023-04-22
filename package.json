@@ -34,7 +34,7 @@
   ],
   "devDependencies": {
     "eslint": "^8.33.0",
-    "prettier": "2.8.4",
+    "prettier": "2.8.7",
     "prettier-plugin-tailwindcss": "^0.2.2",
     "turbo": "1.9.1"
   },
