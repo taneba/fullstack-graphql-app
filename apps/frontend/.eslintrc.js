@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const base = require('config/exlint-next')
+const base = require('config/eslint-next')
 
 module.exports = {
   ...base,

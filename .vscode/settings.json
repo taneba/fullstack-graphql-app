@@ -1,7 +1,8 @@
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
+  "typescript.tsdk": "node_modules/typescript/lib", // Use workspace version of TypeScript
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "graphql-config.load.filePath": "./frontend/graphql.config.js",

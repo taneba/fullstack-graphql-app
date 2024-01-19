@@ -18,3 +18,5 @@ build/**
 docker/db/data/
 
 .pnpm-store/
+
+*.tsbuildinfo
