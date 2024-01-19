@@ -39,7 +39,7 @@
     "ui": "workspace:*",
     "urql": "2.2.3",
     "validation-schema": "workspace:*",
-    "wonka": "4.0.15",
+    "wonka": "6.3.4",
     "zod": "3.20.6"
   },
   "devDependencies": {
