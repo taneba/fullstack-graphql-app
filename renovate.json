@@ -1,12 +1,22 @@
 {
-  "extends": ["config:base"],
-  "timezone": "Asia/Tokyo",
-  "schedule": ["every weekend"],
-  "labels": ["dependencies"],
-  "patch": { "automerge": true },
+  "extends": [
+    "config:base"
+  ],
+  "timezone": "Europe/London",
+  "schedule": [
+    "every weekend"
+  ],
+  "labels": [
+    "dependencies"
+  ],
+  "patch": {
+    "automerge": true
+  },
   "packageRules": [
     {
-      "matchPackageNames": ["node"],
+      "matchPackageNames": [
+        "node"
+      ],
       "enabled": false
     }
   ]

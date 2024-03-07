@@ -45,23 +45,23 @@ export const todoResolvers: gql.TodoResolvers<GraphqlServerContext> = {
 }
 
 export const todoMutationResolvers: gql.MutationResolvers<GraphqlServerContext> =
-  {
-    saveTodo: async (_, params, ctx) => {
-      validateParams(params, TodoInputSchema)
+{
+  saveTodo: async (_, params, ctx) => {
+    validateParams(params, TodoInputSchema)
 
-      const result = await ctx.useCase.todo.save(params.todo)
-      return match(result)
-        .with(whenIsErr, handleAppError)
-        .with(whenIsOk, ({ value }) => {
-          return TodoMapper.toGql(value)
-        })
-        .exhaustive()
-    },
-    completeTodo: async (_, params, ctx) => {
-      const result = await ctx.useCase.todo.markAsCompleted(Number(params.id))
-      return match(result)
-        .with(whenIsErr, handleAppError)
-        .with(whenIsOk, ({ value }) => TodoMapper.toGql(value))
-        .exhaustive()
-    },
-  }
+    const result = await ctx.useCase.todo.save(params.todo)
+    return match(result)
+      .with(whenIsErr, handleAppError)
+      .with(whenIsOk, ({ value }) => {
+        return TodoMapper.toGql(value)
+      })
+      .exhaustive()
+  },
+  completeTodo: async (_, params, ctx) => {
+    const result = await ctx.useCase.todo.markAsCompleted(Number(params.id))
+    return match(result)
+      .with(whenIsErr, handleAppError)
+      .with(whenIsOk, ({ value }) => TodoMapper.toGql(value))
+      .exhaustive()
+  },
+}

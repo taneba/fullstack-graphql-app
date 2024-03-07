@@ -15,5 +15,8 @@
     "**/.hg/store/**": true,
     "**/graphql/**": true,
     "**/ui/dist/index.d.ts": true
+  },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
   }
 }

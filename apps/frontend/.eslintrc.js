@@ -11,5 +11,7 @@ module.exports = {
         ignore: ['jsx', 'global'],
       },
     ],
+    '@typescript-eslint/no-explicit-any': 0,
+    '@typescript-eslint/no-unused-vars': 1,
   },
 }

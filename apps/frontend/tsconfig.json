@@ -8,7 +8,7 @@
     "alwaysStrict": true,
     "allowSyntheticDefaultImports": true,
     "typeRoots": ["src/types", "./node_modules/@types"],
-    "types": ["node", "@types/jest", "@testing-library/jest-dom"]
+    "types": ["node"]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules/**/*", "src/generated/**/*"]

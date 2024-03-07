@@ -1,5 +1,5 @@
 import { GraphQLError } from 'graphql'
-import { match, P } from 'ts-pattern'
+import { match } from 'ts-pattern'
 
 import { AppErrorType } from './error'
 
@@ -19,8 +19,8 @@ export const err = <E extends AppErrorType>(error: E): Err<E> => ({
   error: error,
 })
 
-export const matchResult = <T extends Result<any, AppErrorType>>(result: T) =>
-  match(result).with<P.Pattern<any>, unknown, any>(
+export const matchResult = (result: unknown) =>
+  match(result).with(
     { type: 'error', error: 'DATABASE' },
     () => {
       throw new GraphQLError('database error')

@@ -18,7 +18,7 @@ export class UserUseCase extends UseCase {
   public async save(
     user: UserInput
   ): Promise<Result<User, 'AUTH0' | 'DATABASE'>> {
-    const auth0UserInfo = await got<{ email: string }>(
+    const auth0UserInfo: any = await got(
       `https://${process.env.AUTH0_DOMAIN}/userinfo`,
       {
         headers: {
@@ -27,7 +27,6 @@ export class UserUseCase extends UseCase {
         },
       }
     )
-      .json<{ email: string }>()
       .catch((e) => {
         console.log(e)
         return null
