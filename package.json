@@ -33,19 +33,18 @@
     "packages/*"
   ],
   "devDependencies": {
-    "eslint": "^8.33.0",
-    "prettier": "2.8.7",
-    "prettier-plugin-tailwindcss": "^0.2.2",
-    "turbo": "1.9.3"
-  },
-  "engines": {
-    "npm": ">=7.0.0",
-    "node": ">=14.0.0"
+    "eslint": "^8.57.0",
+    "prettier": "3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "turbo": "1.12.4"
   },
   "dependencies": {
-    "autoprefixer": "^10.4.13",
-    "postcss": "^8.4.21",
-    "tailwindcss": "3.2.7"
+    "autoprefixer": "^10.4.18",
+    "postcss": "^8.4.35",
+    "tailwindcss": "3.4.1"
   },
-  "packageManager": "pnpm@7.26.3"
+  "packageManager": "pnpm@8.9.0",
+  "engines": {
+    "node": ">=18"
+  }
 }

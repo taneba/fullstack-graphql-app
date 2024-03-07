@@ -4,14 +4,16 @@ export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
+export type MakeEmpty<T extends { [key: string]: unknown }, K extends keyof T> = { [_ in K]?: never };
+export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
 export type RequireFields<T, K extends keyof T> = Omit<T, K> & { [P in K]-?: NonNullable<T[P]> };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
-  ID: string;
-  String: string;
-  Boolean: boolean;
-  Int: number;
-  Float: number;
+  ID: { input: string; output: string; }
+  String: { input: string; output: string; }
+  Boolean: { input: boolean; output: boolean; }
+  Int: { input: number; output: number; }
+  Float: { input: number; output: number; }
 };
 
 export type Mutation = {
@@ -23,7 +25,7 @@ export type Mutation = {
 
 
 export type MutationCompleteTodoArgs = {
-  id: Scalars['ID'];
+  id: Scalars['ID']['input'];
 };
 
 
@@ -44,14 +46,14 @@ export type Query = {
   allUsers: Array<User>;
   currentUser?: Maybe<User>;
   getProfile?: Maybe<ProfileResult>;
-  time: Scalars['Int'];
+  time: Scalars['Int']['output'];
   todo?: Maybe<Todo>;
   todosByCurrentUser: Array<Todo>;
 };
 
 
 export type QueryTodoArgs = {
-  id: Scalars['ID'];
+  id: Scalars['ID']['input'];
 };
 
 export const Role = {
@@ -63,35 +65,35 @@ export type Role = typeof Role[keyof typeof Role];
 export type Todo = {
   __typename?: 'Todo';
   author?: Maybe<User>;
-  authorId: Scalars['String'];
-  completed: Scalars['Boolean'];
-  content?: Maybe<Scalars['String']>;
-  createdAt?: Maybe<Scalars['String']>;
-  id: Scalars['ID'];
-  title: Scalars['String'];
-  updatedAt?: Maybe<Scalars['String']>;
+  authorId: Scalars['String']['output'];
+  completed: Scalars['Boolean']['output'];
+  content?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['String']['output']>;
+  id: Scalars['ID']['output'];
+  title: Scalars['String']['output'];
+  updatedAt?: Maybe<Scalars['String']['output']>;
 };
 
 export type TodoInput = {
-  content?: InputMaybe<Scalars['String']>;
-  title: Scalars['String'];
+  content?: InputMaybe<Scalars['String']['input']>;
+  title: Scalars['String']['input'];
 };
 
 export type User = {
   __typename?: 'User';
-  email: Scalars['String'];
-  id: Scalars['ID'];
-  name?: Maybe<Scalars['String']>;
+  email: Scalars['String']['output'];
+  id: Scalars['ID']['output'];
+  name?: Maybe<Scalars['String']['output']>;
   role: Role;
 };
 
 export type UserInput = {
-  name: Scalars['String'];
+  name: Scalars['String']['input'];
 };
 
 export type UserNotFound = {
   __typename?: 'UserNotFound';
-  message: Scalars['String'];
+  message: Scalars['String']['output'];
   role: Role;
 };
 
@@ -103,7 +105,7 @@ export type ResolverTypeWrapper<T> = Promise<T> | T;
 export type ResolverWithResolve<TResult, TParent, TContext, TArgs> = {
   resolve: ResolverFn<TResult, TParent, TContext, TArgs>;
 };
-export type Resolver<TResult, TParent = {}, TContext = {}, TArgs = {}> = ResolverFn<TResult, TParent, TContext, TArgs> | ResolverWithResolve<TResult, TParent, TContext, TArgs>;
+export type Resolver<TResult, TParent = object, TContext = object, TArgs = object> = ResolverFn<TResult, TParent, TContext, TArgs> | ResolverWithResolve<TResult, TParent, TContext, TArgs>;
 
 export type ResolverFn<TResult, TParent, TContext, TArgs> = (
   parent: TParent,
@@ -140,21 +142,21 @@ export type SubscriptionObject<TResult, TKey extends string, TParent, TContext, 
   | SubscriptionSubscriberObject<TResult, TKey, TParent, TContext, TArgs>
   | SubscriptionResolverObject<TResult, TParent, TContext, TArgs>;
 
-export type SubscriptionResolver<TResult, TKey extends string, TParent = {}, TContext = {}, TArgs = {}> =
+export type SubscriptionResolver<TResult, TKey extends string, TParent = object, TContext = object, TArgs = object> =
   | ((...args: any[]) => SubscriptionObject<TResult, TKey, TParent, TContext, TArgs>)
   | SubscriptionObject<TResult, TKey, TParent, TContext, TArgs>;
 
-export type TypeResolveFn<TTypes, TParent = {}, TContext = {}> = (
+export type TypeResolveFn<TTypes, TParent = object, TContext = object> = (
   parent: TParent,
   context: TContext,
   info: GraphQLResolveInfo
 ) => Maybe<TTypes> | Promise<Maybe<TTypes>>;
 
-export type IsTypeOfResolverFn<T = {}, TContext = {}> = (obj: T, context: TContext, info: GraphQLResolveInfo) => boolean | Promise<boolean>;
+export type IsTypeOfResolverFn<T = object, TContext = object> = (obj: T, context: TContext, info: GraphQLResolveInfo) => boolean | Promise<boolean>;
 
 export type NextResolverFn<T> = () => Promise<T>;
 
-export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs = {}> = (
+export type DirectiveResolverFn<TResult = object, TParent = object, TContext = object, TArgs = object> = (
   next: NextResolverFn<TResult>,
   parent: TParent,
   args: TArgs,
@@ -162,16 +164,22 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
   info: GraphQLResolveInfo
 ) => TResult | Promise<TResult>;
 
+/** Mapping of union types */
+export type ResolversUnionTypes<RefType extends Record<string, unknown>> = {
+  ProfileResult: (User) | (UserNotFound);
+};
+
+
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
-  Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
-  ID: ResolverTypeWrapper<Scalars['ID']>;
-  Int: ResolverTypeWrapper<Scalars['Int']>;
-  Mutation: ResolverTypeWrapper<{}>;
-  ProfileResult: ResolversTypes['User'] | ResolversTypes['UserNotFound'];
-  Query: ResolverTypeWrapper<{}>;
+  Boolean: ResolverTypeWrapper<Scalars['Boolean']['output']>;
+  ID: ResolverTypeWrapper<Scalars['ID']['output']>;
+  Int: ResolverTypeWrapper<Scalars['Int']['output']>;
+  Mutation: ResolverTypeWrapper<object>;
+  ProfileResult: ResolverTypeWrapper<ResolversUnionTypes<ResolversTypes>['ProfileResult']>;
+  Query: ResolverTypeWrapper<object>;
   Role: Role;
-  String: ResolverTypeWrapper<Scalars['String']>;
+  String: ResolverTypeWrapper<Scalars['String']['output']>;
   Todo: ResolverTypeWrapper<Todo>;
   TodoInput: TodoInput;
   User: ResolverTypeWrapper<User>;
@@ -181,13 +189,13 @@ export type ResolversTypes = {
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
-  Boolean: Scalars['Boolean'];
-  ID: Scalars['ID'];
-  Int: Scalars['Int'];
-  Mutation: {};
-  ProfileResult: ResolversParentTypes['User'] | ResolversParentTypes['UserNotFound'];
-  Query: {};
-  String: Scalars['String'];
+  Boolean: Scalars['Boolean']['output'];
+  ID: Scalars['ID']['output'];
+  Int: Scalars['Int']['output'];
+  Mutation: object;
+  ProfileResult: ResolversUnionTypes<ResolversParentTypes>['ProfileResult'];
+  Query: object;
+  String: Scalars['String']['output'];
   Todo: Todo;
   TodoInput: TodoInput;
   User: User;
@@ -202,7 +210,7 @@ export type AuthDirectiveArgs = {
 export type AuthDirectiveResolver<Result, Parent, ContextType = any, Args = AuthDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
 
 export type IsOwnerDirectiveArgs = {
-  ownerField?: Maybe<Scalars['String']>;
+  ownerField?: Maybe<Scalars['String']['input']>;
 };
 
 export type IsOwnerDirectiveResolver<Result, Parent, ContextType = any, Args = IsOwnerDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;

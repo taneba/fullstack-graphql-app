@@ -1,4 +1,3 @@
-import { filter } from 'graphql-anywhere'
 import { useQuery } from 'urql'
 
 import { gql } from '~/generated'
@@ -29,7 +28,7 @@ export function TodoList() {
         .map((todo) => (
           <TodoItem
             key={todo.id}
-            todo={filter(TodoItem.fragments.todo, todo)}
+            todo={todo}
           />
         ))}
     </div>

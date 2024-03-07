@@ -8,7 +8,7 @@ function SignIn() {
 
   const loginAsUser = () => {
     loginWithRedirect({
-      role: Role.User,
+      // role: Role.User,
     })
   }
 

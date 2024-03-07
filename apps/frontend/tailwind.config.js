@@ -1,10 +1,9 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-// tailwind config is required for editor support
-const sharedConfig = require('tailwind-config/tailwind.config.js')
-const { fontFamily } = require('tailwindcss/defaultTheme')
+import sharedConfig from 'tailwind-config/tailwind.config.js'
+import { fontFamily } from 'tailwindcss/defaultTheme'
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   ...sharedConfig,
   content: [
     './src/**/*.{js,ts,jsx,tsx}',

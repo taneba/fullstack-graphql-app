@@ -8,7 +8,7 @@ import {
   within,
 } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { graphql } from 'msw'
+import { graphql, HttpResponse } from 'msw'
 import React from 'react'
 
 import {
@@ -39,12 +39,13 @@ describe('Todos Page', () => {
     renderPage(
       graphql.query<GetTodosQuery, GetTodosQueryVariables>(
         'GetTodos',
-        (req, res, ctx) =>
-          res(
-            ctx.data({
+        () => {
+          return HttpResponse.json({
+            data: {
               todosByCurrentUser: [],
-            })
-          )
+            }
+          })
+        }
       )
     )
     const loading = await screen.findByRole('loading')
@@ -71,16 +72,16 @@ describe('Todos Page', () => {
       renderPage(
         graphql.mutation<SaveTodoMutation, SaveTodoMutationVariables>(
           'SaveTodo',
-          (req, res, ctx) => {
-            mutationInterceptor(req.variables)
-            return res.once(
-              ctx.data({
+          ({ variables }) => {
+            mutationInterceptor(variables)
+            return HttpResponse.json({
+              data: {
                 saveTodo: {
                   __typename: 'Todo',
                   id: '1',
                 },
-              })
-            )
+              }
+            })
           }
         )
       )

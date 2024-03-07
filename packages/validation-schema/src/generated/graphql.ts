@@ -4,13 +4,15 @@ export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
+export type MakeEmpty<T extends { [key: string]: unknown }, K extends keyof T> = { [_ in K]?: never };
+export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
-  ID: string;
-  String: string;
-  Boolean: boolean;
-  Int: number;
-  Float: number;
+  ID: { input: string; output: string; }
+  String: { input: string; output: string; }
+  Boolean: { input: boolean; output: boolean; }
+  Int: { input: number; output: number; }
+  Float: { input: number; output: number; }
 };
 
 export type Mutation = {
@@ -22,7 +24,7 @@ export type Mutation = {
 
 
 export type MutationCompleteTodoArgs = {
-  id: Scalars['ID'];
+  id: Scalars['ID']['input'];
 };
 
 
@@ -43,14 +45,14 @@ export type Query = {
   allUsers: Array<User>;
   currentUser?: Maybe<User>;
   getProfile?: Maybe<ProfileResult>;
-  time: Scalars['Int'];
+  time: Scalars['Int']['output'];
   todo?: Maybe<Todo>;
   todosByCurrentUser: Array<Todo>;
 };
 
 
 export type QueryTodoArgs = {
-  id: Scalars['ID'];
+  id: Scalars['ID']['input'];
 };
 
 export enum Role {
@@ -61,35 +63,35 @@ export enum Role {
 export type Todo = {
   __typename?: 'Todo';
   author?: Maybe<User>;
-  authorId: Scalars['String'];
-  completed: Scalars['Boolean'];
-  content?: Maybe<Scalars['String']>;
-  createdAt?: Maybe<Scalars['String']>;
-  id: Scalars['ID'];
-  title: Scalars['String'];
-  updatedAt?: Maybe<Scalars['String']>;
+  authorId: Scalars['String']['output'];
+  completed: Scalars['Boolean']['output'];
+  content?: Maybe<Scalars['String']['output']>;
+  createdAt?: Maybe<Scalars['String']['output']>;
+  id: Scalars['ID']['output'];
+  title: Scalars['String']['output'];
+  updatedAt?: Maybe<Scalars['String']['output']>;
 };
 
 export type TodoInput = {
-  content?: InputMaybe<Scalars['String']>;
-  title: Scalars['String'];
+  content?: InputMaybe<Scalars['String']['input']>;
+  title: Scalars['String']['input'];
 };
 
 export type User = {
   __typename?: 'User';
-  email: Scalars['String'];
-  id: Scalars['ID'];
-  name?: Maybe<Scalars['String']>;
+  email: Scalars['String']['output'];
+  id: Scalars['ID']['output'];
+  name?: Maybe<Scalars['String']['output']>;
   role: Role;
 };
 
 export type UserInput = {
-  name: Scalars['String'];
+  name: Scalars['String']['input'];
 };
 
 export type UserNotFound = {
   __typename?: 'UserNotFound';
-  message: Scalars['String'];
+  message: Scalars['String']['output'];
   role: Role;
 };
 
@@ -107,14 +109,14 @@ export const definedNonNullAnySchema = z.any().refine((v) => isDefinedNonNullAny
 export const RoleSchema = z.nativeEnum(Role);
 
 export function TodoInputSchema(): z.ZodObject<Properties<TodoInput>> {
-  return z.object<Properties<TodoInput>>({
+  return z.object({
     content: z.string().nullish(),
     title: z.string()
   })
 }
 
 export function UserInputSchema(): z.ZodObject<Properties<UserInput>> {
-  return z.object<Properties<UserInput>>({
+  return z.object({
     name: z.string()
   })
 }
