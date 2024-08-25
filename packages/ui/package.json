@@ -33,7 +33,7 @@
     "autoprefixer": "^10.4.13",
     "class-variance-authority": "^0.4.0",
     "clsx": "^1.2.1",
-    "lucide-react": "^0.161.0",
+    "lucide-react": "^0.436.0",
     "postcss": "^8.4.21",
     "spinners-react": "1.0.7",
     "tailwind-config": "workspace:*",
