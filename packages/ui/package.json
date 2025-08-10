@@ -31,7 +31,7 @@
     "@types/react": "18.0.38",
     "@types/react-dom": "18.0.11",
     "autoprefixer": "^10.4.13",
-    "class-variance-authority": "^0.4.0",
+    "class-variance-authority": "^0.7.0",
     "clsx": "^1.2.1",
     "lucide-react": "^0.161.0",
     "postcss": "^8.4.21",
